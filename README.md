@@ -2,7 +2,7 @@
 
 <p align="center">
 
-<img width="80%" src="/Users/dmitrii/Desktop/PhD/Python/HorizonTSD/horizontsd-info/figures/small_logo_white.png">
+<img width="80%" src="/horizontsd-info/figures/small_logo_white.png">
 
 </p>
 
