@@ -1,0 +1,53 @@
+@property --＠color-1 {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: hsl(221, 84%, 58%);
+}
+
+@property --＠color-2 {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: hsl(221, 84%, 58%);
+}
+
+@keyframes gradient-change {
+	to {
+		--＠color-1: hsl(0, 0%, 77%);
+		--＠color-2: hsl(221, 84%, 58%);
+	}
+}
+
+.gradient-text {
+	background: linear-gradient(to right in oklch, var(--＠color-1), var(--＠color-2));
+	background-clip: text;
+	color: transparent;
+	animation: gradient-change 2s linear infinite alternate;
+}
+
+/* dark */
+
+@property --＠color-dark-1 {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: hsl(216, 92%, 20%);
+}
+
+@property --＠color-dark-2 {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: hsl(210, 88%, 14%);
+}
+
+@keyframes dark-gradient-change {
+	to {
+		--＠color-1: hsl(0, 0%, 0%);
+		--＠color-2: hsl(209, 100%, 36%);
+	}
+}
+
+.gradient-text__dark {
+	background: linear-gradient(to right in oklch, var(--＠color-dark-1), var(--＠color-dark-2));
+	background-clip: text;
+	color: transparent;
+	animation: dark-gradient-change 1s linear infinite alternate;
+}
