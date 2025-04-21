@@ -199,7 +199,7 @@ function Content() {
                             className="card-background"
                             sx={{
                                 height: "100%",
-                                border: "1px solid var(--mui-palette-secondary-dark)",
+                                border: "1px solid var(--mui-palette-grey-500)",
                             }}>
                             <div style={{
                                 width: "100%",
@@ -225,10 +225,10 @@ function Content() {
                             <CardContent
                                 sx={{
                                     height: "100%",
-                                    borderTop: "1px solid var(--mui-palette-secondary-dark)",
+                                    borderTop: "1px solid var(--mui-palette-grey-500)",
                                     background: isDark
                                         ? "linear-gradient(280deg, #263238 0%, var(--mui-palette-primary-dark) 30%)"
-                                        : "linear-gradient(var(--mui-palette-primary-light), var(--mui-palette-common-white))"
+                                        : "linear-gradient(var(--mui-palette-grey-200), var(--mui-palette-common-white))"
                                 }}
                             >
                                 {member?.first_name && member?.last_name &&

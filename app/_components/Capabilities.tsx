@@ -117,12 +117,10 @@ function Desktop() {
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
     const { dict } = useI18n();
 
-    if (!dict || !dict.Home || !dict.Home.Capabilities || !dict.Home.Capabilities.Content) {
-        return null;
-    }
+    if (!dict || !dict.Home || !dict.Home.Capabilities || !dict.Home.Capabilities.Content) return null;
 
     const content: CapabilityItem[] = dict.Home.Capabilities.Content;
-    const backgroundColor2 = isDark ? "var(--mui-palette-primary-dark)" : "var(--mui-palette-common-white)"
+    const backgroundColor2 = isDark ? "var(--mui-palette-grey-900)" : "var(--mui-palette-common-white)"
 
     return (
         <Grid container spacing={2} sx={{ padding: "2rem", maxWidth: "1480px" }}>

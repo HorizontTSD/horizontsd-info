@@ -201,7 +201,8 @@ function Desktop() {
                                 onClick={() => handleItemClick(index)}
                                 sx={[
                                     {
-                                        border: `1px solid ${selectedItemIndex === index ? "none" : "var(--mui-palette-secondary-dark)"}`,
+                                        border: `none`,
+                                        background: `var(--mui-palette-LinearProgress-secondaryBg)`,
                                         cursor: "pointer",
                                         borderRadius: "var(--mui-shape-borderRadius)",
                                         display: "flex",
@@ -210,15 +211,17 @@ function Desktop() {
                                         alignItems: "center",
                                         padding: 2,
                                         height: `100%`,
-                                        backgroundColor: backgroundColor,
                                         width: "auto",
+                                        color: `var(--mui-palette-text-primary)`,
                                         marginLeft: index === 0 ? 0 : "1rem",
                                         "&:hover": {
                                             backgroundColor: hoverBackground,
+                                            color: `var(--mui-palette-secondary-light)`
                                         },
                                     },
                                     selectedItemIndex === index && {
                                         backgroundColor: backgroundSelected,
+                                        color: `var(--mui-palette-secondary-light)`
                                     },
                                 ]}
                             >
@@ -234,19 +237,16 @@ function Desktop() {
                                         <Stack direction="row" alignItems="center">
                                             <FormatListBulletedIcon
                                                 sx={{
-                                                    color: selectedItemIndex === index ? "text.primary" : "primary.main",
                                                     marginRight: "1rem"
                                                 }}
                                             />
                                             <Typography
-                                                color={selectedItemIndex === index ? "primary.light" : backgroundSelected}
                                                 variant="h6"
                                             >
                                                 {button.title}
                                             </Typography>
                                         </Stack>
                                         <Typography
-                                            color={selectedItemIndex === index ? "primary.light" : backgroundSelected}
                                             variant="body2"
                                         >
                                             {button.description}
