@@ -51,7 +51,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => {
         '& .MuiSwitch-track': {
             opacity: 1,
             background: theme.palette.primary.light,
-            borderRadius: 20 / 2,
+            borderRadius: 10,
         },
     };
 });
