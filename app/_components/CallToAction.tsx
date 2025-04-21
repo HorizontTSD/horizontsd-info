@@ -30,7 +30,7 @@ const StyledButton = styled(Button)(({ theme }) => {
 });
 
 const GradientCard = styled(Card)(({ theme }) => ({
-    borderRadius: "24px",
+    borderRadius: "var(--mui-shape-borderRadius)",
     overflow: "hidden",
     boxShadow: theme.shadows[10],
 }));

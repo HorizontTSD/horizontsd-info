@@ -40,7 +40,7 @@ function Background({ direction }: BackgroundProps) {
     return (
         <Box
             sx={{
-                borderRadius: `1rem`,
+                borderRadius: "var(--mui-shape-borderRadius)",
                 position: "absolute",
                 top: 0,
                 left: 0,
@@ -102,7 +102,7 @@ function Mobile() {
                             width: `80%`,
                             height: `90%`,
                             border: `1px solid ${theme.palette.primary.main}`,
-                            borderRadius: `1rem`,
+                            borderRadius: "var(--mui-shape-borderRadius)",
                             display: "flex",
                             justifySelf: `center`,
                         }}>
