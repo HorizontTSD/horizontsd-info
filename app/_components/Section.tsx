@@ -39,9 +39,9 @@ export default function Section(props: SectionProps) {
         width: "100vw",
         zIndex: 2,
         userSelect: "none",
-        minHeight: "100vh",
+        minHeight: "1080px",
         backgroundSize: "cover",
-        backgroundColor: isDark ? "primary.dark" : "primary.light"
+        backgroundColor: isDark ? "primary.dark" : "var(--mui-palette-grey-100)"
     };
 
     const mergedStyles: SxProps<Theme> = props.sx

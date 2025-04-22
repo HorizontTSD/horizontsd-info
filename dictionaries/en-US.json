@@ -1,7 +1,21 @@
 {
   "Home": {
     "Hero": {
-      "slogan": "Your guide to the future"
+      "slogan": "Your guide to the future",
+      "button": [
+        {
+          "title": "Quick Forecast",
+          "description": [
+            "LSTM, XGBoost & hybrid models adapt to any data for ultra-accurate predictions."
+          ]
+        },
+        {
+          "title": "The Solution of the company",
+          "description": [
+            "Experimental results demonstrate that the proposed ensemble model significantly outperforms individual forecasting methods in some metrics, achieving higher accuracy and reliability in predicting electrical load."
+          ]
+        }
+      ]
     },
     "About": {
       "SectionHeader": {

@@ -66,13 +66,13 @@
 @property --shine2-1 {
 	syntax: "<color>";
 	inherits: false;
-	initial-value: #9aaacc;
+	initial-value: #aeb1b8;
 }
 
 @property --shine2-2 {
 	syntax: "<color>";
 	inherits: false;
-	initial-value: #798094c4;
+	initial-value: #83868dc4;
 }
 
 

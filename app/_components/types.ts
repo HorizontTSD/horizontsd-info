@@ -107,6 +107,10 @@ export interface FooterContent {
 
 export interface HeroContent {
 	slogan: string;
+	button: {
+		title: string;
+		description: string[];
+	}[]
 }
 
 export interface NavbarContent {
