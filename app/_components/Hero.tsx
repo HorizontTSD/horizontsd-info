@@ -1,19 +1,19 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
-import { Container, useMediaQuery } from "@mui/material";
-
 import Section from "./Section";
-
-import "./gradient-text.css";
 import { Mobile } from "./Hero/Mobile";
 import { Desktop } from "./Hero/Desktop";
+import { Container, useMediaQuery } from "@mui/material";
+export interface HeroProps {
+    fullsize?: boolean;
+}
 
 function Content({ fullsize = false }: HeroProps) {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
     return (
         <Container
+            maxWidth="lg"
             sx={{
                 height: `100%`,
                 width: `100%`,
@@ -26,11 +26,6 @@ function Content({ fullsize = false }: HeroProps) {
             {isMobile ? <Mobile fullsize={fullsize} /> : <Desktop fullsize={fullsize} />}
         </Container>
     );
-}
-
-
-export interface HeroProps {
-    fullsize?: boolean;
 }
 
 export default function Hero({ fullsize = false }: HeroProps) {
@@ -50,10 +45,10 @@ export default function Hero({ fullsize = false }: HeroProps) {
                 width: "100vw",
                 zIndex: 2,
                 userSelect: "none",
-                minHeight: fullsize ? "1080px" : "50vh",
+                minHeight: fullsize ? "100vh" : "50vh",
             }}
         >
             <Content fullsize={fullsize} />
-        </Section>
+        </Section >
     );
 }
