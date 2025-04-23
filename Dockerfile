@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM node:20-alpine AS base
+FROM node:23-alpine AS base
 WORKDIR /app
 
 # Stage 1: Install dependencies
@@ -11,7 +11,7 @@ RUN apk update && apk upgrade && \
     apk add --no-cache libc6-compat && \
     npm install -g corepack && \
     corepack enable && \
-    corepack prepare yarn@4.7.0 --activate  # Explicit version match
+    corepack prepare yarn@4.9.1 --activate  # Explicit version match
 
 # Copy package manager files
 COPY package.json yarn.lock .yarnrc.yml ./
