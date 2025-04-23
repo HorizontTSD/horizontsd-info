@@ -1,5 +1,4 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import { useColorScheme } from "@mui/material/styles";
 import { useI18n } from "../_providers/I18nProvider";
 import { useTheme } from "@mui/material/styles";
@@ -12,38 +11,13 @@ import {
 } from "@mui/material";
 import Section from "./Section";
 
-import "./card-gradient.css"
-
-const StyledButton = styled(Button)(({ theme }) => {
-    return ({
-        fontWeight: 700,
-        textTransform: "none",
-        padding: theme.spacing(1.5, 4),
-        borderRadius: "12px",
-        transition: "all 0.3s ease",
-        backgroundImage: `linear-gradient(90deg, var(--mui-palette-primary-contrastText), var(--mui-palette-primary-main))`,
-        "&:hover": {
-            transform: "translateY(-2px)",
-            boxShadow: theme.shadows[6],
-        }
-    })
-});
-
-const GradientCard = styled(Card)(({ theme }) => ({
-    borderRadius: "var(--mui-shape-borderRadius)",
-    overflow: "hidden",
-    boxShadow: theme.shadows[10],
-}));
-
 function CTA() {
     const theme = useTheme();
     const { mode } = useColorScheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
     const { dict } = useI18n();
 
-    if (!dict || !dict.Home || !dict.Home.CallToAction) {
-        return null;
-    }
+    if (!dict || !dict.Home || !dict.Home.CallToAction) return null;
 
     const content = dict.Home.CallToAction;
 
@@ -55,25 +29,16 @@ function CTA() {
                 justifyContent: `center`,
                 alignItems: `center`,
             }}>
-            <ScrollGrow
-                animationDelay={200}
-                threshold={0.01}
-                timeout={200}
-                transformOrigin="0 0 0"
-            >
-                <GradientCard className="gradient-section">
+            <ScrollGrow>
+                <Card >
                     <Grid container alignItems="center" spacing={2}>
                         <Grid size={{ xs: 12, md: 6 }} >
                             <CardContent sx={{ p: { sx: 3, md: 5 } }}>
                                 <Typography
                                     variant="h4"
-                                    color="textPrimary"
                                     gutterBottom
                                     sx={{
                                         fontWeight: 800,
-                                        backgroundImage: `linear-gradient(0deg, var(--mui-palette-secondary-light), var(--mui-palette-primary-light))`,
-                                        color: `transparent`,
-                                        backgroundClip: `text`,
                                     }}
                                 >
                                     {content.h3}
@@ -83,9 +48,6 @@ function CTA() {
                                     color="textPrimary"
                                     sx={{
                                         mb: 2, fontSize: "1.1rem",
-                                        backgroundImage: `linear-gradient(40deg, var(--mui-palette-common-white), var(--mui-palette-secondary-light))`,
-                                        color: `transparent`,
-                                        backgroundClip: `text`,
                                     }}
                                 >{content.body1}</Typography>
                                 <Stack
@@ -95,18 +57,21 @@ function CTA() {
                                         justifyContent: `center`
                                     }}
                                 >
-                                    <StyledButton
+                                    <Button
+                                        color="info"
                                         variant="contained"
                                         size="large"
-                                        sx={{ color: "primary.light" }}
+                                        sx={{ color: `var(--mui-palette-secondary-light)` }}
                                     >
                                         {content.StyledButton[0]}
-                                    </StyledButton>
-                                    <StyledButton
+                                    </Button>
+                                    <Button
+                                        color="info"
                                         variant="outlined"
                                         size="large"
-                                        sx={{ color: "secondary.light" }}
-                                    >{content.StyledButton[1]}</StyledButton>
+                                    >
+                                        {content.StyledButton[1]}
+                                    </Button>
                                 </Stack>
                             </CardContent>
                         </Grid>
@@ -118,21 +83,22 @@ function CTA() {
                             <CardMedia
                                 component="img"
                                 image={mode === "dark"
-                                    ? "/images/short_logo_black.webp"
-                                    : "/images/short_logo_white.webp"}
+                                    ? "/images/short_logo_white.webp"
+                                    : "/images/short_logo_black.webp"
+                                }
                                 alt="CTA Illustration"
                                 sx={{
                                     width: `100%`,
                                     height: "100%",
-                                    maxHeight: `60vh`,
-                                    maxWidth: `60vw`,
+                                    maxHeight: `40vh`,
+                                    maxWidth: `40vw`,
                                     objectFit: "cover",
                                     objectPosition: "center"
                                 }}
                             />
                         </Grid>
                     </Grid>
-                </GradientCard>
+                </Card>
             </ScrollGrow>
         </Container>
     );

@@ -34,30 +34,34 @@ interface MobileSwiperSlideProps {
 }
 
 function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
+    const { mode } = useColorScheme();
+    const isDark = mode === "dark";
+    const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
+
     return (
         <Card sx={{
             width: "80%",
-            height: "93%",
-            border: "1px solid var(--mui-palette-primary-main)",
+            height: "80%",
             borderRadius: "var(--mui-shape-borderRadius)",
             display: "grid",
             justifySelf: "center",
-            alignSelf: "center"
+            alignSelf: "center",
+            background: bgPalette[~~(!isDark)]
         }}>
             <CardContent sx={{
                 borderRadius: "var(--mui-shape-borderRadius)",
             }}>
                 <Stack direction="row" alignItems="center">
                     <LabelIcon color="secondary" sx={{ marginRight: "1rem" }} />
-                    <Typography color="primary" variant="button" component="div">
+                    <Typography variant="button" component="div">
                         {item.title}
                     </Typography>
                 </Stack>
                 {item.description.slice(0, 2).map((e: string, i: number) => (
-                    <Typography key={i} variant="subtitle2" color="secondary" gutterBottom>{e}</Typography>
+                    <Typography key={i} variant="subtitle1"  gutterBottom>{e}</Typography>
                 ))}
                 {item.description.slice(2, -1).map((e: string, i: number) => (
-                    <Typography key={i} variant="body2" gutterBottom>{e}</Typography>
+                    <Typography key={i} variant="body1" gutterBottom>{e}</Typography>
                 ))}
                 {item.description.slice(-1).map((e: string, i: number) => (
                     <Typography key={i} variant="caption" color="textSecondary" gutterBottom>
@@ -120,27 +124,23 @@ function Desktop() {
     if (!dict || !dict.Home || !dict.Home.Capabilities || !dict.Home.Capabilities.Content) return null;
 
     const content: CapabilityItem[] = dict.Home.Capabilities.Content;
-    const backgroundColor2 = isDark ? "var(--mui-palette-grey-900)" : "var(--mui-palette-common-white)"
 
+
+    const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
     return (
         <Grid container spacing={2} sx={{ padding: "2rem", maxWidth: "1480px" }}>
             {content.map((item: CapabilityItem, index: number) => (
                 <Grid size={6} key={index} spacing={2}>
-                    <ScrollGrow
-                        animationDelay={200}
-                        threshold={0.01}
-                        timeout={200}
-                        transformOrigin="0 0 0"
-                    >
+                    <ScrollGrow>
                         <Stack
                             direction="column"
                             component={Card}
                             useFlexGap
                             sx={{
                                 color: "textPrimary",
-                                p: 3,
+                                padding: `0.8rem`,
                                 height: isMobile ? "unset" : "30vh",
-                                background: `linear-gradient(-179.99deg, transparent 0%, ${backgroundColor2} 2%)`
+                                background: bgPalette[~~(!isDark)]
                             }}>
                             <div>
                                 <Stack direction="row" sx={{
@@ -150,11 +150,11 @@ function Desktop() {
                                     alignItems: "center",
                                     marginBottom: "1rem"
                                 }}>
-                                    <LabelIcon color="secondary" sx={{ marginRight: "1rem" }} />
-                                    <Typography variant="h6" color="secondary" component="div">{item.title}</Typography>
+                                    <LabelIcon color="primary" sx={{ marginRight: "1rem" }} />
+                                    <Typography variant="h6" component="div">{item.title}</Typography>
                                 </Stack>
                                 {item.description.slice(0, 2).map((e: string, i: number) => (
-                                    <Typography key={i} variant="subtitle2" color="textSecondary" gutterBottom>{e}</Typography>
+                                    <Typography key={i} variant="subtitle1" gutterBottom>{e}</Typography>
                                 ))}
                                 {item.description.slice(2, -1).map((e: string, i: number) => (
                                     <Typography key={i} variant="body2" gutterBottom>{e}</Typography>
@@ -224,7 +224,7 @@ function Footer() {
                     </Typography>
                     <Stack direction={isMobile ? "column" : "row"} sx={{ width: "90%", justifyContent: "space-between" }}>
                         {content.content.map((e: string, i: number) => (
-                            <Typography key={i} variant="caption" gutterBottom color="primary" sx={{
+                            <Typography key={i} variant="caption" gutterBottom color="secondary" sx={{
                                 textAlign: "center",
                             }}>
                                 {e}
@@ -255,15 +255,15 @@ export default function Capabilities() {
         <Section id="capabilities" sx={{ justifyContent: "space-between" }}>
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
-                    // textShadow: "0px 1px 1px var(--mui-palette-primary-main)",
                     userSelect: "none",
                     textAlign: "center",
+                    fontFamily: `inherit`
                 }}>
                     {content.h4}
                 </Typography>
                 <Typography variant="body2" gutterBottom sx={{
-                    // textShadow: "0px 1px 1px var(--mui-palette-primary-main)",
                     textAlign: "center",
+                    fontFamily: `inherit`
                 }}>
                     {content.body2}
                 </Typography>

@@ -31,20 +31,19 @@ function Desktop() {
     const isDark = mode === "dark";
     const { dict } = useI18n();
     if (!dict || !dict.Home || !dict.Home.Features || !dict.Home.Features.Content) {
-        return null; 
+        return null;
     }
     const content: FeatureItem[] = dict.Home.Features.Content;
-
+    const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
     return (
         <Grid
             container
             direction="column"
             justifyContent="center"
-            spacing={1}
             sx={{
-                display: { xs: "none", sm: "none", md: "flex" },
-                width: { lg: "80%", md: "100%" },
-                height: "80vh"
+                height: "80vh",
+                width: `100%`,
+                margin: `0 auto`
             }}>
             <Swiper
                 loop={true}
@@ -79,30 +78,25 @@ function Desktop() {
                             width: "100%",
                             height: "100%",
                             borderRadius: "var(--mui-shape-borderRadius)",
-                            background: isDark
-                                ? "var(--mui-palette-primary-dark)"
-                                : "var(--mui-palette-common-white)"
+                            background: bgPalette[~~(!isDark)]
                         }}>
                             <CardContent sx={{
-                                backgroundSize: "fill",
-                                backgroundRepeat: "no-repeat",
-                                backgroundPosition: "center",
                                 borderRadius: "var(--mui-shape-borderRadius)",
                                 height: "100%",
                             }}>
                                 <Stack direction="row" alignItems="center">
-                                    <LabelIcon color="secondary" sx={{ marginRight: "1rem" }} />
-                                    <Typography variant="button" color="primary" component="div">
+                                    <LabelIcon color="primary" sx={{ marginRight: "1rem" }} />
+                                    <Typography variant="button" component="div">
                                         {item.title}
                                     </Typography>
                                 </Stack>
                                 {item.description.map((e: string, i: number) => (
-                                    <Typography key={i} gutterBottom color="textPrimary" variant="subtitle2">
+                                    <Typography key={i} gutterBottom variant="subtitle2">
                                         {e}
                                     </Typography>
                                 ))}
                                 {item.more.map((e: string, i: number) => (
-                                    <Typography key={i} gutterBottom color="textSecondary" variant="body2">
+                                    <Typography key={i} gutterBottom variant="body2">
                                         {e}
                                     </Typography>
                                 ))}
@@ -111,36 +105,44 @@ function Desktop() {
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </Grid>
+        </Grid >
     );
 }
 
 function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
+    const { mode } = useColorScheme();
+    const isDark = mode === "dark";
+    const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
+
     return (
         <Card sx={{
             width: "80%",
             height: "93%",
-            border: "1px solid var(--mui-palette-primary-contrastText)",
             borderRadius: "var(--mui-shape-borderRadius)",
             display: "flex",
             justifySelf: "center",
+            background: bgPalette[~~(!isDark)]
         }}>
             <CardContent sx={{
                 borderRadius: "var(--mui-shape-borderRadius)",
+                height: "100%",
             }}>
-                <div>
-                    <Typography variant="button" color="primary">
+                <Stack direction="row" alignItems="center">
+                    <LabelIcon color="primary" sx={{ marginRight: "1rem" }} />
+                    <Typography variant="button" component="div">
                         {item.title}
                     </Typography>
-                    <Typography variant="subtitle1" color="textPrimary">
-                        {item.description[0]}
+                </Stack>
+                {item.description.map((e: string, i: number) => (
+                    <Typography key={i} gutterBottom variant="subtitle2">
+                        {e}
                     </Typography>
-                    {item.more.map((e: string, i: number) => (
-                        <Typography key={i} gutterBottom variant="body2" color="textSecondary">
-                            {e}
-                        </Typography>
-                    ))}
-                </div>
+                ))}
+                {item.more.map((e: string, i: number) => (
+                    <Typography key={i} gutterBottom variant="body2">
+                        {e}
+                    </Typography>
+                ))}
             </CardContent>
         </Card>
     );
@@ -149,7 +151,7 @@ function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
 function Mobile() {
     const { dict } = useI18n();
     if (!dict || !dict.Home || !dict.Home.Features || !dict.Home.Features.Content) {
-        return null; 
+        return null;
     }
     const content: FeatureItem[] = dict.Home.Features.Content;
 
@@ -172,7 +174,7 @@ function Mobile() {
                     backgroundPosition: "center",
                     backgroundSize: "cover",
                     width: "100%",
-                    height: "80vh",
+                    height: `60vh`,
                     margin: "1rem 0",
                 }}>
                 {content.map((item: FeatureItem, i: number) => (
@@ -202,15 +204,15 @@ export default function Features() {
         <Section id="features" sx={{ alignItems: "center" }}>
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
-                    // textShadow: "0px 3px 5px var(--mui-palette-primary-dark)",
                     userSelect: "none",
                     textAlign: "center",
+                    fontFamily: `inherit`
                 }}>
                     {content.h4}
                 </Typography>
                 <Typography variant="body2" gutterBottom sx={{
-                    // textShadow: "0px 3px 5px var(--mui-palette-primary-dark)",
                     textAlign: "center",
+                    fontFamily: `inherit`
                 }}>
                     {content.body2}
                 </Typography>

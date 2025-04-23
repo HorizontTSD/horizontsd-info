@@ -15,20 +15,12 @@ import MenuList from '@mui/material/MenuList';
 
 export default function LanguageSwitcher() {
   const { lang, dicts } = useI18n()
-  const { mode } = useColorScheme();
-  const isDark = mode === "dark";
-
-  const idx = dicts.indexOf(lang)
-
-  const bg = isDark
-    ? `linear-gradient(20deg, var(--mui-palette-secondary-dark), var(--mui-palette-secondary-dark))`
-    : `linear-gradient(20deg, var(--mui-palette-secondary-dark), var(--mui-palette-primary-dark))`
-
-
+  const idx = Math.max(dicts.indexOf(lang), 0)
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement>(null);
   const [selectedIndex, setSelectedIndex] = React.useState(idx);
-
+  const { mode } = useColorScheme();
+  const isDark = mode === "dark";
   const handleLanguageChange = (
     event: React.MouseEvent<HTMLLIElement, MouseEvent>,
     index: number,
@@ -64,21 +56,34 @@ export default function LanguageSwitcher() {
         variant="contained"
         ref={anchorRef}
         aria-label="Button group with a nested menu"
+        sx={{
+          cursor: `pointer`,
+          border: `none`,
+          boxShadow: `none`,
+        }}
+        onClick={handleToggle}
       >
-        <Button color="info" variant="text" disabled sx={{
-          color: `var(--mui-palette-primary-light) !important`,
-          opacity: `1`,
-          backgroundColor: bg
+        <Button variant="text" disabled sx={{
+          color: `var(--mui-palette-text-primary) !important`,
+          background: `var(${isDark ? "--mui-palette-secondary-dark" : "--mui-palette-primary-light"}) !important`,
+          border: `2px solid var(${isDark ? "--mui-palette-secondary-light" : "--mui-palette-secondary-dark"}) !important`,
+          padding: `0 0.8rem`,
+          boxShadow: `none`,
         }}
         >{dicts[idx].split(`-`)[0].trim()}</Button>
         <Button
-          sx={{ backgroundColor: bg }}
+          sx={{
+            background: `var(${isDark ? "--mui-palette-secondary-light" : "--mui-palette-secondary-dark"}) !important`,
+            boxShadow: `none`,
+            color: `var(${isDark ? "--mui-palette-secondary-dark" : "--mui-palette-secondary-light"}) !important`,
+            border: `none`,
+            padding: `0`
+          }}
           size="small"
           aria-controls={open ? 'split-button-menu' : undefined}
           aria-expanded={open ? 'true' : undefined}
           aria-label="select merge strategy"
           aria-haspopup="menu"
-          onClick={handleToggle}
         >
           <ArrowDropDownIcon />
         </Button>
@@ -98,9 +103,10 @@ export default function LanguageSwitcher() {
           }}>
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
-                <MenuList id="split-button-menu" autoFocusItem>
+                <MenuList id="split-button-menu" autoFocusItem sx={{ padding: `1rem 0` }}>
                   {dicts.map((option, index) => (
                     <MenuItem
+                      sx={{ padding: `0.1rem 1rem` }}
                       key={option}
                       disabled={index === selectedIndex}
                       selected={index === selectedIndex}
