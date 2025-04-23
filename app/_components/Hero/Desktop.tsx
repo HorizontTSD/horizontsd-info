@@ -5,10 +5,9 @@ import Stack from "@mui/material/Stack";
 import { Grid, Typography } from "@mui/material";
 import { bebasNeue } from "../../../fonts";
 
-import { WebGLBackground } from "../Wow";
-import "../gradient-text.css";
 import { HeroProps } from "../Hero";
 import { HeroCard } from "./HeroCard";
+import { WebGLBackground } from "../Wow";
 
 export interface HeroContent {
 	slogan: string;
@@ -22,29 +21,25 @@ export function Desktop({ fullsize = false }: HeroProps) {
 
 	const content: HeroContent = dict.Home.Hero;
 	const isDark = mode === "dark";
-	const baseColor = isDark
-		? "var(--mui-palette-secondary-main)"
-		: "var(--mui-palette-secondary-main)";
-	const accentColor = isDark
-		? "var(--mui-palette-secondary-light)"
-		: "var(--mui-palette-primary-main)";
+	const accentColor = `var(--mui-palette-secondary-contrastText)`
 
 	return (
 		<Stack direction="column"
 			sx={{
+				zIndex: 3,
 				height: `100%`,
 				width: `100%`,
 				display: "flex",
-				flexDirection: "column",
 				alignItems: "center",
 				justifyContent: "center",
+				background: isDark ? `transparent` : `#FAFAFA`,
+				padding: `2rem`,
+				borderRadius: "var(--mui-shape-borderRadius)",
 			}}
 		>
-			<WebGLBackground color={isDark ? [0.1, 0.5, 0.9] : [0.1, 0.3, 1.0]} />
-
+            <WebGLBackground color={isDark ? [0.1, 0.5, 0.9] : [0.1, 0.3, 1.0]} />
 			<Stack direction="column"
 				sx={{
-					paddingTop: `20%`,
 					position: "relative",
 					height: `100%`,
 					width: `100%`,
@@ -52,16 +47,18 @@ export function Desktop({ fullsize = false }: HeroProps) {
 					flexDirection: "column",
 					alignItems: "start",
 					justifyContent: "start",
+
 				}}>
-				<Stack spacing={4} direction="row">
+				<Stack spacing={3} direction="row">
 					<Typography
 						variant="h1"
 						sx={{
 							fontFamily: bebasNeue.style.fontFamily,
-							color: baseColor
+							color: `#FAFAFA`,
+							textShadow: `0px 0px 10px black`
 						}}
 					>
-						Horizon™
+						Horizon
 					</Typography>
 					<Typography
 						variant="h1"
@@ -81,20 +78,19 @@ export function Desktop({ fullsize = false }: HeroProps) {
 				>
 					<Typography
 						variant="h4"
-						className={isDark ? "gradient-text" : "gradient-text__dark"}
 						sx={{
 							fontFamily: bebasNeue.style.fontFamily,
 							textAlign: "center",
-							color: baseColor
+							color: accentColor
 						}}>
 						{content.slogan}
 					</Typography>
 				</Stack>
 			</Stack>
 			{fullsize &&
-				<Grid container spacing={2}
+				<Grid container spacing={1}
 					sx={{
-						marginTop: `10%`,
+						marginTop: `5%`,
 						width: `100%`,
 						height: `100%`,
 						zIndex: `1`

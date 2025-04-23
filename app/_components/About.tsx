@@ -13,10 +13,6 @@ import SchoolIcon from "@mui/icons-material/School";
 import BadgeIcon from "@mui/icons-material/Badge";
 import LabelIcon from "@mui/icons-material/Label";
 import GithubIcon from "@mui/icons-material/GitHub";
-import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
-import "./card-gradient.css";
-import "./gradient.css";
-import { useState } from "react";
 
 interface ContactInfo {
     telegram?: string;
@@ -48,68 +44,6 @@ declare module 'react' {
         [key: `--${string}`]: string | number;
     }
 }
-
-interface GameProps {
-    setShowGame: (show: boolean) => void;
-}
-
-const Game: React.FC<GameProps> = ({ setShowGame }) => {
-    const handlePlayAgain = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault();
-        setShowGame(false);
-    };
-
-    return (
-        <div>
-            <div id="main-wrapper">
-                <div id="game">
-                    {[...Array(9)].map((_, index) => {
-                        const delays = [
-                            { mole: "0s", branch: "2s" },
-                            { mole: "5s", branch: "0s" },
-                            { mole: "2s", branch: "4s" },
-                            { mole: "6s", branch: "5s" },
-                            { mole: "2s", branch: "4s" },
-                            { mole: "2s", branch: "12s" },
-                            { mole: "1s", branch: "4s" },
-                            { mole: "2s", branch: "12s" },
-                            { mole: "2s", branch: "12s" },
-                        ][index];
-
-                        return (
-                            <div key={index} className="hideout">
-                                <a
-                                    href="#success"
-                                    style={{ "--delay": delays.mole } as React.CSSProperties}
-                                    className="mole"
-                                />
-                                <a
-                                    href="#failure"
-                                    style={{ "--delay": delays.branch } as React.CSSProperties}
-                                    className="branch"
-                                />
-                            </div>
-                        );
-                    })}
-                </div>
-
-                <div id="success" className="endscreen">
-                    <p>Congratulations! You did it!</p>
-                    <a href="#" className="cta" onClick={handlePlayAgain}>
-                        Play again
-                    </a>
-                </div>
-
-                <div id="failure" className="endscreen">
-                    <p>Game over! You lost, too bad!</p>
-                    <a href="#" className="cta" onClick={handlePlayAgain}>
-                        Play again
-                    </a>
-                </div>
-            </div>
-        </div>
-    );
-};
 
 function MemberField({ children, size, product = "", tooltip = false }: MemberFieldProps) {
     const [tooltipOpen, setTooltipOpen] = React.useState(false);
@@ -143,22 +77,32 @@ function MemberField({ children, size, product = "", tooltip = false }: MemberFi
                     overflow: "hidden",
                     whiteSpace: "nowrap",
                     cursor: "pointer",
-                    width: "100%",
-                    marginBottom: `0.1rem`,
-                    height: size && size == "large" ? "auto" : "3rem",
+                    height: size && size == "large" ? "auto" : "2.4rem",
+
                 }}
             >{tooltip
                 ? <Button
-                    className="button-gradient-section"
-                    sx={{ width: `100%`, justifyContent: "space-between" }}
+                    color="secondary"
                     variant="outlined"
-                    color="primary"
+                    sx={{
+                        fontSize: `0.7rem`,
+                        lineHeight: `1rem`,
+                        borderRadius: "var(--mui-shape-borderRadius)",
+                        justifyContent: "center",
+                        alignItems: `center`,
+                        padding: `0.2rem 0.45rem`,
+                        margin: `0`,
+                        color: `var(--mui-palette-text-primary)`,
+                        borderColor: `var(--mui-palette-text-primary)`,
+                    }}
                     startIcon={children[0]}
-                >{product}</Button>
+                >
+                    {product}
+                </Button>
                 : children
                 }
             </Stack>
-        </Tooltip>
+        </Tooltip >
     );
 }
 
@@ -167,8 +111,7 @@ function Content() {
     const isDark = mode === "dark";
     const { dict } = useI18n();
     const teamData: TeamMember[] = dict?.Team as TeamMember[];
-
-    const [showGame, setShowGame] = useState(false);
+    const bgPalette = ['#263238', 'var(--mui-palette-secondary-light)']
 
     return (
         <Container maxWidth="xl" sx={{
@@ -185,7 +128,7 @@ function Content() {
                 spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
                 justifyContent="center"
                 sx={{
-                    width: { xs: "99%", sm: "100%", md: "80%", lg: "80%" }
+                    width: { xs: "95%", sm: "100%", md: "80%", lg: "80%" }
                 }}
             >
                 {teamData.map((member: TeamMember, i: number) => (
@@ -195,12 +138,9 @@ function Content() {
                         rowSpacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
                         spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
                     >
-                        <Card
-                            className="card-background"
-                            sx={{
-                                height: "100%",
-                                border: "1px solid var(--mui-palette-grey-500)",
-                            }}>
+                        <Card sx={{
+                            height: "100%",
+                        }}>
                             <div style={{
                                 width: "100%",
                                 height: "420px",
@@ -225,10 +165,7 @@ function Content() {
                             <CardContent
                                 sx={{
                                     height: "100%",
-                                    borderTop: "1px solid var(--mui-palette-grey-500)",
-                                    background: isDark
-                                        ? "linear-gradient(280deg, #263238 0%, var(--mui-palette-primary-dark) 30%)"
-                                        : "linear-gradient(var(--mui-palette-grey-200), var(--mui-palette-common-white))"
+                                    background: bgPalette[~~(!isDark)]
                                 }}
                             >
                                 {member?.first_name && member?.last_name &&
@@ -237,7 +174,6 @@ function Content() {
                                         <Typography
                                             fontFamily={"sans-serif"}
                                             sx={{
-                                                color: `var(--mui-palette-text-primary)`,
                                                 textOverflow: "ellipsis", userSelect: "text"
                                             }}
                                             variant="h6"
@@ -249,7 +185,7 @@ function Content() {
                                 {member?.job_title &&
                                     <MemberField >
                                         <LabelIcon color="disabled" sx={{ marginRight: "1rem" }} />
-                                        <Typography color="textPrimary" sx={{ userSelect: "text" }} variant="caption" component="div">
+                                        <Typography sx={{ userSelect: "text" }} variant="caption" component="div">
                                             {member.job_title}
                                         </Typography>
                                     </MemberField>
@@ -265,7 +201,6 @@ function Content() {
                                     >
                                         <SchoolIcon sx={{ marginRight: "1rem" }} />
                                         <Typography
-                                            color="textPrimary"
                                             sx={{
                                                 userSelect: "text",
                                                 whiteSpace: "pre-wrap"
@@ -278,16 +213,14 @@ function Content() {
                                     </MemberField>
                                     }
                                 </Stack>
-                                <Stack sx={{
-                                    display: `grid`,
-                                }}>
+                                <Grid container spacing={0.5} justifyContent={"center"}>
                                     {member?.contacts?.telegram &&
                                         <MemberField
                                             tooltip={true}
                                             product={"telegram"}
                                         >
                                             <TelegramIcon color="secondary" />
-                                            <Typography color="textPrimary" sx={{ userSelect: "text" }} variant="caption" component="div">
+                                            <Typography sx={{ userSelect: "text" }} variant="caption" component="div">
                                                 {member.contacts.telegram}
                                             </Typography>
                                         </MemberField>
@@ -298,7 +231,7 @@ function Content() {
                                             product={"github"}
                                         >
                                             <GithubIcon />
-                                            <Typography color="textPrimary"
+                                            <Typography
                                                 sx={{ textOverflow: "ellipsis", userSelect: "text" }}
                                                 variant="caption"
                                                 component="div"
@@ -313,8 +246,7 @@ function Content() {
                                             product={"email"}
                                         >
                                             <AlternateEmailIcon />
-                                            <Typography color="textPrimary"
-                                                sx={{ textOverflow: "ellipsis", userSelect: "text" }}
+                                            <Typography sx={{ textOverflow: "ellipsis", userSelect: "text" }}
                                                 variant="caption"
                                                 component="div"
                                             >
@@ -331,14 +263,14 @@ function Content() {
                                                 display: "flex",
                                                 justifyContent: "center",
                                                 alignItems: "center",
-                                                width: "24px",
-                                                height: "24px",
+                                                width: "20px",
+                                                height: "20px",
                                             }}>
                                                 <Image
                                                     src="/images/orcid_id.svg"
                                                     alt="ORCID logo"
-                                                    width={24}
-                                                    height={24}
+                                                    width={20}
+                                                    height={20}
                                                     unoptimized
                                                     style={{ userSelect: "none" }}
                                                 />
@@ -348,23 +280,7 @@ function Content() {
                                             </Typography>
                                         </MemberField>
                                     }
-                                    {Object.keys(member.contacts).length == 1 &&
-                                        <div className="app">
-                                            {showGame ? (
-                                                <Game setShowGame={setShowGame} />
-                                            ) : (
-                                                <Button
-                                                    onClick={() => setShowGame(true)}
-                                                    className="button-gradient-section"
-                                                    sx={{ width: `100%`, justifyContent: "center" }}
-                                                    variant="outlined"
-                                                    color="warning"
-                                                    startIcon={<QuestionMarkIcon />}
-                                                />
-                                            )}
-                                        </div>
-                                    }
-                                </Stack>
+                                </Grid>
                             </CardContent>
                         </Card>
                     </Grid>
@@ -377,26 +293,22 @@ function Content() {
 
 export default function About() {
     const { dict } = useI18n();
-
-    if (!dict || !dict.Home) {
-        return <div>Loading...</div>;
-    }
-
+    if (!dict || !dict.Home) return null;
     const { Home } = dict;
 
     return (
         <Section id="about">
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
-                    // textShadow: "0px 3px 5px var(--mui-palette-primary-main)",
                     userSelect: "none",
                     textAlign: "center",
+                    fontFamily: `inherit`
                 }}>
                     {Home.About.SectionHeader.h4}
                 </Typography>
                 <Typography variant="body2" gutterBottom sx={{
-                    // textShadow: "0px 3px 3px var(--mui-palette-primary-main)",
                     textAlign: "center",
+                    fontFamily: `inherit`
                 }}>
                     {Home.About.SectionHeader.body2}
                 </Typography>

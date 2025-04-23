@@ -1,7 +1,7 @@
 {
   "name": "horizontsd-info",
   "packageManager": "yarn@v4.7.0",
-  "version": "200425",
+  "version": "230425",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

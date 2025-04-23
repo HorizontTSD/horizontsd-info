@@ -1,13 +1,12 @@
 import * as React from "react";
-import { useColorScheme } from "@mui/material/styles";
 import { useI18n } from "../../_providers/I18nProvider";
 import Stack from "@mui/material/Stack";
 import { Typography } from "@mui/material";
 import { bebasNeue } from "../../../fonts";
-import { WebGLBackground } from "../Wow";
 import { HeroProps } from "../Hero";
 import { HeroCard } from "./HeroCard";
-import "../gradient-text.css";
+import { WebGLBackground } from "../Wow";
+import { useColorScheme } from "@mui/material/styles";
 
 export interface HeroContent {
 	slogan: string;
@@ -16,15 +15,10 @@ export interface HeroContent {
 export function Mobile({ fullsize = false }: HeroProps) {
 	const { dict } = useI18n();
 	const { mode } = useColorScheme();
-
-	if (!dict || !dict.Home || !dict.Home.Hero) {
-		return null;
-	}
-
-	const content: HeroContent = dict.Home.Hero;
 	const isDark = mode === "dark";
-	const baseColor = isDark ? "var(--mui-palette-secondary-main)" : "var(--mui-palette-secondary-main)";
-	const accentColor = isDark ? "var(--mui-palette-secondary-light)" : "var(--mui-palette-primary-main)";
+	if (!dict || !dict.Home || !dict.Home.Hero) return null;
+	const content: HeroContent = dict.Home.Hero;
+	const accentColor = `var(--mui-palette-secondary-contrastText)`
 	return (
 		<Stack direction="column"
 			sx={{
@@ -34,15 +28,12 @@ export function Mobile({ fullsize = false }: HeroProps) {
 				flexDirection: "column",
 				alignItems: "center",
 				justifyContent: "center",
-			}}
-		>
+			}}>
 			<WebGLBackground color={isDark ? [0.1, 0.5, 0.9] : [0.1, 0.3, 1.0]} />
-
 			<Stack direction="column"
 				sx={{
 					marginTop: `50%`,
 					position: "relative",
-					width: `100%`,
 					display: "flex",
 					flexDirection: "column",
 					alignItems: "start",
@@ -50,16 +41,17 @@ export function Mobile({ fullsize = false }: HeroProps) {
 				}}>
 				<Stack spacing={0} direction="column">
 					<Typography
-						variant="h2"
+						variant="h3"
 						sx={{
 							fontFamily: bebasNeue.style.fontFamily,
-							color: baseColor
+							color: `white`,
+							textShadow: `0px 0px 10px black`
 						}}
 					>
-						Horizon™
+						Horizon
 					</Typography>
 					<Typography
-						variant="h2"
+						variant="h3"
 						sx={{
 							fontFamily: bebasNeue.style.fontFamily,
 							color: accentColor
@@ -76,13 +68,11 @@ export function Mobile({ fullsize = false }: HeroProps) {
 				>
 					<Typography
 						variant="h5"
-						className={isDark ? "gradient-text" : "gradient-text__dark"}
 						sx={{
 							fontFamily: bebasNeue.style.fontFamily,
 							textAlign: "center",
-							color: baseColor
-						}}
-					>
+							color: accentColor
+						}}>
 						{content.slogan}
 					</Typography>
 				</Stack>

@@ -12,9 +12,9 @@ interface ScrollGrowProps extends Omit<GrowProps, 'children'> {
 
 const ScrollGrow = ({
   children,
-  animationDelay = 200,
+  animationDelay = 100,
   threshold = 0.01,
-  timeout = 200,
+  timeout = 100,
   transformOrigin = "0 0 0",
   ...growProps
 }: ScrollGrowProps) => {

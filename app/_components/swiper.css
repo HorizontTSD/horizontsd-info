@@ -1,13 +1,14 @@
 .swiper-slider .swiper-button-next {
-  color: var(--mui-palette-primary-main);
+  color: var(--mui-palette-primary-contrastText);
 }
 
 .swiper-slider .swiper-button-prev {
-  color: var(--mui-palette-primary-main);
+  color: var(--mui-palette-primary-contrastText);
 }
 
 .swiper-slider .swiper-pagination-bullet-active {
-  background: var(--mui-palette-primary-main);
+  background: var(--mui-palette-secondary-contrastText);
+  border: 1px solid black;
 }
 
 .swiper-slide {
@@ -15,7 +16,9 @@
 }
 
 .swiper-pagination-bullet {
-  background-color: var(--mui-palette-secondary-dark);
+  background-color: var(--mui-palette-secondary-light);
+  opacity: 0.5;
+  border: 1px solid black;
 }
 
 :root {

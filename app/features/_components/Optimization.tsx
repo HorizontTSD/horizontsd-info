@@ -25,18 +25,11 @@ interface ContentItem {
     image: string;
 }
 
-interface BackgroundProps {
-    direction: boolean;
-}
-
-function Background({ direction }: BackgroundProps) {
-    const theme = useTheme();
+function Background() {
     const { mode } = useColorScheme();
-    const isDark = mode == "dark"
-    const maskOpacity = mode == "dark" ? "0.1" : "0.7"
-    const background = direction
-        ? `linear-gradient(90deg, transparent, ${isDark ? theme.palette.secondary.contrastText : theme.palette.secondary.dark})`
-        : `linear-gradient(90deg, ${isDark ? theme.palette.secondary.contrastText : theme.palette.secondary.dark}, transparent, transparent)`
+    const maskOpacity = mode == "dark" ? "0.3" : "0.3"
+    const background = `var(--mui-palette-primary-light)`
+
     return (
         <Box
             sx={{
@@ -60,7 +53,6 @@ function Background({ direction }: BackgroundProps) {
 }
 
 function Mobile() {
-    const theme = useTheme();
     const { dict } = useI18n();
 
     if (!dict || !dict.Features || !dict.Features.Optimization || !dict.Features.Optimization.Content) {
@@ -101,7 +93,6 @@ function Mobile() {
                         <Card sx={{
                             width: `80%`,
                             height: `90%`,
-                            border: `1px solid ${theme.palette.primary.main}`,
                             borderRadius: "var(--mui-shape-borderRadius)",
                             display: "flex",
                             justifySelf: `center`,
@@ -236,7 +227,7 @@ function Desktop() {
                                         </Stack>
                                     </Box>
                                 </Box>
-                                <Background direction={i % 2 === 0} />
+                                <Background />
                             </Stack>
                         </ScrollGrow>
                     </Stack >
@@ -269,13 +260,13 @@ export default function Optimization() {
         <Section id="optimization">
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
-                    // textShadow: `0px 1px 1px gray`,
                     userSelect: `none`,
                     textAlign: `center`,
+                    fontFamily: `inherit`
                 }}>{content?.h4}</Typography>
                 < Typography variant="subtitle1" gutterBottom sx={{
-                    // textShadow: `0px 1px 1px rgba(255, 255, 255, 0.5)`,
                     textAlign: `center`,
+                    fontFamily: `inherit`
                 }}>{content?.body2}</Typography>
             </SectionHeader>
             <Content />

@@ -79,6 +79,7 @@ export const WebGLBackground: React.FC<WebGLBackgroundProps> = ({
 	return <canvas
 		ref={ref}
 		style={{
+			zIndex: `0`,
 			position: "absolute",
 			top: "0",
 			left: "0",

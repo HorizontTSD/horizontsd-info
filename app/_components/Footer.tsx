@@ -3,10 +3,8 @@ import { useColorScheme } from "@mui/material/styles";
 import { useI18n } from "../_providers/I18nProvider";
 import { useTheme } from "@mui/material/styles";
 import {
-    Box, Typography, Button,
-    useMediaQuery, Stack
+    Box, Typography, Button, useMediaQuery, Stack
 } from "@mui/material"
-
 import EastIcon from "@mui/icons-material/East"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import FacebookIcon from "@mui/icons-material/Facebook"
@@ -17,23 +15,19 @@ import IconButton from "@mui/material/IconButton";
 import Section from "./Section";
 import { FooterContent } from "./types";
 
-import "./card-gradient.css";
-import "./gradient-text.css";
-
 function Row1() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
     const { dict } = useI18n();
-
+    const { mode } = useColorScheme();
+    const isDark = mode == "dark"
     if (!dict || !dict.Footer) {
         return null;
     }
 
     const content = dict.Footer as FooterContent;
     return (
-        <Stack direction={isMobile ? "column" : "row"} sx={{
-            padding: isMobile ? `2rem` : "unset",
-        }}>
+        <Stack direction={isMobile ? "column" : "row"} >
             <Stack direction={"column"}>
                 <Typography
                     color="textPrimary"
@@ -41,7 +35,6 @@ function Row1() {
                     sx={{
                         userSelect: `none`,
                         maxWidth: isMobile ? `100%` : `70%`,
-                        textShadow: `0px 1px 1px var(--mui-palette-primary-main)`,
                     }}>{content.row1Title}</Typography>
             </Stack>
 
@@ -64,7 +57,6 @@ function Row1() {
                         variant="h5"
                         gutterBottom
                         sx={{
-                            textShadow: `0px 1px 1px var(--mui-palette-primary-main)`,
                         }}>{content.row1Title2}</Typography>
                 </Box>
                 <Box sx={{
@@ -84,27 +76,24 @@ function Row1() {
                     userSelect: `none`,
                 }}>
                     <Typography color="textPrimary" variant="body2" sx={{
-                        textShadow: `0px 1px 1px var(--mui-palette-primary-main)`,
                         userSelect: `none`,
                         margin: isMobile ? "1rem 0" : 0,
                     }}>{content.row1Subtitle}</Typography>
                     <Typography color="textPrimary" variant="body2" gutterBottom sx={{
-                        textShadow: `0px 1px 1px var(--mui-palette-primary-main)`,
                         userSelect: `none`,
                     }}>{content.row1Subtitle2}</Typography>
-                    <Button variant="outlined" color="primary" sx={{
+                    <Button variant="contained" sx={{
                         minWidth: "250px",
                         display: `flex`,
                         alignItems: `center`,
                         userSelect: `none`,
                         justifyContent: `center`,
-                        background: `linear-gradient(30deg, var(--mui-palette-secondary-light), var(--mui-palette-primary-light))`
+                        background: isDark ? `var(--mui-palette-secondary-contrastText)` : `var(--mui-palette-secondary-dark)`,
+                        color: `var(--mui-palette-primary-light)`,
+                        lineHeight: `1rem`
                     }}>
-                        <Typography variant="button" sx={{
-                            margin: `auto`,
-                            userSelect: `none`,
-                        }}>{content.row1ButtonText}</Typography>
-                        <EastIcon color={"primary"} />
+                        {content.row1ButtonText}
+                        <EastIcon sx={{ marginLeft: `0.5rem`, color: `var(--mui-palette-primary-light)` }} />
                     </Button>
                 </Box>
             </Stack>
@@ -180,22 +169,8 @@ function Row3() {
 }
 
 function Background() {
-    const theme = useTheme();
     const { mode } = useColorScheme();
     const isDark = mode == "dark"
-    const backgroundColor = isDark
-        ? theme.palette.primary.dark
-        : theme.palette.secondary.light
-    const color = mode === "dark"
-        ? theme.palette.primary.dark
-        : theme.palette.primary.light
-    const maskColor = mode == "dark"
-        ? "#ffffff00"
-        : "#ffffff8a"
-    const maskColor2 = mode == "dark"
-        ? "#ffffff00"
-        : "#ffffff8a"
-    const maskOpacity = mode == "dark" ? "0.4" : "0.7"
     return (
         <>
             < Box
@@ -205,25 +180,26 @@ function Background() {
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    backgroundColor: color,
+                    backgroundColor: isDark
+                        ? `var(--mui-palette-secondary-dark)`
+                        : `var(--mui-palette-grey-50)`,
                     zIndex: 1
                 }} />
             <Box
-                // className="gradient-section"
                 sx={{
                     position: "absolute",
                     top: 0,
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    background: `linear-gradient(330deg, ${backgroundColor}, ${isDark ? theme.palette.secondary.contrastText : theme.palette.secondary.dark}, ${backgroundColor})`,
-                    maskImage: `url(/images/mask.webp), linear-gradient(252deg, ${maskColor}, ${maskColor2})`,
+                    background: `var(--mui-palette-primary-dark)`,
+                    maskImage: `url(/images/mask.webp), linear-gradient(0deg,rgba(255, 255, 255, 0.3))`,
                     maskRepeat: "no-repeat",
                     maskSize: "100vw 100vh",
-                    maskComposite: "destination-over",
+                    maskComposite: "add",
                     maskPosition: "center",
                     zIndex: 1,
-                    opacity: maskOpacity
+                    opacity: 0.3
                 }} />
         </>
     )
@@ -245,7 +221,7 @@ function Content() {
                     justifyContent: `space-around`,
                     alignItems: `center`,
                     flexDirection: `column`,
-                    padding: `0rem 3rem`,
+                    padding: `0rem 1rem`,
                 }}
             >
                 <Row1 />

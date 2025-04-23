@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material/styles";
-import { lightBlue, blue, grey } from "@mui/material/colors";
+import { lightBlue, blue, grey, blueGrey } from "@mui/material/colors";
+
 const bg = {
   50: "#dddee0",
   100: "#b5b6bb",
@@ -12,6 +13,7 @@ const bg = {
   800: "#0C0D0E",
   900: "#090A0B",
 }
+
 export const theme = createTheme({
   cssVariables: {
     colorSchemeSelector: "class",
@@ -23,40 +25,40 @@ export const theme = createTheme({
     light: {
       palette: {
         primary: {
-          main: blue[600],
-          light: blue[50],
-          dark: blue[800],
-          contrastText: blue[400],
+          main: grey[600],
+          light: grey[100],
+          dark: grey[900],
+          contrastText: lightBlue[400],
         },
         secondary: {
-          main: lightBlue[500],
-          light: lightBlue[50],
+          main: lightBlue[600],
+          light: grey[50],
           dark: lightBlue[900],
           contrastText: lightBlue[500],
         },
         text: {
           primary: grey[900],
-          secondary: grey[800]
+          secondary: grey[700]
         },
       },
     },
     dark: {
       palette: {
         primary: {
-          main: blue[500],
-          light: blue[50],
+          main: bg[500],
+          light: bg[50],
           dark: bg[600],
           contrastText: blue[800],
         },
         secondary: {
-          main: lightBlue[500],
-          light: lightBlue[50],
-          dark: lightBlue[900],
-          contrastText: lightBlue[800],
+          main: blueGrey[500],
+          light: blueGrey[50],
+          dark: blueGrey[900],
+          contrastText: blue[800],
         },
         text: {
-          primary: grey[50],
-          secondary: grey[100]
+          primary: grey[100],
+          secondary: grey[400]
         },
       },
     },

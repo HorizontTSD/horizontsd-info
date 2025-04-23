@@ -1,6 +1,6 @@
 import * as React from "react";
 import Divider from "@mui/material/Divider";
-import { Box, SxProps, Theme } from "@mui/material";
+import { Box, SxProps, Theme, useMediaQuery } from "@mui/material";
 import { Suspense } from "react";
 import Skeleton from "@mui/material/Skeleton";
 import { useColorScheme, useTheme } from "@mui/material/styles";
@@ -11,6 +11,7 @@ interface SectionProps {
     ref?: React.RefObject<HTMLElement>;
     sx?: SxProps<Theme>;
     children?: React.ReactNode;
+    fullsize?: boolean;
 }
 
 function Test() {
@@ -28,6 +29,8 @@ export default function Section(props: SectionProps) {
     const theme = useTheme();
     const { mode } = useColorScheme();
     const isDark = mode === "dark";
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const bgPalette = ['var(--mui-palette-primary-dark)', 'var(--mui-palette-primary-light)']
 
     const baseStyles: SystemStyleObject<Theme> = {
         alignItems: "center",
@@ -39,9 +42,9 @@ export default function Section(props: SectionProps) {
         width: "100vw",
         zIndex: 2,
         userSelect: "none",
-        minHeight: "1080px",
+        minHeight: isMobile ? "100vh" : (props?.fullsize ? "100vh" : "1080px"),
         backgroundSize: "cover",
-        backgroundColor: isDark ? "primary.dark" : "var(--mui-palette-grey-100)"
+        backgroundColor: bgPalette[~~(!isDark)]
     };
 
     const mergedStyles: SxProps<Theme> = props.sx
@@ -56,16 +59,17 @@ export default function Section(props: SectionProps) {
                 ref={props.ref}
                 sx={mergedStyles}
             >
-                <Box sx={{
+                <Box maxWidth="lg" sx={{
                     display: "flex",
-                    flexDirection: "column",
                     width: "100%",
                     height: "100%",
                     imageRendering: "smooth",
                     flex: "auto",
-                    justifyContent: "center",
                     flexFlow: "wrap",
-                    color: theme.palette.text.primary
+                    color: theme.palette.text.primary,
+                    flexDirection: `column`,
+                    justifyContent: `center`,
+                    alignItems: `center`
                 }}>
                     <Suspense fallback={<Test />}>
                         {props.children}
