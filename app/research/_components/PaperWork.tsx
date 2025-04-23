@@ -146,12 +146,12 @@ export default function PaperWork({ item }: PaperWorkProps) {
             minHeight: "auto"
         }}>
             <SectionHeader sx={{
-                height: "fit-content"
+                height: "fit-content",
             }}>
                 <Typography variant="h6" gutterBottom sx={{
-                    textShadow: "0px 1px 1px gray",
                     userSelect: "none",
                     textAlign: "center",
+                        fontFamily: `inherit`
                 }}>
                     {item.title}
                 </Typography>

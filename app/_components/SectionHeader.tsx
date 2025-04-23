@@ -2,7 +2,8 @@
 import React, { ReactNode } from "react";
 import { Box, Container, Grid, SxProps } from "@mui/material";
 import ScrollGrow from "./ScrollGrow";
-import "./card-gradient.css";
+import { bebasNeue } from "../../fonts";
+
 
 interface HeaderProps {
     children: ReactNode;
@@ -17,7 +18,6 @@ export default function Header({ children, sx }: HeaderProps) {
                 display: 'flex',
                 width: '100%',
                 minHeight: '9rem',
-                // maxHeight: `20rem`,
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'column',
@@ -25,12 +25,7 @@ export default function Header({ children, sx }: HeaderProps) {
                 ...sx
             }}
         >
-            <ScrollGrow
-                animationDelay={200}
-                threshold={0.01}
-                timeout={200}
-                transformOrigin="0 0 0"
-            >
+            <ScrollGrow>
                 <Container
                     maxWidth="xl"
                     sx={{
@@ -44,7 +39,8 @@ export default function Header({ children, sx }: HeaderProps) {
                         spacing={1}
                         alignContent="center"
                         justifyContent="center"
-                        sx={{ display: "flex", color: "var(--mui-palette-text-primary)" }}
+
+                        sx={{ fontFamily: bebasNeue.style.fontFamily, display: "flex", color: "var(--mui-palette-text-primary)" }}
                     >
                         {children}
                     </Grid>

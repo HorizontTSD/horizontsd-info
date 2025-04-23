@@ -25,19 +25,10 @@ interface ContentItem {
     image: string;
 }
 
-interface BackgroundProps {
-    direction: boolean;
-}
-
-function Background({ direction }: BackgroundProps) {
-    const theme = useTheme();
+function Background() {
     const { mode } = useColorScheme();
-    const isDark = mode === "dark";
     const maskOpacity = mode === "dark" ? "0.1" : "0.7";
-    const background = direction
-        ? `linear-gradient(90deg, transparent, transparent, ${isDark ? theme.palette.secondary.contrastText : theme.palette.secondary.dark})`
-        : `linear-gradient(90deg, ${isDark ? theme.palette.secondary.contrastText : theme.palette.secondary.dark}, transparent, transparent)`;
-
+    const background = `var(--mui-palette-primary-light)`
     return (
         <Box
             sx={{
@@ -61,7 +52,6 @@ function Background({ direction }: BackgroundProps) {
 }
 
 function Mobile() {
-    const theme = useTheme();
     const { dict } = useI18n();
 
     if (!dict || !dict.Features || !dict.Features.Processing || !dict.Features.Processing.Content) {
@@ -103,7 +93,6 @@ function Mobile() {
                         <Card sx={{
                             width: `80%`,
                             height: `90%`,
-                            border: `1px solid ${theme.palette.primary.main}`,
                             borderRadius: `1rem`,
                             display: "flex",
                             justifySelf: `center`,
@@ -237,7 +226,7 @@ function Desktop() {
                                     </Stack>
                                 </Box>
                             </Box>
-                            <Background direction={i % 2 === 0} />
+                            <Background />
                         </Stack>
                     </ScrollGrow>
                 </Stack>
@@ -259,26 +248,26 @@ interface SectionHeaderContent {
 
 export default function Processing() {
     const { dict } = useI18n();
-    
+
     if (!dict || !dict.Features || !dict.Features.Processing || !dict.Features.Processing.SectionHeader) {
         return null;
     }
-    
+
     const content: SectionHeaderContent = dict.Features.Processing.SectionHeader;
 
     return (
         <Section id="processing">
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
-                    // textShadow: `0px 1px 1px gray`,
                     userSelect: `none`,
                     textAlign: `center`,
+                    fontFamily: `inherit`
                 }}>
                     {content?.h4}
                 </Typography>
                 <Typography variant="subtitle1" gutterBottom sx={{
-                    // textShadow: `0px 1px 1px rgba(255, 255, 255, 0.5)`,
                     textAlign: `center`,
+                    fontFamily: `inherit`
                 }}>
                     {content?.body2}
                 </Typography>
