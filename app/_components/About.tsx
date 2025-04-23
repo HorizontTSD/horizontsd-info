@@ -90,7 +90,7 @@ function MemberField({ children, size, product = "", tooltip = false }: MemberFi
                         borderRadius: "var(--mui-shape-borderRadius)",
                         justifyContent: "center",
                         alignItems: `center`,
-                        padding: `0.25rem 0.5rem`,
+                        padding: `0.2rem 0.45rem`,
                         margin: `0`,
                         color: `var(--mui-palette-text-primary)`,
                         borderColor: `var(--mui-palette-text-primary)`,
@@ -213,7 +213,7 @@ function Content() {
                                     </MemberField>
                                     }
                                 </Stack>
-                                <Grid container spacing={1} justifyContent={"center"}>
+                                <Grid container spacing={0.5} justifyContent={"center"}>
                                     {member?.contacts?.telegram &&
                                         <MemberField
                                             tooltip={true}

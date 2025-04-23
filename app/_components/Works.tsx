@@ -31,20 +31,20 @@ function CustomizedTimeline() {
             <TimelineItem>
                 <TimelineOppositeContent color="text.secondary">
                     <Stack>
-                        <Typography variant="caption" color="textPrimary">
+                        <Typography variant="caption" color="textSecondary">
                             historical data
                         </Typography>
-                        <Typography variant="caption" color="textPrimary">
+                        <Typography variant="caption" color="textSecondary">
                             external parameters
                         </Typography>
                     </Stack>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                    <TimelineDot variant="outlined" color="primary" />
+                    <TimelineDot variant="outlined" color="info" />
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
-                    <Typography variant="button" color="primary">
+                    <Typography variant="button" color="info">
                         Data extraction
                     </Typography>
                 </TimelineContent>
@@ -57,17 +57,17 @@ function CustomizedTimeline() {
                         <Typography variant="caption" color="textPrimary">
                             <b>SKNN</b> & <b>HDIRT</b>
                         </Typography>
-                        <Typography variant="caption" color="textPrimary">
+                        <Typography variant="caption" color="textSecondary">
                             Distance Correlation
                         </Typography>
                     </Stack>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                    <TimelineDot variant="outlined" color="primary" />
+                    <TimelineDot variant="outlined" color="info" />
                     <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent>
-                    <Typography variant="button" color="primary">
+                    <Typography variant="button" color="info">
                         Data preprocessing
                     </Typography>
                 </TimelineContent>
@@ -76,22 +76,22 @@ function CustomizedTimeline() {
             <TimelineItem>
                 <TimelineOppositeContent color="text.secondary">
                     <Stack>
-                        <Typography variant="button" color="warning">
+                        <Typography variant="button" color="textPrimary">
                             Realtime
                         </Typography>
-                        <Typography variant="caption" color="textPrimary">
+                        <Typography variant="caption" color="textSecondary">
                             By <b>LSTM</b> utilizing <b>Time2Vec</b>
                         </Typography>
-                        <Typography variant="caption" color="textPrimary">
+                        <Typography variant="caption" color="textSecondary">
                             Temporal Encoding
                         </Typography>
                     </Stack>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
-                    <TimelineDot variant="outlined" color="primary" />
+                    <TimelineDot variant="outlined" color="info" />
                 </TimelineSeparator>
                 <TimelineContent>
-                    <Typography variant="button" color="primary">
+                    <Typography variant="button" color="info">
                         Data prediction
                     </Typography>
                 </TimelineContent>
@@ -103,10 +103,10 @@ function CustomizedTimeline() {
 function Mobile() {
     const { mode } = useColorScheme();
     const isDark = mode === "dark";
-    const { dict } = useI18n(); 
+    const { dict } = useI18n();
 
     if (!dict || !dict.Home || !dict.Home.Works || !dict.Home.Works.Content) {
-        return null; 
+        return null;
     }
 
     const content = dict.Home.Works.Content;
@@ -182,36 +182,26 @@ function Desktop() {
     const { dict } = useI18n();
 
     if (!dict || !dict.Home || !dict.Home.Works || !dict.Home.Works.Content) {
-        return null; 
+        return null;
     }
 
     const content = dict.Home.Works.Content;
     const rawColor = isDark ? `var(--mui-palette-common-white)` : `var(--mui-palette-common-black)`;
     return (
-        <Grid container maxWidth={"lg"}  sx={{
-            display: `flex`, 
-            flexDirection: `column`, 
-            padding: `2rem`, 
-            margin: `1rem`, 
+        <Grid container maxWidth={"lg"} sx={{
+            display: `flex`,
+            flexDirection: `column`,
+            padding: `2rem`,
+            margin: `1rem`,
             borderRadius: "var(--mui-shape-borderRadius)",
             background: isDark ? `var(--mui-palette-primary-dark)` : `var(--mui-palette-common-white)`
         }}>
-            <ScrollGrow
-                animationDelay={200}
-                threshold={0.01}
-                timeout={200}
-                transformOrigin="0 0 0"
-            >
+            <ScrollGrow>
                 <Stack direction={"column"}>
                     <Typography color="textPrimary" variant="h6" gutterBottom>{content[0]}</Typography>
                 </Stack>
             </ScrollGrow>
-            <ScrollGrow
-                animationDelay={200}
-                threshold={0.01}
-                timeout={200}
-                transformOrigin="0 0 0"
-            >
+            <ScrollGrow>
                 <Stack direction={"column"} padding={"2rem"}>
                     <Stack direction={"column"}>
                         <Typography color="textPrimary" variant="subtitle1">{content[1]}</Typography>
@@ -222,12 +212,7 @@ function Desktop() {
             </ScrollGrow>
             <Divider />
             <Stack direction={"column"} padding={"2rem"}>
-                <ScrollGrow
-                    animationDelay={200}
-                    threshold={0.01}
-                    timeout={200}
-                    transformOrigin="0 0 0"
-                >
+                <ScrollGrow>
                     <Stack direction={"column"}>
                         <Typography color="textPrimary" variant="subtitle1" gutterBottom>{content[3]}</Typography>
                         <Typography color="textPrimary" variant="body1">{content[4]}</Typography>
@@ -238,12 +223,7 @@ function Desktop() {
                         </ul>
                     </Stack>
                 </ScrollGrow>
-                <ScrollGrow
-                    animationDelay={500}
-                    threshold={0.01}
-                    timeout={500}
-                    transformOrigin="0 0 0"
-                >
+                <ScrollGrow>
                     <Stack direction={"column"}>
                         <Typography color="textPrimary" variant="subtitle1" gutterBottom>{content[11]}</Typography>
                         <ul style={{ color: rawColor }}>
@@ -253,12 +233,7 @@ function Desktop() {
                         </ul>
                     </Stack>
                 </ScrollGrow>
-                <ScrollGrow
-                    animationDelay={200}
-                    threshold={0.01}
-                    timeout={200}
-                    transformOrigin="0 0 0"
-                >
+                <ScrollGrow>
                     <Stack direction={"column"}>
                         <Typography color="textPrimary" variant="subtitle1" gutterBottom>{content[18]}</Typography>
                         <ul style={{ color: rawColor }}>
@@ -269,12 +244,7 @@ function Desktop() {
                     </Stack>
                 </ScrollGrow>
             </Stack>
-            <ScrollGrow
-                animationDelay={200}
-                threshold={0.01}
-                timeout={200}
-                transformOrigin="0 0 0"
-            >
+            <ScrollGrow>
                 <Stack direction={"column"} sx={{ justifyContent: `center`, alignItems: `center` }}>
                     <Card sx={{ maxWidth: 512, width: `100%`, padding: `2rem`, alignItems: `center` }} >
                         <CardMedia
@@ -300,10 +270,10 @@ function Content() {
 }
 
 export default function Works() {
-    const { dict } = useI18n(); 
+    const { dict } = useI18n();
 
     if (!dict || !dict.Home || !dict.Home.Works || !dict.Home.Works.SectionHeader) {
-        return null; 
+        return null;
     }
 
     const content = dict.Home.Works.SectionHeader;
@@ -311,13 +281,13 @@ export default function Works() {
         <Section id="works">
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
-                    // textShadow: `0px 3px 10px var(--mui-palette-primary-dark)`,
                     userSelect: `none`,
                     textAlign: `center`,
+                    fontFamily: `inherit`
                 }}>{content.h4}</Typography>
                 < Typography variant="subtitle1" gutterBottom sx={{
-                    // textShadow: `0px 3px 3px var(--mui-palette-primary-dark)`,
                     textAlign: `center`,
+                    fontFamily: `inherit`
                 }}>{content.body2}</Typography>
             </SectionHeader>
             <Content />

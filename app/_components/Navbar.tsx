@@ -43,8 +43,10 @@ const NavButton = ({ href, children }: NavButtonProps) => {
                 sx={{
                     width: 'auto',
                     minWidth: '7rem',
-                    color: 'var(--mui-palette-primary-light)',
-                    borderBottom: pathname === href ? '2px solid var(--mui-palette-primary-light)' : "unset",
+                    color: 'var(--mui-palette-text-primary)',
+                    borderBottom: pathname === href
+                        ? '2px solid var(--mui-palette-secondary-main)'
+                        : "unset",
                     borderRadius: 0,
                 }}
             >
@@ -60,9 +62,9 @@ function Mobile() {
     const [open, setOpen] = React.useState(false);
     const { dict } = useI18n();
     const isSmall = useMediaQuery("(min-width:400px)");
-
+    const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
     if (!dict || !dict.Navbar) {
-        return null; 
+        return null;
     }
 
     const content = dict.Navbar as NavbarContent;
@@ -78,10 +80,9 @@ function Mobile() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                background: 'linear-gradient(30deg, var(--mui-palette-secondary-contrastText), var(--mui-palette-primary-dark))'
+                background: bgPalette[~~(!isDark)]
             }}>
                 <IconButton
-                    sx={{ color: 'var(--mui-palette-primary-light)' }}
                     aria-label="Menu button"
                     onClick={toggleDrawer(true)}
                 >
@@ -92,7 +93,7 @@ function Mobile() {
                     open={open}
                     onClose={toggleDrawer(false)}
                 >
-                    <Box sx={{ p: 2, background: 'linear-gradient(25deg, var(--mui-palette-secondary-dark), var(--mui-palette-primary-dark))' }}>
+                    <Box sx={{ p: 2 }}>
                         <Box
                             sx={{
                                 display: "flex",
@@ -100,7 +101,7 @@ function Mobile() {
                                 background: 'transparent'
                             }}
                         >
-                            <IconButton onClick={toggleDrawer(false)} sx={{ color: 'var(--mui-palette-primary-light)' }}>
+                            <IconButton onClick={toggleDrawer(false)}>
                                 <CloseRoundedIcon />
                             </IconButton>
                         </Box>
@@ -119,9 +120,9 @@ function Mobile() {
                                         background: 'transparent'
                                     }}
                                 >
-                                    <Icon color={'var(--mui-palette-primary-light)'} size="s" />
+                                    <Icon color={bgPalette[~~(isDark)]} size="s" />
                                     <Typography
-                                        color="primary.light"
+                                        color="textPrimary"
                                         variant="button"
                                         sx={{ marginLeft: '1rem', lineHeight: '2.1rem' }}
                                     >
@@ -133,19 +134,19 @@ function Mobile() {
                             <ListItemButton component="a" href="/">
                                 <ListItemText
                                     primary={content.home}
-                                    sx={{ color: 'primary.light', textTransform: "uppercase" }}
+                                    sx={{ textTransform: "uppercase" }}
                                 />
                             </ListItemButton>
                             <ListItemButton component="a" href="/features">
                                 <ListItemText
                                     primary={content.features}
-                                    sx={{ color: 'primary.light', textTransform: "uppercase" }}
+                                    sx={{ textTransform: "uppercase" }}
                                 />
                             </ListItemButton>
                             <ListItemButton component="a" href="/research">
                                 <ListItemText
                                     primary={content.research}
-                                    sx={{ color: 'primary.light', textTransform: "uppercase" }}
+                                    sx={{ textTransform: "uppercase" }}
                                 />
                             </ListItemButton>
                         </List>
@@ -158,10 +159,10 @@ function Mobile() {
                     width: '30%',
                     background: 'transparent'
                 }}>
-                    <Icon color={'var(--mui-palette-primary-light)'} size="s" />
+                    <Icon color={bgPalette[~~(isDark)]} size="s" />
                     {isSmall &&
                         <Typography
-                            color="primary.light"
+                            color="textPrimary"
                             variant="button"
                             sx={{ marginLeft: '1rem', lineHeight: '2.1rem' }}
                         >
@@ -186,22 +187,21 @@ function Desktop() {
     const { mode, setMode } = useColorScheme();
     const toggleMode = () => { setMode(mode === "dark" ? "light" : "dark") };
     const isDark = mode === "dark";
+    const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
     const { dict } = useI18n();
-
-    if (!dict || !dict.Navbar) {
-        return null; 
-    }
-
+    if (!dict || !dict.Navbar) return null;
     const content = dict.Navbar as NavbarContent;
-    const bg = isDark
-        ? 'linear-gradient(30deg, var(--mui-palette-primary-dark), var(--mui-palette-secondary-dark))'
-        : 'linear-gradient(30deg, var(--mui-palette-secondary-dark), var(--mui-palette-primary-dark))';
+    const bg = bgPalette[~~(!isDark)]
     return (
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" sx={{
+            display: `flex`,
+            justifyContent: `center`,
+        }}>
             <Toolbar
                 disableGutters
                 variant="dense"
                 sx={{
+                    width: `100%`,
                     borderRadius: '4rem',
                     backdropFilter: "blur(36px)",
                     display: "flex",
@@ -211,7 +211,7 @@ function Desktop() {
                     background: bg
                 }}
             >
-                <Icon color={'var(--mui-palette-primary-light)'} size="m" />
+                <Icon color={bgPalette[~~(isDark)]} size="m" />
                 <Stack
                     spacing={1}
                     direction="row"
@@ -238,7 +238,7 @@ function Desktop() {
                     <ThemeSwitcher checked={isDark} onChange={toggleMode} />
                 </Stack>
             </Toolbar>
-        </Container>
+        </Container >
     );
 }
 
@@ -268,6 +268,7 @@ export default function Navbar() {
                     bgcolor: "transparent",
                     backgroundImage: "none",
                     mt: "1rem",
+                    paddingLeft: isMobile ? `0px` : `15px`
                 }}
             >
                 {isMobile ? <Mobile /> : <Desktop />}

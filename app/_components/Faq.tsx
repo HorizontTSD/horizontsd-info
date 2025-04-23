@@ -29,16 +29,14 @@ function FAQ() {
     const [expanded, setExpanded] = React.useState<string[]>([]);
     const { dict } = useI18n();
     const { mode } = useColorScheme();
-    
+
     if (!dict || !dict.Home || !dict.Home.Faq) {
         return null;
     }
-    
+
     const { h2, Content: content } = dict.Home.Faq as FAQContent;
     const isDark = mode === "dark";
-    const bgSelect = isDark
-        ? "linear-gradient(45deg, var(--mui-palette-primary-dark) 20%, var(--mui-palette-secondary-dark))"
-        : "linear-gradient(45deg, var(--mui-palette-primary-light) 20%, var(--mui-palette-secondary-main))";
+    const bgSelect = isDark ? "var(--mui-palette-secondary-dark)" : "var(--mui-palette-primary-light)"
 
     const handleChange = (panel: string) => (_: React.SyntheticEvent, isExpanded: boolean) => {
         setExpanded(isExpanded
@@ -71,7 +69,7 @@ function FAQ() {
             </Typography>
             <Box sx={{ width: "100%" }}>
                 {content.map((item: FAQItem, i: number) => (
-                    <Accordion 
+                    <Accordion
                         key={i}
                         expanded={expanded.includes(`panel${i + 1}`)}
                         onChange={handleChange(`panel${i + 1}`)}
@@ -110,26 +108,26 @@ function FAQ() {
 
 export default function Faq() {
     const { dict } = useI18n();
-    
+
     if (!dict || !dict.Home || !dict.Home.Faq || !dict.Home.Faq.SectionHeader) {
         return null;
     }
-    
+
     const { SectionHeader: content } = dict.Home.Faq;
 
     return (
         <Section id="faq" sx={{ minHeight: "50vh" }}>
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
-                    // textShadow: "0px 1px 1px gray",
                     userSelect: "none",
                     textAlign: "center",
+                    fontFamily: `inherit`
                 }}>
                     {content.h4}
                 </Typography>
                 <Typography variant="body2" gutterBottom sx={{
-                    // textShadow: "0px 1px 1px rgba(255, 255, 255, 0.5)",
                     textAlign: "center",
+                    fontFamily: `inherit`
                 }}>
                     {content.body2}
                 </Typography>

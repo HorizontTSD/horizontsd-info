@@ -28,7 +28,7 @@ export default function ScrollTop({ children }: { children?: React.ReactNode }) 
                     <Fab size="small" aria-label="scroll back to top" sx={{
                         background: mode == 'dark' ? `white` : `black`
                     }}>
-                        <KeyboardArrowUpIcon color="primary" fontSize="large" />
+                        <KeyboardArrowUpIcon fontSize="large" sx={{ color: mode == 'dark' ? `black` : `white` }} />
                     </Fab>
                 )}
             </Box>
