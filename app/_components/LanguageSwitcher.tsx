@@ -1,17 +1,16 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
 import Cookies from "js-cookie"
-import { useI18n } from "../_providers/I18nProvider"
-import { useColorScheme } from "@mui/material";
-import ButtonGroup from '@mui/material/ButtonGroup';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Grow from '@mui/material/Grow';
-import Paper from '@mui/material/Paper';
-import Popper from '@mui/material/Popper';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import { useColorScheme } from "@mui/material";
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
-
+import Button from "@mui/material/Button";
+import Popper from '@mui/material/Popper';
+import Paper from '@mui/material/Paper';
+import Grow from '@mui/material/Grow';
+import { useI18n } from "@/app/_providers/I18nProvider"
 
 export default function LanguageSwitcher() {
   const { lang, dicts } = useI18n()
@@ -57,44 +56,49 @@ export default function LanguageSwitcher() {
         ref={anchorRef}
         aria-label="Button group with a nested menu"
         sx={{
-          cursor: `pointer`,
           border: `none`,
           boxShadow: `none`,
+          cursor: `pointer`,
         }}
         onClick={handleToggle}
       >
         <Button variant="text" disabled sx={{
-          color: `var(--mui-palette-text-primary) !important`,
           background: `var(${isDark ? "--mui-palette-secondary-dark" : "--mui-palette-primary-light"}) !important`,
           border: `2px solid var(${isDark ? "--mui-palette-secondary-light" : "--mui-palette-secondary-dark"}) !important`,
-          padding: `0 0.8rem`,
           boxShadow: `none`,
+          color: `var(--mui-palette-text-primary) !important`,
+          padding: `0 0.8rem`,
         }}
         >{dicts[idx].split(`-`)[0].trim()}</Button>
         <Button
-          sx={{
-            background: `var(${isDark ? "--mui-palette-secondary-light" : "--mui-palette-secondary-dark"}) !important`,
-            boxShadow: `none`,
-            color: `var(${isDark ? "--mui-palette-secondary-dark" : "--mui-palette-secondary-light"}) !important`,
-            border: `none`,
-            padding: `0`
-          }}
-          size="small"
           aria-controls={open ? 'split-button-menu' : undefined}
           aria-expanded={open ? 'true' : undefined}
-          aria-label="select merge strategy"
           aria-haspopup="menu"
+          aria-label="select merge strategy"
+          size="small"
+          sx={{
+            background: `var(${isDark ? "--mui-palette-secondary-light" : "--mui-palette-secondary-dark"}) !important`,
+            border: `none`,
+            boxShadow: `none`,
+            color: `var(${isDark ? "--mui-palette-secondary-dark" : "--mui-palette-secondary-light"}) !important`,
+            padding: `0`
+          }}
         >
           <ArrowDropDownIcon />
         </Button>
       </ButtonGroup>
       <Popper
-        sx={{ zIndex: 1, paddingTop: `7px`, width: `100px`, borderRadius: "var(--mui-shape-borderRadius)" }}
-        open={open}
         anchorEl={anchorRef.current}
-        role={undefined}
-        transition
         disablePortal
+        open={open}
+        role={undefined}
+        sx={{
+          borderRadius: "var(--mui-shape-borderRadius)",
+          paddingTop: `7px`,
+          width: `100px`,
+          zIndex: 1,
+        }}
+        transition
       >
         {({ TransitionProps, placement }) => (
           <Grow {...TransitionProps} style={{
@@ -106,11 +110,11 @@ export default function LanguageSwitcher() {
                 <MenuList id="split-button-menu" autoFocusItem sx={{ padding: `1rem 0` }}>
                   {dicts.map((option, index) => (
                     <MenuItem
-                      sx={{ padding: `0.1rem 1rem` }}
-                      key={option}
                       disabled={index === selectedIndex}
-                      selected={index === selectedIndex}
+                      key={option}
                       onClick={(event) => handleLanguageChange(event, index)}
+                      selected={index === selectedIndex}
+                      sx={{ padding: `0.1rem 1rem` }}
                     >
                       {option.split(`-`)[0].trim().toUpperCase()}
                     </MenuItem>

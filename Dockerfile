@@ -26,7 +26,7 @@ ENV NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production
 # Set up Corepack in builder stage
 RUN npm install -g corepack && \
     corepack enable && \
-    corepack prepare yarn@4.7.0 --activate  # Activate in builder too
+    corepack prepare yarn@4.9.1 --activate  # Activate in builder too
 
 # Copy dependencies from previous stage
 COPY --from=deps /app/node_modules ./node_modules

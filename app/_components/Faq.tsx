@@ -1,15 +1,13 @@
 import * as React from "react";
-import { useI18n } from "../_providers/I18nProvider";
-import {
-    Box, Container, Typography,
-} from "@mui/material";
-import { useColorScheme } from "@mui/material/styles";
-import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import SectionHeader from "./SectionHeader";
-import Section from "./Section";
+import { Box, Container, Typography } from "@mui/material";
+import { useColorScheme } from "@mui/material/styles";
+import Accordion from "@mui/material/Accordion";
+import { useI18n } from "@/app/_providers/I18nProvider";
+import SectionHeader from "@/app/_components/SectionHeader";
+import Section from "@/app/_components/Section";
 
 interface FAQItem {
     question: string;
@@ -29,44 +27,26 @@ function FAQ() {
     const [expanded, setExpanded] = React.useState<string[]>([]);
     const { dict } = useI18n();
     const { mode } = useColorScheme();
-
-    if (!dict || !dict.Home || !dict.Home.Faq) {
-        return null;
-    }
-
-    const { h2, Content: content } = dict.Home.Faq as FAQContent;
+    if (!dict || !dict.Home || !dict.Home.Faq) return null;
+    const { Content: content } = dict.Home.Faq as FAQContent;
     const isDark = mode === "dark";
     const bgSelect = isDark ? "var(--mui-palette-secondary-dark)" : "var(--mui-palette-primary-light)"
-
-    const handleChange = (panel: string) => (_: React.SyntheticEvent, isExpanded: boolean) => {
-        setExpanded(isExpanded
-            ? [...expanded, panel]
-            : expanded.filter((item) => item !== panel)
-        );
-    };
-
+    const handleChange = (panel: string) => (_: React.SyntheticEvent, isExpanded: boolean) => setExpanded(isExpanded
+        ? [...expanded, panel]
+        : expanded.filter((item) => item !== panel)
+    );
     return (
         <Container
             id="faq"
             sx={{
-                pt: { xs: 4, sm: 12 },
-                pb: { xs: 8, sm: 16 },
-                position: "relative",
+                alignItems: "center",
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
                 gap: { xs: 3, sm: 6 },
+                pb: { xs: 8, sm: 16 },
+                position: "relative",
+                pt: { xs: 4, sm: 12 },
             }}>
-            <Typography
-                component="h2"
-                variant="h4"
-                sx={{
-                    color: "text.primary",
-                    width: { sm: "100%", md: "60%" },
-                    textAlign: { sm: "left", md: "center" },
-                }}>
-                {h2}
-            </Typography>
             <Box sx={{ width: "100%" }}>
                 {content.map((item: FAQItem, i: number) => (
                     <Accordion
@@ -75,7 +55,7 @@ function FAQ() {
                         onChange={handleChange(`panel${i + 1}`)}
                     >
                         <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
+                            expandIcon={<ExpandMoreIcon color={expanded.includes(`panel${i + 1}`) ? "info" : "action"} />}
                             aria-controls={`panel${i + 1}d-content`}
                             id={`panel${i + 1}d-header`}
                             sx={{
@@ -90,10 +70,10 @@ function FAQ() {
                         <AccordionDetails>
                             {item.answer.map((answer: string, j: number) => (
                                 <Typography
-                                    key={j}
-                                    variant="body2"
                                     gutterBottom
+                                    key={j}
                                     sx={{ maxWidth: { sm: "100%", md: "70%" } }}
+                                    variant="body2"
                                 >
                                     {answer}
                                 </Typography>
@@ -116,18 +96,18 @@ export default function Faq() {
     const { SectionHeader: content } = dict.Home.Faq;
 
     return (
-        <Section id="faq" sx={{ minHeight: "50vh" }}>
+        <Section id="faq">
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
-                    userSelect: "none",
+                    fontFamily: `inherit`,
                     textAlign: "center",
-                    fontFamily: `inherit`
+                    userSelect: "none",
                 }}>
                     {content.h4}
                 </Typography>
-                <Typography variant="body2" gutterBottom sx={{
+                <Typography variant="h6" gutterBottom sx={{
+                    fontFamily: `inherit`,
                     textAlign: "center",
-                    fontFamily: `inherit`
                 }}>
                     {content.body2}
                 </Typography>

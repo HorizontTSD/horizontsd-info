@@ -1,15 +1,15 @@
 import * as React from "react";
 import { useColorScheme } from "@mui/material/styles";
-import { useI18n } from "../_providers/I18nProvider";
+import { useI18n } from "@/app/_providers/I18nProvider";
 import { useTheme } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
-import ScrollGrow from "./ScrollGrow";
+import ScrollGrow from "@/app/_components/ScrollGrow";
 import {
     Card, CardContent, CardMedia,
     Container, Typography, Button,
     useMediaQuery, Grid
 } from "@mui/material";
-import Section from "./Section";
+import Section from "@/app/_components/Section";
 
 function CTA() {
     const theme = useTheme();
@@ -24,10 +24,10 @@ function CTA() {
     return (
         <Container
             maxWidth="lg" sx={{
-                padding: `2rem`,
+                alignItems: `center`,
                 display: `flex`,
                 justifyContent: `center`,
-                alignItems: `center`,
+                padding: `2rem`,
             }}>
             <ScrollGrow>
                 <Card >
@@ -37,25 +37,19 @@ function CTA() {
                                 <Typography
                                     variant="h4"
                                     gutterBottom
-                                    sx={{
-                                        fontWeight: 800,
-                                    }}
+                                    sx={{ fontWeight: 800, }}
                                 >
                                     {content.h3}
                                 </Typography>
                                 <Typography
                                     variant="body1"
                                     color="textPrimary"
-                                    sx={{
-                                        mb: 2, fontSize: "1.1rem",
-                                    }}
+                                    sx={{ mb: 2, fontSize: "1.1rem", }}
                                 >{content.body1}</Typography>
                                 <Stack
                                     direction={isMobile ? "column" : "row"}
                                     spacing={2}
-                                    sx={{
-                                        justifyContent: `center`
-                                    }}
+                                    sx={{ justifyContent: `center` }}
                                 >
                                     <Button
                                         color="info"
@@ -76,9 +70,9 @@ function CTA() {
                             </CardContent>
                         </Grid>
                         <Grid size={{ xs: 12, md: 6 }} sx={{
+                            alignItems: `center`,
                             display: `flex`,
                             justifyContent: `center`,
-                            alignItems: `center`
                         }} >
                             <CardMedia
                                 component="img"
@@ -88,12 +82,12 @@ function CTA() {
                                 }
                                 alt="CTA Illustration"
                                 sx={{
-                                    width: `100%`,
                                     height: "100%",
                                     maxHeight: `40vh`,
                                     maxWidth: `40vw`,
                                     objectFit: "cover",
-                                    objectPosition: "center"
+                                    objectPosition: "center",
+                                    width: `100%`,
                                 }}
                             />
                         </Grid>
@@ -106,6 +100,6 @@ function CTA() {
 
 export default function CallToAction() {
     return (
-        <Section id="call-to-action" sx={{ minHeight: "30vh" }}><CTA /></Section>
+        <Section id="call-to-action" sx={{ minHeight: "720px", justifyContent: `center` }}><CTA /></Section>
     )
 }

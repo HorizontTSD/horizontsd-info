@@ -35,17 +35,17 @@ export interface HeroCardIllustrationProps {
 export function HeroCardIllustrationBox({ size = 6, offset = 0, Icon }: HeroCardBoxProps) {
 	return (
 		<Box sx={{
-			position: `relative`,
-			left: `${offset * 1.5}px`,
-			top: `${-offset * 0.5}px`,
-			width: `${size}rem`,
-			height: `${size}rem`,
+			alignItems: `center`,
 			background: `rgba(255,255,255,0.1)`,
 			borderRadius: "var(--mui-shape-borderRadius)",
 			display: `flex`,
 			flexDirection: `column`,
+			height: `${size}rem`,
 			justifyContent: `center`,
-			alignItems: `center`
+			left: `${offset * 1.5}px`,
+			position: `relative`,
+			top: `${-offset * 0.5}px`,
+			width: `${size}rem`,
 		}}>
 			<Icon sx={{ color: `var(--mui-palette-text-primary)`, width: `64px`, height: `64px` }} />
 		</Box>
@@ -58,32 +58,27 @@ export function HeroCardIllustration({ type = "primary" }: HeroCardIllustrationP
 		? [DatasetIcon, DataObjectIcon, DataArrayIcon]
 		: [OnlinePredictionIcon, BatchPrediction];
 	const secondBoxIcons = [AreaChartIcon, AutoGraphIcon]
-
 	const [currentFirstIcon, setCurrentFirstIcon] = useState(0);
 	const [currentSecondIcon, setCurrentSecondIcon] = useState(0);
-
 	useEffect(() => {
 		const firstInterval = setInterval(() => {
 			setCurrentFirstIcon(prev => (prev + 1) % firstBoxIcons.length);
 		}, 2000);
-
 		const secondInterval = setInterval(() => {
 			setCurrentSecondIcon(prev => (prev + 1) % secondBoxIcons.length);
 		}, 6000);
-
 		return () => {
 			clearInterval(firstInterval);
 			clearInterval(secondInterval);
 		};
 	}, [firstBoxIcons.length, secondBoxIcons.length]);
-
 	return (
 		<div style={{
+			alignItems: `center`,
 			display: `flex`,
-			width: `200px`,
 			height: `200px`,
 			justifyContent: `center`,
-			alignItems: `center`,
+			width: `200px`,
 		}}>
 			<div>
 				<HeroCardIllustrationBox
@@ -115,12 +110,11 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 			background: `#26AD50`
 		}
 	}[type]
-
 	return (
 		<Card sx={{
 			background: t.background,
-			width: isMd ? `60%` : `45%`,
 			height: isMd ? `185px` : `200px`,
+			width: isMd ? `60%` : `45%`,
 		}}>
 			<CardActionArea
 				sx={{
@@ -145,9 +139,9 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 							<Stack
 								direction={"row"}
 								sx={{
-									marginBottom: `0.3rem`,
-									justifyContent: `start`,
 									alignItems: `start`,
+									justifyContent: `start`,
+									marginBottom: `0.3rem`,
 									maxWidth: '300px',
 								}}
 							>
@@ -158,9 +152,9 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 								<Typography
 									variant="h6"
 									sx={{
+										lineHeight: `1rem`,
 										whiteSpace: 'normal',
 										wordBreak: 'break-word',
-										lineHeight: `1rem`
 									}}
 								>
 									{content.title}
@@ -170,19 +164,19 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 								<Typography
 									variant="body2"
 									sx={{
-										overflow: `hidden`,
-										maxHeight: `5rem`,
-										position: `relative`,
 										lineHeight: `1.0rem`,
+										maxHeight: `5rem`,
+										overflow: `hidden`,
+										position: `relative`,
 										"&:after": {
-											content: `""`,
-											textAlign: `right`,
-											position: `absolute`,
-											bottom: `0`,
-											right: `0`,
-											width: `70%`,
-											height: `1.1rem`,
 											background: `linear-gradient(to right, rgba(255, 255, 255, 0), ${t.background} 70%)`,
+											bottom: `0`,
+											content: `""`,
+											height: `1.1rem`,
+											position: `absolute`,
+											right: `0`,
+											textAlign: `right`,
+											width: `70%`,
 										}
 									}}
 								>{content.description}</Typography>
@@ -190,19 +184,23 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 						</Stack>
 						<div style={{
 							display: "flex",
-							width: isMd ? "150px" : "200px",
-							position: "relative",
 							left: isMd ? "-65px" : "-35px",
+							maxWidth: `50%`,
+							position: "relative",
 							top: isMd ? `-20px` : `-12px`,
-							maxWidth: `50%`
+							width: isMd ? "150px" : "200px",
 						}}>
 							<div style={{
 								display: `flex`,
-								position: `relative`,
 								left: `180px`,
+								position: `relative`,
 								top: `10px`,
 							}}>
-								<TurnRightIcon sx={{ width: `64px`, height: `64px`, transform: `rotate(90deg)` }} />
+								<TurnRightIcon sx={{
+									height: `64px`,
+									transform: `rotate(90deg)`,
+									width: `64px`,
+								}} />
 							</div>
 							<HeroCardIllustration type={type} />
 						</div>
@@ -229,9 +227,9 @@ function HeroCardMobile({ type }: HeroCardProps) {
 	return (
 		<Card sx={{
 			background: t.background,
-			width: `90%`,
 			marginBottom: `1rem`,
-			marginTop: type == "primary" ? `1rem` : "unset"
+			marginTop: type == "primary" ? `1rem` : "unset",
+			width: `90%`,
 		}}>
 			<CardActionArea
 				sx={{
@@ -254,9 +252,9 @@ function HeroCardMobile({ type }: HeroCardProps) {
 						<Stack direction={"column"}>
 							<Stack direction={"row"}
 								sx={{
-									marginBottom: `0.5rem`,
-									justifyContent: `start`,
 									alignItems: `start`,
+									justifyContent: `start`,
+									marginBottom: `0.5rem`,
 								}}>
 								{type == 'primary'
 									? <FlashOnIcon sx={{ color: "var(--mui-palette-warning-dark)", marginRight: `5px` }} />
@@ -264,9 +262,9 @@ function HeroCardMobile({ type }: HeroCardProps) {
 								}
 								<Typography variant="h6"
 									sx={{
+										lineHeight: `1rem`,
 										whiteSpace: 'normal',
 										wordBreak: 'break-word',
-										lineHeight: `1rem`
 									}}
 								>
 									{content.title}
@@ -276,20 +274,20 @@ function HeroCardMobile({ type }: HeroCardProps) {
 								<Typography
 									variant="body2"
 									sx={{
-										overflow: `hidden`,
+										lineHeight: `1rem`,
 										maxHeight: `3rem`,
 										maxWidth: `20rem`,
+										overflow: `hidden`,
 										position: `relative`,
-										lineHeight: `1rem`,
 										"&:after": {
-											content: `""`,
-											textAlign: `right`,
-											position: `absolute`,
-											bottom: `0`,
-											right: `0`,
-											width: `70%`,
-											height: `1.1rem`,
 											background: `linear-gradient(to right, rgba(255, 255, 255, 0), ${t.background} 70%)`,
+											bottom: `0`,
+											content: `""`,
+											height: `1.1rem`,
+											position: `absolute`,
+											right: `0`,
+											textAlign: `right`,
+											width: `70%`,
 										}
 									}}
 								>{content.description}</Typography>

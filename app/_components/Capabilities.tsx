@@ -1,21 +1,20 @@
 import * as React from "react";
-import { useColorScheme } from "@mui/material/styles";
-import { useI18n } from "../_providers/I18nProvider";
-import { useTheme } from "@mui/material/styles";
+import Link from "next/link";
 import { Card, CardContent, Box, Container, Typography, useMediaQuery, Grid, Button, Stack } from "@mui/material";
-import type { } from "swiper/types";
+import { useColorScheme } from "@mui/material/styles";
+import LabelIcon from "@mui/icons-material/Label";
+import { useTheme } from "@mui/material/styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
-import SectionHeader from "./SectionHeader";
-import Section from "./Section";
-import LabelIcon from "@mui/icons-material/Label";
-import Link from "next/link";
-import ScrollGrow from "./ScrollGrow";
+import SectionHeader from "@/app/_components/SectionHeader";
+import { useI18n } from "@/app/_providers/I18nProvider";
+import ScrollGrow from "@/app/_components/ScrollGrow";
+import Section from "@/app/_components/Section";
+import type { } from "swiper/types";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
-import "./swiper.css";
 
 interface CapabilityItem {
     title: string;
@@ -31,6 +30,7 @@ interface FooterContent {
 
 interface MobileSwiperSlideProps {
     item: CapabilityItem;
+    size?: number;
 }
 
 function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
@@ -40,17 +40,17 @@ function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
 
     return (
         <Card sx={{
-            width: "80%",
-            height: "80%",
+            alignItems: "center",
+            background: bgPalette[~~(!isDark)],
             borderRadius: "var(--mui-shape-borderRadius)",
-            display: "grid",
+            display: "flex",
+            flexDirection: "column",
+            height: "93%",
+            justifyContent: "start",
             justifySelf: "center",
-            alignSelf: "center",
-            background: bgPalette[~~(!isDark)]
+            width: "80%",
         }}>
-            <CardContent sx={{
-                borderRadius: "var(--mui-shape-borderRadius)",
-            }}>
+            <CardContent sx={{ display: `flex`, flexDirection: `column`, height: `100%`, justifyContent: "space-between", borderRadius: "var(--mui-shape-borderRadius)" }}>
                 <Stack direction="row" alignItems="center">
                     <LabelIcon color="secondary" sx={{ marginRight: "1rem" }} />
                     <Typography variant="button" component="div">
@@ -58,7 +58,7 @@ function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
                     </Typography>
                 </Stack>
                 {item.description.slice(0, 2).map((e: string, i: number) => (
-                    <Typography key={i} variant="subtitle1"  gutterBottom>{e}</Typography>
+                    <Typography key={i} variant="subtitle1" gutterBottom>{e}</Typography>
                 ))}
                 {item.description.slice(2, -1).map((e: string, i: number) => (
                     <Typography key={i} variant="body1" gutterBottom>{e}</Typography>
@@ -75,38 +75,34 @@ function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
 
 function SliderMobile() {
     const { dict } = useI18n();
-
-    if (!dict || !dict.Home || !dict.Home.Capabilities || !dict.Home.Capabilities.Content) {
-        return null;
-    }
-
+    if (!dict || !dict.Home || !dict.Home.Capabilities || !dict.Home.Capabilities.Content) return null;
     const content: CapabilityItem[] = dict.Home.Capabilities.Content;
-
+    const size = 35
     return (
         <Grid container direction="column" sx={{
-            display: { xs: "flex", sm: "flex", md: "none" },
             width: "100%",
+            height: `100%`
         }}>
             <Swiper
-                spaceBetween={10}
-                pagination={{ clickable: true }}
-                navigation={{ enabled: true }}
+                className="swiper-slider"
                 loop={true}
                 modules={[Pagination, Navigation]}
-                className="swiper-slider"
+                navigation={{ enabled: true }}
+                pagination={{ clickable: true }}
+                spaceBetween={10}
                 style={{
-                    display: "flex",
-                    justifyContent: "center",
                     alignItems: "center",
                     backgroundPosition: "center",
                     backgroundSize: "cover",
-                    width: "100%",
+                    display: "flex",
                     height: "80vh",
+                    justifyContent: "center",
                     margin: "1rem 0",
+                    width: "100%",
                 }}>
                 {content.map((item: CapabilityItem, i: number) => (
                     <SwiperSlide key={i}>
-                        <MobileSwiperSlide item={item} />
+                        <MobileSwiperSlide size={size} item={item} />
                     </SwiperSlide>
                 ))}
             </Swiper>
@@ -115,40 +111,34 @@ function SliderMobile() {
 }
 
 function Desktop() {
-    const theme = useTheme();
     const { mode } = useColorScheme();
     const isDark = mode === "dark";
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
     const { dict } = useI18n();
-
     if (!dict || !dict.Home || !dict.Home.Capabilities || !dict.Home.Capabilities.Content) return null;
-
     const content: CapabilityItem[] = dict.Home.Capabilities.Content;
-
-
     const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
     return (
-        <Grid container spacing={2} sx={{ padding: "2rem", maxWidth: "1480px" }}>
+        <Grid container maxWidth={"lg"} spacing={1} rowSpacing={1} sx={{ padding: "1rem" }}>
             {content.map((item: CapabilityItem, index: number) => (
-                <Grid size={6} key={index} spacing={2}>
+                <Grid size={6} key={index} >
                     <ScrollGrow>
                         <Stack
                             direction="column"
                             component={Card}
                             useFlexGap
                             sx={{
+                                background: bgPalette[~~(!isDark)],
                                 color: "textPrimary",
+                                justifyContent: "space-between",
+                                minHeight: "21rem",
                                 padding: `0.8rem`,
-                                height: isMobile ? "unset" : "30vh",
-                                background: bgPalette[~~(!isDark)]
                             }}>
                             <div>
                                 <Stack direction="row" sx={{
+                                    alignItems: "center",
                                     display: "flex",
                                     flexDirection: "row",
                                     justifyContent: "start",
-                                    alignItems: "center",
-                                    marginBottom: "1rem"
                                 }}>
                                     <LabelIcon color="primary" sx={{ marginRight: "1rem" }} />
                                     <Typography variant="h6" component="div">{item.title}</Typography>
@@ -159,12 +149,13 @@ function Desktop() {
                                 {item.description.slice(2, -1).map((e: string, i: number) => (
                                     <Typography key={i} variant="body2" gutterBottom>{e}</Typography>
                                 ))}
-                                {item.description.slice(-1).map((e: string, i: number) => (
-                                    <Typography key={i} variant="caption" color="textSecondary" gutterBottom>
-                                        {e}
-                                    </Typography>
-                                ))}
                             </div>
+
+                            {item.description.slice(-1).map((e: string, i: number) => (
+                                <Typography key={i} variant="caption" color="textSecondary" gutterBottom>
+                                    {e}
+                                </Typography>
+                            ))}
                         </Stack>
                     </ScrollGrow>
                 </Grid>
@@ -192,25 +183,25 @@ function Footer() {
 
     return (
         <Box sx={{
-            display: "flex",
-            width: "100%",
-            minHeight: "180px",
-            justifyContent: "end",
             alignItems: "center",
+            display: "flex",
+            flex: "auto",
             flexDirection: "column",
-            paddingBottom: "20px",
-            flex: "auto"
+            justifyContent: "end",
+            minHeight: "180px",
+            paddingBottom: "2rem",
+            width: "100%",
         }}>
             <Container maxWidth="xl" sx={{
                 display: "flex",
-                justifyContent: "center",
                 flexDirection: "column",
+                justifyContent: "center",
             }}>
                 <Grid container direction="column" spacing={2} alignContent="center"
                     sx={{
+                        alignItems: "center",
                         display: "flex",
                         justifyContent: "center",
-                        alignItems: "center",
                     }}>
                     <Typography variant="caption" gutterBottom color="textPrimary" sx={{
                         textAlign: "center",
@@ -232,7 +223,7 @@ function Footer() {
                         ))}
                     </Stack>
                     <Link href="/research">
-                        <Button color="primary" variant="contained" sx={{ color: "primary.light" }}>
+                        <Button color="secondary" variant="contained" sx={{ color: "primary.light" }}>
                             {content.Button}
                         </Button>
                     </Link>
@@ -244,26 +235,29 @@ function Footer() {
 
 export default function Capabilities() {
     const { dict } = useI18n();
-
-    if (!dict || !dict.Home || !dict.Home.Capabilities || !dict.Home.Capabilities.SectionHeader) {
-        return null;
-    }
-
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    
+    if (!dict || !dict.Home || !dict.Home.Capabilities || !dict.Home.Capabilities.SectionHeader) return null;
     const content = dict.Home.Capabilities.SectionHeader;
 
     return (
-        <Section id="capabilities" sx={{ justifyContent: "space-between" }}>
+        <Section id="capabilities" sx={{
+            display: `flex`,
+            flexDirection: `column`,
+            maxHeight: isMobile ? "auto" : `1080px`
+        }}>
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
-                    userSelect: "none",
+                    fontFamily: `inherit`,
                     textAlign: "center",
-                    fontFamily: `inherit`
+                    userSelect: "none",
                 }}>
                     {content.h4}
                 </Typography>
-                <Typography variant="body2" gutterBottom sx={{
+                <Typography variant="h6" gutterBottom sx={{
+                    fontFamily: `inherit`,
                     textAlign: "center",
-                    fontFamily: `inherit`
                 }}>
                     {content.body2}
                 </Typography>

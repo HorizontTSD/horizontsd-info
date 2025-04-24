@@ -1,18 +1,18 @@
 import * as React from "react";
-import { useI18n } from "../_providers/I18nProvider";
-import Stack from "@mui/material/Stack";
-import { Card, CardContent, Box, Container, Typography, Grid, Divider, Button } from "@mui/material";
-import Tooltip from '@mui/material/Tooltip';
-import { useColorScheme } from "@mui/material/styles";
-import SectionHeader from "./SectionHeader";
-import Section from "./Section";
 import Image from "next/image";
+import { Card, CardContent, Box, Container, Typography, Grid, Divider, Button } from "@mui/material";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import { useColorScheme } from "@mui/material/styles";
+import GithubIcon from "@mui/icons-material/GitHub";
 import SchoolIcon from "@mui/icons-material/School";
 import BadgeIcon from "@mui/icons-material/Badge";
 import LabelIcon from "@mui/icons-material/Label";
-import GithubIcon from "@mui/icons-material/GitHub";
+import Tooltip from '@mui/material/Tooltip';
+import Stack from "@mui/material/Stack";
+import SectionHeader from "@/app/_components/SectionHeader";
+import { useI18n } from "@/app/_providers/I18nProvider";
+import Section from "@/app/_components/Section";
 
 interface ContactInfo {
     telegram?: string;
@@ -74,26 +74,25 @@ function MemberField({ children, size, product = "", tooltip = false }: MemberFi
                 direction="row"
                 sx={{
                     alignItems: size && size == "large" ? "start" : "center",
-                    overflow: "hidden",
-                    whiteSpace: "nowrap",
                     cursor: "pointer",
                     height: size && size == "large" ? "auto" : "2.4rem",
-
+                    overflow: "hidden",
+                    whiteSpace: "nowrap",
                 }}
             >{tooltip
                 ? <Button
                     color="secondary"
                     variant="outlined"
                     sx={{
-                        fontSize: `0.7rem`,
-                        lineHeight: `1rem`,
-                        borderRadius: "var(--mui-shape-borderRadius)",
-                        justifyContent: "center",
                         alignItems: `center`,
-                        padding: `0.2rem 0.45rem`,
-                        margin: `0`,
-                        color: `var(--mui-palette-text-primary)`,
                         borderColor: `var(--mui-palette-text-primary)`,
+                        borderRadius: "var(--mui-shape-borderRadius)",
+                        color: `var(--mui-palette-text-primary)`,
+                        fontSize: `0.7rem`,
+                        justifyContent: "center",
+                        lineHeight: `1rem`,
+                        margin: `0`,
+                        padding: `0.2rem 0.45rem`,
                     }}
                     startIcon={children[0]}
                 >
@@ -115,11 +114,11 @@ function Content() {
 
     return (
         <Container maxWidth="xl" sx={{
+            alignItems: "center",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
             height: "auto",
-            alignItems: "center",
+            justifyContent: "center",
             margin: "auto",
             padding: "0 0 2rem 0",
         }}>
@@ -127,9 +126,7 @@ function Content() {
                 container
                 spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
                 justifyContent="center"
-                sx={{
-                    width: { xs: "95%", sm: "100%", md: "80%", lg: "80%" }
-                }}
+                sx={{ width: { xs: "95%", sm: "100%", md: "80%", lg: "80%" } }}
             >
                 {teamData.map((member: TeamMember, i: number) => (
                     <Grid
@@ -138,44 +135,37 @@ function Content() {
                         rowSpacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
                         spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
                     >
-                        <Card sx={{
-                            height: "100%",
-                        }}>
+                        <Card sx={{ height: "100%" }}>
                             <div style={{
-                                width: "100%",
                                 height: "420px",
+                                width: "100%",
                             }}>
                                 {member?.photo?.length && (
                                     <div style={{
-                                        display: "flex",
-                                        flexDirection: "column",
-                                        width: "100%",
-                                        height: "100%",
-                                        justifyContent: "center",
                                         alignItems: "center",
                                         background: `url(${member.photo})`,
                                         backgroundPosition: "0% 100%",
-                                        backgroundSize: "contain",
                                         backgroundRepeat: "no-repeat",
+                                        backgroundSize: "contain",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        height: "100%",
+                                        justifyContent: "center",
+                                        width: "100%",
                                     }}>
                                     </div>
                                 )}
                             </div>
 
                             <CardContent
-                                sx={{
-                                    height: "100%",
-                                    background: bgPalette[~~(!isDark)]
-                                }}
+                                sx={{ background: bgPalette[~~(!isDark)], height: "100%" }}
                             >
                                 {member?.first_name && member?.last_name &&
                                     <MemberField>
                                         <BadgeIcon color="disabled" sx={{ marginRight: "1rem" }} />
                                         <Typography
                                             fontFamily={"sans-serif"}
-                                            sx={{
-                                                textOverflow: "ellipsis", userSelect: "text"
-                                            }}
+                                            sx={{ textOverflow: "ellipsis", userSelect: "text" }}
                                             variant="h6"
                                         >
                                             {capitalizeFirstLetter(member.first_name)} {capitalizeFirstLetter(member.last_name)}
@@ -191,9 +181,7 @@ function Content() {
                                     </MemberField>
                                 }
                                 <Divider sx={{ marginBottom: "1rem" }} />
-                                <Stack sx={{
-                                    height: member?.education ? `4rem` : "unset"
-                                }}
+                                <Stack sx={{ height: member?.education ? `4rem` : "unset" }}
                                 >{member?.education &&
                                     <MemberField
                                         tooltip={false}
@@ -201,10 +189,7 @@ function Content() {
                                     >
                                         <SchoolIcon sx={{ marginRight: "1rem" }} />
                                         <Typography
-                                            sx={{
-                                                userSelect: "text",
-                                                whiteSpace: "pre-wrap"
-                                            }}
+                                            sx={{ userSelect: "text", whiteSpace: "pre-wrap" }}
                                             variant="caption"
                                             component="div"
                                         >
@@ -260,19 +245,19 @@ function Content() {
                                             product={"orcid"}
                                         >
                                             <Box sx={{
-                                                display: "flex",
-                                                justifyContent: "center",
                                                 alignItems: "center",
-                                                width: "20px",
+                                                display: "flex",
                                                 height: "20px",
+                                                justifyContent: "center",
+                                                width: "20px",
                                             }}>
                                                 <Image
-                                                    src="/images/orcid_id.svg"
                                                     alt="ORCID logo"
-                                                    width={20}
                                                     height={20}
-                                                    unoptimized
+                                                    src="/images/orcid_id.svg"
                                                     style={{ userSelect: "none" }}
+                                                    unoptimized
+                                                    width={20}
                                                 />
                                             </Box>
                                             <Typography sx={{ userSelect: "text" }} variant="caption" component="div">
@@ -295,20 +280,19 @@ export default function About() {
     const { dict } = useI18n();
     if (!dict || !dict.Home) return null;
     const { Home } = dict;
-
     return (
         <Section id="about">
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
-                    userSelect: "none",
+                    fontFamily: `inherit`,
                     textAlign: "center",
-                    fontFamily: `inherit`
+                    userSelect: "none",
                 }}>
                     {Home.About.SectionHeader.h4}
                 </Typography>
-                <Typography variant="body2" gutterBottom sx={{
+                <Typography variant="h6" gutterBottom sx={{
+                    fontFamily: `inherit`,
                     textAlign: "center",
-                    fontFamily: `inherit`
                 }}>
                     {Home.About.SectionHeader.body2}
                 </Typography>

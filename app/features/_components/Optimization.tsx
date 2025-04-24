@@ -1,23 +1,18 @@
 import * as React from "react";
+import { Card, CardMedia, CardContent, Typography, Box, useMediaQuery, Grid, Stack } from "@mui/material"
 import { useColorScheme } from "@mui/material/styles";
-import { useI18n } from "../../_providers/I18nProvider";
 import { useTheme } from "@mui/material/styles";
-import {
-    Card, CardMedia, CardContent,
-    Typography, Box,
-    useMediaQuery, Grid, Stack
-} from "@mui/material"
-import SectionHeader from "../../_components/SectionHeader"
-import Section from "../../_components/Section"
-import ScrollGrow from "../../_components/ScrollGrow";
-import type { } from "swiper/types";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { } from "swiper/types";
+import SectionHeader from "@/app/_components/SectionHeader"
+import { useI18n } from "@/app/_providers/I18nProvider";
+import ScrollGrow from "@/app/_components/ScrollGrow";
+import Section from "@/app/_components/Section"
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
-import "../../_components/swiper.css"
 
 interface ContentItem {
     title: string;
@@ -29,79 +24,66 @@ function Background() {
     const { mode } = useColorScheme();
     const maskOpacity = mode == "dark" ? "0.3" : "0.3"
     const background = `var(--mui-palette-primary-light)`
-
     return (
-        <Box
-            sx={{
-                borderRadius: "var(--mui-shape-borderRadius)",
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                background: background,
-                maskImage: `url(/images/mask.webp), ${background}`,
-                maskRepeat: "no-repeat",
-                maskSize: "100% 200%",
-                maskComposite: "revert",
-                maskPosition: "0% 0%",
-                zIndex: 1,
-                opacity: maskOpacity
-            }}
-        />
+        <Box sx={{
+            background: background,
+            borderRadius: "var(--mui-shape-borderRadius)",
+            height: "100%",
+            left: 0,
+            maskComposite: "revert",
+            maskImage: `url(/images/mask.webp), ${background}`,
+            maskPosition: "0% 0%",
+            maskRepeat: "no-repeat",
+            maskSize: "100% 200%",
+            opacity: maskOpacity,
+            position: "absolute",
+            top: 0,
+            width: "100%",
+            zIndex: 1,
+        }} />
     )
 }
 
 function Mobile() {
     const { dict } = useI18n();
-
-    if (!dict || !dict.Features || !dict.Features.Optimization || !dict.Features.Optimization.Content) {
-        return null;
-    }
-
+    if (!dict || !dict.Features || !dict.Features.Optimization || !dict.Features.Optimization.Content) return null;
     const content: ContentItem[] = dict.Features.Optimization.Content;
     return (
         <Grid
             container direction="column" sx={{
-                display: { xs: "flex", sm: "flex", md: "none" },
-                width: `100%`,
-            }}
-        >
+                display: { xs: "flex", sm: "flex", md: "none" }, width: `100%`,
+            }}>
             <Swiper
-                spaceBetween={10}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={{
-                    enabled: true
-                }}
+                className="swiper-slider"
                 loop={true}
                 modules={[Pagination, Navigation]}
-                className="swiper-slider"
+                navigation={{ enabled: true }}
+                pagination={{ clickable: true }}
+                spaceBetween={10}
                 style={{
-                    display: "flex",
-                    justifyContent: "center",
                     alignItems: "center",
                     backgroundPosition: `center`,
                     backgroundSize: `cover`,
-                    width: `100%`,
+                    display: "flex",
                     height: `80vh`,
+                    justifyContent: "center",
                     margin: `2rem 0`,
+                    width: `100%`,
                 }}>
                 {content.map((item: ContentItem, i: number) => (
                     <SwiperSlide key={i}>
                         <Card sx={{
-                            width: `80%`,
-                            height: `90%`,
                             borderRadius: "var(--mui-shape-borderRadius)",
                             display: "flex",
+                            height: `90%`,
                             justifySelf: `center`,
+                            width: `80%`,
                         }}>
                             <CardContent sx={{
                                 borderRadius: `1rem`,
-                                height: `90%`,
                                 display: `flex`,
                                 flexDirection: `column`,
+                                height: `90%`,
                                 justifyContent: `space-between`
                             }}>
                                 <Stack >
@@ -118,10 +100,10 @@ function Mobile() {
                                     component="img"
                                     alt={item.title}
                                     sx={{
-                                        width: `100%`,
                                         backgroundColor: `transparent`,
+                                        backgroundSize: `contain`,
                                         height: `auto`,
-                                        backgroundSize: `contain`
+                                        width: `100%`,
                                     }}
                                     image={item.image}
                                 />
@@ -136,22 +118,16 @@ function Mobile() {
 
 function Desktop() {
     const { dict } = useI18n();
-
-    if (!dict || !dict.Features || !dict.Features.Optimization || !dict.Features.Optimization.Content) {
-        return null;
-    }
-
+    if (!dict || !dict.Features || !dict.Features.Optimization || !dict.Features.Optimization.Content) return null;
     const content: ContentItem[] = dict.Features.Optimization.Content;
     return (
-        <Grid
-            container
-            sx={{
-                display: `flex`,
-                flexDirection: `column`,
-                padding: `2rem`,
-                borderRadius: `1rem`,
-                width: `100%`
-            }}>
+        <Grid container sx={{
+            borderRadius: `1rem`,
+            display: `flex`,
+            flexDirection: `column`,
+            padding: `2rem`,
+            width: `100%`
+        }}>
             {content?.map((item: ContentItem, i: number) => {
                 return (
                     <Stack direction={"column"} key={i} sx={{
@@ -160,41 +136,40 @@ function Desktop() {
                     }}>
                         <ScrollGrow>
                             <Stack direction={i % 2 === 0 ? "row" : `row-reverse`} sx={{
-                                width: `100%`,
-                                height: `50vh`,
-                                zIndex: `2`,
-                                position: `relative`,
-                                display: `flex`,
-                                justifyContent: `space-around`,
                                 alignItems: `center`,
+                                display: `flex`,
+                                height: `50vh`,
+                                justifyContent: `space-around`,
+                                position: `relative`,
+                                width: `100%`,
+                                zIndex: `2`,
                             }}>
                                 <Box sx={{
-                                    zIndex: `10`,
-                                    borderRadius: `0.5rem`,
-                                    border: `1px solid black`,
-                                    position: `relative`,
-                                    display: `flex`,
-                                    justifyContent: `center`,
                                     alignItems: `center`,
                                     backgroundColor: `transparent`,
+                                    border: `1px solid black`,
+                                    borderRadius: `0.5rem`,
+                                    display: `flex`,
+                                    justifyContent: `center`,
                                     maxHeight: `45vh`,
-                                    width: `40%`,
+                                    position: `relative`,
                                     transition: `transform 0.3s linear`,
+                                    width: `40%`,
+                                    zIndex: `10`,
                                     "&:hover": {
                                         transform: `scale(1.4) translateX(${i % 2 === 0 ? `10%` : `-10%`})`
                                     },
                                 }}>
                                     <CardMedia
-                                        component="img"
                                         alt={item.title}
+                                        component="img"
+                                        src={item.image}
                                         sx={{
                                             maxHeight: `45vh`,
                                             width: `100%`,
                                         }}
-                                        src={item.image}
                                     />
                                 </Box>
-
                                 <Box sx={{
                                     display: `flex`,
                                     flexDirection: `column`,
@@ -202,16 +177,16 @@ function Desktop() {
                                     width: `30%`,
                                 }} >
                                     <Box sx={{
+                                        alignItems: `start`,
                                         display: `flex`,
                                         flexDirection: `column`,
+                                        height: `30vh`,
                                         justifyContent: `space-between`,
-                                        alignItems: `start`,
+                                        left: `0`,
+                                        padding: `1rem`,
                                         position: `relative`,
                                         top: `0`,
-                                        left: `0`,
                                         width: `100%`,
-                                        height: `30vh`,
-                                        padding: `1rem`,
                                         zIndex: 4
                                     }} >
                                         <Stack sx={{
@@ -250,19 +225,15 @@ interface SectionHeaderContent {
 
 export default function Optimization() {
     const { dict } = useI18n();
-
-    if (!dict || !dict.Features || !dict.Features.Optimization || !dict.Features.Optimization.SectionHeader) {
-        return null;
-    }
-
+    if (!dict || !dict.Features || !dict.Features.Optimization || !dict.Features.Optimization.SectionHeader) return null;
     const content: SectionHeaderContent = dict.Features.Optimization.SectionHeader;
     return (
         <Section id="optimization">
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
-                    userSelect: `none`,
+                    fontFamily: `inherit`,
                     textAlign: `center`,
-                    fontFamily: `inherit`
+                    userSelect: `none`,
                 }}>{content?.h4}</Typography>
                 < Typography variant="subtitle1" gutterBottom sx={{
                     textAlign: `center`,

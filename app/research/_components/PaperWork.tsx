@@ -1,19 +1,15 @@
 import * as React from "react";
+import NextLink from "next/link";
+import Image from "next/image";
+import { Typography, Button, Box, useMediaQuery, Grid, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import {
-    Typography, Button, Box,
-    useMediaQuery, Grid, Stack
-} from "@mui/material";
-import SectionHeader from "../../_components/SectionHeader";
-import Section from "../../_components/Section";
+import SectionHeader from "@/app/_components/SectionHeader";
+import { ResearchItem } from "@/app/_components/types";
+import Section from "@/app/_components/Section";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
-import "../../_components/swiper.css";
-import NextLink from "next/link";
-import Image from "next/image";
-import { ResearchItem } from "../../_components/types";
 
 interface PaperWorkProps {
     item: ResearchItem;
@@ -21,43 +17,40 @@ interface PaperWorkProps {
 
 function Mobile({ content }: { content: ResearchItem }) {
     const buttonContent = content.Button;
-
     return (
-        <Grid
-            container
-            sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                padding: "1rem",
-                width: "100%"
-            }}>
+        <Grid container sx={{
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: "1rem",
+            width: "100%"
+        }}>
             <Box sx={{
-                position: "relative",
-                display: "flex",
-                justifyContent: "center",
                 alignItems: "center",
                 backgroundColor: "transparent",
+                display: "flex",
+                justifyContent: "center",
                 maxHeight: "45vh",
+                paddingBottom: "2rem",
+                position: "relative",
                 width: "100%",
-                paddingBottom: "2rem"
             }}>
                 <Image
-                    src={content.image}
                     alt={content.title}
-                    width={800}
                     height={450}
+                    src={content.image}
                     style={{
                         maxHeight: "45vh",
+                        objectFit: "contain",
                         width: "100%",
-                        objectFit: "contain"
                     }}
+                    width={800}
                 />
             </Box>
             <Stack sx={{
+                marginBottom: "2rem",
                 width: "100%",
-                marginBottom: "2rem"
             }}>
                 {content.description.map((item: string, i: number) => (
                     <Typography key={i} color="textPrimary" gutterBottom variant="body1">
@@ -78,39 +71,39 @@ function Mobile({ content }: { content: ResearchItem }) {
 
 function Desktop({ content }: { content: ResearchItem }) {
     const buttonContent = content.Button;
-
     return (
         <Grid
             container
             sx={{
+                alignItems: "center",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                alignItems: "center",
+                margin: "2rem 0",
                 padding: "1rem",
                 width: "80%",
-                margin: "2rem 0"
             }}>
             <Box sx={{
-                position: "relative",
-                display: "flex",
-                justifyContent: "center",
                 alignItems: "center",
                 backgroundColor: "transparent",
+                display: "flex",
+                justifyContent: "center",
                 maxHeight: "45vh",
+                paddingBottom: "2rem",
+                position: "relative",
                 width: "50%",
-                paddingBottom: "2rem"
             }}>
                 <Image
-                    src={content.image}
                     alt={content.title}
-                    width={800}
                     height={450}
+                    src={content.image}
                     style={{
                         maxHeight: "45vh",
+                        objectFit: "contain",
                         width: "100%",
-                        objectFit: "contain"
                     }}
+                    width={800}
+
                 />
             </Box>
             <Stack sx={{
@@ -149,9 +142,9 @@ export default function PaperWork({ item }: PaperWorkProps) {
                 height: "fit-content",
             }}>
                 <Typography variant="h6" gutterBottom sx={{
-                    userSelect: "none",
+                    fontFamily: `inherit`,
                     textAlign: "center",
-                        fontFamily: `inherit`
+                    userSelect: "none",
                 }}>
                     {item.title}
                 </Typography>

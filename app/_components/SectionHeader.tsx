@@ -1,9 +1,8 @@
 "use client";
 import React, { ReactNode } from "react";
 import { Box, Container, Grid, SxProps } from "@mui/material";
-import ScrollGrow from "./ScrollGrow";
-import { bebasNeue } from "../../fonts";
-
+import ScrollGrow from "@/app/_components/ScrollGrow";
+import { bebasNeue } from "@/fonts";
 
 interface HeaderProps {
     children: ReactNode;
@@ -15,13 +14,13 @@ export default function Header({ children, sx }: HeaderProps) {
         <Box
             className="section-header"
             sx={{
-                display: 'flex',
-                width: '100%',
-                minHeight: '9rem',
-                justifyContent: 'center',
                 alignItems: 'center',
+                display: 'flex',
                 flexDirection: 'column',
+                justifyContent: 'center',
+                minHeight: '9rem',
                 textTransform: 'uppercase',
+                width: '100%',
                 ...sx
             }}
         >
@@ -34,13 +33,16 @@ export default function Header({ children, sx }: HeaderProps) {
                     }}
                 >
                     <Grid
+                        alignContent="center"
                         container
                         direction="column"
-                        spacing={1}
-                        alignContent="center"
                         justifyContent="center"
-
-                        sx={{ fontFamily: bebasNeue.style.fontFamily, display: "flex", color: "var(--mui-palette-text-primary)" }}
+                        spacing={1}
+                        sx={{
+                            fontFamily: bebasNeue.style.fontFamily,
+                            display: "flex",
+                            color: "var(--mui-palette-text-primary)"
+                        }}
                     >
                         {children}
                     </Grid>

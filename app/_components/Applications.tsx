@@ -1,20 +1,19 @@
 import * as React from "react";
-import { useI18n } from "../_providers/I18nProvider";
+import { useI18n } from "@/app/_providers/I18nProvider";
 import { useTheme } from "@mui/material/styles";
 import {
     Typography, useMediaQuery
 } from "@mui/material";
+import SectionHeader from "@/app/_components/SectionHeader";
+import Section from "@/app/_components/Section";
+import { Desktop } from "@/app/_components/Applications/Desktop"
+import { Mobile } from "@/app/_components/Applications/Mobile"
 import type { } from "swiper/types";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "./swiper.css";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
-import SectionHeader from "./SectionHeader";
-import Section from "./Section";
-import { Desktop } from "./Applications/Desktop"
-import { Mobile } from "./Applications/Mobile"
 
 function Content() {
     const theme = useTheme();
@@ -26,20 +25,19 @@ export default function Applications() {
     const { dict } = useI18n();
     if (!dict || !dict.Home || !dict.Home.Applications || !dict.Home.Applications.SectionHeader) return null;
     const dictionary = dict.Home.Applications;
-
     return (
         <Section id="applications">
             <SectionHeader >
                 <Typography variant="h4" gutterBottom sx={{
-                    userSelect: "none",
+                    fontFamily: `inherit`,
                     textAlign: "center",
-                    fontFamily: `inherit`
+                    userSelect: "none",
                 }}>
                     {dictionary.SectionHeader.h4}
                 </Typography>
-                <Typography variant="body2" gutterBottom sx={{
+                <Typography variant="h6" gutterBottom sx={{
+                    fontFamily: `inherit`,
                     textAlign: "center",
-                    fontFamily: `inherit`
                 }}>
                     {dictionary.SectionHeader.body2}
                 </Typography>

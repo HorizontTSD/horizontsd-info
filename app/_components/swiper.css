@@ -22,7 +22,7 @@
 }
 
 :root {
-  --swiper-pagination-bottom: -0.1%;
+  --swiper-pagination-bottom: -0.5%;
 }
 
 .swiper-wrapper {
@@ -32,6 +32,7 @@
 /*  */
 .swiper-slide {
   opacity: 0.0;
+  display: grid !important;
 }
 
 .swiper-slide-visible {

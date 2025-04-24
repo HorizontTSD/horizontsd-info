@@ -1,15 +1,10 @@
 import * as React from "react";
+import Link from "next/link"
 import { useColorScheme } from "@mui/material/styles";
-import { useI18n } from "../_providers/I18nProvider";
 import { useTheme } from "@mui/material/styles";
 import Divider from "@mui/material/Divider";
-import Link from "next/link"
 import Stack from "@mui/material/Stack";
-import {
-    Card, CardMedia,
-    Typography, Button,
-    useMediaQuery, Grid, CardActions
-} from "@mui/material"
+import { Card, CardMedia, Typography, Button, useMediaQuery, Grid, CardActions } from "@mui/material"
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
@@ -17,10 +12,10 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import SectionHeader from "./SectionHeader"
-import Section from "./Section"
-
-import ScrollGrow from "./ScrollGrow";
+import { useI18n } from "@/app/_providers/I18nProvider";
+import SectionHeader from "@/app/_components/SectionHeader"
+import Section from "@/app/_components/Section"
+import ScrollGrow from "@/app/_components/ScrollGrow";
 
 function CustomizedTimeline() {
     return (
@@ -49,8 +44,6 @@ function CustomizedTimeline() {
                     </Typography>
                 </TimelineContent>
             </TimelineItem>
-
-
             <TimelineItem>
                 <TimelineOppositeContent color="text.secondary">
                     <Stack>
@@ -72,7 +65,6 @@ function CustomizedTimeline() {
                     </Typography>
                 </TimelineContent>
             </TimelineItem>
-
             <TimelineItem>
                 <TimelineOppositeContent color="text.secondary">
                     <Stack>
@@ -104,11 +96,7 @@ function Mobile() {
     const { mode } = useColorScheme();
     const isDark = mode === "dark";
     const { dict } = useI18n();
-
-    if (!dict || !dict.Home || !dict.Home.Works || !dict.Home.Works.Content) {
-        return null;
-    }
-
+    if (!dict || !dict.Home || !dict.Home.Works || !dict.Home.Works.Content) return null;
     const content = dict.Home.Works.Content;
     return (
         <Grid container sx={{
@@ -180,21 +168,18 @@ function Desktop() {
     const { mode } = useColorScheme();
     const isDark = mode === "dark";
     const { dict } = useI18n();
-
-    if (!dict || !dict.Home || !dict.Home.Works || !dict.Home.Works.Content) {
-        return null;
-    }
-
+    if (!dict || !dict.Home || !dict.Home.Works || !dict.Home.Works.Content) return null;
+    const bgPalette = ['#263238', 'var(--mui-palette-secondary-light)']
     const content = dict.Home.Works.Content;
     const rawColor = isDark ? `var(--mui-palette-common-white)` : `var(--mui-palette-common-black)`;
     return (
         <Grid container maxWidth={"lg"} sx={{
+            background: bgPalette[~~(!isDark)],
+            borderRadius: "var(--mui-shape-borderRadius)",
             display: `flex`,
             flexDirection: `column`,
-            padding: `2rem`,
             margin: `1rem`,
-            borderRadius: "var(--mui-shape-borderRadius)",
-            background: isDark ? `var(--mui-palette-primary-dark)` : `var(--mui-palette-common-white)`
+            padding: `2rem`,
         }}>
             <ScrollGrow>
                 <Stack direction={"column"}>
@@ -245,10 +230,21 @@ function Desktop() {
                 </ScrollGrow>
             </Stack>
             <ScrollGrow>
-                <Stack direction={"column"} sx={{ justifyContent: `center`, alignItems: `center` }}>
-                    <Card sx={{ maxWidth: 512, width: `100%`, padding: `2rem`, alignItems: `center` }} >
+                <Stack direction={"column"} sx={{
+                    alignItems: `center`,
+                    justifyContent: `center`,
+                }}>
+                    <Card sx={{
+                        alignItems: `center`,
+                        maxWidth: 512,
+                        padding: `2rem`,
+                        width: `100%`,
+                    }} >
                         <CardMedia
-                            sx={{ height: 256, alignItems: `center` }}
+                            sx={{
+                                alignItems: `center`,
+                                height: 256,
+                            }}
                             image={`/images/${isDark ? "dashboard-dark.webp" : "dashboard-light.webp"}`}
                         />
                         <CardActions sx={{ justifyContent: `center` }}>
@@ -271,23 +267,19 @@ function Content() {
 
 export default function Works() {
     const { dict } = useI18n();
-
-    if (!dict || !dict.Home || !dict.Home.Works || !dict.Home.Works.SectionHeader) {
-        return null;
-    }
-
+    if (!dict || !dict.Home || !dict.Home.Works || !dict.Home.Works.SectionHeader) return null;
     const content = dict.Home.Works.SectionHeader;
     return (
         <Section id="works">
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
-                    userSelect: `none`,
+                    fontFamily: `inherit`,
                     textAlign: `center`,
-                    fontFamily: `inherit`
+                    userSelect: `none`,
                 }}>{content.h4}</Typography>
                 < Typography variant="subtitle1" gutterBottom sx={{
+                    fontFamily: `inherit`,
                     textAlign: `center`,
-                    fontFamily: `inherit`
                 }}>{content.body2}</Typography>
             </SectionHeader>
             <Content />
