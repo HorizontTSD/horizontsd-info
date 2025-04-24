@@ -258,7 +258,6 @@ export default function Capabilities() {
                 <Typography variant="h6" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: "center",
-                    fontFamily: `inherit`
                 }}>
                     {content.body2}
                 </Typography>

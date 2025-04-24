@@ -280,7 +280,6 @@ export default function Works() {
                 < Typography variant="subtitle1" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: `center`,
-                    fontFamily: `inherit`
                 }}>{content.body2}</Typography>
             </SectionHeader>
             <Content />
