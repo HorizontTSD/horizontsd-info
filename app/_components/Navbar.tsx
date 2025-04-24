@@ -1,32 +1,32 @@
 "use client"
 import * as React from "react";
-import { ListItemButton } from "@mui/material";
-import { useColorScheme } from "@mui/material/styles";
-import { useI18n } from "../_providers/I18nProvider";
-import { useMediaQuery } from "@mui/material";
 import { usePathname } from "next/navigation";
-import { useTheme } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
-import Container from "@mui/material/Container";
-import Drawer from "@mui/material/Drawer";
-import Icon from "./Icon";
-import IconButton from "@mui/material/IconButton";
-import LanguageSwitcher from "./LanguageSwitcher";
 import Link from "next/link";
-import List from "@mui/material/List";
-import ListItemText from "@mui/material/ListItemText";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 import ListSubheader from "@mui/material/ListSubheader";
+import ListItemText from "@mui/material/ListItemText";
+import { useColorScheme } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import { useTheme } from "@mui/material/styles";
+import { ListItemButton } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
+import Toolbar from "@mui/material/Toolbar";
+import Icon from "@/app/_components/Icon";
+import AppBar from "@mui/material/AppBar";
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
 import Slide from "@mui/material/Slide";
 import Stack from "@mui/material/Stack";
-import ThemeSwitcher from "./ThemeSwitcher";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
-import { NavbarContent } from "./types";
+import List from "@mui/material/List";
+import Box from "@mui/material/Box";
+import LanguageSwitcher from "@/app/_components/LanguageSwitcher";
+import ThemeSwitcher from "@/app/_components/ThemeSwitcher";
+import { useI18n } from "@/app/_providers/I18nProvider";
+import { NavbarContent } from "@/app/_components/types";
 
 interface NavButtonProps {
     href: string;
@@ -41,15 +41,12 @@ const NavButton = ({ href, children }: NavButtonProps) => {
             <Button
                 variant="text"
                 sx={{
-                    width: 'auto',
-                    minWidth: '7rem',
-                    color: 'var(--mui-palette-text-primary)',
-                    borderBottom: pathname === href
-                        ? '2px solid var(--mui-palette-secondary-main)'
-                        : "unset",
+                    borderBottom: pathname === href ? '2px solid var(--mui-palette-secondary-main)' : "unset",
                     borderRadius: 0,
-                }}
-            >
+                    color: 'var(--mui-palette-text-primary)',
+                    minWidth: '7rem',
+                    width: 'auto',
+                }}>
                 {children}
             </Button>
         </Link>
@@ -63,24 +60,20 @@ function Mobile() {
     const { dict } = useI18n();
     const isSmall = useMediaQuery("(min-width:400px)");
     const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
-    if (!dict || !dict.Navbar) {
-        return null;
-    }
-
+    if (!dict || !dict.Navbar) return null;
     const content = dict.Navbar as NavbarContent;
     const toggleDrawer = (newOpen: boolean) => () => setOpen(newOpen);
     const toggleMode = () => { setMode(isDark ? "light" : "dark") };
-
     return (
         <Container maxWidth="lg">
             <Toolbar sx={{
-                borderRadius: '4rem',
-                backdropFilter: "blur(24px)",
-                flexGrow: 1,
-                display: "flex",
                 alignItems: "center",
+                backdropFilter: "blur(24px)",
+                background: bgPalette[~~(!isDark)],
+                borderRadius: '4rem',
+                display: "flex",
+                flexGrow: 1,
                 justifyContent: "space-between",
-                background: bgPalette[~~(!isDark)]
             }}>
                 <IconButton
                     aria-label="Menu button"
@@ -90,15 +83,15 @@ function Mobile() {
                 </IconButton>
                 <Drawer
                     anchor="top"
-                    open={open}
                     onClose={toggleDrawer(false)}
+                    open={open}
                 >
                     <Box sx={{ p: 2 }}>
                         <Box
                             sx={{
+                                background: 'transparent',
                                 display: "flex",
                                 justifyContent: "flex-end",
-                                background: 'transparent'
                             }}
                         >
                             <IconButton onClick={toggleDrawer(false)}>
@@ -106,25 +99,28 @@ function Mobile() {
                             </IconButton>
                         </Box>
                         <List
-                            sx={{ width: "100%", maxWidth: 360 }}
-                            component="nav"
                             aria-labelledby="nested-list-subheader"
+                            component="nav"
+                            sx={{ width: "100%", maxWidth: 360 }}
                             subheader={
                                 <ListSubheader
                                     component="div"
                                     id="nested-list-subheader"
                                     sx={{
-                                        display: 'flex',
                                         alignContent: 'center',
+                                        background: 'transparent',
+                                        display: 'flex',
                                         justifyContent: 'start',
-                                        background: 'transparent'
                                     }}
                                 >
                                     <Icon color={bgPalette[~~(isDark)]} size="s" />
                                     <Typography
                                         color="textPrimary"
                                         variant="button"
-                                        sx={{ marginLeft: '1rem', lineHeight: '2.1rem' }}
+                                        sx={{
+                                            lineHeight: '2.1rem',
+                                            marginLeft: '1rem',
+                                        }}
                                     >
                                         Horizon
                                     </Typography>
@@ -153,26 +149,29 @@ function Mobile() {
                     </Box>
                 </Drawer>
                 <Box sx={{
-                    display: "flex",
                     alignItems: "center",
+                    background: 'transparent',
+                    display: "flex",
                     justifyContent: "start",
                     width: '30%',
-                    background: 'transparent'
                 }}>
                     <Icon color={bgPalette[~~(isDark)]} size="s" />
                     {isSmall &&
                         <Typography
                             color="textPrimary"
                             variant="button"
-                            sx={{ marginLeft: '1rem', lineHeight: '2.1rem' }}
+                            sx={{
+                                lineHeight: '2.1rem',
+                                marginLeft: '1rem',
+                            }}
                         >
                             Horizon
                         </Typography>
                     }
                 </Box>
                 <Box sx={{
-                    display: "flex",
                     alignItems: "center",
+                    display: "flex",
                     justifyContent: "start",
                     width: '30%'
                 }} />
@@ -201,21 +200,21 @@ function Desktop() {
                 disableGutters
                 variant="dense"
                 sx={{
-                    width: `100%`,
-                    borderRadius: '4rem',
-                    backdropFilter: "blur(36px)",
-                    display: "flex",
                     alignItems: "center",
+                    backdropFilter: "blur(36px)",
+                    background: bg,
+                    borderRadius: '4rem',
+                    display: "flex",
                     justifyContent: "start",
                     padding: '0.5rem',
-                    background: bg
+                    width: `100%`,
                 }}
             >
                 <Icon color={bgPalette[~~(isDark)]} size="m" />
                 <Stack
-                    spacing={1}
                     direction="row"
                     justifyContent="start"
+                    spacing={1}
                     sx={{ marginLeft: '1rem' }}
                 >
                     <NavButton href="/">
@@ -229,9 +228,9 @@ function Desktop() {
                     </NavButton>
                 </Stack>
                 <Stack
-                    spacing={1}
                     direction="row"
                     justifySelf="end"
+                    spacing={1}
                     sx={{ width: '100%', justifyContent: 'end', alignItems: 'center' }}
                 >
                     <LanguageSwitcher />
@@ -261,12 +260,12 @@ export default function Navbar() {
     return (
         <HideOnScroll>
             <AppBar
-                position="fixed"
                 enableColorOnDark
+                position="fixed"
                 sx={{
-                    boxShadow: 0,
-                    bgcolor: "transparent",
                     backgroundImage: "none",
+                    bgcolor: "transparent",
+                    boxShadow: 0,
                     mt: "1rem",
                     paddingLeft: isMobile ? `0px` : `15px`
                 }}

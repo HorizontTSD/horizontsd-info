@@ -1,10 +1,10 @@
 import * as React from "react";
-import Divider from "@mui/material/Divider";
-import { Box, SxProps, Theme, useMediaQuery } from "@mui/material";
 import { Suspense } from "react";
-import Skeleton from "@mui/material/Skeleton";
+import { Box, SxProps, Theme, useMediaQuery } from "@mui/material";
 import { useColorScheme, useTheme } from "@mui/material/styles";
 import { SystemStyleObject } from "@mui/system";
+import Skeleton from "@mui/material/Skeleton";
+import Divider from "@mui/material/Divider";
 
 interface SectionProps {
     id?: string;
@@ -42,9 +42,14 @@ export default function Section(props: SectionProps) {
         width: "100vw",
         zIndex: 2,
         userSelect: "none",
-        minHeight: isMobile ? "100vh" : (props?.fullsize ? "100vh" : "1080px"),
+        minHeight: isMobile
+            ? (props?.fullsize ? "100vh" : "50vh")
+            : (props?.fullsize ? "1080px" : "30vh"),
         backgroundSize: "cover",
-        backgroundColor: bgPalette[~~(!isDark)]
+        backgroundColor: bgPalette[~~(!isDark)],
+        height: "100%",
+        imageRendering: "smooth",
+        color: theme.palette.text.primary,
     };
 
     const mergedStyles: SxProps<Theme> = props.sx
@@ -59,22 +64,9 @@ export default function Section(props: SectionProps) {
                 ref={props.ref}
                 sx={mergedStyles}
             >
-                <Box maxWidth="lg" sx={{
-                    display: "flex",
-                    width: "100%",
-                    height: "100%",
-                    imageRendering: "smooth",
-                    flex: "auto",
-                    flexFlow: "wrap",
-                    color: theme.palette.text.primary,
-                    flexDirection: `column`,
-                    justifyContent: `center`,
-                    alignItems: `center`
-                }}>
-                    <Suspense fallback={<Test />}>
-                        {props.children}
-                    </Suspense>
-                </Box>
+                <Suspense fallback={<Test />}>
+                    {props.children}
+                </Suspense>
             </Box>
             <Divider />
         </>

@@ -1,8 +1,8 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
-import Section from "./Section";
-import { Mobile } from "./Hero/Mobile";
-import { Desktop } from "./Hero/Desktop";
+import Section from "@/app/_components/Section";
+import { Mobile } from "@/app/_components/Hero/Mobile";
+import { Desktop } from "@/app/_components/Hero/Desktop";
 import { Container, useMediaQuery } from "@mui/material";
 export interface HeroProps {
     fullsize?: boolean;
@@ -15,12 +15,12 @@ function Content({ fullsize = false }: HeroProps) {
         <Container
             maxWidth="lg"
             sx={{
-                height: `100%`,
-                width: `100%`,
+                alignItems: "center",
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
+                height: `100%`,
                 justifyContent: "center",
+                width: `100%`,
             }}
         >
             {isMobile ? <Mobile fullsize={fullsize} /> : <Desktop fullsize={fullsize} />}
@@ -40,13 +40,14 @@ export default function Hero({ fullsize = false }: HeroProps) {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
+                maxHeight: `1080px`,
                 overflow: "hidden",
                 position: "relative",
+                userSelect: "none",
                 width: "100vw",
                 zIndex: 2,
-                userSelect: "none",
-                minHeight: fullsize ? "100vh" : "50vh",
             }}
+            fullsize={fullsize}
         >
             <Content fullsize={fullsize} />
         </Section >

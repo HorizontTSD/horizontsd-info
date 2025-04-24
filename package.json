@@ -1,6 +1,6 @@
 {
   "name": "horizontsd-info",
-  "packageManager": "yarn@v4.7.0",
+  "packageManager": "yarn@4.9.1",
   "version": "230425",
   "private": true,
   "scripts": {
@@ -27,7 +27,7 @@
     "critters": "^0.0.25",
     "js-cookie": "^3.0.5",
     "negotiator": "^1.0.0",
-    "next": "15.2.5",
+    "next": "^15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "styled-components": "^6.1.17",

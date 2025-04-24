@@ -4,14 +4,14 @@ import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Toolbar from "@mui/material/Toolbar";
-import Navbar from "../_components/Navbar"
-import Hero from "../_components/Hero"
-import CallToAction from "../_components/CallToAction"
-import Footer from "../_components/Footer"
-import Optimization from "./_components/Optimization";
-import Prediction from "./_components/Prediction";
-import Processing from "./_components/Processing";
-import ScrollTop from "../_components/ScrollTop"
+import Navbar from "@/app/_components/Navbar"
+import Hero from "@/app/_components/Hero"
+import CallToAction from "@/app/_components/CallToAction"
+import Footer from "@/app/_components/Footer"
+import Optimization from "@/app/features/_components/Optimization";
+import Prediction from "@/app/features/_components/Prediction";
+import Processing from "@/app/features/_components/Processing";
+import ScrollTop from "@/app/_components/ScrollTop"
 
 function PageContent() {
   return (
@@ -30,9 +30,9 @@ function PageContent() {
 export default function Page() {
   return (
     <Box sx={{
-      overflowX: `hidden`,
-      minWidth: `320px`,
       margin: `0 auto`,
+      minWidth: `320px`,
+      overflowX: `hidden`,
     }}>
       <Toolbar id="back-to-top-anchor" sx={{ position: `absolute` }} />
       <PageContent />

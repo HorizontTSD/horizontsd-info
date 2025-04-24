@@ -1,17 +1,14 @@
 import * as React from "react";
-import { useI18n } from "../../_providers/I18nProvider";
-import { useColorScheme } from "@mui/material/styles";
-import {
-	Card, CardContent, Typography, Button, Grid, Stack, CardActions
-} from "@mui/material";
 import NextLink from "next/link";
-import type { } from "swiper/types";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Card, CardContent, Typography, Button, Grid, Stack, CardActions } from "@mui/material";
+import { useColorScheme } from "@mui/material/styles";
 import { Pagination, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { } from "swiper/types";
+import { useI18n } from "@/app/_providers/I18nProvider";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "../swiper.css";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
 
@@ -49,40 +46,48 @@ export function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
 
 	return (
 		<Card sx={{
-			width: "80%",
-			height: "93%",
+			alignItems: "center",
+			background: bgPalette[~~(!isDark)],
 			borderRadius: "var(--mui-shape-borderRadius)",
 			display: "flex",
-			justifySelf: "center",
 			flexDirection: "column",
+			height: "93%",
 			justifyContent: "start",
-			alignItems: "center",
-			background: bgPalette[~~(!isDark)]
+			justifySelf: "center",
+			width: "80%",
 		}}>
 			<CardContent sx={{
+				alignItems: "center",
 				borderRadius: "var(--mui-shape-borderRadius)",
 				display: "flex",
 				flexDirection: "column",
-				justifyContent: "space-between",
-				alignItems: "center",
 				height: "100%",
+				justifyContent: "space-between",
 				width: "95%"
 			}}>
 				<Stack direction="column" sx={{ justifyContent: "start", width: "100%" }}>
 					<Typography variant="h6" sx={{ color: "text.primary" }}>
 						{item.title}
 					</Typography>
-					<Typography variant="body2" sx={{ color: "text.secondary" }}>
-						{item.description[0]}
-					</Typography>
+					{item.description.slice(0, -1).map((e, i) => (
+						<Typography key={i} gutterBottom variant="body2" sx={{ color: "text.primary" }}>
+							{e}
+						</Typography>
+					))}
+					{item.description.slice(-1).map((e, i) => (
+						<Typography key={i} variant="caption" sx={{ color: "text.secondary" }}>
+							{e}
+						</Typography>
+					))}
+
 				</Stack>
 				<CardActions sx={{
-					display: "flex",
-					justifyContent: "center",
 					alignItems: "center",
-					padding: 0,
+					display: "flex",
+					height: "10%",
+					justifyContent: "center",
 					margin: 0,
-					height: "10%"
+					padding: 0,
 				}}>
 					<NextLink href={item.link}>
 						<Button color="secondary" variant="contained" sx={{

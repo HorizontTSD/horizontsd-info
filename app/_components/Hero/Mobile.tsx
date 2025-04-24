@@ -1,12 +1,12 @@
 import * as React from "react";
-import { useI18n } from "../../_providers/I18nProvider";
-import Stack from "@mui/material/Stack";
-import { Typography } from "@mui/material";
-import { bebasNeue } from "../../../fonts";
-import { HeroProps } from "../Hero";
-import { HeroCard } from "./HeroCard";
-import { WebGLBackground } from "../Wow";
 import { useColorScheme } from "@mui/material/styles";
+import { Typography } from "@mui/material";
+import Stack from "@mui/material/Stack";
+import { HeroCard } from "@/app/_components/Hero/HeroCard";
+import { WebGLBackground } from "@/app/_components/Wow";
+import { useI18n } from "@/app/_providers/I18nProvider";
+import { HeroProps } from "@/app/_components/Hero";
+import { bebasNeue } from "@/fonts";
 
 export interface HeroContent {
 	slogan: string;
@@ -22,41 +22,39 @@ export function Mobile({ fullsize = false }: HeroProps) {
 	return (
 		<Stack direction="column"
 			sx={{
-				height: `100%`,
-				width: `100%`,
+				alignItems: "center",
 				display: "flex",
 				flexDirection: "column",
-				alignItems: "center",
+				height: `100%`,
 				justifyContent: "center",
+				width: `100%`,
 			}}>
 			<WebGLBackground color={isDark ? [0.1, 0.5, 0.9] : [0.1, 0.3, 1.0]} />
 			<Stack direction="column"
 				sx={{
-					marginTop: `50%`,
-					position: "relative",
+					alignItems: "start",
 					display: "flex",
 					flexDirection: "column",
-					alignItems: "start",
 					justifyContent: "start",
+					marginTop: `50%`,
+					position: "relative",
 				}}>
 				<Stack spacing={0} direction="column">
 					<Typography
 						variant="h3"
 						sx={{
-							fontFamily: bebasNeue.style.fontFamily,
 							color: `white`,
+							fontFamily: bebasNeue.style.fontFamily,
 							textShadow: `0px 0px 10px black`
-						}}
-					>
+						}}>
 						Horizon
 					</Typography>
 					<Typography
 						variant="h3"
 						sx={{
+							color: accentColor,
 							fontFamily: bebasNeue.style.fontFamily,
-							color: accentColor
-						}}
-					>
+						}}>
 						Time Series Data
 					</Typography>
 				</Stack>
@@ -64,14 +62,13 @@ export function Mobile({ fullsize = false }: HeroProps) {
 					direction="column"
 					sx={{
 						justifyContent: "start"
-					}}
-				>
+					}}>
 					<Typography
 						variant="h5"
 						sx={{
+							color: accentColor,
 							fontFamily: bebasNeue.style.fontFamily,
 							textAlign: "center",
-							color: accentColor
 						}}>
 						{content.slogan}
 					</Typography>
@@ -80,10 +77,10 @@ export function Mobile({ fullsize = false }: HeroProps) {
 			{fullsize &&
 				<Stack direction="column"
 					sx={{
-						position: "relative",
-						display: "flex",
 						alignItems: "center",
+						display: "flex",
 						justifyContent: "start",
+						position: "relative",
 					}}>
 					<HeroCard type="primary" />
 					<HeroCard type="secondary" />

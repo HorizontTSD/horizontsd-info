@@ -1,14 +1,13 @@
 import * as React from "react";
-import { useI18n } from "../../_providers/I18nProvider";
-import { useColorScheme } from "@mui/material/styles";
+import NextLink from "next/link";
 import { Card, Box, Container, Typography, Button, Stack } from "@mui/material";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
-import NextLink from "next/link";
+import { useColorScheme } from "@mui/material/styles";
 import type { } from "swiper/types";
+import { useI18n } from "@/app/_providers/I18nProvider";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "../swiper.css";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
 
@@ -35,7 +34,6 @@ export interface DesktopButtonProps {
 	content: {
 		title: string;
 		description: string;
-
 	}
 }
 
@@ -55,6 +53,8 @@ function DesktopButton({ active = false, index, handleItemClick, content }: Desk
 	const isDark = mode == 'dark'
 	return (
 		<Box onClick={() => handleItemClick(index)} sx={{
+			alignItems: "center",
+			borderRadius: "var(--mui-shape-borderRadius)",
 			border: `none`,
 			background: active
 				? "rgb(54, 106, 243)"
@@ -62,18 +62,16 @@ function DesktopButton({ active = false, index, handleItemClick, content }: Desk
 					? "var(--mui-palette-primary-dark)"
 					: "var(--mui-palette-primary-light)",
 			cursor: "pointer",
-			borderRadius: "var(--mui-shape-borderRadius)",
-			display: "flex",
-			flexDirection: "column",
-			justifyContent: "start",
-			alignItems: "center",
-			padding: 2,
-			height: `100%`,
-			width: "auto",
 			color: active
 				? `var(--mui-palette-primary-light)`
 				: `var(--mui-palette-text-primary)`,
+			display: "flex",
+			flexDirection: "column",
+			height: `100%`,
+			justifyContent: "start",
 			marginLeft: index != 0 ? "1rem" : 0,
+			padding: 2,
+			width: "auto",
 			"&:hover": {
 				background: active
 					? "rgb(54, 106, 243)" : isDark
@@ -85,12 +83,12 @@ function DesktopButton({ active = false, index, handleItemClick, content }: Desk
 			}
 		}}>
 			<Box sx={{
-				width: "100%",
+				alignItems: "left",
 				display: "flex",
 				flexDirection: "column",
-				alignItems: "left",
 				textAlign: "left",
 				textTransform: "none",
+				width: "100%",
 			}}>
 				<Stack>
 					<Stack direction="row" alignItems="center">
@@ -112,33 +110,31 @@ function DesktopCard({ selected, dictionary }: DesktopCardProps) {
 	return (
 		<Box sx={{
 			display: "flex",
-			width: "100%",
 			overflow: "hidden",
+			width: "100%",
 			zIndex: 3
 		}}>
 			<Card variant="outlined" sx={{
 				width: "100%",
-				height: "100%"
 			}}>
 				<Box sx={{
+					left: 0,
 					position: "relative",
 					top: 0,
-					left: 0,
 					width: "100%",
-					height: "25vh",
 					zIndex: 3
 				}} >
 					<Box sx={{
+						alignItems: "start",
 						display: "flex",
 						flexDirection: "column",
 						justifyContent: "space-between",
-						alignItems: "start",
+						left: 0,
+						minHeight: "20rem",
+						padding: "0.8rem",
 						position: "relative",
 						top: 0,
-						left: 0,
 						width: "100%",
-						height: "100%",
-						padding: "0.8rem",
 						zIndex: 4
 					}} >
 						<Stack>
@@ -166,7 +162,6 @@ function DesktopCard({ selected, dictionary }: DesktopCardProps) {
 }
 
 export function Desktop() {
-
 	const { dict } = useI18n();
 	const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
 	if (!dict || !dict.Home || !dict.Home.Applications || !dict.Home.Applications.Content) return null;
@@ -176,28 +171,29 @@ export function Desktop() {
 	return (
 		<Container
 			sx={{
+				alignItems: "center",
 				display: "flex",
 				flexDirection: "column",
-				alignItems: "center",
-				pt: { xs: 14, sm: 20 },
 				pb: { xs: 8, sm: 12 },
+				pt: { xs: 14, sm: 20 },
 			}}>
 			<Box
 				sx={{
 					display: "flex",
 					flexDirection: "column",
-					width: "100%"
+					height: `100%`,
+					width: "100%",
 				}}>
 				<Stack direction="column">
 					<Box
 						sx={{
+							alignItems: "center",
 							display: "flex",
 							flexDirection: "row",
+							height: `auto`,
 							justifyContent: "space-between",
-							alignItems: "center",
 							margin: "0 0 1rem 0",
 							width: "100%",
-							height: `auto`
 						}}>
 						{dictionary.Content.map(({ button }: ContentItem, index: number) => (
 							<DesktopButton

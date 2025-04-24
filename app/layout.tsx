@@ -1,13 +1,13 @@
 import * as React from "react";
 import { Roboto } from "next/font/google";
-import { I18nProvider } from "./_providers/I18nProvider"
-import Negotiator from "negotiator";
-import { cookies } from "next/headers"
-import { headers } from "next/headers"
-import { dictionaries } from "../dictionaries"
+import { cookies, headers } from "next/headers"
 import Script from "next/script";
 import Image from "next/image";
-import MuiProvider from "./_providers/MuiProvider";
+import Negotiator from "negotiator";
+import { dictionaries } from "@/dictionaries"
+import { I18nProvider } from "@/app/_providers/I18nProvider"
+import MuiProvider from "@/app/_providers/MuiProvider";
+import "@/app/_components/swiper.css";
 
 const i18n = {
     defaultLocale: "ru",

@@ -3,26 +3,16 @@ import { useEffect, useRef } from "react";
 
 const V = `#version 300 es
 in vec2 aVertexPosition;
-void main() {
-  gl_Position = vec4(aVertexPosition, 0, 1);
-}
+void main() {gl_Position = vec4(aVertexPosition, 0, 1);}
 `;
 const F = `#version 300 es
-precision highp float;
-uniform vec3 iResolution;
-uniform float iTime;
-uniform vec3 uColor;
-out vec4 fragColor;
+precision highp float;uniform vec3 iResolution;uniform float iTime;uniform lowp vec3 uColor;out vec4 fragColor;
 float h(float x){return fract(sin(x*12.9898)*43758.5453);}
 void main(){vec2 u=gl_FragCoord.xy/iResolution.xy;float s=0.001,t=0.02,m=0.1,M=0.9,r=floor(u.y/s),y=fract(u.y/s),a=step(y,t),L=mix(m,M,h(r)),v=mix(.1,.5,h(r+1.)),p=fract(1.-u.x+iTime*v+h(r)),b=step(p,L),o=clamp(1.-p/L,0.,1.);fragColor=vec4(uColor,a*b*o);}
 `;
 
-type WebGLBackgroundProps = {
-	color?: [number, number, number];
-};
-
-export const WebGLBackground: React.FC<WebGLBackgroundProps> = ({
-	color = [0.0, 0.0, 1.0],
+export const WebGLBackground: React.FC<{ color: [number, number, number]; }> = ({
+	color = [0.0, 0.0, 1.0]
 }) => {
 	const ref = useRef<HTMLCanvasElement>(null);
 	useEffect(() => {
@@ -49,7 +39,7 @@ export const WebGLBackground: React.FC<WebGLBackgroundProps> = ({
 		gl.attachShader(prog, compile(V, gl.VERTEX_SHADER));
 		gl.attachShader(prog, compile(F, gl.FRAGMENT_SHADER));
 		gl.linkProgram(prog);
-		gl.useProgram(prog);
+		if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog) || 'Program link failed');
 		const buf = gl.createBuffer()!;
 		gl.bindBuffer(gl.ARRAY_BUFFER, buf);
 		gl.bufferData(
@@ -60,21 +50,26 @@ export const WebGLBackground: React.FC<WebGLBackgroundProps> = ({
 		const posLoc = gl.getAttribLocation(prog, 'aVertexPosition');
 		gl.enableVertexAttribArray(posLoc);
 		gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
-		const rLoc = gl.getUniformLocation(prog, 'iResolution')!;
-		const tLoc = gl.getUniformLocation(prog, 'iTime')!;
-		const cLoc = gl.getUniformLocation(prog, 'uColor')!;
+		gl.useProgram(prog)
+		const rLoc = gl.getUniformLocation(prog, 'iResolution')!
+		const tLoc = gl.getUniformLocation(prog, 'iTime')!
+		const cLoc = gl.getUniformLocation(prog, 'uColor')!
+		let rafId: number
 		const start = performance.now();
 		const render = () => {
-			gl.clearColor(0, 0, 0, 0);
-			gl.clear(gl.COLOR_BUFFER_BIT);
-			gl.uniform3f(rLoc, c.width, c.height, 1);
-			gl.uniform1f(tLoc, (performance.now() - start) * 0.001);
-			gl.uniform3f(cLoc, color[0], color[1], color[2]);
-			gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-			requestAnimationFrame(render);
-		};
-		render();
-		return () => window.removeEventListener('resize', resize);
+			gl.useProgram(prog)
+			gl.clear(gl.COLOR_BUFFER_BIT)
+			gl.uniform3f(rLoc, c.width, c.height, 1)
+			gl.uniform1f(tLoc, (performance.now() - start) * 0.001)
+			gl.uniform3f(cLoc, color[0], color[1], color[2])
+			gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
+			rafId = requestAnimationFrame(render)
+		}
+		render()
+		return () => {
+			window.removeEventListener('resize', resize)
+			cancelAnimationFrame(rafId)
+		}
 	}, [color]);
 	return <canvas
 		ref={ref}

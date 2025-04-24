@@ -1,20 +1,19 @@
 import * as React from "react";
-import { useColorScheme } from "@mui/material/styles";
-import { useI18n } from "../_providers/I18nProvider";
-import { useTheme } from "@mui/material/styles";
-import Stack from "@mui/material/Stack";
 import { Card, CardContent, Typography, useMediaQuery, Grid } from "@mui/material";
-import type { } from "swiper/types";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, EffectCoverflow } from "swiper/modules";
-import SectionHeader from "./SectionHeader";
-import Section from "./Section";
+import { useColorScheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import LabelIcon from "@mui/icons-material/Label";
+import Stack from "@mui/material/Stack";
+import { Pagination, Navigation, EffectCoverflow } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SectionHeader from "@/app/_components/SectionHeader";
+import Section from "@/app/_components/Section";
+import { useI18n } from "@/app/_providers/I18nProvider";
+import type { } from "swiper/types";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
-import "./swiper.css";
 
 interface FeatureItem {
     title: string;
@@ -24,6 +23,7 @@ interface FeatureItem {
 
 interface MobileSwiperSlideProps {
     item: FeatureItem;
+    size?: number;
 }
 
 function Desktop() {
@@ -38,51 +38,54 @@ function Desktop() {
     return (
         <Grid
             container
+            maxWidth={"lg"}
             direction="column"
             justifyContent="center"
             sx={{
-                height: "80vh",
-                width: `100%`,
-                margin: `0 auto`
+                height: `1px`,
+                minHeight: `720px`,
+                width: `100%`
             }}>
             <Swiper
+                className="swiper-slider"
+                effect={"coverflow"}
+                grabCursor={true}
                 loop={true}
                 modules={[Pagination, Navigation, EffectCoverflow]}
                 navigation={{ enabled: true }}
                 pagination={{ clickable: true }}
-                spaceBetween={10}
                 slidesPerView={3}
-                effect={"coverflow"}
-                grabCursor={true}
-                className="swiper-slider"
+                spaceBetween={20}
                 coverflowEffect={{
-                    rotate: 45,
-                    stretch: 50,
                     depth: 50,
-                    modifier: 0.7,
-                    slideShadows: true,
+                    modifier: 0.9,
+                    rotate: 50,
+                    slideShadows: false,
+                    stretch: 50,
                 }}
                 style={{
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    display: "flex",
-                    height: "100%",
-                    width: "100%",
+                    alignItems: `center`,
+                    display: `inline-flex`,
+                    height: `100%`,
+                    justifyContent: `center`,
                     maxHeight: "540px",
-                    maxWidth: "80%",
-                    padding: "20px 0"
+                    maxWidth: "1920px",
+                    paddingTop: `1.1rem`,
+                    width: "90%",
                 }}>
                 {content.map((item: FeatureItem, i: number) => (
                     <SwiperSlide key={i}>
                         <Card sx={{
-                            width: "100%",
-                            height: "100%",
+                            alignSelf: "center",
+                            background: bgPalette[~~(!isDark)],
                             borderRadius: "var(--mui-shape-borderRadius)",
-                            background: bgPalette[~~(!isDark)]
+                            display: "grid",
+                            height: `${30}rem`,
+                            justifySelf: "center",
+                            width: `100%`,
                         }}>
                             <CardContent sx={{
                                 borderRadius: "var(--mui-shape-borderRadius)",
-                                height: "100%",
                             }}>
                                 <Stack direction="row" alignItems="center">
                                     <LabelIcon color="primary" sx={{ marginRight: "1rem" }} />
@@ -95,8 +98,13 @@ function Desktop() {
                                         {e}
                                     </Typography>
                                 ))}
-                                {item.more.map((e: string, i: number) => (
-                                    <Typography key={i} gutterBottom variant="body2">
+                                {item.more.slice(0, -1).map((e: string, i: number) => (
+                                    <Typography key={i} gutterBottom variant="body2" color="textPrimary">
+                                        {e}
+                                    </Typography>
+                                ))}
+                                {item.more.slice(-1).map((e: string, i: number) => (
+                                    <Typography key={i} gutterBottom variant="caption" color="textSecondary">
                                         {e}
                                     </Typography>
                                 ))}
@@ -116,12 +124,15 @@ function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
 
     return (
         <Card sx={{
-            width: "80%",
-            height: "93%",
+            alignItems: "center",
+            background: bgPalette[~~(!isDark)],
             borderRadius: "var(--mui-shape-borderRadius)",
             display: "flex",
+            flexDirection: "column",
+            height: "93%",
+            justifyContent: "start",
             justifySelf: "center",
-            background: bgPalette[~~(!isDark)]
+            width: "80%",
         }}>
             <CardContent sx={{
                 borderRadius: "var(--mui-shape-borderRadius)",
@@ -150,36 +161,31 @@ function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
 
 function Mobile() {
     const { dict } = useI18n();
-    if (!dict || !dict.Home || !dict.Home.Features || !dict.Home.Features.Content) {
-        return null;
-    }
+    if (!dict || !dict.Home || !dict.Home.Features || !dict.Home.Features.Content) return null;
     const content: FeatureItem[] = dict.Home.Features.Content;
-
+    const size = 20
     return (
-        <Grid container direction="column" sx={{
-            display: { xs: "flex", sm: "flex", md: "none" },
-            width: "100%",
-        }}>
+        <Grid container direction="column" sx={{ width: "100%" }}>
             <Swiper
-                spaceBetween={10}
-                pagination={{ clickable: true }}
-                navigation={{ enabled: true }}
+                className="swiper-slider"
                 loop={true}
                 modules={[Pagination, Navigation]}
-                className="swiper-slider"
+                navigation={{ enabled: true }}
+                pagination={{ clickable: true }}
+                spaceBetween={10}
                 style={{
-                    display: "flex",
-                    justifyContent: "center",
                     alignItems: "center",
                     backgroundPosition: "center",
                     backgroundSize: "cover",
-                    width: "100%",
-                    height: `60vh`,
+                    display: "flex",
+                    height: "70vh",
+                    justifyContent: "center",
                     margin: "1rem 0",
+                    width: "100%",
                 }}>
                 {content.map((item: FeatureItem, i: number) => (
                     <SwiperSlide key={i}>
-                        <MobileSwiperSlide item={item} />
+                        <MobileSwiperSlide size={size} item={item} />
                     </SwiperSlide>
                 ))}
             </Swiper>
@@ -195,22 +201,20 @@ function Content() {
 
 export default function Features() {
     const { dict } = useI18n();
-    if (!dict || !dict.Home || !dict.Home.Features || !dict.Home.Features.SectionHeader) {
-        return null;
-    }
+    if (!dict || !dict.Home || !dict.Home.Features || !dict.Home.Features.SectionHeader) return null;
     const content = dict.Home.Features.SectionHeader;
-
     return (
-        <Section id="features" sx={{ alignItems: "center" }}>
+        <Section id="features" >
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
-                    userSelect: "none",
+                    fontFamily: `inherit`,
                     textAlign: "center",
-                    fontFamily: `inherit`
+                    userSelect: "none",
                 }}>
                     {content.h4}
                 </Typography>
-                <Typography variant="body2" gutterBottom sx={{
+                <Typography variant="h6" gutterBottom sx={{
+                    fontFamily: `inherit`,
                     textAlign: "center",
                     fontFamily: `inherit`
                 }}>

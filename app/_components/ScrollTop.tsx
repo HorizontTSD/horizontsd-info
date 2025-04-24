@@ -20,8 +20,10 @@ export default function ScrollTop({ children }: { children?: React.ReactNode }) 
                 onClick={handleClick}
                 role="presentation"
                 sx={{
-                    position: "fixed", bottom: 16, right: 16, zIndex: 999,
-
+                    bottom: 16, 
+                    position: "fixed", 
+                    right: 16, 
+                    zIndex: 999
                 }}
             >
                 {children || (
