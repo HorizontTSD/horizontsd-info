@@ -272,12 +272,12 @@ export default function Works() {
     return (
         <Section id="works">
             <SectionHeader>
-                <Typography variant="h4" gutterBottom sx={{
+                <Typography variant="h2" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: `center`,
                     userSelect: `none`,
                 }}>{content.h4}</Typography>
-                < Typography variant="subtitle1" gutterBottom sx={{
+                < Typography variant="h5" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: `center`,
                 }}>{content.body2}</Typography>

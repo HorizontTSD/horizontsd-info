@@ -14,6 +14,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
+import { bebasNeue } from "@/fonts";
 
 interface FeatureItem {
     title: string;
@@ -89,12 +90,21 @@ function Desktop() {
                             }}>
                                 <Stack direction="row" alignItems="center">
                                     <LabelIcon color="primary" sx={{ marginRight: "1rem" }} />
-                                    <Typography variant="button" component="div">
+                                    <Typography
+                                     variant="h4"
+                                     component="div"
+                                     sx={{
+                                         fontFamily: `inherit`,
+                                         textAlign: "center",
+                                         userSelect: "none",
+                                         fontFamily: bebasNeue.style.fontFamily,
+                                     }}
+                                     >
                                         {item.title}
                                     </Typography>
                                 </Stack>
                                 {item.description.map((e: string, i: number) => (
-                                    <Typography key={i} gutterBottom variant="subtitle2">
+                                    <Typography key={i} gutterBottom variant="h6">
                                         {e}
                                     </Typography>
                                 ))}
@@ -206,16 +216,18 @@ export default function Features() {
     return (
         <Section id="features" >
             <SectionHeader>
-                <Typography variant="h4" gutterBottom sx={{
+                <Typography variant="h2" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: "center",
                     userSelect: "none",
+                    fontFamily: bebasNeue.style.fontFamily,
                 }}>
                     {content.h4}
                 </Typography>
-                <Typography variant="h6" gutterBottom sx={{
+                <Typography variant="h5" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: "center",
+                    fontFamily: bebasNeue.style.fontFamily,
                 }}>
                     {content.body2}
                 </Typography>

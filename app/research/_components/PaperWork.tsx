@@ -111,7 +111,7 @@ function Desktop({ content }: { content: ResearchItem }) {
                 margin: "1rem 0"
             }}>
                 {content.description.map((item: string, i: number) => (
-                    <Typography key={i} color="textPrimary" gutterBottom variant="body1">
+                    <Typography key={i} color="textPrimary" gutterBottom variant="body1" style={{ textAlign: 'justify' }}>
                         {item}
                     </Typography>
                 ))}

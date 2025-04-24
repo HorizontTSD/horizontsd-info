@@ -283,14 +283,14 @@ export default function About() {
     return (
         <Section id="about">
             <SectionHeader>
-                <Typography variant="h4" gutterBottom sx={{
+                <Typography variant="h2" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: "center",
                     userSelect: "none",
                 }}>
                     {Home.About.SectionHeader.h4}
                 </Typography>
-                <Typography variant="h6" gutterBottom sx={{
+                <Typography variant="h5" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: "center",
                 }}>

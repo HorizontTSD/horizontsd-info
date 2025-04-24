@@ -20,18 +20,22 @@ export function Desktop({ fullsize = false }: HeroProps) {
 	const content: HeroContent = dict.Home.Hero;
 	const isDark = mode === "dark";
 	return (
-		<Stack direction="column"
-			sx={{
-				alignItems: "center",
-				background: isDark ? `transparent` : `#FAFAFA`,
-				borderRadius: "var(--mui-shape-borderRadius)",
-				display: "flex",
-				height: `100%`,
-				justifyContent: "center",
-				padding: `2rem`,
-				width: `100%`,
-				zIndex: 3,
-			}}>
+        <Stack direction="column"
+            sx={{
+                alignItems: "center",
+                background: mode == 'dark' ? 'rgba(18, 18, 18)' : '#FAFAFA',
+                borderRadius: "var(--mui-shape-borderRadius)",
+                display: "flex",
+                height: '43rem',
+                justifyContent: "center",
+                padding: `2rem`,
+                width: `95vw`,
+                zIndex: 0,
+                marginTop: -25,
+                marginLeft: `calc(-50vw + 50%)`,
+                marginRight: `calc(-50vw + 50%)`,
+                position: "relative",
+            }}>
 			<WebGLBackground color={isDark ? [0.1, 0.5, 0.9] : [0.1, 0.3, 1.0]} />
 			<Stack direction="column"
 				sx={{
@@ -81,9 +85,10 @@ export function Desktop({ fullsize = false }: HeroProps) {
 			{fullsize &&
 				<Grid container spacing={1}
 					sx={{
-						height: `100%`,
-						marginTop: `5%`,
-						width: `100%`,
+						height: `80%`,
+						marginTop: `-10%`,
+						marginRight: `20%`,
+						width: `80%`,
 						zIndex: `1`
 					}}>
 					<HeroCard type="primary" />
@@ -93,3 +98,4 @@ export function Desktop({ fullsize = false }: HeroProps) {
 		</Stack>
 	);
 }
+

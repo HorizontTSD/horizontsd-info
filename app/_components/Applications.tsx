@@ -6,8 +6,8 @@ import {
 } from "@mui/material";
 import SectionHeader from "@/app/_components/SectionHeader";
 import Section from "@/app/_components/Section";
-import { Desktop } from "@/app/_components/Applications/Desktop"
 import { Mobile } from "@/app/_components/Applications/Mobile"
+import { Desktop } from "@/app/_components/Applications/Desktop"
 import type { } from "swiper/types";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -28,14 +28,14 @@ export default function Applications() {
     return (
         <Section id="applications">
             <SectionHeader >
-                <Typography variant="h4" gutterBottom sx={{
+                <Typography variant="h2" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: "center",
                     userSelect: "none",
                 }}>
                     {dictionary.SectionHeader.h4}
                 </Typography>
-                <Typography variant="h6" gutterBottom sx={{
+                <Typography variant="h5" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: "center",
                 }}>

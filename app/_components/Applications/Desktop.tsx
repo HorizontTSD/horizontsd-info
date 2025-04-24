@@ -107,6 +107,7 @@ function DesktopButton({ active = false, index, handleItemClick, content }: Desk
 }
 
 function DesktopCard({ selected, dictionary }: DesktopCardProps) {
+
 	return (
 		<Box sx={{
 			display: "flex",
@@ -168,6 +169,8 @@ export function Desktop() {
 	const dictionary = dict.Home.Applications;
 	const handleItemClick = (index: number) => setSelectedItemIndex(index);
 	const selected = dictionary.Content[selectedItemIndex].block;
+    const { mode } = useColorScheme();
+    const isDark = mode == 'dark'
 	return (
 		<Container
 			sx={{

@@ -17,7 +17,7 @@ function PageContent() {
   return (
     <>
       <Navbar />
-      <Hero fullsize={false} />
+      <Hero fullsize={false}/>
       <Optimization />
       <Prediction />
       <CallToAction />

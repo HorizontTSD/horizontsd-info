@@ -3,6 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import Section from "@/app/_components/Section";
 import { Mobile } from "@/app/_components/Hero/Mobile";
 import { Desktop } from "@/app/_components/Hero/Desktop";
+
 import { Container, useMediaQuery } from "@mui/material";
 export interface HeroProps {
     fullsize?: boolean;
@@ -28,7 +29,7 @@ function Content({ fullsize = false }: HeroProps) {
     );
 }
 
-export default function Hero({ fullsize = false }: HeroProps) {
+export default function Hero({ fullsize = false, heightVal = '43rem', marginTopVal = -25  }: HeroProps) {
     return (
         <Section
             id="hero"
@@ -40,16 +41,17 @@ export default function Hero({ fullsize = false }: HeroProps) {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                maxHeight: `1080px`,
+                maxHeight: '40vw',
                 overflow: "hidden",
                 position: "relative",
                 userSelect: "none",
                 width: "100vw",
+                height: '33vw',
                 zIndex: 2,
             }}
             fullsize={fullsize}
         >
-            <Content fullsize={fullsize} />
+            <Content fullsize={fullsize} heightVal={heightVal} marginTopVal={marginTopVal}/>
         </Section >
     );
 }

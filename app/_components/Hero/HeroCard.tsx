@@ -13,6 +13,11 @@ import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import OnlinePredictionIcon from '@mui/icons-material/OnlinePrediction';
 import BatchPrediction from '@mui/icons-material/BatchPrediction';
 import { useI18n } from "@/app/_providers/I18nProvider";
+import Link from 'next/link';
+import { bebasNeue } from "@/fonts";
+import Chip from '@mui/material/Chip';
+import { useColorScheme } from "@mui/material";
+
 
 export interface HeroCardProps {
 	type: "primary" | "secondary";
@@ -102,6 +107,8 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 	const isMd = useMediaQuery(theme.breakpoints.down("lg"));
 	if (!dict || !dict.Home || !dict.Home.Hero || !dict.Home.Hero.button) return null;
 	const content = dict.Home.Hero.button[type == 'primary' ? 0 : 1]
+	const href = type === 'primary' ? 'http://77.37.136.11:8501' : 'http://77.37.136.11:8502'
+	const { mode } = useColorScheme();
 	const t = {
 		primary: {
 			background: `#2291FF`
@@ -110,104 +117,138 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 			background: `#26AD50`
 		}
 	}[type]
-	return (
-		<Card sx={{
-			background: t.background,
-			height: isMd ? `185px` : `200px`,
-			width: isMd ? `60%` : `45%`,
-		}}>
-			<CardActionArea
-				sx={{
-					padding: `0.5rem`,
-					'&[data-active]': {
-						backgroundColor: 'action.selected',
-						'&:hover': {
-							backgroundColor: 'action.selectedHover',
-						},
-					},
-				}}>
-				<CardContent sx={{
-					display: `flex`,
-					flexDirection: `column`,
-					justifyContent: `space-between`
-				}}>
-					<Stack direction={"row"} sx={{
-						justifyContent: `center`,
-						alignItems: `start`,
-					}}>
-						<Stack direction={"column"} sx={{ maxWidth: isMd ? `65%` : `50%` }}>
-							<Stack
-								direction={"row"}
-								sx={{
-									alignItems: `start`,
-									justifyContent: `start`,
-									marginBottom: `0.3rem`,
-									maxWidth: '300px',
-								}}
-							>
-								{type == 'primary'
-									? <FlashOnIcon sx={{ color: "var(--mui-palette-warning-dark)", marginRight: `5px` }} />
-									: <OnlinePredictionIcon sx={{ color: "var(--mui-palette-text-primary)", marginRight: `5px`, marginTop: `-3px` }} />
-								}
-								<Typography
-									variant="h6"
-									sx={{
-										lineHeight: `1rem`,
-										whiteSpace: 'normal',
-										wordBreak: 'break-word',
-									}}
-								>
-									{content.title}
-								</Typography>
-							</Stack>
-							<Stack direction={"column"}>
-								<Typography
-									variant="body2"
-									sx={{
-										lineHeight: `1.0rem`,
-										maxHeight: `5rem`,
-										overflow: `hidden`,
-										position: `relative`,
-										"&:after": {
-											background: `linear-gradient(to right, rgba(255, 255, 255, 0), ${t.background} 70%)`,
-											bottom: `0`,
-											content: `""`,
-											height: `1.1rem`,
-											position: `absolute`,
-											right: `0`,
-											textAlign: `right`,
-											width: `70%`,
-										}
-									}}
-								>{content.description}</Typography>
-							</Stack>
-						</Stack>
-						<div style={{
-							display: "flex",
-							left: isMd ? "-65px" : "-35px",
-							maxWidth: `50%`,
-							position: "relative",
-							top: isMd ? `-20px` : `-12px`,
-							width: isMd ? "150px" : "200px",
-						}}>
-							<div style={{
-								display: `flex`,
-								left: `180px`,
-								position: `relative`,
-								top: `10px`,
-							}}>
-								<TurnRightIcon sx={{
-									height: `64px`,
-									transform: `rotate(90deg)`,
-									width: `64px`,
-								}} />
-							</div>
-							<HeroCardIllustration type={type} />
-						</div>
-					</Stack>
-				</CardContent>
-			</CardActionArea>
-		</Card >
+    return (
+        <Link
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: 'contents' }}
+        >
+            <Card sx={{
+                background: mode == 'dark' ? 'rgba(38, 50, 56)' : 'white',
+                width: isMd ? `60%` : `45%`,
+                height: isMd ? `185px` : `200px`,
+                transition: "background 0.2s ease",
+                "&:hover": {
+                  background: t.background,
+                  cursor: 'pointer',
+                },
+            }}>
+                <CardActionArea
+                    sx={{
+                        padding: `0.5rem`,
+                        '&[data-active]': {
+                            backgroundColor: 'action.selected',
+                            '&:hover': {
+                                backgroundColor: 'action.selectedHover',
+                            },
+                        },
+                    }}>
+                    <CardContent sx={{
+                        display: `flex`,
+                        flexDirection: `column`,
+                        justifyContent: `space-between`
+                    }}>
+                        <Stack direction={"row"} sx={{
+                            justifyContent: `center`,
+                            alignItems: `start`,
+                        }}>
+                            <Stack direction={"column"} sx={{ maxWidth: isMd ? `65%` : `50%` }}>
+                                <Stack
+                                    direction={"row"}
+                                    sx={{
+                                        alignItems: `start`,
+                                        justifyContent: `start`,
+                                        marginBottom: `0.8rem`,
+                                        maxWidth: '300px',
+                                    }}
+                                >
+                                    {type == 'primary'
+                                        ? <FlashOnIcon sx={{ color: "var(--mui-palette-warning-dark)", marginRight: `5px` }} />
+                                        : <OnlinePredictionIcon sx={{ color: "var(--mui-palette-text-primary)", marginRight: `5px`, marginTop: `-3px` }} />
+                                    }
+                                    <Typography
+                                        variant="h4"
+                                        sx={{
+                                            lineHeight: `2rem`,
+                                            whiteSpace: 'normal',
+                                            wordBreak: 'break-word',
+                                            fontFamily: bebasNeue.style.fontFamily,
+                                        }}
+                                    >
+                                        {content.title}
+                                    </Typography>
+                                </Stack>
+                                <Stack direction={"column"} sx={{ paddingRight: 15 }}>
+                                    <Typography
+                                        variant="h5"
+                                       sx={{
+                                          position: 'absolute',
+                                          bottom: 105,
+                                          padding: '10px',
+                                          fontFamily: bebasNeue.style.fontFamily,
+
+                                       }}
+                                    >{content.action}</Typography>
+                                </Stack>
+                                <Stack
+                                    direction="row"
+                                    spacing={1}
+                                    flexWrap="wrap"
+                                    useFlexGap
+                                    sx={{
+                                      position: 'absolute',
+                                      bottom: 60,
+                                      left: 5,
+                                      right: 5,
+                                      padding: '10px',
+                                    }}
+                                    >
+                                  {content.keywords.map((keyword, index) => (
+                                    <Chip
+                                      key={index}
+                                      label={keyword}
+                                      sx={{
+                                        fontFamily: bebasNeue.style.fontFamily,
+                                        backgroundColor: (theme) =>
+                                          theme.palette.mode === 'light'
+                                            ? '909090'
+                                            : '909090',
+                                        backdropFilter: 'blur(10px)',
+                                        color: 'text.primary',
+                                        borderRadius: '16px',
+                                      }}
+                                    />
+                                  ))}
+                                </Stack>
+                            </Stack>
+                            <div style={{
+                                display: "flex",
+                                left: isMd ? "-65px" : "-35px",
+                                maxWidth: `50%`,
+                                position: "relative",
+                                top: isMd ? `-20px` : `-12px`,
+                                width: isMd ? "150px" : "200px",
+                            }}>
+                                <div style={{
+                                    display: `flex`,
+                                    left: `180px`,
+                                    position: `relative`,
+                                    top: `10px`,
+                                }}>
+                                    <TurnRightIcon sx={{
+                                        height: `64px`,
+                                        transform: `rotate(90deg)`,
+                                        width: `64px`,
+                                    }} />
+                                </div>
+                                <HeroCardIllustration type={type} />
+                            </div>
+                        </Stack>
+                    </CardContent>
+                </CardActionArea>
+            </Card >
+        </Link>
 	)
 }
 
@@ -260,11 +301,12 @@ function HeroCardMobile({ type }: HeroCardProps) {
 									? <FlashOnIcon sx={{ color: "var(--mui-palette-warning-dark)", marginRight: `5px` }} />
 									: <OnlinePredictionIcon sx={{ color: "var(--mui-palette-text-primary)", marginRight: `5px` }} />
 								}
-								<Typography variant="h6"
+								<Typography variant="h4"
 									sx={{
 										lineHeight: `1rem`,
 										whiteSpace: 'normal',
 										wordBreak: 'break-word',
+										fontFamily: bebasNeue.style.fontFamily,
 									}}
 								>
 									{content.title}
@@ -288,6 +330,7 @@ function HeroCardMobile({ type }: HeroCardProps) {
 											right: `0`,
 											textAlign: `right`,
 											width: `70%`,
+											fontFamily: bebasNeue.style.fontFamily,
 										}
 									}}
 								>{content.description}</Typography>
