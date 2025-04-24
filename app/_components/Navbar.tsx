@@ -267,6 +267,7 @@ export default function Navbar() {
                     bgcolor: "transparent",
                     boxShadow: 0,
                     mt: "1rem",
+                    paddingLeft: isMobile ? `0px` : `15px`
                 }}
             >
                 {isMobile ? <Mobile /> : <Desktop />}

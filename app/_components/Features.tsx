@@ -136,6 +136,7 @@ function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
         }}>
             <CardContent sx={{
                 borderRadius: "var(--mui-shape-borderRadius)",
+                height: "100%",
             }}>
                 <Stack direction="row" alignItems="center">
                     <LabelIcon color="primary" sx={{ marginRight: "1rem" }} />
@@ -215,6 +216,7 @@ export default function Features() {
                 <Typography variant="h6" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: "center",
+                    fontFamily: `inherit`
                 }}>
                     {content.body2}
                 </Typography>
