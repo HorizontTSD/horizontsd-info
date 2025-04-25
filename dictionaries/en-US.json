@@ -30,6 +30,7 @@
     },
     "Phone": {
       "inputLabel": "Your phone number",
+      "code": "1",
       "placeholder": "+1(000)000-0000",
       "FormHelperText": "Please enter a valid phone number"
     },

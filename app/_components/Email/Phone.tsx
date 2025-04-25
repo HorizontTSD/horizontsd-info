@@ -5,7 +5,6 @@ import { Stack, FormControl, InputLabel, Input, FormHelperText, InputBaseCompone
 import { IMaskInput } from 'react-imask';
 import { FormData, FormDataFieldStatus } from "@/app/_providers/ModalFormProvider";
 import { FieldSetterProps } from "./Form";
-import validator from 'validator';
 import { useI18n } from "@/app/_providers/I18nProvider";
 
 interface CustomProps extends InputBaseComponentProps {
@@ -14,11 +13,14 @@ interface CustomProps extends InputBaseComponentProps {
 
 const TextMaskCustom = React.forwardRef<HTMLInputElement, CustomProps>(
   function TextMaskCustom(props, ref) {
+    const { dict } = useI18n();
+    if (!dict || !dict.FeedbackForm) return null;
+    const { FeedbackForm } = dict;
     const { onChange, ...other } = props;
     return (
       <IMaskInput
         {...other}
-        mask='+{7}(000)000-00-00'
+        mask={`+{${FeedbackForm.Phone.code}}(000)000-00-00`} // Default mask, will be updated based on country code
         definitions={{
           '#': /[1-9]/,
         }}
@@ -33,15 +35,22 @@ const TextMaskCustom = React.forwardRef<HTMLInputElement, CustomProps>(
 export function Phone({ formData, setFormData, checkForm }: FieldSetterProps) {
   const [inputValue, setInputValue] = useState(formData.phone);
   const debounceTimer = useRef<NodeJS.Timeout | null>(null);
+
   const validatePhone = (phone: string) => {
     const onlyDigits = phone.replace(/\D/g, '');
     if (onlyDigits.length === 0) {
       return FormDataFieldStatus.Empty;
     }
-    if (!validator.isMobilePhone(onlyDigits, "any") || onlyDigits.length !== 11) {
-      return FormDataFieldStatus.Invalid;
+    const withoutPhoneCode = phone.slice(phone.indexOf(`(`)).replace(/\D/g, '')
+    try {
+      // if (validator.isMobilePhone(onlyDigits, (lang as MobilePhoneLocale), { strictMode: true })) {
+      if (withoutPhoneCode.length == 10) {
+        return FormDataFieldStatus.Valid;
+      }
+    } catch {
     }
-    return FormDataFieldStatus.Valid;
+
+    return FormDataFieldStatus.Invalid;
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
