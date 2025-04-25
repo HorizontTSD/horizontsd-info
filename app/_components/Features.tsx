@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SectionHeader from "@/app/_components/SectionHeader";
 import Section from "@/app/_components/Section";
 import { useI18n } from "@/app/_providers/I18nProvider";
+import { bebasNeue } from "@/fonts";
 import type { } from "swiper/types";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -30,9 +31,7 @@ function Desktop() {
     const { mode } = useColorScheme();
     const isDark = mode === "dark";
     const { dict } = useI18n();
-    if (!dict || !dict.Home || !dict.Home.Features || !dict.Home.Features.Content) {
-        return null;
-    }
+    if (!dict || !dict.Home || !dict.Home.Features || !dict.Home.Features.Content) return null;
     const content: FeatureItem[] = dict.Home.Features.Content;
     const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
     return (
@@ -86,25 +85,31 @@ function Desktop() {
                         }}>
                             <CardContent sx={{
                                 borderRadius: "var(--mui-shape-borderRadius)",
+                                justifyContent: `start`,
+                                height: `90%`,
+                                display: `flex`,
+                                flexDirection: `column`
                             }}>
                                 <Stack direction="row" alignItems="center">
                                     <LabelIcon color="primary" sx={{ marginRight: "1rem" }} />
-                                    <Typography variant="button" component="div">
+                                    <Typography variant="h6" sx={{ lineHeight: `2rem`, fontFamily: bebasNeue.style.fontFamily }}>
                                         {item.title}
                                     </Typography>
                                 </Stack>
-                                {item.description.map((e: string, i: number) => (
-                                    <Typography key={i} gutterBottom variant="subtitle2">
-                                        {e}
-                                    </Typography>
-                                ))}
-                                {item.more.slice(0, -1).map((e: string, i: number) => (
-                                    <Typography key={i} gutterBottom variant="body2" color="textPrimary">
-                                        {e}
-                                    </Typography>
-                                ))}
+                                <Stack direction="column" justifyContent={"start"} alignItems={"start"} sx={{ height: `90%` }}>
+                                    {item.description.map((e: string, i: number) => (
+                                        <Typography key={i} gutterBottom variant="subtitle1" color="textPrimary" sx={{ lineHeight: `1.1rem` }}>
+                                            {e}
+                                        </Typography>
+                                    ))}
+                                    {item.more.slice(0, -1).map((e: string, i: number) => (
+                                        <Typography gutterBottom key={i} variant="body2">
+                                            {e}
+                                        </Typography>
+                                    ))}
+                                </Stack>
                                 {item.more.slice(-1).map((e: string, i: number) => (
-                                    <Typography key={i} gutterBottom variant="caption" color="textSecondary">
+                                    <Typography key={i} variant="caption" color="info">
                                         {e}
                                     </Typography>
                                 ))}
@@ -206,14 +211,14 @@ export default function Features() {
     return (
         <Section id="features" >
             <SectionHeader>
-                <Typography variant="h4" gutterBottom sx={{
+                <Typography variant="h3" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: "center",
                     userSelect: "none",
                 }}>
                     {content.h4}
                 </Typography>
-                <Typography variant="h6" gutterBottom sx={{
+                <Typography variant="h5" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: "center",
                 }}>

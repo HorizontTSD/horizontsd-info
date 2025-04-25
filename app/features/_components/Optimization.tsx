@@ -230,7 +230,7 @@ export default function Optimization() {
     return (
         <Section id="optimization">
             <SectionHeader>
-                <Typography variant="h4" gutterBottom sx={{
+                <Typography variant="h3" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: `center`,
                     userSelect: `none`,

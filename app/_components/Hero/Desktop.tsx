@@ -23,7 +23,6 @@ export function Desktop({ fullsize = false }: HeroProps) {
 		<Stack direction="column"
 			sx={{
 				alignItems: "center",
-				background: isDark ? `transparent` : `#FAFAFA`,
 				borderRadius: "var(--mui-shape-borderRadius)",
 				display: "flex",
 				height: `100%`,
@@ -47,7 +46,7 @@ export function Desktop({ fullsize = false }: HeroProps) {
 					<Typography
 						variant="h1"
 						sx={{
-							color: `#FAFAFA`,
+							color: `var(--mui-palette-common-white)`,
 							fontFamily: bebasNeue.style.fontFamily,
 							textShadow: `0px 0px 10px black`
 						}}>

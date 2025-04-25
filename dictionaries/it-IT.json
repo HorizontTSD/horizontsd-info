@@ -1,4 +1,42 @@
 {
+	"FeedbackForm": {
+		"Company": {
+			"label": "Your company name",
+			"helperTextA": "Company name should be less than",
+			"helperTextB": "characters"
+		},
+		"Email": {
+			"label": "Your email",
+			"helperA": "Please enter a valid email address",
+			"helperB": "Email is valid"
+		},
+		"Header": {
+			"value": "Submit your request"
+		},
+		"LegalInfo": {
+			"A": "By submitting this form, you consent to the processing of your personal data for the purpose of responding to your request.",
+			"B": "We store and protect your information in accordance with our",
+			"C": "Privacy Policy",
+			"D": "You may withdraw consent at any time by contacting us at"
+		},
+		"Name": {
+			"label": "Your name",
+			"helperTextA": "Name should contain only letters and spaces",
+			"helperTextB": "Your name should be less than",
+			"helperTextC": "characters"
+		},
+		"PageRating": {
+			"helperTextA": "Please select rating between 0 and 5"
+		},
+		"Phone": {
+			"inputLabel": "Your phone number",
+			"placeholder": "+1(000)000-0000",
+			"FormHelperText": "Please enter a valid phone number"
+		},
+		"Submit": {
+			"button": "send"
+		}
+	},
 	"Home": {
 		"Hero": {
 			"slogan": "La tua guida verso il futuro",
@@ -6,13 +44,18 @@
 				{
 					"title": "Quick Forecast",
 					"description": [
-						"LSTM, XGBoost & hybrid models adapt to any data for ultra-accurate predictions."
+						"try it now",
+						"lstm",
+						"xgboost",
+						"hybrid models"
 					]
 				},
 				{
 					"title": "The Solution of the company",
 					"description": [
-						"Experimental results demonstrate that the proposed ensemble model significantly outperforms individual forecasting methods in some metrics, achieving higher accuracy and reliability in predicting electrical load."
+						"view the demo",
+						"demo",
+						"example"
 					]
 				}
 			]

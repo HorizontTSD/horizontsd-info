@@ -227,7 +227,7 @@ export default function Processing() {
     return (
         <Section id="processing">
             <SectionHeader>
-                <Typography variant="h4" gutterBottom sx={{
+                <Typography variant="h3" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: `center`,
                     userSelect: `none`,

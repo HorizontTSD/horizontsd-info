@@ -8,7 +8,7 @@
 <br>
 
 
-<img src="./_design/ColorPalette.png"  height="600">
+<img src="./_design/Screenshot 2025-04-24 120748.png"  height="600">
 
 <br>
 

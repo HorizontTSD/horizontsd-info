@@ -2,7 +2,7 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
-import { SvgIcon, Box, Card, CardActionArea, CardContent, Typography, useMediaQuery } from "@mui/material";
+import { SvgIcon, Box, Card, CardActionArea, CardContent, Typography, useMediaQuery, useColorScheme, Chip } from "@mui/material";
 import FlashOnIcon from '@mui/icons-material/FlashOn';
 import TurnRightIcon from '@mui/icons-material/TurnRight';
 import DatasetIcon from '@mui/icons-material/Dataset';
@@ -13,7 +13,7 @@ import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import OnlinePredictionIcon from '@mui/icons-material/OnlinePrediction';
 import BatchPrediction from '@mui/icons-material/BatchPrediction';
 import { useI18n } from "@/app/_providers/I18nProvider";
-
+import { bebasNeue } from "@/fonts";
 export interface HeroCardProps {
 	type: "primary" | "secondary";
 }
@@ -22,6 +22,7 @@ export interface HeroCardBoxProps {
 	offset: number;
 	size: number;
 	Icon: typeof SvgIcon;
+	type: "primary" | "secondary";
 }
 
 export interface HeroCardProps {
@@ -32,11 +33,19 @@ export interface HeroCardIllustrationProps {
 	type: HeroCardProps["type"];
 }
 
-export function HeroCardIllustrationBox({ size = 6, offset = 0, Icon }: HeroCardBoxProps) {
+export function HeroCardIllustrationBox({ type, size = 6, offset = 0, Icon }: HeroCardBoxProps) {
+	const { mode } = useColorScheme();
+	const isDark = mode == 'dark'
+	const primaryColor = isDark ?
+		`var(--mui-palette-primary-light)`
+		: `var(--mui-palette-text-primary)`
+	const secondaryColor = isDark ?
+		`var(--mui-palette-primary-light)`
+		: `var(--mui-palette-text-primary)`
 	return (
 		<Box sx={{
 			alignItems: `center`,
-			background: `rgba(255,255,255,0.1)`,
+			background: type == "primary" ? `rgba(0,0,0,0.1)` : `rgba(255,255,255,0.1)`,
 			borderRadius: "var(--mui-shape-borderRadius)",
 			display: `flex`,
 			flexDirection: `column`,
@@ -47,7 +56,7 @@ export function HeroCardIllustrationBox({ size = 6, offset = 0, Icon }: HeroCard
 			top: `${-offset * 0.5}px`,
 			width: `${size}rem`,
 		}}>
-			<Icon sx={{ color: `var(--mui-palette-text-primary)`, width: `64px`, height: `64px` }} />
+			<Icon sx={{ color: type == "primary" ? primaryColor : secondaryColor, width: `64px`, height: `64px` }} />
 		</Box>
 	)
 }
@@ -57,21 +66,22 @@ export function HeroCardIllustration({ type = "primary" }: HeroCardIllustrationP
 	const firstBoxIcons = type == "primary"
 		? [DatasetIcon, DataObjectIcon, DataArrayIcon]
 		: [OnlinePredictionIcon, BatchPrediction];
-	const secondBoxIcons = [AreaChartIcon, AutoGraphIcon]
+	const secondBoxIcons = type == "primary" ? [AreaChartIcon, AutoGraphIcon] : [AutoGraphIcon, AreaChartIcon];
 	const [currentFirstIcon, setCurrentFirstIcon] = useState(0);
 	const [currentSecondIcon, setCurrentSecondIcon] = useState(0);
 	useEffect(() => {
 		const firstInterval = setInterval(() => {
 			setCurrentFirstIcon(prev => (prev + 1) % firstBoxIcons.length);
-		}, 2000);
+		}, type == "primary" ? 2100 : 3200);
+
 		const secondInterval = setInterval(() => {
 			setCurrentSecondIcon(prev => (prev + 1) % secondBoxIcons.length);
-		}, 6000);
+		}, type == "primary" ? 6300 : 2400);
 		return () => {
 			clearInterval(firstInterval);
 			clearInterval(secondInterval);
 		};
-	}, [firstBoxIcons.length, secondBoxIcons.length]);
+	}, [type, firstBoxIcons.length, secondBoxIcons.length]);
 	return (
 		<div style={{
 			alignItems: `center`,
@@ -82,11 +92,13 @@ export function HeroCardIllustration({ type = "primary" }: HeroCardIllustrationP
 		}}>
 			<div>
 				<HeroCardIllustrationBox
+					type={type}
 					Icon={firstBoxIcons[currentFirstIcon]}
 					size={boxSize}
 					offset={0}
 				/>
 				<HeroCardIllustrationBox
+					type={type}
 					Icon={secondBoxIcons[currentSecondIcon]}
 					size={boxSize}
 					offset={boxSize * 8}
@@ -100,25 +112,32 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 	const { dict } = useI18n();
 	const theme = useTheme();
 	const isMd = useMediaQuery(theme.breakpoints.down("lg"));
+	const { mode } = useColorScheme();
 	if (!dict || !dict.Home || !dict.Home.Hero || !dict.Home.Hero.button) return null;
 	const content = dict.Home.Hero.button[type == 'primary' ? 0 : 1]
-	const t = {
+	const isDark = mode == 'dark'
+	const { background: cardBackground } = {
 		primary: {
-			background: `#2291FF`
+			background: isDark
+				? `var(--mui-palette-primary-main)`
+				: `var(--mui-palette-primary-light)`
 		},
 		secondary: {
-			background: `#26AD50`
+			background: isDark
+				? `var(--mui-palette-success-dark)`
+				: `var(--mui-palette-success-light)`
 		}
 	}[type]
+	
 	return (
 		<Card sx={{
-			background: t.background,
-			height: isMd ? `185px` : `200px`,
-			width: isMd ? `60%` : `45%`,
+			background: cardBackground,
+			width: `49%`,
+			maxHeight: `200px`
 		}}>
 			<CardActionArea
 				sx={{
-					padding: `0.5rem`,
+					padding: `0.4rem`,
 					'&[data-active]': {
 						backgroundColor: 'action.selected',
 						'&:hover': {
@@ -131,68 +150,63 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 					flexDirection: `column`,
 					justifyContent: `space-between`
 				}}>
-					<Stack direction={"row"} sx={{
-						justifyContent: `center`,
-						alignItems: `start`,
-					}}>
-						<Stack direction={"column"} sx={{ maxWidth: isMd ? `65%` : `50%` }}>
+					<Stack direction={"row"} >
+						<Stack direction={"column"} sx={{ justifyContent: `space-around`, minWidth: `14rem` }} >
 							<Stack
 								direction={"row"}
-								sx={{
-									alignItems: `start`,
-									justifyContent: `start`,
-									marginBottom: `0.3rem`,
-									maxWidth: '300px',
-								}}
+								sx={{ marginBottom: `0.5rem` }}
 							>
 								{type == 'primary'
-									? <FlashOnIcon sx={{ color: "var(--mui-palette-warning-dark)", marginRight: `5px` }} />
-									: <OnlinePredictionIcon sx={{ color: "var(--mui-palette-text-primary)", marginRight: `5px`, marginTop: `-3px` }} />
+									? <FlashOnIcon sx={{ color: "var(--mui-palette-warning-dark)" }} />
+									: <OnlinePredictionIcon sx={{ color: "var(--mui-palette-text-primary)" }} />
 								}
 								<Typography
-									variant="h6"
+									variant="h4"
 									sx={{
-										lineHeight: `1rem`,
-										whiteSpace: 'normal',
-										wordBreak: 'break-word',
+										fontFamily: bebasNeue.style.fontFamily,
+										textTransform: `uppercase`,
+										lineHeight: `1.8rem`,
 									}}
 								>
 									{content.title}
 								</Typography>
 							</Stack>
-							<Stack direction={"column"}>
+							<Stack direction={"column"} >
 								<Typography
-									variant="body2"
+									variant="h6"
 									sx={{
+										fontFamily: bebasNeue.style.fontFamily,
+										textTransform: `uppercase`,
 										lineHeight: `1.0rem`,
 										maxHeight: `5rem`,
 										overflow: `hidden`,
-										position: `relative`,
-										"&:after": {
-											background: `linear-gradient(to right, rgba(255, 255, 255, 0), ${t.background} 70%)`,
-											bottom: `0`,
-											content: `""`,
-											height: `1.1rem`,
-											position: `absolute`,
-											right: `0`,
-											textAlign: `right`,
-											width: `70%`,
-										}
+										position: `relative`
 									}}
-								>{content.description}</Typography>
+								>{content.description[0]}</Typography>
+							</Stack>
+							<Stack direction={"row"} spacing={1} sx={{ width: `100px`, position: `relative`, bottom: `-20px` }}>
+								{content.description.slice(1).map((e, i) => (
+									<Chip key={i} variant="filled" label={e} size="small" sx={{
+										fontFamily: bebasNeue.style.fontFamily,
+										textTransform: `uppercase`,
+										padding: `0.5rem`,
+										color: type == "primary" ? `warning.main` : "text.primary"
+									}} />
+								))}
 							</Stack>
 						</Stack>
 						<div style={{
 							display: "flex",
-							left: isMd ? "-65px" : "-35px",
+							left: "-80px",
 							maxWidth: `50%`,
 							position: "relative",
 							top: isMd ? `-20px` : `-12px`,
 							width: isMd ? "150px" : "200px",
+							height: `140px`
 						}}>
 							<div style={{
 								display: `flex`,
-								left: `180px`,
+								left: isMd ? `160px` : `180px`,
 								position: `relative`,
 								top: `10px`,
 							}}>
