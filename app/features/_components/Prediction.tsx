@@ -224,7 +224,7 @@ export default function Prediction() {
     return (
         <Section id="prediction">
             <SectionHeader>
-                <Typography variant="h4" gutterBottom sx={{
+                <Typography variant="h3" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: `center`,
                     userSelect: `none`,

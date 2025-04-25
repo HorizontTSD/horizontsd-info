@@ -8,6 +8,8 @@ import { dictionaries } from "@/dictionaries"
 import { I18nProvider } from "@/app/_providers/I18nProvider"
 import MuiProvider from "@/app/_providers/MuiProvider";
 import "@/app/_components/swiper.css";
+import { ModalFormProvider } from "@/app/_providers/ModalFormProvider";
+import { Metadata } from 'next';
 
 const i18n = {
     defaultLocale: "ru",
@@ -21,7 +23,7 @@ const roboto = Roboto({
     variable: "--font-roboto",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
     title: "Horizon – Временные ряды и прогнозы",
     description: "Инструмент для анализа и прогнозирования временных рядов. Time series forecasting and analysis tool.",
     keywords: [
@@ -143,26 +145,14 @@ const Metrika = () => (
         id="yandex-metrika"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-            __html: `
-                            (function(m,e,t,r,i,k,a){
-                                m[i]=m[i]||function(){
-                                    (m[i].a=m[i].a||[]).push(arguments)
-                                };
-                                m[i].l=1*new Date();
-                                for (var j = 0; j < document.scripts.length; j++) {
-                                    if (document.scripts[j].src === r) { return; }
-                                }
-                                k=e.createElement(t),a=e.getElementsByTagName(t)[0],
-                                k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-                            })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-                            ym(101065655, "init", {
-                                clickmap:true,
-                                trackLinks:true,
-                                accurateTrackBounce:true,
-                                webvisor:true
-                            });
-                        `
+            __html: `(function(m,e,t,r,i,k,a){
+                m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();
+                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                k=e.createElement(t),a=e.getElementsByTagName(t)[0],
+                k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+            })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            ym(${process.env.NEXT_PUBLIC_YANDEX_ANALYTICS_ID}, "init", {accurateTrackBounce:true,clickmap:true,trackLinks:true,webvisor:true});`
         }}
     />
 )
@@ -171,11 +161,11 @@ const MetrikaNoScript = () => (
     <noscript>
         <div>
             <Image
-                src="https://mc.yandex.ru/watch/101065655"
-                width={1}
-                height={1}
-                style={{ position: "absolute", left: "-9999px" }}
                 alt=""
+                height={1}
+                src={`https://mc.yandex.ru/watch/${process.env.NEXT_PUBLIC_YANDEX_ANALYTICS_ID}`}
+                style={{ position: "absolute", left: "-9999px" }}
+                width={1}
             />
         </div>
     </noscript>
@@ -189,11 +179,7 @@ export default async function RootLayout({
     const cookieStore = await cookies();
     let preferredLanguage = await getPreferredLanguage();
     const cookieLanguage = cookieStore.get("language")?.value;
-
-    if (cookieLanguage) {
-        preferredLanguage = cookieLanguage;
-    }
-
+    if (cookieLanguage) { preferredLanguage = cookieLanguage; }
     return (
         <html lang={preferredLanguage} className={roboto.variable} suppressHydrationWarning>
             <head>
@@ -202,7 +188,9 @@ export default async function RootLayout({
             <body>
                 <I18nProvider lang={preferredLanguage}>
                     <MuiProvider>
-                        {children}
+                        <ModalFormProvider opened={false}>
+                            {children}
+                        </ModalFormProvider>
                     </MuiProvider>
                 </I18nProvider>
             </body>

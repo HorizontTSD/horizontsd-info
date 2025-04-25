@@ -57,7 +57,7 @@ function DesktopButton({ active = false, index, handleItemClick, content }: Desk
 			borderRadius: "var(--mui-shape-borderRadius)",
 			border: `none`,
 			background: active
-				? "rgb(54, 106, 243)"
+				? "var(--mui-palette-info-dark)"
 				: isDark
 					? "var(--mui-palette-primary-dark)"
 					: "var(--mui-palette-primary-light)",
@@ -74,12 +74,10 @@ function DesktopButton({ active = false, index, handleItemClick, content }: Desk
 			width: "auto",
 			"&:hover": {
 				background: active
-					? "rgb(54, 106, 243)" : isDark
-						? "var(--mui-palette-secondary-dark)"
-						: "var(--mui-palette-secondary-light)",
-				color: isDark
-					? `var(--mui-palette-primary-light)`
-					: `var(--mui-palette-primary-dark)`
+					? "var(--mui-palette-info-light)" : isDark
+						? "var(--mui-palette-info-dark)"
+						: "var(--mui-palette-info-light)",
+				color: `var(--mui-palette-primary-light)`
 			}
 		}}>
 			<Box sx={{
@@ -149,7 +147,7 @@ function DesktopCard({ selected, dictionary }: DesktopCardProps) {
 						</Stack>
 						<Stack>
 							<NextLink href={selected.link}>
-								<Button color="secondary" variant="contained" sx={{ color: "primary.light" }}>
+								<Button color="secondary" variant="contained" sx={{ background: "var(--mui-palette-info-main)", color: "primary.light" }}>
 									{dictionary.Button}
 								</Button>
 							</NextLink>

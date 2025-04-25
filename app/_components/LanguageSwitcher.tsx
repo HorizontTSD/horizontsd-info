@@ -1,9 +1,10 @@
 import * as React from "react";
+import Image from "next/image";
 import Cookies from "js-cookie"
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { useColorScheme } from "@mui/material";
+import { Typography, useColorScheme } from "@mui/material";
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import Button from "@mui/material/Button";
@@ -114,9 +115,19 @@ export default function LanguageSwitcher() {
                       key={option}
                       onClick={(event) => handleLanguageChange(event, index)}
                       selected={index === selectedIndex}
-                      sx={{ padding: `0.1rem 1rem` }}
+                      sx={{ padding: `0.1rem 1rem`, justifyContent: `space-evenly` }}
                     >
-                      {option.split(`-`)[0].trim().toUpperCase()}
+                      <Typography color="textPrimary" variant="button" sx={{marginRight: `1rem`}}>
+                        {option.split(`-`)[0].trim().toUpperCase()}
+                      </Typography>
+
+                      <Image
+                        loading="lazy"
+                        width="16"
+                        height="8"
+                        src={`https://flagcdn.com/w20/${option.split(`-`)[1].trim().toLowerCase()}.png`}
+                        alt=""
+                      />
                     </MenuItem>
                   ))}
                 </MenuList>

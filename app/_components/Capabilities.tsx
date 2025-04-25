@@ -248,14 +248,14 @@ export default function Capabilities() {
             maxHeight: isMobile ? "auto" : `1080px`
         }}>
             <SectionHeader>
-                <Typography variant="h4" gutterBottom sx={{
+                <Typography variant="h3" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: "center",
                     userSelect: "none",
                 }}>
                     {content.h4}
                 </Typography>
-                <Typography variant="h6" gutterBottom sx={{
+                <Typography variant="h5" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: "center",
                 }}>

@@ -3,7 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import Section from "@/app/_components/Section";
 import { Mobile } from "@/app/_components/Hero/Mobile";
 import { Desktop } from "@/app/_components/Hero/Desktop";
-import { Container, useMediaQuery } from "@mui/material";
+import { Container, useColorScheme, useMediaQuery } from "@mui/material";
 export interface HeroProps {
     fullsize?: boolean;
 }
@@ -29,6 +29,8 @@ function Content({ fullsize = false }: HeroProps) {
 }
 
 export default function Hero({ fullsize = false }: HeroProps) {
+    const { mode } = useColorScheme();
+    const isDark = mode === "dark";
     return (
         <Section
             id="hero"
@@ -46,6 +48,7 @@ export default function Hero({ fullsize = false }: HeroProps) {
                 userSelect: "none",
                 width: "100vw",
                 zIndex: 2,
+                background: isDark ? `rgba(0,0,0,0.5)` : `rgba(255,255,255,0.5)`
             }}
             fullsize={fullsize}
         >

@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-import { lightBlue, blue, grey, blueGrey } from "@mui/material/colors";
+import { lightBlue, blue, grey, blueGrey, indigo } from "@mui/material/colors";
 
 const bg = {
   50: "#dddee0",
@@ -24,6 +24,7 @@ export const theme = createTheme({
   colorSchemes: {
     light: {
       palette: {
+        info: indigo,
         primary: {
           main: grey[600],
           light: grey[100],
@@ -44,6 +45,7 @@ export const theme = createTheme({
     },
     dark: {
       palette: {
+        info: blue,
         primary: {
           main: bg[500],
           light: bg[50],

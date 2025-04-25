@@ -12,6 +12,7 @@ import XIcon from "@mui/icons-material/X"
 import { useI18n } from "@/app/_providers/I18nProvider"
 import { FooterContent } from "@/app/_components/types"
 import Section from "@/app/_components/Section"
+import { useModalForm } from "@/app/_providers/ModalFormProvider";
 
 function Row1() {
     const theme = useTheme();
@@ -19,9 +20,8 @@ function Row1() {
     const { dict } = useI18n();
     const { mode } = useColorScheme();
     const isDark = mode == "dark"
-    if (!dict || !dict.Footer) {
-        return null;
-    }
+    const modal = useModalForm();
+    if (!dict || !dict.Footer) return null;
 
     const content = dict.Footer as FooterContent;
     return (
@@ -78,7 +78,7 @@ function Row1() {
                     <Typography color="textPrimary" variant="body2" gutterBottom sx={{
                         userSelect: `none`,
                     }}>{content.row1Subtitle2}</Typography>
-                    <Button variant="contained" sx={{
+                    <Button onClick={() => modal.setOpen(true)} variant="contained" sx={{
                         alignItems: `center`,
                         background: isDark ? `var(--mui-palette-secondary-contrastText)` : `var(--mui-palette-secondary-dark)`,
                         color: `var(--mui-palette-primary-light)`,
@@ -87,6 +87,7 @@ function Row1() {
                         lineHeight: `1rem`,
                         minWidth: "250px",
                         userSelect: `none`,
+
                     }}>
                         {content.row1ButtonText}
                         <EastIcon sx={{ marginLeft: `0.5rem`, color: `var(--mui-palette-primary-light)` }} />

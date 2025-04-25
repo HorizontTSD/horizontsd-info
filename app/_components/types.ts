@@ -214,4 +214,9 @@ export interface AppDictionary extends Dictionary {
 		Button?: string;
 	};
 	Team: TeamMember[];
+	FeedbackForm: {
+		[key: string]: {
+			[key: string]: string
+		}
+	};
 }

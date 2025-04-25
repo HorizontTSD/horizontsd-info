@@ -35,7 +35,7 @@ export default function Applications() {
                 }}>
                     {dictionary.SectionHeader.h4}
                 </Typography>
-                <Typography variant="h6" gutterBottom sx={{
+                <Typography variant="h5" gutterBottom sx={{
                     fontFamily: `inherit`,
                     textAlign: "center",
                 }}>
