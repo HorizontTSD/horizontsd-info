@@ -41,8 +41,8 @@ export default function Header({ children, sx }: HeaderProps) {
                         spacing={1}
                         sx={{
                             fontFamily: bebasNeue.style.fontFamily,
-                            display: "flex",
-                            color: "var(--mui-palette-text-primary)"
+                            color: "var(--mui-palette-text-primary)",
+                            wordBreak: `break-word`
                         }}
                     >
                         {children}

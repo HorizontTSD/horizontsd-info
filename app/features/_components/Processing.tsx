@@ -13,37 +13,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
+import { CardBackground } from "@/app/_components/Common";
 
 interface ContentItem {
     title: string;
     description: string[];
     image: string;
-}
-
-function Background() {
-    const { mode } = useColorScheme();
-    const maskOpacity = mode === "dark" ? "0.1" : "0.7";
-    const background = `var(--mui-palette-primary-light)`
-    return (
-        <Box
-            sx={{
-                background: background,
-                borderRadius: `1rem`,
-                height: "100%",
-                left: 0,
-                maskComposite: "revert",
-                maskImage: `url(/images/mask.webp), ${background}`,
-                maskPosition: "0% 0%",
-                maskRepeat: "no-repeat",
-                maskSize: "100% 200%",
-                opacity: maskOpacity,
-                position: "absolute",
-                top: 0,
-                width: "100%",
-                zIndex: 1,
-            }}
-        />
-    );
 }
 
 function Mobile() {
@@ -120,90 +95,86 @@ function Mobile() {
 }
 
 function Desktop() {
+    const { mode } = useColorScheme();
+    const isDark = mode == "dark"
     const { dict } = useI18n();
     if (!dict || !dict.Features || !dict.Features.Processing || !dict.Features.Processing.Content) return null;
     const content: ContentItem[] = dict.Features.Processing.Content;
     return (
-        <Grid container sx={{
-            borderRadius: `1rem`,
+        <Grid maxWidth={"xl"} container sx={{
+            borderRadius: "var(--mui-shape-borderRadius)",
             display: `flex`,
             flexDirection: `column`,
-            padding: `2rem`,
+            padding: `1rem`,
             width: `100%`
         }}>
             {content?.map((item: ContentItem, i: number) => (
-                <Stack direction={"column"} key={i} sx={{
-                    padding: `2rem`,
-                    width: `100%`,
-                }}>
-                    <ScrollGrow>
-                        <Stack direction={i % 2 === 0 ? "row" : "row-reverse"} sx={{
+                <ScrollGrow key={i}>
+                    <Stack direction={"column"} sx={{
+                        padding: `1rem`,
+                        alignItems: `center`,
+                        maxHeight: `45vh`,
+                    }}>
+                        <Stack direction={i % 2 === 0 ? "row" : `row-reverse`} sx={{
                             alignItems: `center`,
-                            display: `flex`,
-                            height: `50vh`,
-                            justifyContent: `space-around`,
                             position: `relative`,
                             width: `100%`,
-                            zIndex: `2`,
+                            justifyContent: `space-between`,
+                            zIndex: 4,
                         }}>
                             <Box sx={{
                                 alignItems: `center`,
                                 backgroundColor: `transparent`,
-                                border: `1px solid black`,
-                                borderRadius: `0.5rem`,
+                                borderRadius: "var(--mui-shape-borderRadius)",
                                 display: `flex`,
                                 justifyContent: `center`,
-                                maxHeight: `45vh`,
                                 position: `relative`,
-                                transition: `transform 0.3s linear`,
                                 width: `40%`,
-                                zIndex: `10`,
+                                maxHeight: `20vh`,
+                                margin: i % 2 === 0 ? `0 0 0 1rem` : `0 1rem 0 0`,
+                                transition: `transform 0.3s linear`,
+                                zIndex: 5,
+                                background: `url(${item.image})`,
+                                backgroundPosition: "50% 50%",
+                                backgroundRepeat: "no-repeat",
+                                backgroundSize: "contain",
+                                flexDirection: "column",
+                                height: "19vh",
                                 "&:hover": {
-                                    transform: `scale(1.4) translateX(${i % 2 === 0 ? `10%` : `-10%`})`
+                                    transform: `scale(2) translateX(${i % 2 === 0 ? `3%` : `-3%`})`
                                 },
-                            }}>
-                                <CardMedia
-                                    alt={item.title}
-                                    component="img"
-                                    image={item.image}
-                                    sx={{ maxHeight: `45vh`, width: `100%`, }}
-                                />
-                            </Box>
+                            }} />
                             <Box sx={{
                                 display: `flex`,
                                 flexDirection: `column`,
-                                justifyContent: `start`,
-                                width: `30%`,
-                            }}>
-                                <Box sx={{
-                                    alignItems: `start`,
-                                    display: `flex`,
-                                    flexDirection: `column`,
-                                    height: `30vh`,
-                                    justifyContent: `space-between`,
-                                    left: `0`,
-                                    padding: `1rem`,
-                                    position: `relative`,
-                                    top: `0`,
-                                    width: `100%`,
-                                    zIndex: 4
+                                justifyContent: `center`,
+                                alignItems: i % 2 == 0 ? `end` : `start`,
+                                width: `60%`,
+                                borderRadius: "var(--mui-shape-borderRadius)",
+                                zIndex: 4,
+                                background: `linear-gradient(${i % 2 == 0 ? -90 : 90}deg, rgb(from var(${isDark ? "--mui-palette-secondary-dark" : "--mui-palette-common-white"}) r g b / 0.5) 80%, transparent)`,
+                                height: `40vh`,
+                                left: `0`,
+                                padding: `1rem`,
+                                position: `relative`,
+                                top: `0`,
+                            }} >
+                                <Stack sx={{
+                                    textAlign: i % 2 === 0 ? "right" : "left"
                                 }}>
-                                    <Stack>
-                                        <Typography gutterBottom variant="h6" color="textPrimary">
-                                            {item.title}
-                                        </Typography>
-                                        {item.description.map((e: string, i: number) => (
-                                            <Typography key={i} gutterBottom variant="body2" color="textPrimary">
-                                                {e}
-                                            </Typography>
-                                        ))}
-                                    </Stack>
-                                </Box>
+                                    <Typography gutterBottom variant="h6" color="textPrimary">{item.title}</Typography>
+                                    {item.description.slice(0, 1).map((e: string, i: number) =>
+                                        (<Typography key={i} gutterBottom variant="subtitle1" color="textSecondary" >{e}</Typography>)
+                                    )}
+                                    {item.description.slice(1).map((e: string, i: number) =>
+                                        (<Typography key={i} gutterBottom variant="body1" color="textSecondary" >{e}</Typography>)
+                                    )}
+                                </Stack>
                             </Box>
-                            <Background />
+                            <CardBackground direction={i % 2 === 0} />
                         </Stack>
-                    </ScrollGrow>
-                </Stack>
+                    </Stack >
+                </ScrollGrow>
             ))}
         </Grid>
     );

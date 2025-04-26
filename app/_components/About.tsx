@@ -81,11 +81,10 @@ function MemberField({ children, size, product = "", tooltip = false }: MemberFi
                 }}
             >{tooltip
                 ? <Button
-                    color="secondary"
                     variant="outlined"
                     sx={{
                         alignItems: `center`,
-                        borderColor: `var(--mui-palette-text-primary)`,
+                        borderColor: `var(--mui-palette-text-secondary)`,
                         borderRadius: "var(--mui-shape-borderRadius)",
                         color: `var(--mui-palette-text-primary)`,
                         fontSize: `0.7rem`,
@@ -166,7 +165,7 @@ function Content() {
                                         <BadgeIcon color="disabled" sx={{ marginRight: "1rem" }} />
                                         <Typography
                                             fontFamily={"sans-serif"}
-                                            sx={{ textOverflow: "ellipsis", userSelect: "text" }}
+                                            sx={{ textOverflow: "ellipsis", userSelect: "none", }}
                                             variant="h6"
                                         >
                                             {capitalizeFirstLetter(member.first_name)} {capitalizeFirstLetter(member.last_name)}
@@ -176,7 +175,7 @@ function Content() {
                                 {member?.job_title &&
                                     <MemberField >
                                         <LabelIcon color="disabled" sx={{ marginRight: "1rem" }} />
-                                        <Typography sx={{ userSelect: "text" }} variant="caption" component="div">
+                                        <Typography sx={{ userSelect: "none" }} variant="caption" component="div">
                                             {member.job_title}
                                         </Typography>
                                     </MemberField>
@@ -190,7 +189,7 @@ function Content() {
                                     >
                                         <SchoolIcon sx={{ marginRight: "1rem" }} />
                                         <Typography
-                                            sx={{ userSelect: "text", whiteSpace: "pre-wrap" }}
+                                            sx={{ userSelect: "none", whiteSpace: "pre-wrap" }}
                                             variant="caption"
                                             component="div"
                                         >
@@ -206,7 +205,7 @@ function Content() {
                                             product={"telegram"}
                                         >
                                             <TelegramIcon color="secondary" />
-                                            <Typography sx={{ userSelect: "text" }} variant="caption" component="div">
+                                            <Typography sx={{ userSelect: "none" }} variant="caption" component="div">
                                                 {member.contacts.telegram}
                                             </Typography>
                                         </MemberField>
@@ -218,7 +217,7 @@ function Content() {
                                         >
                                             <GithubIcon />
                                             <Typography
-                                                sx={{ textOverflow: "ellipsis", userSelect: "text" }}
+                                                sx={{ textOverflow: "ellipsis", userSelect: "none" }}
                                                 variant="caption"
                                                 component="div"
                                             >
@@ -232,7 +231,7 @@ function Content() {
                                             product={"email"}
                                         >
                                             <AlternateEmailIcon />
-                                            <Typography sx={{ textOverflow: "ellipsis", userSelect: "text" }}
+                                            <Typography sx={{ textOverflow: "ellipsis", userSelect: "none" }}
                                                 variant="caption"
                                                 component="div"
                                             >
