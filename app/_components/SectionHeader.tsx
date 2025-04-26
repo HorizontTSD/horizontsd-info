@@ -14,6 +14,7 @@ export default function Header({ children, sx }: HeaderProps) {
         <Box
             className="section-header"
             sx={{
+                marginTop: `1rem`,
                 alignItems: 'center',
                 display: 'flex',
                 flexDirection: 'column',

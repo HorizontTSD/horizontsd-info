@@ -115,6 +115,7 @@ export function Email({ formData, setFormData, checkForm }: FieldSetterProps) {
 					color="secondary"
 					size={24}
 					sx={{
+						userSelect: `none`,
 						position: 'absolute',
 						right: `0%`,
 						top: `18%`,

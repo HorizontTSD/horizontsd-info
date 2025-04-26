@@ -96,10 +96,12 @@ function Mobile() {
     const { mode } = useColorScheme();
     const isDark = mode === "dark";
     const { dict } = useI18n();
+    const bgPalette = ['#263238', 'var(--mui-palette-secondary-light)']
     if (!dict || !dict.Home || !dict.Home.Works || !dict.Home.Works.Content) return null;
     const content = dict.Home.Works.Content;
     return (
         <Grid container sx={{
+            background: bgPalette[~~(!isDark)],
             alignContent: `center`, display: `flex`, flexDirection: `column`,
             padding: `0.5rem`, margin: `0.5rem`, borderRadius: `0.9rem`,
         }}>
@@ -155,7 +157,7 @@ function Mobile() {
                     />
                     <CardActions sx={{ justifyContent: `center` }}>
                         <Link href={`/images/${isDark ? "dashboard-dark.webp" : "dashboard-light.webp"}`}>
-                            <Button size="small">{content[25]}</Button>
+                            <Button color="info" size="small">{content[25]}</Button>
                         </Link>
                     </CardActions>
                 </Card>
@@ -261,7 +263,7 @@ function Desktop() {
 
 function Content() {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
     return isMobile ? <Mobile /> : <Desktop />
 }
 

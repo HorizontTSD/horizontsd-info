@@ -1,6 +1,6 @@
 import * as React from "react";
 import NextLink from "next/link";
-import { Card, Box, Container, Typography, Button, Stack } from "@mui/material";
+import { Card, Box, Container, Typography, Button, Stack, useMediaQuery, useTheme } from "@mui/material";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import { useColorScheme } from "@mui/material/styles";
 import type { } from "swiper/types";
@@ -48,54 +48,65 @@ export interface DesktopCardProps {
 	}
 }
 
+
+
 function DesktopButton({ active = false, index, handleItemClick, content }: DesktopButtonProps) {
 	const { mode } = useColorScheme();
 	const isDark = mode == 'dark'
+	const theme = useTheme();
+	const isMd = useMediaQuery(theme.breakpoints.between("sm", "lg"));
+	const isSm = useMediaQuery(theme.breakpoints.down("md"));
+	const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
+	const activeBackground = ["var(--mui-palette-info-main)", `rgb(from var(--mui-palette-info-main) r g b / 0.9)`]
+	const hoverBackground = ['rgb(from var(--mui-palette-info-main) r g b / 0.2)', 'rgb(from var(--mui-palette-info-dark) r g b / 0.2)']
+	const activeColor = ["var(--mui-palette-info-light)", `var(--mui-palette-info-dark)`]
+
 	return (
-		<Box onClick={() => handleItemClick(index)} sx={{
-			alignItems: "center",
-			borderRadius: "var(--mui-shape-borderRadius)",
-			border: `none`,
-			background: active
-				? "var(--mui-palette-info-dark)"
-				: isDark
-					? "var(--mui-palette-primary-dark)"
-					: "var(--mui-palette-primary-light)",
-			cursor: "pointer",
-			color: active
-				? `var(--mui-palette-primary-light)`
-				: `var(--mui-palette-text-primary)`,
-			display: "flex",
-			flexDirection: "column",
-			height: `100%`,
-			justifyContent: "start",
-			marginLeft: index != 0 ? "1rem" : 0,
-			padding: 2,
-			width: "auto",
-			"&:hover": {
+		<Box
+			sx={{
+				height: '100%',
+				alignItems: "center",
+				borderRadius: "var(--mui-shape-borderRadius)",
+				border: `none`,
 				background: active
-					? "var(--mui-palette-info-light)" : isDark
-						? "var(--mui-palette-info-dark)"
-						: "var(--mui-palette-info-light)",
-				color: `var(--mui-palette-primary-light)`
-			}
-		}}>
+					? activeBackground[~~isDark]
+					: bgPalette[~~!isDark],
+				cursor: "pointer",
+				color: active
+					? `var(--mui-palette-primary-light)`
+					: `var(--mui-palette-text-primary)`,
+				display: "flex",
+				flexDirection: "column",
+				justifyContent: "start",
+				marginLeft: index != 0 ? "1rem" : 0,
+				"&:hover": {
+					background: active
+						? activeBackground[~~!isDark]
+						: hoverBackground[~~(isDark)],
+					color: active
+						? activeColor[~~(isDark)]
+						: activeColor[~~(!isDark)]
+				}
+			}}
+			onClick={() => handleItemClick(index)}
+		>
 			<Box sx={{
 				alignItems: "left",
 				display: "flex",
 				flexDirection: "column",
 				textAlign: "left",
 				textTransform: "none",
-				width: "100%",
+				height: isSm ? `12rem` : `11rem`,
+				padding: isMd ? `1rem` : `2rem`,
 			}}>
-				<Stack>
+				<Stack direction={"column"} >
 					<Stack direction="row" alignItems="center">
 						<FormatListBulletedIcon sx={{ marginRight: "1rem" }} />
-						<Typography variant="h6">
+						<Typography variant={isSm ? "caption" : "h6"} sx={{ lineHeight: `1.5rem` }}>
 							{content.title}
 						</Typography>
 					</Stack>
-					<Typography variant="body2">
+					<Typography variant={isSm ? "caption" : "body1"}>
 						{content.description}
 					</Typography>
 				</Stack>
@@ -105,6 +116,11 @@ function DesktopButton({ active = false, index, handleItemClick, content }: Desk
 }
 
 function DesktopCard({ selected, dictionary }: DesktopCardProps) {
+	const { mode } = useColorScheme();
+	const isDark = mode == 'dark'
+
+	const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
+
 	return (
 		<Box sx={{
 			display: "flex",
@@ -113,7 +129,9 @@ function DesktopCard({ selected, dictionary }: DesktopCardProps) {
 			zIndex: 3
 		}}>
 			<Card variant="outlined" sx={{
+				border: `none`,
 				width: "100%",
+				background: bgPalette[~~(!isDark)],
 			}}>
 				<Box sx={{
 					left: 0,
@@ -155,43 +173,53 @@ function DesktopCard({ selected, dictionary }: DesktopCardProps) {
 					</Box>
 				</Box>
 			</Card>
-		</Box>
+		</Box >
 	)
 }
 
 export function Desktop() {
-	const { dict } = useI18n();
+	const theme = useTheme();
 	const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
+	const handleItemClick = (index: number) => setSelectedItemIndex(index);
+	const breakpoint = [
+		useMediaQuery(theme.breakpoints.up("lg")),
+		useMediaQuery(theme.breakpoints.between("md", "lg")),
+		useMediaQuery(theme.breakpoints.between("sm", "md")),
+		useMediaQuery(theme.breakpoints.between("xs", "sm")),
+		useMediaQuery(theme.breakpoints.down("xs")),
+	].indexOf(true) + 1
+
+	const { dict } = useI18n();
 	if (!dict || !dict.Home || !dict.Home.Applications || !dict.Home.Applications.Content) return null;
 	const dictionary = dict.Home.Applications;
-	const handleItemClick = (index: number) => setSelectedItemIndex(index);
 	const selected = dictionary.Content[selectedItemIndex].block;
+
 	return (
 		<Container
 			sx={{
 				alignItems: "center",
 				display: "flex",
 				flexDirection: "column",
-				pb: { xs: 8, sm: 12 },
-				pt: { xs: 14, sm: 20 },
+				height: `100%`,
+				width: "100%",
+				pb: { xs: breakpoint, sm: breakpoint },
+				pt: { xs: breakpoint, sm: breakpoint },
 			}}>
-			<Box
+			<Stack
+				direction="column"
 				sx={{
-					display: "flex",
-					flexDirection: "column",
-					height: `100%`,
-					width: "100%",
-				}}>
-				<Stack direction="column">
-					<Box
+					width: '100%',
+					height: '100%',
+				}}
+			>
+				<Box sx={{ height: '20%', minHeight: 0 }}>
+					<Stack
+						direction="row"
 						sx={{
-							alignItems: "center",
-							display: "flex",
-							flexDirection: "row",
-							height: `auto`,
+							alignItems: "stretch",
+							height: '100%',
 							justifyContent: "space-between",
 							margin: "0 0 1rem 0",
-							width: "100%",
 						}}>
 						{dictionary.Content.map(({ button }: ContentItem, index: number) => (
 							<DesktopButton
@@ -202,10 +230,13 @@ export function Desktop() {
 								key={index}
 							/>
 						))}
-					</Box>
-				</Stack>
-				<DesktopCard dictionary={dictionary} selected={selected} />
-			</Box >
-		</Container >
+					</Stack>
+				</Box>
+
+				<Box sx={{ height: '80%', minHeight: 0 }}>
+					<DesktopCard dictionary={dictionary} selected={selected} />
+				</Box>
+			</Stack>
+		</Container>
 	);
 }

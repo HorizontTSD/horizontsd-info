@@ -52,7 +52,8 @@ const styleMobile = {
 	width: `97%`,
 	height: `auto`,
 	maxHeight: `85%`,
-	p: `0.5rem`,
+	p: `0.2rem`,
+	overflowY: `scroll`
 };
 
 
@@ -67,20 +68,28 @@ export function Form({
 }: FormProps) {
 
 	const theme = useTheme();
-	const mediaQuery = [
-		useMediaQuery(theme.breakpoints.down("lg")),
-		useMediaQuery(theme.breakpoints.down("md")),
-		useMediaQuery(theme.breakpoints.down("sm"))
-	]
+
+	const breakpoint = [
+		useMediaQuery(theme.breakpoints.up("lg")),
+		useMediaQuery(theme.breakpoints.between("md", "lg")),
+		useMediaQuery(theme.breakpoints.between("sm", "md")),
+		useMediaQuery(theme.breakpoints.between("xs", "sm")),
+		useMediaQuery(theme.breakpoints.down("xs")),
+	].indexOf(true)
+
 	const styles = [
+		styleDesktop,
 		styleDesktop,
 		styleMd,
 		styleMobile,
+		styleMobile,
 	]
-	const current = mediaQuery.reduce((a, e) => e ? ++a : a, 0)
+
+	const current = Math.max(0, breakpoint + 1)
 	const { dict } = useI18n();
 	if (!dict || !dict.FeedbackForm) return null;
 	const { FeedbackForm } = dict;
+
 	return (
 		<Modal
 			aria-describedby="modal-submit-description"
@@ -89,13 +98,13 @@ export function Form({
 			open={opened}
 		>
 			<Fade in={opened}>
-				<Card sx={{ ...baseStyle, ...styles[Math.max(current - 1, 0)] }} >
+				<Card sx={{ ...baseStyle, ...styles[current] }} >
 					<Stack direction={"row"} alignItems={"baseline"} justifyContent={"center"} m={current}>
-						<Typography gutterBottom variant={`h3`} >
+						<Typography gutterBottom variant={current > 1 ? "h4" : "h6"} sx={{ userSelect: `none` }}>
 							{FeedbackForm.Header.value}
 						</Typography>
 					</Stack>
-					<Box component="form" noValidate autoComplete="off">
+					<Box >
 						<Name
 							formData={formData}
 							submitHandle={submitHandle}

@@ -20,7 +20,7 @@ const TextMaskCustom = React.forwardRef<HTMLInputElement, CustomProps>(
     return (
       <IMaskInput
         {...other}
-        mask={`+{${FeedbackForm.Phone.code}}(000)000-00-00`} // Default mask, will be updated based on country code
+        mask={`+{${FeedbackForm.Phone.code}}(000)000-00-00`}
         definitions={{
           '#': /[1-9]/,
         }}
@@ -43,7 +43,6 @@ export function Phone({ formData, setFormData, checkForm }: FieldSetterProps) {
     }
     const withoutPhoneCode = phone.slice(phone.indexOf(`(`)).replace(/\D/g, '')
     try {
-      // if (validator.isMobilePhone(onlyDigits, (lang as MobilePhoneLocale), { strictMode: true })) {
       if (withoutPhoneCode.length == 10) {
         return FormDataFieldStatus.Valid;
       }
@@ -121,7 +120,7 @@ export function Phone({ formData, setFormData, checkForm }: FieldSetterProps) {
             name: 'phone',
           }}
         />
-        <FormHelperText>
+        <FormHelperText sx={{ userSelect: `none` }}>
           {inputValue.status === FormDataFieldStatus.Invalid && inputValue.value.length > 0
             ? FeedbackForm.Phone.FormHelperText
             : ""}

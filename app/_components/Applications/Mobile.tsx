@@ -2,6 +2,7 @@ import * as React from "react";
 import NextLink from "next/link";
 import { Card, CardContent, Typography, Button, Grid, Stack, CardActions } from "@mui/material";
 import { useColorScheme } from "@mui/material/styles";
+import LabelIcon from "@mui/icons-material/Label";
 import { Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { } from "swiper/types";
@@ -65,17 +66,22 @@ export function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
 				justifyContent: "space-between",
 				width: "95%"
 			}}>
-				<Stack direction="column" sx={{ justifyContent: "start", width: "100%" }}>
-					<Typography variant="h6" sx={{ color: "text.primary" }}>
-						{item.title}
-					</Typography>
-					{item.description.slice(0, -1).map((e, i) => (
-						<Typography key={i} gutterBottom variant="body2" sx={{ color: "text.primary" }}>
-							{e}
-						</Typography>
-					))}
+				<Stack direction="column" sx={{ justifyContent: "space-between", height: `100%`, width: "100%" }}>
+					<Stack>
+						<Stack direction={"row"} alignItems={"center"} marginBottom={1}>
+							<LabelIcon color="primary" sx={{ marginRight: "1rem" }} />
+							<Typography variant="h6" sx={{ lineHeight: `1.9rem`, color: "text.primary" }}>
+								{item.title}
+							</Typography>
+						</Stack>
+						{item.description.slice(0, -1).map((e, i) => (
+							<Typography key={i} gutterBottom variant="body2" sx={{ color: "text.primary" }}>
+								{e}
+							</Typography>
+						))}
+					</Stack>
 					{item.description.slice(-1).map((e, i) => (
-						<Typography key={i} variant="caption" sx={{ color: "text.secondary" }}>
+						<Typography key={i} variant="caption" gutterBottom sx={{ color: "text.secondary" }}>
 							{e}
 						</Typography>
 					))}

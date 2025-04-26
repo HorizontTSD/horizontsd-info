@@ -17,7 +17,7 @@ import "swiper/css/thumbs";
 
 function Content() {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
     return isMobile ? <Mobile /> : <Desktop />;
 }
 

@@ -10,7 +10,7 @@ export interface HeroProps {
 
 function Content({ fullsize = false }: HeroProps) {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
     return (
         <Container
             maxWidth="lg"

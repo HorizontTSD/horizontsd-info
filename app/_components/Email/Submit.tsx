@@ -36,7 +36,7 @@ export function Submit({ formData, submitHandle, formStatus, checkForm }: FieldS
 			{isPending && (
 				<CircularProgress
 					color="primary"
-					sx={{ zIndex: 3, position: "absolute", right: "15%", p: 0.3 }}
+					sx={{ userSelect: `none`, zIndex: 3, position: "absolute", right: "15%", p: 0.3 }}
 				/>
 			)}
 			<Button
@@ -45,7 +45,7 @@ export function Submit({ formData, submitHandle, formStatus, checkForm }: FieldS
 				size="large"
 				variant="contained"
 				color={isPending ? "warning" : "secondary"}
-				sx={{ color: "primary.light" }}
+				sx={{ color: "primary.light", userSelect: `none` }}
 				onClick={handleClick}
 			>
 				{FeedbackForm.Submit.button}

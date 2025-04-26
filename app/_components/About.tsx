@@ -1,6 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
-import { Card, CardContent, Box, Container, Typography, Grid, Divider, Button } from "@mui/material";
+import { Card, CardContent, Box, Container, Typography, Grid, Divider, Button, useTheme, useMediaQuery } from "@mui/material";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import { useColorScheme } from "@mui/material/styles";
@@ -111,7 +111,8 @@ function Content() {
     const { dict } = useI18n();
     const teamData: TeamMember[] = dict?.Team as TeamMember[];
     const bgPalette = ['#263238', 'var(--mui-palette-secondary-light)']
-
+    const theme = useTheme();
+    const isSm = useMediaQuery(theme.breakpoints.down("sm"));
     return (
         <Container maxWidth="xl" sx={{
             alignItems: "center",
@@ -124,9 +125,9 @@ function Content() {
         }}>
             <Grid
                 container
-                spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
+                spacing={{ xs: 1, sm: 2, md: 3, lg: 4 }}
                 justifyContent="center"
-                sx={{ width: { xs: "95%", sm: "100%", md: "80%", lg: "80%" } }}
+                sx={{ width: { xs: "95%", sm: "94%", md: "93%", lg: "92%" } }}
             >
                 {teamData.map((member: TeamMember, i: number) => (
                     <Grid
@@ -137,14 +138,14 @@ function Content() {
                     >
                         <Card sx={{ height: "100%" }}>
                             <div style={{
-                                height: "420px",
+                                height: isSm ? `300px` : "420px",
                                 width: "100%",
                             }}>
                                 {member?.photo?.length && (
                                     <div style={{
                                         alignItems: "center",
                                         background: `url(${member.photo})`,
-                                        backgroundPosition: "0% 100%",
+                                        backgroundPosition: "50% 100%",
                                         backgroundRepeat: "no-repeat",
                                         backgroundSize: "contain",
                                         display: "flex",

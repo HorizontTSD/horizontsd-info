@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useColorScheme } from "@mui/material/styles";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import { HeroCard } from "@/app/_components/Hero/HeroCard";
 import { useI18n } from "@/app/_providers/I18nProvider";
@@ -15,6 +15,9 @@ export interface HeroContent {
 export function Desktop({ fullsize = false }: HeroProps) {
 	const { mode } = useColorScheme();
 	const { dict } = useI18n();
+	const theme = useTheme();
+	const isSm = useMediaQuery(theme.breakpoints.down("sm"));
+	const isMd = useMediaQuery(theme.breakpoints.down("md"));
 	if (!dict || !dict.Home || !dict.Home.Hero) return null;
 	const accentColor = `var(--mui-palette-secondary-contrastText)`
 	const content: HeroContent = dict.Home.Hero;
@@ -32,17 +35,16 @@ export function Desktop({ fullsize = false }: HeroProps) {
 				zIndex: 3,
 			}}>
 			<WebGLBackground color={isDark ? [0.1, 0.5, 0.9] : [0.1, 0.3, 1.0]} />
-			<Stack direction="column"
+			<Stack direction={"column"}
 				sx={{
 					alignItems: "start",
 					display: "flex",
-					flexDirection: "column",
 					height: `100%`,
 					justifyContent: "start",
 					position: "relative",
 					width: `100%`,
 				}}>
-				<Stack spacing={3} direction="row">
+				<Stack spacing={isSm ? 1 : 3} direction={isMd ? "column" : "row"}>
 					<Typography
 						variant="h1"
 						sx={{

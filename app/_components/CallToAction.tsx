@@ -13,7 +13,7 @@ function CTA() {
     const modal = useModalForm();
     const { mode } = useColorScheme();
     const { dict } = useI18n();
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
     if (!dict || !dict.Home || !dict.Home.CallToAction) return null;
     const content = dict.Home.CallToAction;
     return (
@@ -28,16 +28,16 @@ function CTA() {
                 <Card >
                     <Grid container alignItems="center" spacing={2}>
                         <Grid size={{ xs: 12, md: 6 }} >
-                            <CardContent sx={{ p: { sx: 3, md: 5 } }}>
+                            <CardContent sx={{ display: `flex`, flexDirection: `column`, alignItems: `center`, p: { sx: 3, md: 5 } }}>
                                 <Typography
-                                    variant="h4"
+                                    variant="h3"
                                     gutterBottom
                                     sx={{ fontWeight: 800, }}
                                 >
                                     {content.h3}
                                 </Typography>
                                 <Typography
-                                    variant="body1"
+                                    variant="button"
                                     color="textPrimary"
                                     sx={{ mb: 2, fontSize: "1.1rem", }}
                                 >{content.body1}</Typography>
@@ -93,6 +93,8 @@ function CTA() {
 
 export default function CallToAction() {
     return (
-        <Section id="call-to-action" sx={{ minHeight: "720px", justifyContent: `center` }}><CTA /></Section>
+        <Section id="call-to-action" sx={{ minHeight: "720px", justifyContent: `center` }}>
+            <CTA />
+        </Section>
     )
 }

@@ -128,11 +128,12 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 				: `var(--mui-palette-success-light)`
 		}
 	}[type]
-	
+
 	return (
 		<Card sx={{
 			background: cardBackground,
-			width: `49%`,
+			width: isMd ? `38%` : `40%`,
+			minWidth: `385px`,
 			maxHeight: `200px`
 		}}>
 			<CardActionArea
@@ -148,10 +149,19 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 				<CardContent sx={{
 					display: `flex`,
 					flexDirection: `column`,
-					justifyContent: `space-between`
+					justifyContent: `space-between`,
 				}}>
-					<Stack direction={"row"} >
-						<Stack direction={"column"} sx={{ justifyContent: `space-around`, minWidth: `14rem` }} >
+					<Stack direction={"row"} sx={{
+						display: `flex`,
+						flexDirection: `row`,
+						justifyContent: `space-between`,
+						alignItems: `normal`,
+						padding: `0 0 0 0`
+					}}>
+						<Stack
+							direction={"column"}
+							sx={{ justifyContent: `space-around`, minWidth: isMd ? `200px` : `13rem` }}
+						>
 							<Stack
 								direction={"row"}
 								sx={{ marginBottom: `0.5rem` }}
@@ -161,7 +171,7 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 									: <OnlinePredictionIcon sx={{ color: "var(--mui-palette-text-primary)" }} />
 								}
 								<Typography
-									variant="h4"
+									variant={isMd ? "h6" : "h4"}
 									sx={{
 										fontFamily: bebasNeue.style.fontFamily,
 										textTransform: `uppercase`,
@@ -173,11 +183,11 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 							</Stack>
 							<Stack direction={"column"} >
 								<Typography
-									variant="h6"
+									variant={isMd ? "subtitle1" : "h5"}
 									sx={{
 										fontFamily: bebasNeue.style.fontFamily,
 										textTransform: `uppercase`,
-										lineHeight: `1.0rem`,
+										lineHeight: `1.5rem`,
 										maxHeight: `5rem`,
 										overflow: `hidden`,
 										position: `relative`
@@ -189,7 +199,7 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 									<Chip key={i} variant="filled" label={e} size="small" sx={{
 										fontFamily: bebasNeue.style.fontFamily,
 										textTransform: `uppercase`,
-										padding: `0.5rem`,
+										padding: `0.5rem 0.5rem 0.3rem 0.5rem`,
 										color: type == "primary" ? `warning.main` : "text.primary"
 									}} />
 								))}
@@ -197,16 +207,16 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 						</Stack>
 						<div style={{
 							display: "flex",
-							left: "-80px",
-							maxWidth: `50%`,
+							left: isMd ? "-95px" : "-15%",
+							minWidth: `200px`,
 							position: "relative",
-							top: isMd ? `-20px` : `-12px`,
-							width: isMd ? "150px" : "200px",
+							top: `-1rem`,
+							width: "200px",
 							height: `140px`
 						}}>
 							<div style={{
 								display: `flex`,
-								left: isMd ? `160px` : `180px`,
+								left: `82%`,
 								position: `relative`,
 								top: `10px`,
 							}}>
@@ -227,23 +237,28 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 
 function HeroCardMobile({ type }: HeroCardProps) {
 	const { dict } = useI18n();
-	if (!dict || !dict.Home || !dict.Home.Hero || !dict.Home.Hero.button) return null;
-	const content = dict.Home.Hero.button[type == 'primary' ? 0 : 1]
-	const t = {
+	const { mode } = useColorScheme();
+	const isDark = mode == 'dark'
+	const { background: cardBackground } = {
 		primary: {
-			background: `#2291FF`
+			background: isDark
+				? `var(--mui-palette-primary-main)`
+				: `var(--mui-palette-primary-light)`
 		},
 		secondary: {
-			background: `#26AD50`
+			background: isDark
+				? `var(--mui-palette-success-dark)`
+				: `var(--mui-palette-success-light)`
 		}
 	}[type]
-
+	if (!dict || !dict.Home || !dict.Home.Hero || !dict.Home.Hero.button) return null;
+	const content = dict.Home.Hero.button[type == 'primary' ? 0 : 1]
 	return (
 		<Card sx={{
-			background: t.background,
+			background: cardBackground,
 			marginBottom: `1rem`,
 			marginTop: type == "primary" ? `1rem` : "unset",
-			width: `90%`,
+			width: `100%`,
 		}}>
 			<CardActionArea
 				sx={{
@@ -254,58 +269,44 @@ function HeroCardMobile({ type }: HeroCardProps) {
 						},
 					},
 				}}>
-				<CardContent sx={{
-					display: `flex`,
-					flexDirection: `column`,
-					justifyContent: `space-between`
-				}}>
-					<Stack direction={"column"} sx={{
-						justifyContent: `center`,
-						alignItems: `baseline`
-					}}>
-						<Stack direction={"column"}>
-							<Stack direction={"row"}
+				<CardContent>
+					<Stack direction={"column"}>
+						<Stack direction={"row"} >
+							{type == 'primary'
+								? <FlashOnIcon sx={{ color: "var(--mui-palette-warning-dark)" }} />
+								: <OnlinePredictionIcon sx={{ color: "var(--mui-palette-text-primary)" }} />
+							}
+							<Typography
+								variant="h6"
 								sx={{
-									alignItems: `start`,
-									justifyContent: `start`,
-									marginBottom: `0.5rem`,
-								}}>
-								{type == 'primary'
-									? <FlashOnIcon sx={{ color: "var(--mui-palette-warning-dark)", marginRight: `5px` }} />
-									: <OnlinePredictionIcon sx={{ color: "var(--mui-palette-text-primary)", marginRight: `5px` }} />
-								}
-								<Typography variant="h6"
-									sx={{
-										lineHeight: `1rem`,
-										whiteSpace: 'normal',
-										wordBreak: 'break-word',
-									}}
-								>
-									{content.title}
-								</Typography>
-							</Stack>
-							<Stack direction={"column"}>
-								<Typography
-									variant="body2"
-									sx={{
-										lineHeight: `1rem`,
-										maxHeight: `3rem`,
-										maxWidth: `20rem`,
-										overflow: `hidden`,
-										position: `relative`,
-										"&:after": {
-											background: `linear-gradient(to right, rgba(255, 255, 255, 0), ${t.background} 70%)`,
-											bottom: `0`,
-											content: `""`,
-											height: `1.1rem`,
-											position: `absolute`,
-											right: `0`,
-											textAlign: `right`,
-											width: `70%`,
-										}
-									}}
-								>{content.description}</Typography>
-							</Stack>
+									fontFamily: bebasNeue.style.fontFamily,
+									textTransform: `uppercase`,
+									lineHeight: `1.8rem`,
+								}}
+							>
+								{content.title}
+							</Typography>
+						</Stack>
+						<Stack direction={"column"} >
+							<Typography
+								variant={"subtitle1"}
+								sx={{
+									fontFamily: bebasNeue.style.fontFamily,
+									textTransform: `uppercase`,
+									overflow: `hidden`,
+									position: `relative`
+								}}
+							>{content.description[0]}</Typography>
+						</Stack>
+						<Stack direction={"row"} spacing={1} sx={{ position: `relative` }}>
+							{content.description.slice(1).map((e, i) => (
+								<Chip key={i} variant="filled" label={e} size="small" sx={{
+									fontFamily: bebasNeue.style.fontFamily,
+									textTransform: `uppercase`,
+									padding: `0.5rem 0.5rem 0.3rem 0.5rem`,
+									color: type == "primary" ? `warning.main` : "text.primary"
+								}} />
+							))}
 						</Stack>
 					</Stack>
 				</CardContent>

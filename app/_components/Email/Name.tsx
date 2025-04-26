@@ -86,10 +86,10 @@ export function Name({ formData, setFormData, checkForm }: FieldSetterProps) {
                 inputProps={{
                     maxLength: maxLength
                 }}
-               
+
             />
             {inputValue.value.length > 0 && (
-                <FormHelperText sx={{ ml: 1 }}>
+                <FormHelperText sx={{ ml: 1, userSelect: `none` }}>
                     {getHelperText()}
                 </FormHelperText>
             )}
