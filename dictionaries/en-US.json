@@ -569,18 +569,6 @@
   },
   "Team": [
     {
-      "first_name": "Dmitrii",
-      "last_name": "Vasenin",
-      "education": "PhD in Technology for Health",
-      "job_title": "Co-founder / Lead",
-      "contacts": {
-        "telegram": "https://t.me/dvasenin",
-        "orcid": "0000-0002-7028-9984",
-        "email": "vasenindmitrij01@gmail.com"
-      },
-      "photo": "/images/team/Dmitrii_Vasenin.png"
-    },
-    {
       "first_name": "Nikita",
       "last_name": "Savvin",
       "education": "PhD Student. Major – Systems Analysis, Information Management and Processing, Statistics",
@@ -591,6 +579,18 @@
         "orcid": "0009-0009-9163-6234"
       },
       "photo": "/images/team/Savvin_Nikita.png"
+    },
+    {
+      "first_name": "Dmitrii",
+      "last_name": "Vasenin",
+      "education": "PhD in Technology for Health",
+      "job_title": "Co-founder / Lead",
+      "contacts": {
+        "telegram": "https://t.me/dvasenin",
+        "orcid": "0000-0002-7028-9984",
+        "email": "vasenindmitrij01@gmail.com"
+      },
+      "photo": "/images/team/Dmitrii_Vasenin.png"
     },
     {
       "first_name": "Andrew",
@@ -620,6 +620,16 @@
       "contacts": {
         "telegram": "https://t.me/dostanmenyatyt",
         "email": "ilyailyaselivanov@gmail.com"
+      }
+    },
+    {
+      "first_name": "Bulat",
+      "last_name": "Khuzin",
+      "education": "Master's degree in Oil and gas Engineering",
+      "job_title": "Data Scientist",
+      "contacts": {
+        "telegram": "https://t.me/erzert",
+        "email": "bhkuzin@gmail.com"
       }
     }
   ],

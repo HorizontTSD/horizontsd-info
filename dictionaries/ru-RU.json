@@ -377,6 +377,16 @@
         "telegram": "https://t.me/dostanmenyatyt",
         "email": "ilyailyaselivanov@gmail.com"
       }
+    },
+    {
+      "first_name": "Булат",
+      "last_name": "Хузин",
+      "education": " Магистр в Нефтегазовом деле",
+      "job_title": "Data Scientist",
+      "contacts": {
+        "telegram": "https://t.me/erzert",
+        "email": "bhkuzin@gmail.com"
+      }
     }
   ],
   "Footer": {
