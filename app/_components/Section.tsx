@@ -41,16 +41,16 @@ export default function Section(props: SectionProps) {
 
     const minHeightFullsize: string[] = [
         "1080px",
-        "100vh",
-        "100vh",
-        "100vh",
-        "100vh"
+        "960px",
+        "auto",
+        "auto",
+        "auto"
     ]
     const minHeightHalfsize: string[] = [
-        "540px",
-        "540px",
-        "540px",
-        "540px",
+        "480px",
+        "380px",
+        "380px",
+        "380px",
     ]
 
     const currentBreakpoint = Math.max(0, breakpoint);

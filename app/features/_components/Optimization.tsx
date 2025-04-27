@@ -142,7 +142,7 @@ function Desktop() {
                                 flexDirection: "column",
                                 height: "19vh",
                                 "&:hover": {
-                                    transform: `scale(2) translateX(${i % 2 === 0 ? `3%` : `-3%`})`
+                                    transform: `scale(2) translateX(${i % 2 === 0 ? `10%` : `-10%`})`
                                 },
                             }} />
 

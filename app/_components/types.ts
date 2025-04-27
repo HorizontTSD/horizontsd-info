@@ -176,6 +176,8 @@ export interface ResearchItem {
 	image: string;
 	description: string[];
 	Button: string;
+	link: string;
+
 }
 
 export interface ResearchContent {
@@ -211,7 +213,7 @@ export interface AppDictionary extends Dictionary {
 	Features: FeaturesContent;
 	Research: {
 		Content: ResearchItem[];
-		Button?: string;
+		Button: string;
 	};
 	Team: TeamMember[];
 	FeedbackForm: {

@@ -72,11 +72,11 @@ export function HeroCardIllustration({ type = "primary" }: HeroCardIllustrationP
 	useEffect(() => {
 		const firstInterval = setInterval(() => {
 			setCurrentFirstIcon(prev => (prev + 1) % firstBoxIcons.length);
-		}, type == "primary" ? 2100 : 3200);
+		}, type == "primary" ? 4000 : 6000);
 
 		const secondInterval = setInterval(() => {
 			setCurrentSecondIcon(prev => (prev + 1) % secondBoxIcons.length);
-		}, type == "primary" ? 6300 : 2400);
+		}, type == "primary" ? 7000 : 3000);
 		return () => {
 			clearInterval(firstInterval);
 			clearInterval(secondInterval);
@@ -134,7 +134,8 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 			background: cardBackground,
 			width: isMd ? `38%` : `40%`,
 			minWidth: `385px`,
-			maxHeight: `200px`
+			maxHeight: `200px`,
+			boxShadow: 10,
 		}}>
 			<CardActionArea
 				sx={{
@@ -194,7 +195,7 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 									}}
 								>{content.description[0]}</Typography>
 							</Stack>
-							<Stack direction={"row"} spacing={1} sx={{ width: `100px`, position: `relative`, bottom: `-20px` }}>
+							<Stack direction={"row"} spacing={1} sx={{ width: `100px`, position: `relative`, bottom: `-15px` }}>
 								{content.description.slice(1).map((e, i) => (
 									<Chip key={i} variant="filled" label={e} size="small" sx={{
 										fontFamily: bebasNeue.style.fontFamily,
@@ -298,7 +299,7 @@ function HeroCardMobile({ type }: HeroCardProps) {
 								}}
 							>{content.description[0]}</Typography>
 						</Stack>
-						<Stack direction={"row"} spacing={1} sx={{ position: `relative` }}>
+						<Stack direction={"row"} spacing={1} sx={{ position: `relative`, bottom: `-5px` }}>
 							{content.description.slice(1).map((e, i) => (
 								<Chip key={i} variant="filled" label={e} size="small" sx={{
 									fontFamily: bebasNeue.style.fontFamily,

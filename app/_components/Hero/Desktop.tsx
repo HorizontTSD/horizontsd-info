@@ -1,10 +1,8 @@
 import * as React from "react";
-import { useColorScheme } from "@mui/material/styles";
 import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import { HeroCard } from "@/app/_components/Hero/HeroCard";
 import { useI18n } from "@/app/_providers/I18nProvider";
-import { WebGLBackground } from "@/app/_components/Wow";
 import { HeroProps } from "@/app/_components/Hero";
 import { bebasNeue } from "@/fonts";
 
@@ -13,7 +11,6 @@ export interface HeroContent {
 }
 
 export function Desktop({ fullsize = false }: HeroProps) {
-	const { mode } = useColorScheme();
 	const { dict } = useI18n();
 	const theme = useTheme();
 	const isSm = useMediaQuery(theme.breakpoints.down("sm"));
@@ -21,7 +18,6 @@ export function Desktop({ fullsize = false }: HeroProps) {
 	if (!dict || !dict.Home || !dict.Home.Hero) return null;
 	const accentColor = `var(--mui-palette-secondary-contrastText)`
 	const content: HeroContent = dict.Home.Hero;
-	const isDark = mode === "dark";
 	return (
 		<Stack direction="column"
 			sx={{
@@ -34,7 +30,6 @@ export function Desktop({ fullsize = false }: HeroProps) {
 				width: `100%`,
 				zIndex: 3,
 			}}>
-			<WebGLBackground color={isDark ? [0.1, 0.5, 0.9] : [0.1, 0.3, 1.0]} />
 			<Stack direction={"column"}
 				sx={{
 					alignItems: "start",

@@ -54,7 +54,6 @@ function DesktopButton({ active = false, index, handleItemClick, content }: Desk
 	const { mode } = useColorScheme();
 	const isDark = mode == 'dark'
 	const theme = useTheme();
-	const isMd = useMediaQuery(theme.breakpoints.between("sm", "lg"));
 	const isSm = useMediaQuery(theme.breakpoints.down("md"));
 	const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
 	const activeBackground = ["var(--mui-palette-info-main)", `rgb(from var(--mui-palette-info-main) r g b / 0.9)`]
@@ -64,8 +63,7 @@ function DesktopButton({ active = false, index, handleItemClick, content }: Desk
 	return (
 		<Box
 			sx={{
-				height: '100%',
-				alignItems: "center",
+				minHeight: `9rem`,
 				borderRadius: "var(--mui-shape-borderRadius)",
 				border: `none`,
 				background: active
@@ -77,7 +75,6 @@ function DesktopButton({ active = false, index, handleItemClick, content }: Desk
 					: `var(--mui-palette-text-primary)`,
 				display: "flex",
 				flexDirection: "column",
-				justifyContent: "start",
 				marginLeft: index != 0 ? "1rem" : 0,
 				"&:hover": {
 					background: active
@@ -96,8 +93,7 @@ function DesktopButton({ active = false, index, handleItemClick, content }: Desk
 				flexDirection: "column",
 				textAlign: "left",
 				textTransform: "none",
-				height: isSm ? `12rem` : `11rem`,
-				padding: isMd ? `1rem` : `2rem`,
+				padding: `1rem`,
 			}}>
 				<Stack direction={"column"} >
 					<Stack direction="row" alignItems="center">
@@ -106,7 +102,7 @@ function DesktopButton({ active = false, index, handleItemClick, content }: Desk
 							{content.title}
 						</Typography>
 					</Stack>
-					<Typography variant={isSm ? "caption" : "body1"}>
+					<Typography variant={isSm ? "caption" : "body2"}>
 						{content.description}
 					</Typography>
 				</Stack>
@@ -158,7 +154,7 @@ function DesktopCard({ selected, dictionary }: DesktopCardProps) {
 								{selected.title}
 							</Typography>
 							{selected.description.map((e: string, i: number) => (
-								<Typography key={i} gutterBottom variant="body2">
+								<Typography key={i} gutterBottom variant="body1">
 									{e}
 								</Typography>
 							))}
@@ -208,34 +204,28 @@ export function Desktop() {
 			<Stack
 				direction="column"
 				sx={{
-					width: '100%',
 					height: '100%',
+					width: '100%',
 				}}
 			>
-				<Box sx={{ height: '20%', minHeight: 0 }}>
-					<Stack
-						direction="row"
-						sx={{
-							alignItems: "stretch",
-							height: '100%',
-							justifyContent: "space-between",
-							margin: "0 0 1rem 0",
-						}}>
-						{dictionary.Content.map(({ button }: ContentItem, index: number) => (
-							<DesktopButton
-								active={selectedItemIndex === index}
-								content={button}
-								handleItemClick={handleItemClick}
-								index={index}
-								key={index}
-							/>
-						))}
-					</Stack>
-				</Box>
-
-				<Box sx={{ height: '80%', minHeight: 0 }}>
-					<DesktopCard dictionary={dictionary} selected={selected} />
-				</Box>
+				<Stack
+					direction="row"
+					sx={{
+						alignItems: "stretch",
+						justifyContent: "space-between",
+						marginBottom: `1rem`
+					}}>
+					{dictionary.Content.map(({ button }: ContentItem, index: number) => (
+						<DesktopButton
+							active={selectedItemIndex === index}
+							content={button}
+							handleItemClick={handleItemClick}
+							index={index}
+							key={index}
+						/>
+					))}
+				</Stack>
+				<DesktopCard dictionary={dictionary} selected={selected} />
 			</Stack>
 		</Container>
 	);

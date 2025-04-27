@@ -526,38 +526,44 @@
     "Button": "Learn more",
     "Content": [
       {
-        "image": "/images/images_research/Optimizing Short-Term Electrical Load Forecasting with Bi-LSTM and Advanced Temporal Encoding.webp",
-        "title": "Optimizing Short-Term Electrical Load Forecasting with Bi-LSTM and Advanced Temporal Encoding",
+        "image": "/images/images_research/LSTM-Based Models for Day-Ahead Electrical Load Forecast A Novel Feature Selection Method Including Weather Data.webp",
+        "title": "LSTM-Based Models for Day-Ahead Electrical Load Forecast: A Novel Feature Selection Method Including Weather Data",
         "description": [
-          "This paper presents a new approach to short-term electrical load forecasting, focusing on temporal encoding and minimizing the impact of weather data.",
-          "The study found that weather variables had little effect on forecast accuracy, leading to a shift towards encoding time features like minute, hour, and day using sine and cosine transformations.",
-          "Advanced machine learning models, including Bi-LSTM and CNN-Bi-LSTM, were tested, with the Bi-LSTM model showing the highest accuracy when combined with the temporal encoding technique.",
-          "The findings emphasize the importance of time feature engineering in improving forecast reliability."
-        ]
+          "We present a novel load forecasting algorithm based on LSTM combined with a custom Time2Vec temporal encoding method and weather data integration.",
+          "Only calendar-based features (weekday, hour, date) and weather indicators (temperature, humidity, etc.) were used as inputs.",
+          "Our comparative analysis shows that the Time2Vec + LSTM approach we developed significantly outperforms more complex architectures like Bi-LSTM or CNN-LSTM.",
+          "This confirms that proper feature engineering and advanced time encoding can deliver highly accurate forecasts without the need for architectural complexity."
+        ],
+        "link": "https://iris.unibs.it/bitstream/11379/622686/2/PhD_Thesis_ML_for_T4H_final_version_pdf.pdf"
       },
       {
         "image": "/images/images_research/Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series.webp",
         "title": "Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series",
         "description": [
-          "This paper addresses missing data in power demand time series by comparing imputation methods.",
-          "It introduces two new approaches: Historical Data Informed Regression (H-DIRT) and Seasonal K-Nearest Neighbors (SKNN).",
-          "H-DIRT uses historical data for linear regression, while SKNN adds seasonal trends.",
-          "SKNN is more accurate, but H-DIRT is faster for smaller data gaps.",
-          "The study shows these methods can improve power demand data accuracy, providing a solid base for future research."
-        ]
+          "This work introduces and validates two innovative methods for missing data imputation in power demand time series: H-DIRT (historical regression) and SKNN (seasonal K-nearest neighbors).",
+          "Designed for both interpretability and accuracy, these methods incorporate seasonal features (year, season, month, week, day) to improve performance over standard imputation techniques.",
+          "H-DIRT uses linear regression based on historical consumption, offering excellent performance and speed for short gaps.",
+          "SKNN enriches standard KNN with seasonal data and shows better stability and accuracy for long sequences of missing values.",
+          "Tested on multi-year real-world data from an electrical station in Italy, both methods significantly outperform traditional time-domain KNN imputation.",
+          "SKNN achieves the best overall accuracy, while H-DIRT is more computationally efficient and competitive when data gaps are short and resources are limited."
+        ],
+        "link": "https://ieeexplore.ieee.org/document/10613768"
       },
       {
         "image": "/images/images_research/Enhancing Short-Term Load Forecasting through Machine Learning Ensemble Models and by Incorporating Weather Data.webp",
         "title": "Enhancing Short-Term Load Forecasting through Machine Learning Ensemble Models and by Incorporating Weather Data",
         "description": [
-          "Accurate short-term electrical load forecasting is crucial for efficient energy management and grid stability.",
-          "This paper presents an advanced ensemble approach for enhancing short-term load forecasting accuracy by integrating Random Forest (RF) and Histogram-based Gradient Boosting Regression (HGBR) algorithms.",
-          "The ensemble method leverages the strengths of each algorithm to capture complex patterns and interactions in the data.",
-          "Notably, the model incorporates real-world data from the University of Brescia's electrical facility data collection system, adding practical relevance to the study.",
-          "Additionally, external weather components, particularly ambient temperature, are included to improve predictive capabilities.",
-          "Experimental results demonstrate that the proposed ensemble model significantly outperforms individual forecasting methods in some metrics, achieving higher accuracy and reliability in predicting electrical load.",
-          "The inclusion of ambient temperature as an external variable contributes to the enhanced performance, highlighting the importance of weather factors in load forecasting."
-        ]
+          "This work proposes a novel ensemble model combining Random Forest (RF) and Histogram-based Gradient Boosting (HGBR) to improve the accuracy of short-term load forecasting.",
+          "Key findings include:",
+          "Without ambient temperature: the ensemble model slightly outperforms both RF and HGBR.",
+          "With ambient temperature: HGBR becomes the top performer across all metrics.",
+          "On anomaly days: the ensemble model with temperature achieves the best overall accuracy and robustness.",
+          "These results highlight:",
+          "The importance of including ambient temperature as a feature for improved prediction.",
+          "The strength of ensemble techniques in handling variability and complex dependencies in load data.",
+          "This approach not only improves day-to-day accuracy but also provides reliable forecasts under irregular conditions, making it a promising direction for real-world energy systems and broader time-series forecasting applications."
+        ],
+        "link": "https://ieeexplore.ieee.org/document/10805705"
       }
     ]
   },

@@ -8,7 +8,7 @@ void main() {gl_Position = vec4(aVertexPosition, 0, 1);}
 const F = `#version 300 es
 precision highp float;uniform vec3 iResolution;uniform float iTime;uniform lowp vec3 uColor;out vec4 fragColor;
 float h(float x){return fract(sin(x*12.9898)*43758.5453);}
-void main(){vec2 u=gl_FragCoord.xy/iResolution.xy;float s=0.001,t=0.02,m=0.1,M=0.9,r=floor(u.y/s),y=fract(u.y/s),a=step(y,t),L=mix(m,M,h(r)),v=mix(.1,.5,h(r+1.)),p=fract(1.-u.x+iTime*v+h(r)),b=step(p,L),o=clamp(1.-p/L,0.,1.);fragColor=vec4(uColor,a*b*o);}
+void main(){vec2 u=gl_FragCoord.xy/iResolution.xy;float s=0.1,t=0.025,m=0.25,M=0.1,r=floor(u.y/s),y=fract(u.y/s),a=step(y,t),L=mix(m,M,h(r)),v=mix(.1,.1,h(r+1.)),p=fract(1.-u.x+iTime*v+h(r)),b=step(p,L),o=clamp(1.-p/L,0.,1.);fragColor=vec4(uColor,a*b*o);}
 `;
 
 export const WebGLBackground: React.FC<{ color: [number, number, number]; }> = ({
@@ -74,12 +74,9 @@ export const WebGLBackground: React.FC<{ color: [number, number, number]; }> = (
 	return <canvas
 		ref={ref}
 		style={{
-			zIndex: `0`,
-			position: "absolute",
 			top: "0",
 			left: "0",
 			width: '100%',
 			height: '100%',
-			background: 'transparent'
 		}} />;
 };

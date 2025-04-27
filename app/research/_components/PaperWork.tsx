@@ -1,6 +1,5 @@
 import * as React from "react";
 import NextLink from "next/link";
-import Image from "next/image";
 import { Typography, Button, Box, useMediaQuery, Grid, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import SectionHeader from "@/app/_components/SectionHeader";
@@ -13,10 +12,10 @@ import "swiper/css/effect-coverflow";
 
 interface PaperWorkProps {
     item: ResearchItem;
+    button: string;
 }
 
-function Mobile({ content }: { content: ResearchItem }) {
-    const buttonContent = content.Button;
+function Mobile({ content, button }: { content: ResearchItem, button: string; }) {
     return (
         <Grid container sx={{
             alignItems: "center",
@@ -31,23 +30,14 @@ function Mobile({ content }: { content: ResearchItem }) {
                 backgroundColor: "transparent",
                 display: "flex",
                 justifyContent: "center",
-                maxHeight: "45vh",
-                paddingBottom: "2rem",
-                position: "relative",
+                maxHeight: "720px",
                 width: "100%",
-            }}>
-                <Image
-                    alt={content.title}
-                    height={450}
-                    src={content.image}
-                    style={{
-                        maxHeight: "45vh",
-                        objectFit: "contain",
-                        width: "100%",
-                    }}
-                    width={800}
-                />
-            </Box>
+                aspectRatio: "1 / 1",
+                backgroundImage: `url("${content.image}")`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+            }} />
             <Stack sx={{
                 marginBottom: "2rem",
                 width: "100%",
@@ -61,7 +51,7 @@ function Mobile({ content }: { content: ResearchItem }) {
             <Stack>
                 <NextLink href="#">
                     <Button variant="contained" sx={{ color: "primary.light" }}>
-                        {buttonContent}
+                        {button}
                     </Button>
                 </NextLink>
             </Stack>
@@ -69,8 +59,7 @@ function Mobile({ content }: { content: ResearchItem }) {
     );
 }
 
-function Desktop({ content }: { content: ResearchItem }) {
-    const buttonContent = content.Button;
+function Desktop({ content, button }: { content: ResearchItem, button: string; }) {
     return (
         <Grid
             container
@@ -88,24 +77,15 @@ function Desktop({ content }: { content: ResearchItem }) {
                 backgroundColor: "transparent",
                 display: "flex",
                 justifyContent: "center",
-                maxHeight: "45vh",
-                paddingBottom: "2rem",
-                position: "relative",
-                width: "50%",
-            }}>
-                <Image
-                    alt={content.title}
-                    height={450}
-                    src={content.image}
-                    style={{
-                        maxHeight: "45vh",
-                        objectFit: "contain",
-                        width: "100%",
-                    }}
-                    width={800}
-
-                />
-            </Box>
+                height: "480px",
+                maxHeight: "720px",
+                width: "80%",
+                aspectRatio: "1 / 1",
+                backgroundImage: `url("${content.image}")`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+            }} />
             <Stack sx={{
                 width: "100%",
                 margin: "1rem 0"
@@ -119,9 +99,9 @@ function Desktop({ content }: { content: ResearchItem }) {
                 ))}
             </Stack>
             <Stack>
-                <NextLink href="#">
+                <NextLink href={`${content?.link}`}>
                     <Button variant="contained" color="secondary" sx={{ color: "primary.light" }}>
-                        {buttonContent}
+                        {button}
                     </Button>
                 </NextLink>
             </Stack>
@@ -129,13 +109,13 @@ function Desktop({ content }: { content: ResearchItem }) {
     );
 }
 
-function Content({ content }: { content: ResearchItem }) {
+function Content({ content, button }: { content: ResearchItem, button: string }) {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-    return isMobile ? <Mobile content={content} /> : <Desktop content={content} />;
+    return isMobile ? <Mobile content={content} button={button} /> : <Desktop content={content} button={button} />;
 }
 
-export default function PaperWork({ item }: PaperWorkProps) {
+export default function PaperWork({ item, button }: PaperWorkProps) {
     return (
         <Section id="optimization" sx={{
             minHeight: "auto"
@@ -151,7 +131,7 @@ export default function PaperWork({ item }: PaperWorkProps) {
                     {item.title}
                 </Typography>
             </SectionHeader>
-            <Content content={item} />
+            <Content content={item} button={button} />
         </Section>
     );
 }

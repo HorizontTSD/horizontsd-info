@@ -19,15 +19,9 @@ function PageContent() {
     <>
       <Navbar />
       <Hero fullsize={false} />
-      {content.map((item, index) => {
-        const researchItem: ResearchItem = {
-          Button: item.Button || dict.Research.Button || "Learn More",
-          description: item.description,
-          id: item.id || `item-${index}`,
-          image: item.image,
-          title: item.title,
-        };
-        return <PaperWork item={researchItem} key={researchItem.id} />;
+      {content.map((item: ResearchItem, index: number) => {
+
+        return <PaperWork item={item} button={dict.Research.Button} key={index} />;
       })}
       <CallToAction />
       <Footer />
