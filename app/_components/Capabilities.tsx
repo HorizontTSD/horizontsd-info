@@ -50,19 +50,27 @@ function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
             justifySelf: "center",
             width: "80%",
         }}>
-            <CardContent sx={{ display: `flex`, flexDirection: `column`, height: `100%`, justifyContent: "space-between", borderRadius: "var(--mui-shape-borderRadius)" }}>
-                <Stack direction="row" alignItems="center">
-                    <LabelIcon color="secondary" sx={{ marginRight: "1rem" }} />
-                    <Typography variant="button" component="div">
-                        {item.title}
-                    </Typography>
+            <CardContent sx={{
+                borderRadius: "var(--mui-shape-borderRadius)",
+                display: `flex`,
+                flexDirection: `column`,
+                height: `100%`,
+                justifyContent: "space-between",
+            }}>
+                <Stack>
+                    <Stack direction="row" alignItems="center" marginBottom={1}>
+                        <LabelIcon color="primary" sx={{ marginRight: "1rem" }} />
+                        <Typography variant="button" component="div">
+                            {item.title}
+                        </Typography>
+                    </Stack>
+                    {item.description.slice(0, 2).map((e: string, i: number) => (
+                        <Typography key={i} variant="subtitle1" gutterBottom>{e}</Typography>
+                    ))}
+                    {item.description.slice(2, -1).map((e: string, i: number) => (
+                        <Typography key={i} variant="body1" gutterBottom>{e}</Typography>
+                    ))}
                 </Stack>
-                {item.description.slice(0, 2).map((e: string, i: number) => (
-                    <Typography key={i} variant="subtitle1" gutterBottom>{e}</Typography>
-                ))}
-                {item.description.slice(2, -1).map((e: string, i: number) => (
-                    <Typography key={i} variant="body1" gutterBottom>{e}</Typography>
-                ))}
                 {item.description.slice(-1).map((e: string, i: number) => (
                     <Typography key={i} variant="caption" color="textSecondary" gutterBottom>
                         {e}
@@ -111,16 +119,18 @@ function SliderMobile() {
 }
 
 function Desktop() {
+    const theme = useTheme();
     const { mode } = useColorScheme();
     const isDark = mode === "dark";
     const { dict } = useI18n();
+    const isSm = useMediaQuery(theme.breakpoints.down("lg"));
     if (!dict || !dict.Home || !dict.Home.Capabilities || !dict.Home.Capabilities.Content) return null;
     const content: CapabilityItem[] = dict.Home.Capabilities.Content;
     const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
     return (
         <Grid container maxWidth={"lg"} spacing={1} rowSpacing={1} sx={{ padding: "1rem" }}>
             {content.map((item: CapabilityItem, index: number) => (
-                <Grid size={6} key={index} >
+                <Grid size={isSm ? 12 : 6} key={index} >
                     <ScrollGrow>
                         <Stack
                             direction="column"
@@ -130,10 +140,10 @@ function Desktop() {
                                 background: bgPalette[~~(!isDark)],
                                 color: "textPrimary",
                                 justifyContent: "space-between",
-                                minHeight: "21rem",
-                                padding: `0.8rem`,
+                                minHeight: isSm ? `auto` : "22rem",
+                                padding: `0.7rem`,
                             }}>
-                            <div>
+                            <Stack direction={"column"}>
                                 <Stack direction="row" sx={{
                                     alignItems: "center",
                                     display: "flex",
@@ -141,18 +151,18 @@ function Desktop() {
                                     justifyContent: "start",
                                 }}>
                                     <LabelIcon color="primary" sx={{ marginRight: "1rem" }} />
-                                    <Typography variant="h6" component="div">{item.title}</Typography>
+                                    <Typography variant={isSm ? "subtitle1" : "h6"} component="div">{item.title}</Typography>
                                 </Stack>
                                 {item.description.slice(0, 2).map((e: string, i: number) => (
-                                    <Typography key={i} variant="subtitle1" gutterBottom>{e}</Typography>
+                                    <Typography key={i} variant={isSm ? "subtitle2" : "subtitle1"} gutterBottom>{e}</Typography>
                                 ))}
                                 {item.description.slice(2, -1).map((e: string, i: number) => (
-                                    <Typography key={i} variant="body2" gutterBottom>{e}</Typography>
+                                    <Typography key={i} variant={isSm ? "caption" : "body2"} gutterBottom>{e}</Typography>
                                 ))}
-                            </div>
+                            </Stack>
 
                             {item.description.slice(-1).map((e: string, i: number) => (
-                                <Typography key={i} variant="caption" color="textSecondary" gutterBottom>
+                                <Typography key={i} variant={isSm ? "subtitle2" : "caption"} color="textSecondary" gutterBottom>
                                     {e}
                                 </Typography>
                             ))}
@@ -166,19 +176,15 @@ function Desktop() {
 
 function Content() {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
     return isMobile ? <SliderMobile /> : <Desktop />;
 }
 
 function Footer() {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
     const { dict } = useI18n();
-
-    if (!dict || !dict.Home || !dict.Home.Capabilities || !dict.Home.Capabilities.Footer) {
-        return null;
-    }
-
+    if (!dict || !dict.Home || !dict.Home.Capabilities || !dict.Home.Capabilities.Footer) return null;
     const content: FooterContent = dict.Home.Capabilities.Footer;
 
     return (
@@ -235,9 +241,6 @@ function Footer() {
 
 export default function Capabilities() {
     const { dict } = useI18n();
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-    
     if (!dict || !dict.Home || !dict.Home.Capabilities || !dict.Home.Capabilities.SectionHeader) return null;
     const content = dict.Home.Capabilities.SectionHeader;
 
@@ -245,7 +248,6 @@ export default function Capabilities() {
         <Section id="capabilities" sx={{
             display: `flex`,
             flexDirection: `column`,
-            maxHeight: isMobile ? "auto" : `1080px`
         }}>
             <SectionHeader>
                 <Typography variant="h3" gutterBottom sx={{

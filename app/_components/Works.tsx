@@ -96,10 +96,14 @@ function Mobile() {
     const { mode } = useColorScheme();
     const isDark = mode === "dark";
     const { dict } = useI18n();
+    const bgPalette = ['#263238', 'var(--mui-palette-secondary-light)']
     if (!dict || !dict.Home || !dict.Home.Works || !dict.Home.Works.Content) return null;
     const content = dict.Home.Works.Content;
+    const rawColor = isDark ? `var(--mui-palette-common-white)` : `var(--mui-palette-common-black)`;
+
     return (
         <Grid container sx={{
+            background: bgPalette[~~(!isDark)],
             alignContent: `center`, display: `flex`, flexDirection: `column`,
             padding: `0.5rem`, margin: `0.5rem`, borderRadius: `0.9rem`,
         }}>
@@ -109,7 +113,7 @@ function Mobile() {
             }}>
                 <Typography color="textPrimary" variant="h6" gutterBottom>{content[0]}</Typography>
             </Stack>
-            <Stack direction={"column"} padding={"0.5rem"} sx={{
+            <Stack direction={"column"} sx={{
                 maxWidth: `100%`,
                 alignSelf: `center`
             }}>
@@ -120,46 +124,68 @@ function Mobile() {
                 </Stack>
             </Stack>
             <Divider />
-            <Stack direction={"column"} padding={"0.5rem"}>
-                <Stack direction={"column"}>
-                    <Typography color="textPrimary" variant="subtitle1" gutterBottom>{content[3]}</Typography>
-                    <Typography color="textPrimary" variant="body1">{content[4]}</Typography>
-                    <ul style={{ color: `var(--mui-palette-text-secondary)` }}>
-                        <li> <b>{content[5]}</b> {content[6]}</li>
-                        <li> <b>{content[7]}</b> {content[8]}</li>
-                        <li> <b>{content[9]}</b> {content[10]}</li>
-                    </ul>
-                </Stack>
-                <Stack direction={"column"}>
-                    <Typography color="textPrimary" variant="subtitle1" gutterBottom>{content[11]}</Typography>
-                    <ul style={{ color: `var(--mui-palette-text-secondary)` }}>
-                        <li> <b>{content[12]}</b> {content[13]}</li>
-                        <li> <b>{content[14]}</b> {content[15]}</li>
-                        <li> <b>{content[16]}</b> {content[17]}</li>
-                    </ul>
-                </Stack>
-                <Stack direction={"column"}>
-                    <Typography color="textPrimary" variant="subtitle1" gutterBottom>{content[18]}</Typography>
-                    <ul style={{ color: `var(--mui-palette-text-secondary)` }}>
-                        <li> <b>{content[19]}</b> {content[20]}</li>
-                        <li> <b>{content[21]}</b> {content[22]}</li>
-                        <li> <b>{content[23]}</b> {content[24]}</li>
-                    </ul>
-                </Stack>
+            <Stack direction={"column"} >
+                <ScrollGrow>
+                    <Stack direction={"column"}>
+                        <Typography color="textPrimary" variant="subtitle1" gutterBottom>{content[3]}</Typography>
+                        <Typography color="textPrimary" variant="body1">{content[4]}</Typography>
+                        <ul style={{ color: rawColor }}>
+                            <li> <b>{content[5]}</b> {content[6]}</li>
+                            <li> <b>{content[7]}</b> {content[8]}</li>
+                            <li> <b>{content[9]}</b> {content[10]}</li>
+                        </ul>
+                    </Stack>
+                </ScrollGrow>
+                <ScrollGrow>
+                    <Stack direction={"column"}>
+                        <Typography color="textPrimary" variant="subtitle1" gutterBottom>{content[11]}</Typography>
+                        <ul style={{ color: rawColor }}>
+                            <li> <b>{content[12]}</b> {content[13]}</li>
+                            <li> <b>{content[14]}</b> {content[15]}</li>
+                            <li> <b>{content[16]}</b> {content[17]}</li>
+                            <li> <b>{content[18]}</b> {content[19]}</li>
+                            <li> <b>{content[20]}</b> {content[21]}</li>
+                        </ul>
+                    </Stack>
+                </ScrollGrow>
+                <ScrollGrow>
+                    <Stack direction={"column"}>
+                        <Typography color="textPrimary" variant="subtitle1" gutterBottom>{content[22]}</Typography>
+                        <ul style={{ color: rawColor }}>
+                            <li> <b>{content[23]}</b> {content[24]}</li>
+                            <li> <b>{content[25]}</b> {content[26]}</li>
+                            <li> <b>{content[27]}</b> {content[28]}</li>
+                        </ul>
+                    </Stack>
+                </ScrollGrow>
             </Stack>
-            <Stack direction={"column"} sx={{ justifyContent: `center`, alignItems: `center` }}>
-                <Card sx={{ maxWidth: 512, width: `100%`, padding: `1rem`, alignItems: `center` }} >
-                    <CardMedia
-                        sx={{ height: 256, alignItems: `center` }}
-                        image={`/images/${isDark ? "dashboard-dark.webp" : "dashboard-light.webp"}`}
-                    />
-                    <CardActions sx={{ justifyContent: `center` }}>
-                        <Link href={`/images/${isDark ? "dashboard-dark.webp" : "dashboard-light.webp"}`}>
-                            <Button size="small">{content[25]}</Button>
-                        </Link>
-                    </CardActions>
-                </Card>
-            </Stack>
+            <ScrollGrow>
+                <Stack direction={"column"} sx={{
+                    alignItems: `center`,
+                    justifyContent: `center`,
+                }}>
+                    <Card sx={{
+                        alignItems: `center`,
+                        maxWidth: 512,
+                        padding: `0.5rem`,
+                        width: `100%`,
+                    }} >
+                        <CardMedia
+                            sx={{
+                                borderRadius: "var(--mui-shape-borderRadius)",
+                                alignItems: `center`,
+                                height: 256,
+                            }}
+                            image={`/images/${isDark ? "dashboard-dark.webp" : "dashboard-light.webp"}`}
+                        />
+                        <CardActions sx={{ justifyContent: `center` }}>
+                            <Link href={`/images/${isDark ? "dashboard-dark.webp" : "dashboard-light.webp"}`}>
+                                <Button color="secondary" size="small">{content[29]}</Button>
+                            </Link>
+                        </CardActions>
+                    </Card>
+                </Stack>
+            </ScrollGrow>
         </Grid>
     )
 }
@@ -215,16 +241,18 @@ function Desktop() {
                             <li> <b>{content[12]}</b> {content[13]}</li>
                             <li> <b>{content[14]}</b> {content[15]}</li>
                             <li> <b>{content[16]}</b> {content[17]}</li>
+                            <li> <b>{content[18]}</b> {content[19]}</li>
+                            <li> <b>{content[20]}</b> {content[21]}</li>
                         </ul>
                     </Stack>
                 </ScrollGrow>
                 <ScrollGrow>
                     <Stack direction={"column"}>
-                        <Typography color="textPrimary" variant="subtitle1" gutterBottom>{content[18]}</Typography>
+                        <Typography color="textPrimary" variant="subtitle1" gutterBottom>{content[22]}</Typography>
                         <ul style={{ color: rawColor }}>
-                            <li> <b>{content[19]}</b> {content[20]}</li>
-                            <li> <b>{content[21]}</b> {content[22]}</li>
                             <li> <b>{content[23]}</b> {content[24]}</li>
+                            <li> <b>{content[25]}</b> {content[26]}</li>
+                            <li> <b>{content[27]}</b> {content[28]}</li>
                         </ul>
                     </Stack>
                 </ScrollGrow>
@@ -249,7 +277,7 @@ function Desktop() {
                         />
                         <CardActions sx={{ justifyContent: `center` }}>
                             <Link href={`/images/${isDark ? "dashboard-dark.webp" : "dashboard-light.webp"}`}>
-                                <Button color="secondary" size="small">{content[25]}</Button>
+                                <Button color="secondary" size="small">{content[29]}</Button>
                             </Link>
                         </CardActions>
                     </Card>
@@ -261,7 +289,7 @@ function Desktop() {
 
 function Content() {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
     return isMobile ? <Mobile /> : <Desktop />
 }
 

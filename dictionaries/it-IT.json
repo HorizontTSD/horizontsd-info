@@ -1,40 +1,41 @@
 {
 	"FeedbackForm": {
 		"Company": {
-			"label": "Your company name",
-			"helperTextA": "Company name should be less than",
-			"helperTextB": "characters"
+			"label": "Nome della tua azienda",
+			"helperTextA": "Il nome dell'azienda deve essere inferiore a",
+			"helperTextB": "caratteri"
 		},
 		"Email": {
-			"label": "Your email",
-			"helperA": "Please enter a valid email address",
-			"helperB": "Email is valid"
+			"label": "La tua email",
+			"helperA": "Inserisci un indirizzo email valido",
+			"helperB": "L'email è valida"
 		},
 		"Header": {
-			"value": "Submit your request"
+			"value": "Invia la tua richiesta"
 		},
 		"LegalInfo": {
-			"A": "By submitting this form, you consent to the processing of your personal data for the purpose of responding to your request.",
-			"B": "We store and protect your information in accordance with our",
+			"A": "Inviando questo modulo, acconsenti al trattamento dei tuoi dati personali per rispondere alla tua richiesta.",
+			"B": "Conserviamo e proteggiamo le tue informazioni in conformità con la nostra",
 			"C": "Privacy Policy",
-			"D": "You may withdraw consent at any time by contacting us at"
+			"D": "Puoi revocare il consenso in qualsiasi momento contattandoci all'indirizzo"
 		},
 		"Name": {
-			"label": "Your name",
-			"helperTextA": "Name should contain only letters and spaces",
-			"helperTextB": "Your name should be less than",
-			"helperTextC": "characters"
+			"label": "Il tuo nome",
+			"helperTextA": "Il nome deve contenere solo lettere e spazi",
+			"helperTextB": "Il tuo nome deve essere inferiore a",
+			"helperTextC": "caratteri"
 		},
 		"PageRating": {
-			"helperTextA": "Please select rating between 0 and 5"
+			"helperTextA": "Seleziona una valutazione tra 0 e 5"
 		},
 		"Phone": {
-			"inputLabel": "Your phone number",
-			"placeholder": "+1(000)000-0000",
-			"FormHelperText": "Please enter a valid phone number"
+			"inputLabel": "Il tuo numero di telefono",
+			"code": "39",
+			"placeholder": "+39(000)000-0000",
+			"FormHelperText": "Inserisci un numero di telefono valido"
 		},
 		"Submit": {
-			"button": "send"
+			"button": "invia"
 		}
 	},
 	"Home": {
@@ -42,20 +43,20 @@
 			"slogan": "La tua guida verso il futuro",
 			"button": [
 				{
-					"title": "Quick Forecast",
+					"title": "Previsione Rapida",
 					"description": [
-						"try it now",
-						"lstm",
-						"xgboost",
-						"hybrid models"
+						"provalo ora",
+						"LSTM",
+						"XGBoost",
+						"modelli ibridi"
 					]
 				},
 				{
-					"title": "The Solution of the company",
+					"title": "La Soluzione Aziendale",
 					"description": [
-						"view the demo",
+						"guarda la demo",
 						"demo",
-						"example"
+						"esempio"
 					]
 				}
 			]
@@ -278,7 +279,7 @@
 		},
 		"Features": {
 			"SectionHeader": {
-				"h4": "PlugNPlay",
+				"h4": "Plug'n'Play",
 				"body2": "Integrazione seamless con i tuoi sistemi esistenti o deployment full-stack in giorni"
 			},
 			"Content": [
@@ -525,38 +526,44 @@
 		"Button": "Scopri di più",
 		"Content": [
 			{
-				"image": "/images/images_research/Optimizing Short-Term Electrical Load Forecasting with Bi-LSTM and Advanced Temporal Encoding.webp",
-				"title": "Ottimizzazione delle Previsioni a Breve Termine del Carico Elettrico con Bi-LSTM e Codifica Temporale Avanzata",
+				"image": "/images/images_research/LSTM-Based Models for Day-Ahead Electrical Load Forecast A Novel Feature Selection Method Including Weather Data.webp",
+				"title": "Modelli basati su LSTM per la previsione del carico elettrico a breve termine: un innovativo metodo di selezione delle feature con dati meteorologici",
 				"description": [
-					"Questo articolo presenta un nuovo approccio alle previsioni a breve termine del carico elettrico, focalizzato sulla codifica temporale e sulla minimizzazione dell'impatto dei dati meteo.",
-					"Lo studio ha rilevato che le variabili meteorologiche avevano scarso effetto sull'accuratezza delle previsioni, portando a un cambio verso la codifica di feature temporali come minuto, ora e giorno usando trasformazioni seno e coseno.",
-					"Sono stati testati modelli avanzati di machine learning, inclusi Bi-LSTM e CNN-Bi-LSTM, con il modello Bi-LSTM che mostrava la maggiore accuratezza combinato con la tecnica di codifica temporale.",
-					"I risultati enfatizzano l'importanza dell'ingegneria delle feature temporali nel migliorare l'affidabilità delle previsioni."
-				]
+					"Presentiamo un innovativo algoritmo di previsione del carico basato su LSTM, combinato con un metodo personalizzato di codifica temporale Time2Vec e integrazione di dati meteorologici.",
+					"Come input sono stati utilizzati esclusivamente feature basate sul calendario (giorno della settimana, ora, data) e indicatori meteorologici (temperatura, umidità, ecc.).",
+					"La nostra analisi comparativa dimostra che l'approccio Time2Vec + LSTM da noi sviluppato supera significativamente architetture più complesse come Bi-LSTM o CNN-LSTM.",
+					"Ciò conferma che un'accurata progettazione delle feature e una codifica temporale avanzata possono fornire previsioni estremamente accurate senza necessità di complessità architetturale."
+				],
+				"link": "https://iris.unibs.it/bitstream/11379/622686/2/PhD_Thesis_ML_for_T4H_final_version_pdf.pdf"
 			},
 			{
 				"image": "/images/images_research/Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series.webp",
-				"title": "Inclusione di Caratteristiche Stagionali nei Metodi di Imputazione Dati per Serie Temporali di Domanda Energetica",
+				"title": "Integrazione di caratteristiche stagionali nei metodi di imputazione dati per serie temporali di domanda energetica",
 				"description": [
-					"Questo articolo affronta i dati mancanti nelle serie temporali di domanda energetica confrontando metodi di imputazione.",
-					"Introduce due nuovi approcci: Historical Data Informed Regression (H-DIRT) e Seasonal K-Nearest Neighbors (SKNN).",
-					"H-DIRT usa dati storici per regressione lineare, mentre SKNN aggiunge trend stagionali.",
-					"SKNN è più accurato, ma H-DIRT è più veloce per piccole lacune di dati.",
-					"Lo studio mostra che questi metodi possono migliorare l'accuratezza dei dati di domanda energetica, fornendo una base solida per ricerche future."
-				]
+					"Questo lavoro introduce e valida due metodi innovativi per l'imputazione di dati mancanti nelle serie temporali di domanda energetica: H-DIRT (regressione storica) e SKNN (K-vicini stagionali).",
+					"Progettati sia per interpretabilità che accuratezza, questi metodi incorporano caratteristiche stagionali (anno, stagione, mese, settimana, giorno) migliorando le prestazioni rispetto alle tecniche standard di imputazione.",
+					"H-DIRT utilizza regressione lineare basata sui consumi storici, offrendo eccellenti prestazioni e velocità per lacune brevi.",
+					"SKNN arricchisce il KNN standard con dati stagionali, mostrando maggiore stabilità e accuratezza per lunghe sequenze di valori mancanti.",
+					"Testati su dati reali pluriennali di una stazione elettrica italiana, entrambi i metodi superano significativamente la tradizionale imputazione KNN nel dominio temporale.",
+					"SKNN raggiunge la migliore accuratezza complessiva, mentre H-DIRT è più efficiente computazionalmente e competitivo quando le lacune di dati sono brevi e le risorse limitate."
+				],
+				"link": "https://ieeexplore.ieee.org/document/10613768"
 			},
 			{
 				"image": "/images/images_research/Enhancing Short-Term Load Forecasting through Machine Learning Ensemble Models and by Incorporating Weather Data.webp",
-				"title": "Miglioramento delle Previsioni a Breve Termine del Carico con Modelli Ensemble di Machine Learning e Inclusione di Dati Meteorologici",
+				"title": "Miglioramento delle previsioni di carico a breve termine mediante modelli ensemble di machine learning e integrazione di dati meteorologici",
 				"description": [
-					"Previsioni accurate a breve termine del carico elettrico sono cruciali per una gestione efficiente dell'energia e la stabilità della rete.",
-					"Questo articolo presenta un approccio ensemble avanzato per migliorare l'accuratezza delle previsioni a breve termine integrando algoritmi Random Forest (RF) e Histogram-based Gradient Boosting Regression (HGBR).",
-					"Il metodo ensemble sfrutta i punti di forza di ogni algoritmo per catturare pattern complessi e interazioni nei dati.",
-					"Notabilmente, il modello incorpora dati reali dal sistema di raccolta dati dell'impianto elettrico dell'Università di Brescia, aggiungendo rilevanza pratica allo studio.",
-					"Inoltre, componenti meteorologiche esterne, particolarmente la temperatura ambientale, sono incluse per migliorare le capacità predittive.",
-					"Risultati sperimentali dimostrano che il modello ensemble proposto supera significativamente i metodi individuali in alcune metriche, raggiungendo maggiore accuratezza e affidabilità nel predire il carico elettrico.",
-					"L'inclusione della temperatura ambientale come variabile esterna contribuisce alla performance migliorata, evidenziando l'importanza dei fattori meteo nelle previsioni di carico."
-				]
+					"Questo lavoro propone un nuovo modello ensemble che combina Random Forest (RF) e Histogram-based Gradient Boosting (HGBR) per migliorare l'accuratezza delle previsioni di carico a breve termine.",
+					"I principali risultati includono:",
+					"Senza temperatura ambientale: il modello ensemble supera leggermente sia RF che HGBR.",
+					"Con temperatura ambientale: HGBR diventa il migliore in tutte le metriche.",
+					"Nei giorni anomali: il modello ensemble con temperatura raggiunge la migliore accuratezza complessiva e robustezza.",
+					"Questi risultati evidenziano:",
+					"L'importanza di includere la temperatura ambientale come feature per migliorare le previsioni.",
+					"L'efficacia delle tecniche ensemble nel gestire variabilità e dipendenze complesse nei dati di carico.",
+					"Questo approccio non solo migliora l'accuratezza giornaliera, ma fornisce previsioni affidabili in condizioni irregolari, rappresentando una direzione promettente per i sistemi energetici reali e applicazioni più ampie di previsione di serie temporali."
+				],
+				"link": "https://ieeexplore.ieee.org/document/10805705"
 			}
 		]
 	},

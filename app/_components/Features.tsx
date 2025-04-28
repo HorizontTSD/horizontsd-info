@@ -29,11 +29,13 @@ interface MobileSwiperSlideProps {
 
 function Desktop() {
     const { mode } = useColorScheme();
-    const isDark = mode === "dark";
     const { dict } = useI18n();
+    const theme = useTheme();
+    const isSm = useMediaQuery(theme.breakpoints.down("md"));
+    const isDark = mode === "dark";
+    const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
     if (!dict || !dict.Home || !dict.Home.Features || !dict.Home.Features.Content) return null;
     const content: FeatureItem[] = dict.Home.Features.Content;
-    const bgPalette = ['var(--mui-palette-secondary-dark)', 'var(--mui-palette-secondary-light)']
     return (
         <Grid
             container
@@ -42,7 +44,7 @@ function Desktop() {
             justifyContent="center"
             sx={{
                 height: `1px`,
-                minHeight: `720px`,
+                minHeight: isSm ? `640px` : `720px`,
                 width: `100%`
             }}>
             <Swiper
@@ -53,7 +55,7 @@ function Desktop() {
                 modules={[Pagination, Navigation, EffectCoverflow]}
                 navigation={{ enabled: true }}
                 pagination={{ clickable: true }}
-                slidesPerView={3}
+                slidesPerView={isSm ? 1 : 3}
                 spaceBetween={20}
                 coverflowEffect={{
                     depth: 50,
@@ -67,8 +69,8 @@ function Desktop() {
                     display: `inline-flex`,
                     height: `100%`,
                     justifyContent: `center`,
-                    maxHeight: "540px",
-                    maxWidth: "1920px",
+                    maxHeight: isSm ? "540px" : `640px`,
+                    maxWidth: isSm ? `720px` : "1920px",
                     paddingTop: `1.1rem`,
                     width: "90%",
                 }}>
@@ -79,9 +81,9 @@ function Desktop() {
                             background: bgPalette[~~(!isDark)],
                             borderRadius: "var(--mui-shape-borderRadius)",
                             display: "grid",
-                            height: `${30}rem`,
+                            height: `${isSm ? 20 : 30}rem`,
                             justifySelf: "center",
-                            width: `100%`,
+                            width: isSm ? `80%` : `100%`,
                         }}>
                             <CardContent sx={{
                                 borderRadius: "var(--mui-shape-borderRadius)",
@@ -143,7 +145,7 @@ function MobileSwiperSlide({ item }: MobileSwiperSlideProps) {
                 borderRadius: "var(--mui-shape-borderRadius)",
                 height: "100%",
             }}>
-                <Stack direction="row" alignItems="center">
+                <Stack direction="row" alignItems="center" marginBottom={1}>
                     <LabelIcon color="primary" sx={{ marginRight: "1rem" }} />
                     <Typography variant="button" component="div">
                         {item.title}
@@ -200,8 +202,8 @@ function Mobile() {
 
 function Content() {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-    return isMobile ? <Mobile /> : <Desktop />;
+    const isMd = useMediaQuery(theme.breakpoints.down("sm"));
+    return isMd ? <Mobile /> : <Desktop />;
 }
 
 export default function Features() {

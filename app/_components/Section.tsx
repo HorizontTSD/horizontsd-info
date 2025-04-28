@@ -29,8 +29,34 @@ export default function Section(props: SectionProps) {
     const theme = useTheme();
     const { mode } = useColorScheme();
     const isDark = mode === "dark";
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
     const bgPalette = ['var(--mui-palette-primary-dark)', 'var(--mui-palette-primary-light)']
+
+    const breakpoint = [
+        useMediaQuery(theme.breakpoints.up("lg")),
+        useMediaQuery(theme.breakpoints.between("md", "lg")),
+        useMediaQuery(theme.breakpoints.between("sm", "md")),
+        useMediaQuery(theme.breakpoints.between("xs", "sm")),
+        useMediaQuery(theme.breakpoints.down("xs")),
+    ].indexOf(true)
+
+    const minHeightFullsize: string[] = [
+        "1080px",
+        "960px",
+        "auto",
+        "auto",
+        "auto"
+    ]
+    const minHeightHalfsize: string[] = [
+        "480px",
+        "380px",
+        "380px",
+        "380px",
+    ]
+
+    const currentBreakpoint = Math.max(0, breakpoint);
+    const minHeight = props?.fullsize
+        ? minHeightFullsize[currentBreakpoint]
+        : minHeightHalfsize[currentBreakpoint]
 
     const baseStyles: SystemStyleObject<Theme> = {
         alignItems: "center",
@@ -42,14 +68,12 @@ export default function Section(props: SectionProps) {
         width: "100vw",
         zIndex: 2,
         userSelect: "none",
-        minHeight: isMobile
-            ? (props?.fullsize ? "100vh" : "50vh")
-            : (props?.fullsize ? "1080px" : "30vh"),
-        backgroundSize: "cover",
+        minHeight: minHeight,
         backgroundColor: bgPalette[~~(!isDark)],
+        color: theme.palette.text.primary,
+        backgroundSize: "cover",
         height: "100%",
         imageRendering: "smooth",
-        color: theme.palette.text.primary,
     };
 
     const mergedStyles: SxProps<Theme> = props.sx

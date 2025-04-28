@@ -1,8 +1,6 @@
 "use client"
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Fab from "@mui/material/Fab";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Toolbar from "@mui/material/Toolbar";
 import Navbar from "@/app/_components/Navbar";
 import Hero from "@/app/_components/Hero";
@@ -21,15 +19,9 @@ function PageContent() {
     <>
       <Navbar />
       <Hero fullsize={false} />
-      {content.map((item, index) => {
-        const researchItem: ResearchItem = {
-          Button: item.Button || dict.Research.Button || "Learn More",
-          description: item.description,
-          id: item.id || `item-${index}`,
-          image: item.image,
-          title: item.title,
-        };
-        return <PaperWork item={researchItem} key={researchItem.id} />;
+      {content.map((item: ResearchItem, index: number) => {
+
+        return <PaperWork item={item} button={dict.Research.Button} key={index} />;
       })}
       <CallToAction />
       <Footer />
@@ -46,11 +38,7 @@ export default function Page() {
     }}>
       <Toolbar id="back-to-top-anchor" sx={{ position: "absolute" }} />
       <PageContent />
-      <ScrollTop>
-        <Fab size="small" aria-label="scroll back to top">
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </ScrollTop>
+      <ScrollTop />
     </Box>
   );
 }

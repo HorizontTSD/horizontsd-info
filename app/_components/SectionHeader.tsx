@@ -14,6 +14,7 @@ export default function Header({ children, sx }: HeaderProps) {
         <Box
             className="section-header"
             sx={{
+                marginTop: `1rem`,
                 alignItems: 'center',
                 display: 'flex',
                 flexDirection: 'column',
@@ -40,8 +41,8 @@ export default function Header({ children, sx }: HeaderProps) {
                         spacing={1}
                         sx={{
                             fontFamily: bebasNeue.style.fontFamily,
-                            display: "flex",
-                            color: "var(--mui-palette-text-primary)"
+                            color: "var(--mui-palette-text-primary)",
+                            wordBreak: `break-word`
                         }}
                     >
                         {children}

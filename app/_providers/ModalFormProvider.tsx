@@ -68,7 +68,6 @@ export function ModalFormProvider({ opened, children }: ModalFormProviderProps) 
 
 	const checkForm = useCallback(async (data: FormData) => {
 		if (!data) return false;
-		// Safely get all field values
 		const fields = [
 			data.email,
 			data.phone,
@@ -81,8 +80,6 @@ export function ModalFormProvider({ opened, children }: ModalFormProviderProps) 
 		const allValid = fields.every(
 			field => field?.status === FormDataFieldStatus.Valid
 		);
-
-		// Only update state if the status has actually changed
 		if (allValid && formStatus.status !== FormDataFieldStatus.Valid) {
 			setFormStatus({ status: FormDataFieldStatus.Valid });
 			return true;

@@ -96,7 +96,7 @@ export function Company({ formData, setFormData, checkForm }: FieldSetterProps) 
 				}}
 			/>
 			{inputValue.value.length > 0 && (
-				<FormHelperText sx={{ ml: 1 }}>
+				<FormHelperText sx={{ ml: 1, userSelect: `none` }}>
 					{getHelperText()}
 				</FormHelperText>
 			)}

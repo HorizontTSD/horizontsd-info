@@ -25,7 +25,7 @@ export function PageRating({ formData, setFormData, checkForm }: FieldSetterProp
         setFormData((prev: FormData) => ({
             ...prev,
             rating: {
-                ...prev.rating, // Сохраняем все существующие свойства
+                ...prev.rating,
                 value: newValue,
                 status: newStatus
             }
@@ -47,7 +47,8 @@ export function PageRating({ formData, setFormData, checkForm }: FieldSetterProp
                 component="legend"
                 sx={{
                     marginRight: `1rem`,
-                    textTransform: "capitalize"
+                    textTransform: "capitalize",
+                    userSelect: `none`
                 }}
             >
                 Rate UX
@@ -60,8 +61,11 @@ export function PageRating({ formData, setFormData, checkForm }: FieldSetterProp
                 icon={<OfflineBoltIcon fontSize="inherit" />}
                 emptyIcon={<OfflineBoltOutlinedIcon fontSize="inherit" />}
                 onChange={handleRatingChange}
+                sx={{
+                    userSelect: `none`
+                }}
             />
-            <FormHelperText sx={{ ml: 2 }}>
+            <FormHelperText sx={{ ml: 2, userSelect: `none` }} >
                 {getHelperText()}
             </FormHelperText>
         </Stack>

@@ -205,7 +205,13 @@ function Background() {
 function Content() {
     return (
         <Stack direction={"column"} sx={{ padding: `5vh 5vw`, height: `100%`, }}>
-            <Stack direction={"column"} justifyContent={"space-between"} alignItems={"center"} sx={{ height: `100%`, zIndex: `2` }}>
+            <Stack
+                direction={"column"}
+                justifyContent={"space-between"}
+                alignItems={"center"}
+                sx={{
+                    height: `100%`, zIndex: `2`
+                }}>
                 <Row1 />
                 <Row3 />
             </Stack>
@@ -216,9 +222,15 @@ function Content() {
 
 export default function Footer() {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
     return (
-        <Section id={"footer"} sx={{ minHeight: isMobile ? `100vh` : `480px`, height: `20vh`, maxHeight: `1080px` }}>
+        <Section
+            id={"footer"}
+            sx={{
+                minHeight: isMobile ? `100vh` : `480px`,
+                height: `20vh`,
+                maxHeight: `1080px`
+            }}>
             <Content />
         </Section>
     )

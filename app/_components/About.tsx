@@ -1,6 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
-import { Card, CardContent, Box, Container, Typography, Grid, Divider, Button } from "@mui/material";
+import { Card, CardContent, Box, Container, Typography, Grid, Divider, Button, useTheme, useMediaQuery } from "@mui/material";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import { useColorScheme } from "@mui/material/styles";
@@ -75,17 +75,16 @@ function MemberField({ children, size, product = "", tooltip = false }: MemberFi
                 sx={{
                     alignItems: size && size == "large" ? "start" : "center",
                     cursor: "pointer",
-                    height: size && size == "large" ? "auto" : "2.4rem",
+                    height: "auto",
                     overflow: "hidden",
                     whiteSpace: "nowrap",
                 }}
             >{tooltip
                 ? <Button
-                    color="secondary"
                     variant="outlined"
                     sx={{
                         alignItems: `center`,
-                        borderColor: `var(--mui-palette-text-primary)`,
+                        borderColor: `var(--mui-palette-text-secondary)`,
                         borderRadius: "var(--mui-shape-borderRadius)",
                         color: `var(--mui-palette-text-primary)`,
                         fontSize: `0.7rem`,
@@ -111,7 +110,8 @@ function Content() {
     const { dict } = useI18n();
     const teamData: TeamMember[] = dict?.Team as TeamMember[];
     const bgPalette = ['#263238', 'var(--mui-palette-secondary-light)']
-
+    const theme = useTheme();
+    const isSm = useMediaQuery(theme.breakpoints.down("md"));
     return (
         <Container maxWidth="xl" sx={{
             alignItems: "center",
@@ -124,9 +124,9 @@ function Content() {
         }}>
             <Grid
                 container
-                spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
+                spacing={{ xs: 1, sm: 2, md: 3, lg: 4 }}
                 justifyContent="center"
-                sx={{ width: { xs: "95%", sm: "100%", md: "80%", lg: "80%" } }}
+                sx={{ width: { xs: "95%", sm: "94%", md: "93%", lg: "92%" } }}
             >
                 {teamData.map((member: TeamMember, i: number) => (
                     <Grid
@@ -135,16 +135,16 @@ function Content() {
                         rowSpacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
                         spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
                     >
-                        <Card sx={{ height: "100%" }}>
+                        <Card sx={{ height: "100%", minHeight: `620px` }}>
                             <div style={{
-                                height: "420px",
+                                height: isSm ? `300px` : "420px",
                                 width: "100%",
                             }}>
                                 {member?.photo?.length && (
                                     <div style={{
                                         alignItems: "center",
                                         background: `url(${member.photo})`,
-                                        backgroundPosition: "0% 100%",
+                                        backgroundPosition: "50% 100%",
                                         backgroundRepeat: "no-repeat",
                                         backgroundSize: "contain",
                                         display: "flex",
@@ -158,14 +158,21 @@ function Content() {
                             </div>
 
                             <CardContent
-                                sx={{ background: bgPalette[~~(!isDark)], height: "100%" }}
+                                sx={{
+                                    background: bgPalette[~~(!isDark)],
+                                    height: "100%",
+                                    display: `flex`,
+                                    flexDirection: `column`,
+                                    justifyContent: `space-between`,
+                                    maxHeight: isSm ? `320px` : `200px`
+                                }}
                             >
                                 {member?.first_name && member?.last_name &&
                                     <MemberField>
                                         <BadgeIcon color="disabled" sx={{ marginRight: "1rem" }} />
                                         <Typography
                                             fontFamily={"sans-serif"}
-                                            sx={{ textOverflow: "ellipsis", userSelect: "text" }}
+                                            sx={{ textOverflow: "ellipsis", userSelect: "none", }}
                                             variant="h6"
                                         >
                                             {capitalizeFirstLetter(member.first_name)} {capitalizeFirstLetter(member.last_name)}
@@ -173,29 +180,31 @@ function Content() {
                                     </MemberField>
                                 }
                                 {member?.job_title &&
-                                    <MemberField >
-                                        <LabelIcon color="disabled" sx={{ marginRight: "1rem" }} />
-                                        <Typography sx={{ userSelect: "text" }} variant="caption" component="div">
-                                            {member.job_title}
-                                        </Typography>
-                                    </MemberField>
+                                    <Stack sx={{ minHeight: `23px` }}>
+                                        <MemberField >
+                                            <LabelIcon color="disabled" sx={{ marginRight: "1rem" }} />
+                                            <Typography sx={{ whiteSpace: "collapse", userSelect: "none" }} variant="caption" component="div">
+                                                {member.job_title}
+                                            </Typography>
+                                        </MemberField>
+                                    </Stack>
                                 }
-                                <Divider sx={{ marginBottom: "1rem" }} />
-                                <Stack sx={{ height: member?.education ? `4rem` : "unset" }}
-                                >{member?.education &&
-                                    <MemberField
-                                        tooltip={false}
-                                        size="large"
-                                    >
-                                        <SchoolIcon sx={{ marginRight: "1rem" }} />
-                                        <Typography
-                                            sx={{ userSelect: "text", whiteSpace: "pre-wrap" }}
-                                            variant="caption"
-                                            component="div"
+                                <Divider sx={{ marginBottom: isSm ? "0" : "1rem" }} />
+                                <Stack sx={{ minHeight: isSm ? `90px` : `60px` }}>
+                                    {member?.education &&
+                                        <MemberField
+                                            tooltip={false}
+                                            size="large"
                                         >
-                                            {member.education}
-                                        </Typography>
-                                    </MemberField>
+                                            <SchoolIcon sx={{ marginRight: "1rem" }} />
+                                            <Typography
+                                                sx={{ userSelect: "none", whiteSpace: "break-spaces" }}
+                                                variant="caption"
+                                                component="div"
+                                            >
+                                                {member.education}
+                                            </Typography>
+                                        </MemberField>
                                     }
                                 </Stack>
                                 <Grid container spacing={0.5} justifyContent={"center"}>
@@ -205,7 +214,7 @@ function Content() {
                                             product={"telegram"}
                                         >
                                             <TelegramIcon color="secondary" />
-                                            <Typography sx={{ userSelect: "text" }} variant="caption" component="div">
+                                            <Typography sx={{ userSelect: "none" }} variant="caption" component="div">
                                                 {member.contacts.telegram}
                                             </Typography>
                                         </MemberField>
@@ -217,7 +226,7 @@ function Content() {
                                         >
                                             <GithubIcon />
                                             <Typography
-                                                sx={{ textOverflow: "ellipsis", userSelect: "text" }}
+                                                sx={{ textOverflow: "ellipsis", userSelect: "none" }}
                                                 variant="caption"
                                                 component="div"
                                             >
@@ -231,7 +240,7 @@ function Content() {
                                             product={"email"}
                                         >
                                             <AlternateEmailIcon />
-                                            <Typography sx={{ textOverflow: "ellipsis", userSelect: "text" }}
+                                            <Typography sx={{ textOverflow: "ellipsis", userSelect: "none" }}
                                                 variant="caption"
                                                 component="div"
                                             >

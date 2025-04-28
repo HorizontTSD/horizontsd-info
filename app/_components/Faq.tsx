@@ -87,16 +87,17 @@ function FAQ() {
 }
 
 export default function Faq() {
+    const { mode } = useColorScheme();
+    const isDark = mode === "dark";
+    const bgSelect = isDark ? "var(--mui-palette-primary-dark)" : "var(--mui-palette-primary-light)"
+    const bgSelect2 = isDark ? "rgb(from var(--mui-palette-secondary-dark) r g b / 0.8)" : "rgb(from var(--mui-palette-primary-main) r g b / 0.2)"
     const { dict } = useI18n();
-
-    if (!dict || !dict.Home || !dict.Home.Faq || !dict.Home.Faq.SectionHeader) {
-        return null;
-    }
-
+    if (!dict || !dict.Home || !dict.Home.Faq || !dict.Home.Faq.SectionHeader) return null;
     const { SectionHeader: content } = dict.Home.Faq;
-
     return (
-        <Section id="faq">
+        <Section id="faq" sx={{
+            background: `linear-gradient(0deg, ${bgSelect2} 30%, ${bgSelect})`
+        }}>
             <SectionHeader>
                 <Typography variant="h3" gutterBottom sx={{
                     fontFamily: `inherit`,
