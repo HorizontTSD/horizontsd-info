@@ -1,651 +1,805 @@
 {
-	"FeedbackForm": {
-		"Company": {
-			"label": "Nome della tua azienda",
-			"helperTextA": "Il nome dell'azienda deve essere inferiore a",
-			"helperTextB": "caratteri"
-		},
-		"Email": {
-			"label": "La tua email",
-			"helperA": "Inserisci un indirizzo email valido",
-			"helperB": "L'email è valida"
-		},
-		"Header": {
-			"value": "Invia la tua richiesta"
-		},
-		"LegalInfo": {
-			"A": "Inviando questo modulo, acconsenti al trattamento dei tuoi dati personali per rispondere alla tua richiesta.",
-			"B": "Conserviamo e proteggiamo le tue informazioni in conformità con la nostra",
-			"C": "Privacy Policy",
-			"D": "Puoi revocare il consenso in qualsiasi momento contattandoci all'indirizzo"
-		},
-		"Name": {
-			"label": "Il tuo nome",
-			"helperTextA": "Il nome deve contenere solo lettere e spazi",
-			"helperTextB": "Il tuo nome deve essere inferiore a",
-			"helperTextC": "caratteri"
-		},
-		"PageRating": {
-			"helperTextA": "Seleziona una valutazione tra 0 e 5"
-		},
-		"Phone": {
-			"inputLabel": "Il tuo numero di telefono",
-			"code": "39",
-			"placeholder": "+39(000)000-0000",
-			"FormHelperText": "Inserisci un numero di telefono valido"
-		},
-		"Submit": {
-			"button": "invia"
-		}
-	},
-	"Home": {
-		"Hero": {
-			"slogan": "La tua guida verso il futuro",
-			"button": [
-				{
-					"title": "Previsione Rapida",
-					"description": [
-						"provalo ora",
-						"LSTM",
-						"XGBoost",
-						"modelli ibridi"
-					]
-				},
-				{
-					"title": "La Soluzione Aziendale",
-					"description": [
-						"guarda la demo",
-						"demo",
-						"esempio"
-					]
-				}
-			]
-		},
-		"About": {
-			"SectionHeader": {
-				"h4": "Chi siamo",
-				"body2": "Incontra il nostro team"
-			}
-		},
-		"Applications": {
-			"SectionHeader": {
-				"h4": "AI che riduce i tuoi costi energetici - automaticamente",
-				"body2": "Algoritmi avanzati di previsione e ottimizzazione riducono gli sprechi, livellano i picchi di domanda e tagliano i costi operativi - senza lavoro manuale."
-			},
-			"Content": [
-				{
-					"button": {
-						"title": "Analisi dati",
-						"description": "Gli algoritmi SKNN & H-DIRT rilevano modelli stagionali e puliscono i dati senza distorcere i trend."
-					},
-					"block": {
-						"title": "Elaborazione dati intelligente",
-						"link": "/features#processing",
-						"description": [
-							"I nostri algoritmi proprietari SKNN e H-DIRT vanno oltre i metodi tradizionali, identificando modelli stagionali nascosti e colmando le lacune dei dati senza alterare i trend.",
-							"Applicando la correlazione di distanza, catturiamo relazioni non lineari tra fattori esterni (come il meteo) e carichi energetici - garantendo che i tuoi modelli si allenino su dati perfettamente preprocessati.",
-							"Niente più rumore, solo precisione."
-						]
-					}
-				},
-				{
-					"button": {
-						"title": "Previsioni AI",
-						"description": "Modelli LSTM, XGBoost e ibridi si adattano a qualsiasi dato per previsioni ultra-precisi."
-					},
-					"block": {
-						"title": "Previsioni AI adattive",
-						"link": "/features#prediction",
-						"description": [
-							"Non tutti i dati si comportano allo stesso modo - quindi distribuiamo modelli LSTM, XGBoost, Transformer e ibridi per adattarci alle tue dinamiche uniche.",
-							"Con codifica temporale e fattori esterni in tempo reale (es. temperatura), il nostro sistema si auto-regola per un'accuratezza del 95%+ - e si scala facilmente a nuovi asset o periodi.",
-							"Previsioni che evolvono alla stessa velocità delle tue operazioni."
-						]
-					}
-				},
-				{
-					"button": {
-						"title": "Ottimizzazione costi",
-						"description": "Riduci gli sprechi energetici del 30%+ con livellamento automatico della domanda e approvvigionamento intelligente."
-					},
-					"block": {
-						"title": "Risparmi automatizzati",
-						"link": "/features#optimization",
-						"description": [
-							"Smetti di pagare troppo l'energia.",
-							"La nostra AI appiattisce i picchi di domanda, ottimizza gli acquisti di energia e riduce il tempo di preprocessing dell'80% grazie alla piena automazione.",
-							"Dai dati grezzi alle intuizioni azionabili, ogni passo è progettato per aumentare l'efficienza in tutta la tua catena energetica.",
-							"Costi inferiori, zero sforzo manuale."
-						]
-					}
-				}
-			],
-			"Button": "Scopri di più"
-		},
-		"CallToAction": {
-			"h3": "Pronto a iniziare?",
-			"body1": "Diventa utente oggi",
-			"StyledButton": [
-				"Registrati ora",
-				"Scopri di più"
-			]
-		},
-		"Capabilities": {
-			"SectionHeader": {
-				"h4": "Previsioni pronte per il futuro, perfettamente integrate",
-				"body2": "Soluzioni AI plug-and-play che funzionano con i tuoi sistemi esistenti - o distribuisci uno stack di previsione completo da zero."
-			},
-			"Content": [
-				{
-					"title": "Algoritmi di previsione più intelligenti",
-					"description": [
-						"Ibridi LSTM, XGBoost e Transformer che apprendono i modelli nascosti nei tuoi dati - con un'accuratezza superiore all'85%.",
-						"Perché è importante:",
-						"Non tutti i dati seguono le regole.",
-						"I nostri modelli auto-regolanti (inclusi BiLSTM, CNN e architetture ibride) si adattano ai tuoi trend unici - che traccino picchi energetici, comportamenti utente o movimenti di mercato.",
-						"Precisione che evolve alla stessa velocità del tuo business."
-					]
-				},
-				{
-					"title": "Infrastruttura che si adatta perfettamente",
-					"description": [
-						"Costruiamo la tua pipeline dati da zero - o ci integriamo nei tuoi sistemi attuali come Lego.",
-						"Perché è importante:",
-						"Nessun \"strappa e sostituisci\" richiesto.",
-						"Le nostre soluzioni si integrano via API, CSV o connettori personalizzati, fondendosi con il tuo stack tecnologico mentre automatizzano raccolta, pulizia e analisi dei dati.",
-						"I tuoi flussi di lavoro rimangono intatti. Le tue previsioni ottengono superpoteri."
-					]
-				},
-				{
-					"title": "Previsioni con 1 clic (sì, davvero)",
-					"description": [
-						"Carica un CSV o connetti dati live - ottieni previsioni powered by AI senza una laurea in data science.",
-						"Perché è importante:",
-						"Dimentica mesi di sviluppo.",
-						"Il nostro strumento chiavi in mano fornisce previsioni storiche e in tempo reale attraverso un'interfaccia no-code.",
-						"Perfetto per energy manager, team operativi o dirigenti che hanno bisogno di risposte - non algoritmi."
-					]
-				},
-				{
-					"title": "Magia dei dati sotto il cofano",
-					"description": [
-						"SKNN, H-DIRT e correlazione di distanza - puliscono dati disordinati così i tuoi modelli vedono il segnale, non il rumore.",
-						"Perché è importante:",
-						"Spazzatura dentro, spazzatura fuori? Non qui.",
-						"I nostri metodi proprietari rilevano automaticamente modelli stagionali, colmano lacune ed espongono relazioni non lineari - potenziando l'accuratezza delle previsioni.",
-						"Anche quando i tuoi dati sono testardi."
-					]
-				}
-			],
-			"Footer": {
-				"header": "Dalle reti energetiche ai mercati azionari - AI che prevede tutto",
-				"description": "Che ottimizzi carichi di megawatt o preveda picchi di domanda, noi forniamo",
-				"content": [
-					"✓ Modelli su misura per settore",
-					"✓ Supporto end-to-end (setup → scaling)",
-					"✓ Architettura future-proof"
-				],
-				"Button": "Scopri di più"
-			}
-		},
-		"Faq": {
-			"SectionHeader": {
-				"h4": "Le tue domande, risposte",
-				"body2": "Chiare spiegazioni su come funzionano le nostre soluzioni di previsione - e come funzioneranno per te."
-			},
-			"h2": "Domande frequenti",
-			"Content": [
-				{
-					"question": "Funzionerà con i nostri sistemi dati attuali?",
-					"answer": [
-						"Assolutamente.",
-						"La nostra soluzione si integra via API, upload CSV o connettori personalizzati - nessun bisogno di sovrascrivere la tua infrastruttura esistente.",
-						"Che tu usi monitor legacy o piattaforme cloud moderne, ci integriamo perfettamente."
-					]
-				},
-				{
-					"question": "Abbiamo bisogno di esperti AI per usarlo?",
-					"answer": [
-						"Nessun codice richiesto.",
-						"Carica i tuoi dati, e i nostri modelli auto-regolanti fanno il resto.",
-						"Per utenti avanzati, offriamo personalizzazioni - ma il 90% dei clienti esegue previsioni con un solo clic."
-					]
-				},
-				{
-					"question": "Quanto sono accurate le vostre previsioni?",
-					"answer": [
-						"La nostra AI ibrida (LSTM + XGBoost + Transformer) raggiunge un'accuratezza del 95%+ sui carichi energetici, provata in progetti come l'Università di Brescia. Gli algoritmi SKNN/H-DIRT garantiscono dati puliti, minimizzando errori."
-					]
-				},
-				{
-					"question": "Può scalare da una singola struttura a una rete cittadina?",
-					"answer": [
-						"Sì.",
-						"La stessa architettura che ottimizza edifici per uffici alimenta anche smart city.",
-						"I modelli si auto-adattano a volume e complessità dei dati - nessuna riprogettazione necessaria."
-					]
-				},
-				{
-					"question": "Quanto velocemente possiamo implementarlo?",
-					"answer": [
-						"Sì.",
-						"48 ore per integrazione API, 2-4 settimane per rollout completo.",
-						"Le previsioni in tempo reale iniziano ad aggiornarsi entro 5 minuti dalla connessione."
-					]
-				},
-				{
-					"question": "E la sicurezza dei dati?",
-					"answer": [
-						"Siamo conformi a GDPR/ISO 27001.",
-						"I tuoi dati rimangono cifrati, e non li condividiamo mai.",
-						"Disponibile deployment on-premise per sistemi air-gapped."
-					]
-				}
-			]
-		},
-		"Works": {
-			"SectionHeader": {
-				"h4": "Storia di successo",
-				"body2": "Previsioni energetiche powered by AI all'Università di Brescia, Italia"
-			},
-			"Content": [
-				"Il modello LSTM ibrido riduce gli errori di previsione del 43% - risparmiando costi mentre aumenta l'accuratezza a R² 0.84",
-				"La sfida:",
-				"Un campus storico italiano affrontava bollette energetiche volatili e gestione inefficiente dei carichi a causa di metodi di previsione obsoleti.",
-				"La nostra soluzione:",
-				"Abbiamo distribuito un sistema AI auto-apprendente che combina:",
-				"LSTM ibrido + Time2Vec",
-				"per modelli temporali",
-				"Algoritmi SKNN & H-DIRT",
-				"per pulire dati rumorosi",
-				"Integrazione temperatura in tempo reale",
-				"per previsioni consapevoli del meteo",
-				"Risultati concreti:",
-				"43% errori in meno",
-				"(RMSE ↓ da 5941W a 3414W)",
-				"65% aumento accuratezza",
-				"(R² ↑ 0.51 → 0.84)",
-				"Automazione in tempo reale",
-				"- previsioni si aggiornano ogni 5 minuti via API",
-				"L'impatto:",
-				"Riduzione costi 15-20%",
-				"da acquisti energetici ottimizzati",
-				"Zero lavoro manuale",
-				"- pipeline dati completamente automatizzate",
-				"Framework scalabile",
-				"ora adattato ad altri campus EU",
-				"Apri immagine"
-			]
-		},
-		"Features": {
-			"SectionHeader": {
-				"h4": "Plug'n'Play",
-				"body2": "Integrazione seamless con i tuoi sistemi esistenti o deployment full-stack in giorni"
-			},
-			"Content": [
-				{
-					"title": "Mitigazione rischi",
-					"description": [
-						"Riduci errori di previsione del 40-60% - evita sotto-acquisti o sprechi energetici con precisione AI-driven."
-					],
-					"more": [
-						"Basta giochi di ipotesi sulla domanda energetica.",
-						"Il nostro sistema riduce i rischi di previsione della metà, prevenendo costosi sforzi infrastrutturali - specialmente per carichi volatili come campus universitari.",
-						"Dormi meglio sapendo che i tuoi buffer energetici non sono né troppo grandi né troppo piccoli."
-					]
-				},
-				{
-					"title": "Decision intelligence",
-					"description": [
-						"Dashboard chiari, intervalli di confidenza e alert di rischio trasformano dati in azioni confidenti."
-					],
-					"more": [
-						"Niente più fogli Excel al buio.",
-						"Ottieni metriche in tempo reale, previsioni visuali e evidenziazione zone di rischio - tutto progettato per manager non tecnici.",
-						"Prendi decisioni sulle risorse più velocemente, con il 95% di certezza dietro ogni mossa."
-					]
-				},
-				{
-					"title": "Integrazione seamless",
-					"description": [
-						"Setup plug-and-play: funziona con i tuoi monitor attuali o si distribuisce da zero in giorni."
-					],
-					"more": [
-						"Compatibile con CSV, API e tutte le principali piattaforme dati, la nostra soluzione si adatta al tuo tech stack come un guanto.",
-						"Serve un rollout full-stack?",
-						"Gestiamo raccolta, storage e visualizzazione - zero codice richiesto."
-					]
-				},
-				{
-					"title": "AI auto-apprendente",
-					"description": [
-						"Carica un CSV - i nostri modelli si auto-regolano sui tuoi dati, scalando da piccoli uffici a smart city."
-					],
-					"more": [
-						"Dimentica di assumere data scientist.",
-						"Che tu stia ottimizzando un singolo edificio o una rete metropolitana, la nostra AI si adatta ai tuoi pattern out of the box.",
-						"Nessun codice, nessuna complessità - basta premere 'carica' e guardarla imparare."
-					]
-				},
-				{
-					"title": "Taglia-costi",
-					"description": [
-						"Riduci bollette energetiche del 30%+ con ottimizzazione tariffaria intelligente e flussi di lavoro automatizzati."
-					],
-					"more": [
-						"Paghi troppo l'energia?",
-						"Le nostre previsioni identificano sprechi, automatizzano il peak shaving e tagliano costi del lavoro specializzato.",
-						"Distribuisci una volta, risparmia su tutti i siti - ROI entro il 2° trimestre."
-					]
-				},
-				{
-					"title": "UX che funziona e basta",
-					"description": [
-						"Progettato per umani: analytics drag-and-drop, nessun training richiesto."
-					],
-					"more": [
-						"Se sai usare Netflix, sai usare questo.",
-						"Grafici intuitivi, report a un clic e pattern UI familiari fanno partire il tuo team in minuti - non settimane.",
-						"Finalmente, uno strumento energetico che non ha bisogno di un manuale IT."
-					]
-				}
-			]
-		}
-	},
-	"Features": {
-		"Optimization": {
-			"SectionHeader": {
-				"h4": "Ottimizzazione costi",
-				"body2": "Riduci sprechi energetici del 30%+ con livellamento automatico della domanda e approvvigionamento intelligente."
-			},
-			"Content": [
-				{
-					"image": "/images/images_features/optimization-0.webp",
-					"title": "Previsione semplice",
-					"description": [
-						"Insight istantanei, zero problemi",
-						"Carica i tuoi dati, seleziona un timeframe e lascia che i nostri modelli scientifici generino automaticamente previsioni.",
-						"Perfetto per individuare trend rapidi o analisi preliminari quando la velocità batte l'ultra-precisione."
-					]
-				},
-				{
-					"image": "/images/images_features/optimization-1.webp",
-					"title": "Analisi dati approfondita",
-					"description": [
-						"Scopri cosa nascondono i tuoi dati",
-						"Rivela modelli stagionali, punti critici di volatilità e limiti di predicibilità con analytics granulari su serie temporali.",
-						"Per team che hanno bisogno di più che trend superficiali - capisci il perché dietro i numeri."
-					]
-				},
-				{
-					"image": "/images/images_features/optimization-2.webp",
-					"title": "Allena la tua AI",
-					"description": [
-						"Accuratezza personalizzata, nessun codice richiesto",
-						"Modifica parametri, testa scenari e perfeziona modelli sui tuoi dati unici - tutto tramite slider intuitivi, non Python.",
-						"Ottieni previsioni che si adattano alle tue peculiarità aziendali, non viceversa."
-					]
-				},
-				{
-					"image": "/images/images_features/optimization-3.webp",
-					"title": "Insight sempre attivi",
-					"description": [
-						"Previsioni che ti seguono",
-						"Ricevi alert SMS/email quando le previsioni superano le tue soglie personalizzate.",
-						"Identifica anomalie prima, evita rischi più velocemente e mantieni i team sincronizzati - nessun refresh di dashboard richiesto."
-					]
-				},
-				{
-					"image": "/images/images_features/optimization-4.webp",
-					"title": "Costruttore alert intelligenti",
-					"description": [
-						"Le tue regole, le tue reazioni",
-						"Definisci trigger come \"Notifica se la domanda prevista supera X\" e automatizza le risposte.",
-						"Si sincronizza con Slack, Teams o i tuoi tool interni per trasformare previsioni in azioni."
-					]
-				},
-				{
-					"image": "/images/images_features/optimization-5.webp",
-					"title": "Guardiano delle soglie",
-					"description": [
-						"Reti di sicurezza per le tue previsioni",
-						"Quando le previsioni superano livelli critici (es. sovraccarichi energetici), ricevi avvisi istantanei.",
-						"Regole di escalation preimpostate assicurano che le persone giuste agiscano - prima che diventi un costo."
-					]
-				}
-			]
-		},
-		"Prediction": {
-			"SectionHeader": {
-				"h4": "Previsione",
-				"body2": "Corpo previsione"
-			},
-			"Content": [
-				{
-					"image": "/images/images_features/prediction-0.webp",
-					"title": "Previsione semplice",
-					"description": [
-						"Insight rapidi, zero sforzo",
-						"Carica i tuoi dati, seleziona un timeframe e lascia che i nostri modelli scientifici generino automaticamente previsioni.",
-						"Perfetto per individuare trend veloci o analisi preliminari - quando la velocità conta più dell'ultra-precisione."
-					],
-					"title2": "Perché si distingue",
-					"description2": [
-						"✅ Previsioni a un clic",
-						"✅ Algoritmi basati su ricerca",
-						"✅ Ideale per decision-making rapido"
-					]
-				},
-				{
-					"image": "/images/images_features/prediction-1.webp",
-					"title": "Allena la tua AI",
-					"description": [
-						"Accuratezza personalizzata, nessun codice richiesto",
-						"Modifica parametri, testa scenari e perfeziona modelli sui tuoi dati - tutto tramite slider intuitivi, non Python.",
-						"Ottieni previsioni che si adattano alle tue peculiarità aziendali."
-					],
-					"title2": "Perché è potente:",
-					"description2": [
-						"⚙️ Regolazione parametri drag-and-drop",
-						"⚙️ Si adatta a pattern dati unici",
-						"⚙️ Aumenta l'accuratezza per decisioni strategiche"
-					]
-				},
-				{
-					"image": "/images/images_features/prediction-2.webp",
-					"title": "Valuta accuratezza",
-					"description": [
-						"Trasparenza che puoi misurare",
-						"Confronta modelli side-by-side usando MSE, R², MAE e 10+ altre metriche.",
-						"Vedi esattamente dove la tua previsione eccelle (o ha bisogno di miglioramenti) - nessuna ipotesi."
-					],
-					"title2": "Perché è importante:",
-					"description2": [
-						"🔍 Valuta le performance oggettivamente",
-						"🔍 Identifica punti deboli con mappe di calore degli errori",
-						"🔍 Fidati dei dati, non delle sensazioni"
-					]
-				}
-			]
-		},
-		"Processing": {
-			"SectionHeader": {
-				"h4": "Elaborazione",
-				"body2": "Corpo elaborazione"
-			},
-			"Content": [
-				{
-					"image": "/images/images_features/processing-0.webp",
-					"title": "Dashboard interattiva",
-					"description": [
-						"Insight istantanei a portata di mano",
-						"Carica i tuoi dati, imposta il tuo orizzonte di previsione e lascia che i nostri algoritmi basati su ricerca facciano il resto.",
-						"Progettata per velocità e semplicità, questo tool offre valutazioni rapide dei trend e insight azionabili - perfetta quando hai bisogno di risposte veloci, non precisione da laboratorio."
-					],
-					"title2": "Punti di forza:",
-					"description2": [
-						"✅ Previsioni a un clic",
-						"✅ Modelli scientifici",
-						"✅ Ideale per valutazione rapida di scenari"
-					]
-				},
-				{
-					"image": "/images/images_features/processing-1.webp",
-					"title": "Visualizzazione metriche",
-					"description": [
-						"Vedi la storia dietro i tuoi dati",
-						"Approfondisci modelli temporali, trend stagionali e punti critici di volatilità.",
-						"I nostri tool interattivi trasformano numeri grezzi in narrazioni visuali - esponendo driver nascosti di domanda, rischi e opportunità."
-					],
-					"title2": "Perché è importante:",
-					"description2": [
-						"📈 Identifica limiti di predicibilità",
-						"📈 Confronta previsioni vs. risultati in tempo reale",
-						"📈 Trasforma \"rumore di dati\" in strategie pronte per la sala riunioni"
-					]
-				},
-				{
-					"image": "/images/images_features/processing-2.webp",
-					"title": "Analisi stagionalità",
-					"description": [
-						"Prevedi cicli, non caos",
-						"Rileva automaticamente pattern ricorrenti - picchi settimanali di vendite, aumenti mensili di energia, cali annuali di inventario.",
-						"Personalizza modelli via slider intuitivi (nessun codice!) per allineare previsioni ai tuoi ritmi aziendali unici."
-					],
-					"title2": "Costruito per adattabilità",
-					"description2": [
-						"🔄 Template predefiniti per cicli comuni",
-						"🔄 Override manuale per casi particolari",
-						"🔄 Sincronizza risultati con team acquisti/pianificazione"
-					]
-				}
-			]
-		}
-	},
-	"Research": {
-		"Button": "Scopri di più",
-		"Content": [
-			{
-				"image": "/images/images_research/LSTM-Based Models for Day-Ahead Electrical Load Forecast A Novel Feature Selection Method Including Weather Data.webp",
-				"title": "Modelli basati su LSTM per la previsione del carico elettrico a breve termine: un innovativo metodo di selezione delle feature con dati meteorologici",
-				"description": [
-					"Presentiamo un innovativo algoritmo di previsione del carico basato su LSTM, combinato con un metodo personalizzato di codifica temporale Time2Vec e integrazione di dati meteorologici.",
-					"Come input sono stati utilizzati esclusivamente feature basate sul calendario (giorno della settimana, ora, data) e indicatori meteorologici (temperatura, umidità, ecc.).",
-					"La nostra analisi comparativa dimostra che l'approccio Time2Vec + LSTM da noi sviluppato supera significativamente architetture più complesse come Bi-LSTM o CNN-LSTM.",
-					"Ciò conferma che un'accurata progettazione delle feature e una codifica temporale avanzata possono fornire previsioni estremamente accurate senza necessità di complessità architetturale."
-				],
-				"link": "https://iris.unibs.it/bitstream/11379/622686/2/PhD_Thesis_ML_for_T4H_final_version_pdf.pdf"
-			},
-			{
-				"image": "/images/images_research/Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series.webp",
-				"title": "Integrazione di caratteristiche stagionali nei metodi di imputazione dati per serie temporali di domanda energetica",
-				"description": [
-					"Questo lavoro introduce e valida due metodi innovativi per l'imputazione di dati mancanti nelle serie temporali di domanda energetica: H-DIRT (regressione storica) e SKNN (K-vicini stagionali).",
-					"Progettati sia per interpretabilità che accuratezza, questi metodi incorporano caratteristiche stagionali (anno, stagione, mese, settimana, giorno) migliorando le prestazioni rispetto alle tecniche standard di imputazione.",
-					"H-DIRT utilizza regressione lineare basata sui consumi storici, offrendo eccellenti prestazioni e velocità per lacune brevi.",
-					"SKNN arricchisce il KNN standard con dati stagionali, mostrando maggiore stabilità e accuratezza per lunghe sequenze di valori mancanti.",
-					"Testati su dati reali pluriennali di una stazione elettrica italiana, entrambi i metodi superano significativamente la tradizionale imputazione KNN nel dominio temporale.",
-					"SKNN raggiunge la migliore accuratezza complessiva, mentre H-DIRT è più efficiente computazionalmente e competitivo quando le lacune di dati sono brevi e le risorse limitate."
-				],
-				"link": "https://ieeexplore.ieee.org/document/10613768"
-			},
-			{
-				"image": "/images/images_research/Enhancing Short-Term Load Forecasting through Machine Learning Ensemble Models and by Incorporating Weather Data.webp",
-				"title": "Miglioramento delle previsioni di carico a breve termine mediante modelli ensemble di machine learning e integrazione di dati meteorologici",
-				"description": [
-					"Questo lavoro propone un nuovo modello ensemble che combina Random Forest (RF) e Histogram-based Gradient Boosting (HGBR) per migliorare l'accuratezza delle previsioni di carico a breve termine.",
-					"I principali risultati includono:",
-					"Senza temperatura ambientale: il modello ensemble supera leggermente sia RF che HGBR.",
-					"Con temperatura ambientale: HGBR diventa il migliore in tutte le metriche.",
-					"Nei giorni anomali: il modello ensemble con temperatura raggiunge la migliore accuratezza complessiva e robustezza.",
-					"Questi risultati evidenziano:",
-					"L'importanza di includere la temperatura ambientale come feature per migliorare le previsioni.",
-					"L'efficacia delle tecniche ensemble nel gestire variabilità e dipendenze complesse nei dati di carico.",
-					"Questo approccio non solo migliora l'accuratezza giornaliera, ma fornisce previsioni affidabili in condizioni irregolari, rappresentando una direzione promettente per i sistemi energetici reali e applicazioni più ampie di previsione di serie temporali."
-				],
-				"link": "https://ieeexplore.ieee.org/document/10805705"
-			}
-		]
-	},
-	"Team": [
-		{
-			"first_name": "Nikita",
-			"last_name": "Savvin",
-			"education": "PhD Student. Major – Systems Analysis, Information Management and Processing, Statistics",
-			"job_title": "Co-founder / Technical Lead",
-			"contacts": {
-				"telegram": "https://t.me/SavvinNikita",
-				"email": "savvin.nikita.work@yandex.ru",
-				"orcid": "0009-0009-9163-6234"
-			},
-			"photo": "/images/team/Savvin_Nikita.png"
-		},
-		{
-			"first_name": "Dmitrii",
-			"last_name": "Vasenin",
-			"education": "PhD in Technology for Health",
-			"job_title": "Co-founder / Lead",
-			"contacts": {
-				"telegram": "https://t.me/dvasenin",
-				"orcid": "0000-0002-7028-9984",
-				"email": "vasenindmitrij01@gmail.com"
-			},
-			"photo": "/images/team/Dmitrii_Vasenin.png"
-		},
-		{
-			"first_name": "Andrew",
-			"last_name": "S.",
-			"job_title": "Lead Frontend Developer",
-			"contacts": {
-				"github": "https://github.com/ranareinsit"
-			}
-		},
-		{
-			"first_name": "Anastasiia",
-			"last_name": "Shakhova",
-			"education": "Information systems and technologies",
-			"job_title": "Data Scientist",
-			"contacts": {
-				"telegram": "https://t.me/aashakhova",
-				"email": "anastasia.shakhova1@gmail.com",
-				"orcid": "0009-0007-8392-3634"
-			},
-			"photo": "/images/team/Anastasia_Shahova.png"
-		},
-		{
-			"first_name": "Ilya",
-			"last_name": "Selivanov",
-			"education": "Information Systems and Programming, Web and Multimedia Applications Developer.",
-			"job_title": "Frontend Developer",
-			"contacts": {
-				"telegram": "https://t.me/dostanmenyatyt",
-				"email": "ilyailyaselivanov@gmail.com"
-			}
-		},
-		{
-			"first_name": "Bulat",
-			"last_name": "Khuzin",
-			"education": "Master's degree in Oil and gas Engineering",
-			"job_title": "Data Scientist",
-			"contacts": {
-				"telegram": "https://t.me/erzert",
-				"email": "bhkuzin@gmail.com"
-			}
-		}
-
-	],
-	"Footer": {
-		"row1Title": "Previsioni migliori creano futuri più luminosi.",
-		"row1Title2": "Curioso di come la nostra AI per previsioni può lavorare per te?",
-		"row1Subtitle": "Hai una sfida specifica da risolvere?",
-		"row1Subtitle2": "I nostri ingegneri sono pronti ad aiutare.",
-		"row1ButtonText": "Parla con un Esperto",
-		"row3Follows": "Seguici",
-		"row3Copyright": "© 2025 Horizon TSD"
-	},
-	"Navbar": {
-		"home": "home",
-		"features": "funzionalità",
-		"research": "ricerca"
-	}
+  "FeedbackForm": {
+    "Company": {
+      "label": "Nome della tua azienda",
+      "helperTextA": "Il nome dell'azienda deve essere inferiore a",
+      "helperTextB": "caratteri"
+    },
+    "Email": {
+      "label": "La tua email",
+      "helperA": "Inserisci un indirizzo email valido",
+      "helperB": "L'email è valida"
+    },
+    "Header": {
+      "value": "Invia la tua richiesta"
+    },
+    "LegalInfo": {
+      "A": "Inviando questo modulo, acconsenti al trattamento dei tuoi dati personali per rispondere alla tua richiesta.",
+      "B": "Conserviamo e proteggiamo le tue informazioni in conformità con la nostra",
+      "C": "Privacy Policy",
+      "D": "Puoi revocare il consenso in qualsiasi momento contattandoci all'indirizzo"
+    },
+    "Name": {
+      "label": "Il tuo nome",
+      "helperTextA": "Il nome deve contenere solo lettere e spazi",
+      "helperTextB": "Il tuo nome deve essere inferiore a",
+      "helperTextC": "caratteri"
+    },
+    "PageRating": {
+      "helperTextA": "Seleziona una valutazione tra 0 e 5"
+    },
+    "Phone": {
+      "inputLabel": "Il tuo numero di telefono",
+      "code": "39",
+      "placeholder": "+39(000)000-0000",
+      "FormHelperText": "Inserisci un numero di telefono valido"
+    },
+    "Submit": {
+      "button": "invia"
+    }
+  },
+  "Home": {
+    "Hero": {
+      "slogan": "La tua guida verso il futuro",
+      "button": [
+        {
+          "title": "Previsione Rapida",
+          "description": ["provalo ora", "LSTM", "XGBoost", "modelli ibridi"]
+        },
+        {
+          "title": "La Soluzione Aziendale",
+          "description": ["guarda la demo", "demo", "esempio"]
+        }
+      ]
+    },
+    "About": {
+      "SectionHeader": {
+        "h4": "Chi siamo",
+        "body2": "Incontra il nostro team"
+      }
+    },
+    "Applications": {
+      "SectionHeader": {
+        "h4": "AI che riduce i tuoi costi energetici - automaticamente",
+        "body2": "Algoritmi avanzati di previsione e ottimizzazione riducono gli sprechi, livellano i picchi di domanda e tagliano i costi operativi - senza lavoro manuale."
+      },
+      "Content": [
+        {
+          "button": {
+            "title": "Analisi dati",
+            "description": "Gli algoritmi SKNN & H-DIRT rilevano modelli stagionali e puliscono i dati senza distorcere i trend."
+          },
+          "block": {
+            "title": "Elaborazione dati intelligente",
+            "link": "/features#processing",
+            "description": [
+              "I nostri algoritmi proprietari SKNN e H-DIRT vanno oltre i metodi tradizionali, identificando modelli stagionali nascosti e colmando le lacune dei dati senza alterare i trend.",
+              "Applicando la correlazione di distanza, catturiamo relazioni non lineari tra fattori esterni (come il meteo) e carichi energetici - garantendo che i tuoi modelli si allenino su dati perfettamente preprocessati.",
+              "Niente più rumore, solo precisione."
+            ]
+          }
+        },
+        {
+          "button": {
+            "title": "Previsioni AI",
+            "description": "Modelli LSTM, XGBoost e ibridi si adattano a qualsiasi dato per previsioni ultra-precisi."
+          },
+          "block": {
+            "title": "Previsioni AI adattive",
+            "link": "/features#prediction",
+            "description": [
+              "Non tutti i dati si comportano allo stesso modo - quindi distribuiamo modelli LSTM, XGBoost, Transformer e ibridi per adattarci alle tue dinamiche uniche.",
+              "Con codifica temporale e fattori esterni in tempo reale (es. temperatura), il nostro sistema si auto-regola per un'accuratezza del 95%+ - e si scala facilmente a nuovi asset o periodi.",
+              "Previsioni che evolvono alla stessa velocità delle tue operazioni."
+            ]
+          }
+        },
+        {
+          "button": {
+            "title": "Ottimizzazione costi",
+            "description": "Riduci gli sprechi energetici del 30%+ con livellamento automatico della domanda e approvvigionamento intelligente."
+          },
+          "block": {
+            "title": "Risparmi automatizzati",
+            "link": "/features#optimization",
+            "description": [
+              "Smetti di pagare troppo l'energia.",
+              "La nostra AI appiattisce i picchi di domanda, ottimizza gli acquisti di energia e riduce il tempo di preprocessing dell'80% grazie alla piena automazione.",
+              "Dai dati grezzi alle intuizioni azionabili, ogni passo è progettato per aumentare l'efficienza in tutta la tua catena energetica.",
+              "Costi inferiori, zero sforzo manuale."
+            ]
+          }
+        }
+      ],
+      "Button": "Scopri di più"
+    },
+    "CallToAction": {
+      "h3": "Pronto a iniziare?",
+      "body1": "Diventa utente oggi",
+      "StyledButton": ["Registrati ora", "Scopri di più"]
+    },
+    "Capabilities": {
+      "SectionHeader": {
+        "h4": "Previsioni pronte per il futuro, perfettamente integrate",
+        "body2": "Soluzioni AI plug-and-play che funzionano con i tuoi sistemi esistenti - o distribuisci uno stack di previsione completo da zero."
+      },
+      "Content": [
+        {
+          "title": "Algoritmi di previsione più intelligenti",
+          "description": [
+            "Ibridi LSTM, XGBoost e Transformer che apprendono i modelli nascosti nei tuoi dati - con un'accuratezza superiore all'85%.",
+            "Perché è importante:",
+            "Non tutti i dati seguono le regole.",
+            "I nostri modelli auto-regolanti (inclusi BiLSTM, CNN e architetture ibride) si adattano ai tuoi trend unici - che traccino picchi energetici, comportamenti utente o movimenti di mercato.",
+            "Precisione che evolve alla stessa velocità del tuo business."
+          ]
+        },
+        {
+          "title": "Infrastruttura che si adatta perfettamente",
+          "description": [
+            "Costruiamo la tua pipeline dati da zero - o ci integriamo nei tuoi sistemi attuali come Lego.",
+            "Perché è importante:",
+            "Nessun \"strappa e sostituisci\" richiesto.",
+            "Le nostre soluzioni si integrano via API, CSV o connettori personalizzati, fondendosi con il tuo stack tecnologico mentre automatizzano raccolta, pulizia e analisi dei dati.",
+            "I tuoi flussi di lavoro rimangono intatti. Le tue previsioni ottengono superpoteri."
+          ]
+        },
+        {
+          "title": "Previsioni con 1 clic (sì, davvero)",
+          "description": [
+            "Carica un CSV o connetti dati live - ottieni previsioni powered by AI senza una laurea in data science.",
+            "Perché è importante:",
+            "Dimentica mesi di sviluppo.",
+            "Il nostro strumento chiavi in mano fornisce previsioni storiche e in tempo reale attraverso un'interfaccia no-code.",
+            "Perfetto per energy manager, team operativi o dirigenti che hanno bisogno di risposte - non algoritmi."
+          ]
+        },
+        {
+          "title": "Magia dei dati sotto il cofano",
+          "description": [
+            "SKNN, H-DIRT e correlazione di distanza - puliscono dati disordinati così i tuoi modelli vedono il segnale, non il rumore.",
+            "Perché è importante:",
+            "Spazzatura dentro, spazzatura fuori? Non qui.",
+            "I nostri metodi proprietari rilevano automaticamente modelli stagionali, colmano lacune ed espongono relazioni non lineari - potenziando l'accuratezza delle previsioni.",
+            "Anche quando i tuoi dati sono testardi."
+          ]
+        }
+      ],
+      "Footer": {
+        "header": "Dalle reti energetiche ai mercati azionari - AI che prevede tutto",
+        "description": "Che ottimizzi carichi di megawatt o preveda picchi di domanda, noi forniamo",
+        "content": [
+          "✓ Modelli su misura per settore",
+          "✓ Supporto end-to-end (setup → scaling)",
+          "✓ Architettura future-proof"
+        ],
+        "Button": "Scopri di più"
+      }
+    },
+    "Faq": {
+      "SectionHeader": {
+        "h4": "Le tue domande, risposte",
+        "body2": "Chiare spiegazioni su come funzionano le nostre soluzioni di previsione - e come funzioneranno per te."
+      },
+      "h2": "Domande frequenti",
+      "Content": [
+        {
+          "question": "Funzionerà con i nostri sistemi dati attuali?",
+          "answer": [
+            "Assolutamente.",
+            "La nostra soluzione si integra via API, upload CSV o connettori personalizzati - nessun bisogno di sovrascrivere la tua infrastruttura esistente.",
+            "Che tu usi monitor legacy o piattaforme cloud moderne, ci integriamo perfettamente."
+          ]
+        },
+        {
+          "question": "Abbiamo bisogno di esperti AI per usarlo?",
+          "answer": [
+            "Nessun codice richiesto.",
+            "Carica i tuoi dati, e i nostri modelli auto-regolanti fanno il resto.",
+            "Per utenti avanzati, offriamo personalizzazioni - ma il 90% dei clienti esegue previsioni con un solo clic."
+          ]
+        },
+        {
+          "question": "Quanto sono accurate le vostre previsioni?",
+          "answer": [
+            "La nostra AI ibrida (LSTM + XGBoost + Transformer) raggiunge un'accuratezza del 95%+ sui carichi energetici, provata in progetti come l'Università di Brescia. Gli algoritmi SKNN/H-DIRT garantiscono dati puliti, minimizzando errori."
+          ]
+        },
+        {
+          "question": "Può scalare da una singola struttura a una rete cittadina?",
+          "answer": [
+            "Sì.",
+            "La stessa architettura che ottimizza edifici per uffici alimenta anche smart city.",
+            "I modelli si auto-adattano a volume e complessità dei dati - nessuna riprogettazione necessaria."
+          ]
+        },
+        {
+          "question": "Quanto velocemente possiamo implementarlo?",
+          "answer": [
+            "Sì.",
+            "48 ore per integrazione API, 2-4 settimane per rollout completo.",
+            "Le previsioni in tempo reale iniziano ad aggiornarsi entro 5 minuti dalla connessione."
+          ]
+        },
+        {
+          "question": "E la sicurezza dei dati?",
+          "answer": [
+            "Siamo conformi a GDPR/ISO 27001.",
+            "I tuoi dati rimangono cifrati, e non li condividiamo mai.",
+            "Disponibile deployment on-premise per sistemi air-gapped."
+          ]
+        }
+      ]
+    },
+    "Works": {
+      "SectionHeader": {
+        "h4": "Storia di successo",
+        "body2": "Previsioni energetiche powered by AI all'Università di Brescia, Italia"
+      },
+      "Content": [
+        "Il modello LSTM ibrido riduce gli errori di previsione del 43% - risparmiando costi mentre aumenta l'accuratezza a R² 0.84",
+        "La sfida:",
+        "Un campus storico italiano affrontava bollette energetiche volatili e gestione inefficiente dei carichi a causa di metodi di previsione obsoleti.",
+        "La nostra soluzione:",
+        "Abbiamo distribuito un sistema AI auto-apprendente che combina:",
+        "LSTM ibrido + Time2Vec",
+        "per modelli temporali",
+        "Algoritmi SKNN & H-DIRT",
+        "per pulire dati rumorosi",
+        "Integrazione temperatura in tempo reale",
+        "per previsioni consapevoli del meteo",
+        "Risultati concreti:",
+        "43% errori in meno",
+        "(RMSE ↓ da 5941W a 3414W)",
+        "65% aumento accuratezza",
+        "(R² ↑ 0.51 → 0.84)",
+        "Automazione in tempo reale",
+        "- previsioni si aggiornano ogni 5 minuti via API",
+        "L'impatto:",
+        "Riduzione costi 15-20%",
+        "da acquisti energetici ottimizzati",
+        "Zero lavoro manuale",
+        "- pipeline dati completamente automatizzate",
+        "Framework scalabile",
+        "ora adattato ad altri campus EU",
+        "Apri immagine"
+      ]
+    },
+    "Features": {
+      "SectionHeader": {
+        "h4": "Plug'n'Play",
+        "body2": "Integrazione seamless con i tuoi sistemi esistenti o deployment full-stack in giorni"
+      },
+      "Content": [
+        {
+          "title": "Mitigazione rischi",
+          "description": [
+            "Riduci errori di previsione del 40-60% - evita sotto-acquisti o sprechi energetici con precisione AI-driven."
+          ],
+          "more": [
+            "Basta giochi di ipotesi sulla domanda energetica.",
+            "Il nostro sistema riduce i rischi di previsione della metà, prevenendo costosi sforzi infrastrutturali - specialmente per carichi volatili come campus universitari.",
+            "Dormi meglio sapendo che i tuoi buffer energetici non sono né troppo grandi né troppo piccoli."
+          ]
+        },
+        {
+          "title": "Decision intelligence",
+          "description": [
+            "Dashboard chiari, intervalli di confidenza e alert di rischio trasformano dati in azioni confidenti."
+          ],
+          "more": [
+            "Niente più fogli Excel al buio.",
+            "Ottieni metriche in tempo reale, previsioni visuali e evidenziazione zone di rischio - tutto progettato per manager non tecnici.",
+            "Prendi decisioni sulle risorse più velocemente, con il 95% di certezza dietro ogni mossa."
+          ]
+        },
+        {
+          "title": "Integrazione seamless",
+          "description": [
+            "Setup plug-and-play: funziona con i tuoi monitor attuali o si distribuisce da zero in giorni."
+          ],
+          "more": [
+            "Compatibile con CSV, API e tutte le principali piattaforme dati, la nostra soluzione si adatta al tuo tech stack come un guanto.",
+            "Serve un rollout full-stack?",
+            "Gestiamo raccolta, storage e visualizzazione - zero codice richiesto."
+          ]
+        },
+        {
+          "title": "AI auto-apprendente",
+          "description": [
+            "Carica un CSV - i nostri modelli si auto-regolano sui tuoi dati, scalando da piccoli uffici a smart city."
+          ],
+          "more": [
+            "Dimentica di assumere data scientist.",
+            "Che tu stia ottimizzando un singolo edificio o una rete metropolitana, la nostra AI si adatta ai tuoi pattern out of the box.",
+            "Nessun codice, nessuna complessità - basta premere 'carica' e guardarla imparare."
+          ]
+        },
+        {
+          "title": "Taglia-costi",
+          "description": [
+            "Riduci bollette energetiche del 30%+ con ottimizzazione tariffaria intelligente e flussi di lavoro automatizzati."
+          ],
+          "more": [
+            "Paghi troppo l'energia?",
+            "Le nostre previsioni identificano sprechi, automatizzano il peak shaving e tagliano costi del lavoro specializzato.",
+            "Distribuisci una volta, risparmia su tutti i siti - ROI entro il 2° trimestre."
+          ]
+        },
+        {
+          "title": "UX che funziona e basta",
+          "description": [
+            "Progettato per umani: analytics drag-and-drop, nessun training richiesto."
+          ],
+          "more": [
+            "Se sai usare Netflix, sai usare questo.",
+            "Grafici intuitivi, report a un clic e pattern UI familiari fanno partire il tuo team in minuti - non settimane.",
+            "Finalmente, uno strumento energetico che non ha bisogno di un manuale IT."
+          ]
+        }
+      ]
+    }
+  },
+  "Features": {
+    "Optimization": {
+      "SectionHeader": {
+        "h4": "Ottimizzazione costi",
+        "body2": "Riduci sprechi energetici del 30%+ con livellamento automatico della domanda e approvvigionamento intelligente."
+      },
+      "Content": [
+        {
+          "image": "/images/images_features/optimization-0.webp",
+          "title": "Previsione semplice",
+          "description": [
+            "Insight istantanei, zero problemi",
+            "Carica i tuoi dati, seleziona un timeframe e lascia che i nostri modelli scientifici generino automaticamente previsioni.",
+            "Perfetto per individuare trend rapidi o analisi preliminari quando la velocità batte l'ultra-precisione."
+          ]
+        },
+        {
+          "image": "/images/images_features/optimization-1.webp",
+          "title": "Analisi dati approfondita",
+          "description": [
+            "Scopri cosa nascondono i tuoi dati",
+            "Rivela modelli stagionali, punti critici di volatilità e limiti di predicibilità con analytics granulari su serie temporali.",
+            "Per team che hanno bisogno di più che trend superficiali - capisci il perché dietro i numeri."
+          ]
+        },
+        {
+          "image": "/images/images_features/optimization-2.webp",
+          "title": "Allena la tua AI",
+          "description": [
+            "Accuratezza personalizzata, nessun codice richiesto",
+            "Modifica parametri, testa scenari e perfeziona modelli sui tuoi dati unici - tutto tramite slider intuitivi, non Python.",
+            "Ottieni previsioni che si adattano alle tue peculiarità aziendali, non viceversa."
+          ]
+        },
+        {
+          "image": "/images/images_features/optimization-3.webp",
+          "title": "Insight sempre attivi",
+          "description": [
+            "Previsioni che ti seguono",
+            "Ricevi alert SMS/email quando le previsioni superano le tue soglie personalizzate.",
+            "Identifica anomalie prima, evita rischi più velocemente e mantieni i team sincronizzati - nessun refresh di dashboard richiesto."
+          ]
+        },
+        {
+          "image": "/images/images_features/optimization-4.webp",
+          "title": "Costruttore alert intelligenti",
+          "description": [
+            "Le tue regole, le tue reazioni",
+            "Definisci trigger come \"Notifica se la domanda prevista supera X\" e automatizza le risposte.",
+            "Si sincronizza con Slack, Teams o i tuoi tool interni per trasformare previsioni in azioni."
+          ]
+        },
+        {
+          "image": "/images/images_features/optimization-5.webp",
+          "title": "Guardiano delle soglie",
+          "description": [
+            "Reti di sicurezza per le tue previsioni",
+            "Quando le previsioni superano livelli critici (es. sovraccarichi energetici), ricevi avvisi istantanei.",
+            "Regole di escalation preimpostate assicurano che le persone giuste agiscano - prima che diventi un costo."
+          ]
+        }
+      ]
+    },
+    "Prediction": {
+      "SectionHeader": {
+        "h4": "Previsione",
+        "body2": "Corpo previsione"
+      },
+      "Content": [
+        {
+          "image": "/images/images_features/prediction-0.webp",
+          "title": "Previsione semplice",
+          "description": [
+            "Insight rapidi, zero sforzo",
+            "Carica i tuoi dati, seleziona un timeframe e lascia che i nostri modelli scientifici generino automaticamente previsioni.",
+            "Perfetto per individuare trend veloci o analisi preliminari - quando la velocità conta più dell'ultra-precisione."
+          ],
+          "title2": "Perché si distingue",
+          "description2": [
+            "✅ Previsioni a un clic",
+            "✅ Algoritmi basati su ricerca",
+            "✅ Ideale per decision-making rapido"
+          ]
+        },
+        {
+          "image": "/images/images_features/prediction-1.webp",
+          "title": "Allena la tua AI",
+          "description": [
+            "Accuratezza personalizzata, nessun codice richiesto",
+            "Modifica parametri, testa scenari e perfeziona modelli sui tuoi dati - tutto tramite slider intuitivi, non Python.",
+            "Ottieni previsioni che si adattano alle tue peculiarità aziendali."
+          ],
+          "title2": "Perché è potente:",
+          "description2": [
+            "⚙️ Regolazione parametri drag-and-drop",
+            "⚙️ Si adatta a pattern dati unici",
+            "⚙️ Aumenta l'accuratezza per decisioni strategiche"
+          ]
+        },
+        {
+          "image": "/images/images_features/prediction-2.webp",
+          "title": "Valuta accuratezza",
+          "description": [
+            "Trasparenza che puoi misurare",
+            "Confronta modelli side-by-side usando MSE, R², MAE e 10+ altre metriche.",
+            "Vedi esattamente dove la tua previsione eccelle (o ha bisogno di miglioramenti) - nessuna ipotesi."
+          ],
+          "title2": "Perché è importante:",
+          "description2": [
+            "🔍 Valuta le performance oggettivamente",
+            "🔍 Identifica punti deboli con mappe di calore degli errori",
+            "🔍 Fidati dei dati, non delle sensazioni"
+          ]
+        }
+      ]
+    },
+    "Processing": {
+      "SectionHeader": {
+        "h4": "Elaborazione",
+        "body2": "Corpo elaborazione"
+      },
+      "Content": [
+        {
+          "image": "/images/images_features/processing-0.webp",
+          "title": "Dashboard interattiva",
+          "description": [
+            "Insight istantanei a portata di mano",
+            "Carica i tuoi dati, imposta il tuo orizzonte di previsione e lascia che i nostri algoritmi basati su ricerca facciano il resto.",
+            "Progettata per velocità e semplicità, questo tool offre valutazioni rapide dei trend e insight azionabili - perfetta quando hai bisogno di risposte veloci, non precisione da laboratorio."
+          ],
+          "title2": "Punti di forza:",
+          "description2": [
+            "✅ Previsioni a un clic",
+            "✅ Modelli scientifici",
+            "✅ Ideale per valutazione rapida di scenari"
+          ]
+        },
+        {
+          "image": "/images/images_features/processing-1.webp",
+          "title": "Visualizzazione metriche",
+          "description": [
+            "Vedi la storia dietro i tuoi dati",
+            "Approfondisci modelli temporali, trend stagionali e punti critici di volatilità.",
+            "I nostri tool interattivi trasformano numeri grezzi in narrazioni visuali - esponendo driver nascosti di domanda, rischi e opportunità."
+          ],
+          "title2": "Perché è importante:",
+          "description2": [
+            "📈 Identifica limiti di predicibilità",
+            "📈 Confronta previsioni vs. risultati in tempo reale",
+            "📈 Trasforma \"rumore di dati\" in strategie pronte per la sala riunioni"
+          ]
+        },
+        {
+          "image": "/images/images_features/processing-2.webp",
+          "title": "Analisi stagionalità",
+          "description": [
+            "Prevedi cicli, non caos",
+            "Rileva automaticamente pattern ricorrenti - picchi settimanali di vendite, aumenti mensili di energia, cali annuali di inventario.",
+            "Personalizza modelli via slider intuitivi (nessun codice!) per allineare previsioni ai tuoi ritmi aziendali unici."
+          ],
+          "title2": "Costruito per adattabilità",
+          "description2": [
+            "🔄 Template predefiniti per cicli comuni",
+            "🔄 Override manuale per casi particolari",
+            "🔄 Sincronizza risultati con team acquisti/pianificazione"
+          ]
+        }
+      ]
+    }
+  },
+  "Research": {
+    "Button": "Scopri di più",
+    "Content": [
+      {
+        "image": "/images/images_research/LSTM-Based Models for Day-Ahead Electrical Load Forecast A Novel Feature Selection Method Including Weather Data.webp",
+        "title": "Modelli basati su LSTM per la previsione del carico elettrico a breve termine: un innovativo metodo di selezione delle feature con dati meteorologici",
+        "description": [
+          "Presentiamo un innovativo algoritmo di previsione del carico basato su LSTM, combinato con un metodo personalizzato di codifica temporale Time2Vec e integrazione di dati meteorologici.",
+          "Come input sono stati utilizzati esclusivamente feature basate sul calendario (giorno della settimana, ora, data) e indicatori meteorologici (temperatura, umidità, ecc.).",
+          "La nostra analisi comparativa dimostra che l'approccio Time2Vec + LSTM da noi sviluppato supera significativamente architetture più complesse come Bi-LSTM o CNN-LSTM.",
+          "Ciò conferma che un'accurata progettazione delle feature e una codifica temporale avanzata possono fornire previsioni estremamente accurate senza necessità di complessità architetturale."
+        ],
+        "link": "https://iris.unibs.it/bitstream/11379/622686/2/PhD_Thesis_ML_for_T4H_final_version_pdf.pdf"
+      },
+      {
+        "image": "/images/images_research/Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series.webp",
+        "title": "Integrazione di caratteristiche stagionali nei metodi di imputazione dati per serie temporali di domanda energetica",
+        "description": [
+          "Questo lavoro introduce e valida due metodi innovativi per l'imputazione di dati mancanti nelle serie temporali di domanda energetica: H-DIRT (regressione storica) e SKNN (K-vicini stagionali).",
+          "Progettati sia per interpretabilità che accuratezza, questi metodi incorporano caratteristiche stagionali (anno, stagione, mese, settimana, giorno) migliorando le prestazioni rispetto alle tecniche standard di imputazione.",
+          "H-DIRT utilizza regressione lineare basata sui consumi storici, offrendo eccellenti prestazioni e velocità per lacune brevi.",
+          "SKNN arricchisce il KNN standard con dati stagionali, mostrando maggiore stabilità e accuratezza per lunghe sequenze di valori mancanti.",
+          "Testati su dati reali pluriennali di una stazione elettrica italiana, entrambi i metodi superano significativamente la tradizionale imputazione KNN nel dominio temporale.",
+          "SKNN raggiunge la migliore accuratezza complessiva, mentre H-DIRT è più efficiente computazionalmente e competitivo quando le lacune di dati sono brevi e le risorse limitate."
+        ],
+        "link": "https://ieeexplore.ieee.org/document/10613768"
+      },
+      {
+        "image": "/images/images_research/Enhancing Short-Term Load Forecasting through Machine Learning Ensemble Models and by Incorporating Weather Data.webp",
+        "title": "Miglioramento delle previsioni di carico a breve termine mediante modelli ensemble di machine learning e integrazione di dati meteorologici",
+        "description": [
+          "Questo lavoro propone un nuovo modello ensemble che combina Random Forest (RF) e Histogram-based Gradient Boosting (HGBR) per migliorare l'accuratezza delle previsioni di carico a breve termine.",
+          "I principali risultati includono:",
+          "Senza temperatura ambientale: il modello ensemble supera leggermente sia RF che HGBR.",
+          "Con temperatura ambientale: HGBR diventa il migliore in tutte le metriche.",
+          "Nei giorni anomali: il modello ensemble con temperatura raggiunge la migliore accuratezza complessiva e robustezza.",
+          "Questi risultati evidenziano:",
+          "L'importanza di includere la temperatura ambientale come feature per migliorare le previsioni.",
+          "L'efficacia delle tecniche ensemble nel gestire variabilità e dipendenze complesse nei dati di carico.",
+          "Questo approccio non solo migliora l'accuratezza giornaliera, ma fornisce previsioni affidabili in condizioni irregolari, rappresentando una direzione promettente per i sistemi energetici reali e applicazioni più ampie di previsione di serie temporali."
+        ],
+        "link": "https://ieeexplore.ieee.org/document/10805705"
+      }
+    ]
+  },
+  "Team": [
+    {
+      "first_name": "Nikita",
+      "last_name": "Savvin",
+      "education": "PhD Student. Major – Systems Analysis, Information Management and Processing, Statistics",
+      "job_title": "Co-founder / Technical Lead",
+      "contacts": {
+        "telegram": "https://t.me/SavvinNikita",
+        "email": "savvin.nikita.work@yandex.ru",
+        "orcid": "0009-0009-9163-6234"
+      },
+      "photo": "/images/team/Savvin_Nikita.png"
+    },
+    {
+      "first_name": "Dmitrii",
+      "last_name": "Vasenin",
+      "education": "PhD in Technology for Health",
+      "job_title": "Co-founder / Lead",
+      "contacts": {
+        "telegram": "https://t.me/dvasenin",
+        "orcid": "0000-0002-7028-9984",
+        "email": "vasenindmitrij01@gmail.com"
+      },
+      "photo": "/images/team/Dmitrii_Vasenin.png"
+    },
+    {
+      "first_name": "Andrew",
+      "last_name": "S.",
+      "job_title": "Lead Frontend Developer",
+      "contacts": {
+        "github": "https://github.com/ranareinsit"
+      }
+    },
+    {
+      "first_name": "Anastasiia",
+      "last_name": "Shakhova",
+      "education": "Information systems and technologies",
+      "job_title": "Data Scientist",
+      "contacts": {
+        "telegram": "https://t.me/aashakhova",
+        "email": "anastasia.shakhova1@gmail.com",
+        "orcid": "0009-0007-8392-3634"
+      },
+      "photo": "/images/team/Anastasia_Shahova.png"
+    },
+    {
+      "first_name": "Ilya",
+      "last_name": "Selivanov",
+      "education": "Information Systems and Programming, Web and Multimedia Applications Developer.",
+      "job_title": "Frontend Developer",
+      "contacts": {
+        "telegram": "https://t.me/dostanmenyatyt",
+        "email": "ilyailyaselivanov@gmail.com"
+      }
+    },
+    {
+      "first_name": "Bulat",
+      "last_name": "Khuzin",
+      "education": "Master's degree in Oil and gas Engineering",
+      "job_title": "Data Scientist",
+      "contacts": {
+        "telegram": "https://t.me/erzert",
+        "email": "bhkuzin@gmail.com"
+      }
+    }
+  ],
+  "Footer": {
+    "row1Title": "Previsioni migliori creano futuri più luminosi.",
+    "row1Title2": "Curioso di come la nostra AI per previsioni può lavorare per te?",
+    "row1Subtitle": "Hai una sfida specifica da risolvere?",
+    "row1Subtitle2": "I nostri ingegneri sono pronti ad aiutare.",
+    "row1ButtonText": "Parla con un Esperto",
+    "row2TermsTitle": "Termini di servizio",
+    "row2PrivacyTitle": "Informativa sulla privacy",
+    "row2CookiesTitle": "Informativa sui cookie",
+    "row3Follows": "Seguici",
+    "row3Copyright": "© 2025 Horizon TSD"
+  },
+  "Navbar": {
+    "home": "home",
+    "features": "funzionalità",
+    "research": "ricerca"
+  },
+  "Legal": {
+    "Terms": {
+      "Title": "Termini e Condizioni",
+      "LastUpdated": "Ultimo aggiornamento: 11 aprile 2023",
+      "Sections": [
+        {
+          "title": "Introduzione",
+          "content": "Questi Termini e Condizioni (\"Termini\") regolano l'utilizzo del sito web <COMPANY website URL> (\"Sito Web\" o \"Sito\") e qualsiasi servizio correlato fornito da <COMPANY> (\"noi\", \"nostro\"). Accedendo o utilizzando il Sito Web, accetti di essere vincolato da questi Termini, che costituiscono un accordo legalmente vincolante tra te e <COMPANY>. Se non accetti questi Termini, ti preghiamo di non utilizzare il Sito Web."
+        },
+        {
+          "title": "La Nostra Azienda",
+          "content": "<COMPANY> è un nome commerciale di <COMPANY legal entity>, registrata in <COMPANY country of registration> (Numero azienda <COMPANY registration number>), Sede legale: <COMPANY registered address>."
+        },
+        {
+          "title": "Eligibilità",
+          "content": "Per utilizzare il Sito Web e i suoi servizi, devi avere almeno 18 anni, avere la capacità legale di stipulare un contratto vincolante ed essere residente in uno stato membro dell'Unione Europea. Utilizzando il Sito, dichiari e garantisci di soddisfare questi requisiti di eligibilità."
+        },
+        {
+          "title": "Registrazione",
+          "content": "Per accedere a determinate funzionalità del Sito Web, potrebbe essere richiesta la registrazione di un account. Accetti di fornire informazioni di registrazione accurate e complete e di mantenere il tuo account aggiornato. Sei responsabile del mantenimento della riservatezza delle credenziali del tuo account e di qualsiasi attività che si verifica sotto il tuo account."
+        },
+        {
+          "title": "Contenuto Utente",
+          "content": "Sei l'unico responsabile di qualsiasi contenuto che invii, pubblichi o visualizzi sul Sito Web (\"Contenuto Utente\"). Inviando Contenuto Utente, ci concedi una licenza mondiale, non esclusiva, gratuita, sublicenziabile e trasferibile per utilizzare, riprodurre, distribuire, preparare opere derivate e visualizzare il tuo Contenuto Utente per qualsiasi scopo connesso al funzionamento del Sito Web. Dichiarazioni e garantisci di avere i diritti, il potere e l'autorità per concedere i diritti al tuo Contenuto Utente come specificato in questi Termini, e che il tuo Contenuto Utente non viola alcun diritto di terzi, inclusi diritti di proprietà intellettuale, diritti alla privacy o diritti di pubblicità."
+        },
+        {
+          "title": "Attività Proibite",
+          "content": "Accetti di non impegnarti in nessuna delle seguenti attività durante l'utilizzo del Sito Web:\n\n- Inviare, pubblicare o visualizzare qualsiasi contenuto che sia illegale, diffamatorio, minaccioso, molesto, abusivo, osceno o altrimenti inaccettabile;\n- Violare qualsiasi legge, regolamento o codice di settore applicabile;\n- Violare qualsiasi diritto di terzi, inclusi diritti di proprietà intellettuale, diritti alla privacy o diritti di pubblicità;\n- Trasmettere o introdurre virus, worm o altro software dannoso nel Sito Web;\n- Tentare di ottenere accesso non autorizzato a qualsiasi parte del Sito Web o agli account di altri utenti;\n- Impegnarsi in qualsiasi attività che interferisca o interrompa il corretto funzionamento del Sito Web.\n\nCi riserviamo il diritto di investigare e intraprendere azioni legali appropriate contro chiunque, a nostra esclusiva discrezione, violi questi Termini."
+        },
+        {
+          "title": "Proprietà Intellettuale",
+          "content": "Tutti i diritti di proprietà intellettuale nel Sito Web, il suo contenuto e qualsiasi servizio correlato, inclusi ma non limitati a marchi, loghi, design, grafica e testo, sono di proprietà di <COMPANY> o dei nostri licenziatari. Nulla in questi Termini ti concede alcun diritto di utilizzare qualsiasi nostra proprietà intellettuale senza il nostro espresso consenso scritto."
+        },
+        {
+          "title": "Siti Web di Terze Parti",
+          "content": "Il Sito Web potrebbe contenere link a siti web o servizi di terze parti. Non siamo responsabili del contenuto, delle pratiche sulla privacy o dei termini e condizioni di tali siti web di terze parti. Riconosci e accetti che il tuo utilizzo di qualsiasi sito web di terze parti è a tuo esclusivo rischio."
+        },
+        {
+          "title": "Rinuncia di Garanzie",
+          "content": "Il Sito Web e il suo contenuto sono forniti \"così come sono\" e \"come disponibili\". Non facciamo alcuna rappresentazione o garanzia di alcun tipo, espressa o implicita, riguardo al Sito Web o al suo contenuto, inclusi ma non limitati alla sua accuratezza, completezza o idoneità per un particolare scopo. Utilizzi il Sito Web a tuo rischio."
+        },
+        {
+          "title": "Limitazione di Responsabilità",
+          "content": "In nessun caso <COMPANY> o i suoi direttori, ufficiali, dipendenti, agenti o affiliati saranno responsabili per danni diretti, indiretti, incidentali, speciali, consequenziali o punitivi, inclusi ma non limitati a perdita di profitti, dati o avviamento, derivanti o in connessione con il tuo accesso, utilizzo o incapacità di utilizzare il Sito Web, il suo contenuto o qualsiasi servizio correlato, sia basato su garanzia, contratto, illecito o qualsiasi altra teoria legale, e indipendentemente dal fatto che siamo stati avvisati della possibilità di tali danni. Nella misura consentita dalla legge, la nostra responsabilità totale nei tuoi confronti per tutte le richieste derivanti o in connessione con questi Termini, il Sito Web o qualsiasi servizio correlato non supererà l'importo da te pagato, se del caso, per accedere o utilizzare il Sito Web durante i sei (6) mesi immediatamente precedenti l'evento che ha dato origine alla responsabilità."
+        },
+        {
+          "title": "Indennizzo",
+          "content": "Accetti di indennizzare, difendere e tenere indenne <COMPANY>, i suoi direttori, ufficiali, dipendenti, agenti e affiliati da e contro qualsiasi e tutte le richieste, responsabilità, danni, perdite o spese, inclusi ragionevoli onorari e costi legali, derivanti o in qualsiasi modo connessi con il tuo accesso, utilizzo o violazione di questi Termini, il Sito Web o qualsiasi servizio correlato."
+        },
+        {
+          "title": "Legge Applicabile e Giurisdizione",
+          "content": "Questi Termini saranno governati e interpretati in conformità con le leggi dell'Unione Europea, senza riguardo alle sue disposizioni di conflitto di leggi. Qualsiasi controversia derivante o in connessione con questi Termini, il Sito Web o qualsiasi servizio correlato sarà soggetta alla giurisdizione esclusiva dei tribunali situati all'interno dell'Unione Europea."
+        },
+        {
+          "title": "Modifiche a Questi Termini",
+          "content": "Ci riserviamo il diritto di modificare o sostituire questi Termini in qualsiasi momento, a nostra esclusiva discrezione. Forniremo notifica di eventuali modifiche pubblicando i Termini aggiornati sul Sito Web. Il tuo continuo utilizzo del Sito Web dopo eventuali modifiche costituisce la tua accettazione dei nuovi Termini. Se non accetti i Termini aggiornati, devi smettere di utilizzare il Sito Web."
+        },
+        {
+          "title": "Separabilità",
+          "content": "Se qualsiasi disposizione di questi Termini è ritenuta invalida o inapplicabile da un tribunale competente, tale disposizione sarà considerata separabile dalle restanti disposizioni, e le restanti disposizioni rimarranno in pieno vigore ed effetto."
+        },
+        {
+          "title": "Rinuncia",
+          "content": "Nessuna rinuncia a qualsiasi disposizione di questi Termini sarà considerata una rinuncia ulteriore o continua a tale disposizione o a qualsiasi altra disposizione, e il nostro mancato esercizio di qualsiasi diritto o disposizione ai sensi di questi Termini non costituirà una rinuncia a tale diritto o disposizione."
+        },
+        {
+          "title": "Contattaci",
+          "content": "Se hai domande o dubbi su questi Termini, ti preghiamo di contattarci a <COMPANY contact email>."
+        },
+        {
+          "title": "Accordo Completo",
+          "content": "Questi Termini, insieme a qualsiasi altro avviso legale e accordo pubblicato da noi sul Sito Web, costituiscono l'accordo completo tra te e <COMPANY> per quanto riguarda il tuo utilizzo del Sito Web e sostituiscono qualsiasi precedente o contemporanea comprensione, comunicazione o accordo, sia scritto che orale, riguardante lo stesso argomento."
+        }
+      ]
+    },
+    "Privacy": {
+      "Title": "Informativa sulla Privacy",
+      "LastUpdated": "Ultimo aggiornamento: 11 aprile 2023",
+      "Sections": [
+        {
+          "title": "Introduzione",
+          "content": "Questa Informativa sulla Privacy (\"Informativa\") descrive come <COMPANY> (\"noi\", \"nostro\") raccoglie, utilizza e divulga le tue informazioni personali quando utilizzi il nostro sito web <COMPANY website URL> (\"Sito Web\") e qualsiasi servizio correlato. Utilizzando il Sito Web, accetti la raccolta e l'utilizzo delle informazioni in conformità con questa Informativa."
+        },
+        {
+          "title": "Informazioni che Raccogliamo",
+          "content": "Raccogliamo diversi tipi di informazioni dagli utenti del nostro Sito Web, tra cui:\n\n- Informazioni personali (come nome, indirizzo email, numero di telefono)\n- Dati di utilizzo (come indirizzo IP, tipo di browser, pagine visitate)\n- Cookie e tecnologie di tracciamento simili\n- Informazioni che fornisci quando ci contatti o utilizzi i nostri servizi"
+        },
+        {
+          "title": "Come Utilizziamo le Tue Informazioni",
+          "content": "Utilizziamo le informazioni che raccogliamo per vari scopi, tra cui:\n\n- Fornire e mantenere il nostro Sito Web\n- Notificarti modifiche al nostro Sito Web\n- Fornire supporto clienti\n- Raccogliere analisi o informazioni preziose per migliorare il nostro Sito Web\n- Monitorare l'utilizzo del nostro Sito Web\n- Rilevare, prevenire e risolvere problemi tecnici"
+        },
+        {
+          "title": "Archiviazione e Sicurezza dei Dati",
+          "content": "Implementiamo misure tecniche e organizzative appropriate per proteggere le tue informazioni personali contro l'elaborazione non autorizzata o illegale, la perdita accidentale, la distruzione o il danneggiamento. I tuoi dati sono archiviati su server sicuri e protetti da misure di sicurezza standard del settore."
+        },
+        {
+          "title": "Conservazione dei Dati",
+          "content": "Conserveremo le tue informazioni personali solo per il tempo necessario a soddisfare gli scopi per cui le abbiamo raccolte, inclusi gli scopi di soddisfare qualsiasi requisito legale, contabile o di rendicontazione."
+        },
+        {
+          "title": "I Tuoi Diritti",
+          "content": "Ai sensi del GDPR, hai i seguenti diritti:\n\n- Il diritto di accesso ai tuoi dati personali\n- Il diritto di rettifica di dati inesatti\n- Il diritto alla cancellazione (\"diritto all'oblio\")\n- Il diritto di limitazione del trattamento\n- Il diritto alla portabilità dei dati\n- Il diritto di opposizione al trattamento\n- Diritti in relazione al processo decisionale automatizzato e alla profilazione"
+        },
+        {
+          "title": "Cookie",
+          "content": "Utilizziamo cookie e tecnologie di tracciamento simili per monitorare l'attività sul nostro Sito Web e conservare determinate informazioni. Puoi istruire il tuo browser a rifiutare tutti i cookie o a indicare quando viene inviato un cookie. Tuttavia, se non accetti i cookie, potresti non essere in grado di utilizzare alcune parti del nostro Sito Web."
+        },
+        {
+          "title": "Servizi di Terze Parti",
+          "content": "Potremmo impiegare società e individui di terze parti per facilitare il nostro Sito Web, fornire servizi per nostro conto, eseguire servizi correlati o aiutarci ad analizzare come viene utilizzato il nostro Sito Web. Queste terze parti hanno accesso alle tue informazioni personali solo per eseguire questi compiti per nostro conto e sono obbligate a non divulgarle o utilizzarle per qualsiasi altro scopo."
+        },
+        {
+          "title": "Privacy dei Minori",
+          "content": "Il nostro Sito Web non è destinato all'uso da parte di minori di 18 anni. Non raccogliamo consapevolmente informazioni personali da minori di 18 anni. Se sei un genitore o un tutore e sei consapevole che tuo figlio ci ha fornito informazioni personali, ti preghiamo di contattarci."
+        },
+        {
+          "title": "Modifiche a Questa Informativa",
+          "content": "Potremmo aggiornare la nostra Informativa sulla Privacy di tanto in tanto. Ti informeremo di eventuali modifiche pubblicando la nuova Informativa sulla Privacy su questa pagina e aggiornando la data dell'\"Ultimo aggiornamento\". Ti consigliamo di rivedere periodicamente questa Informativa sulla Privacy per eventuali modifiche."
+        },
+        {
+          "title": "Contattaci",
+          "content": "Se hai domande su questa Informativa sulla Privacy, ti preghiamo di contattarci a <COMPANY contact email>."
+        }
+      ]
+    },
+    "Cookies": {
+      "Title": "Informativa sui cookie",
+      "LastUpdated": "Ultimo aggiornamento: 11 aprile 2023",
+      "Sections": [
+        {
+          "title": "Introduzione",
+          "content": "La presente Informativa sui cookie (\"Informativa\") spiega come <COMPANY> (\"noi\", \"nostro\") utilizza i cookie e tecnologie di tracciamento simili sul nostro sito web <COMPANY website URL> (\"Sito\"). Utilizzando il nostro Sito, acconsenti all'uso dei cookie in conformità con la presente Informativa."
+        },
+        {
+          "title": "Cosa sono i cookie",
+          "content": "I cookie sono piccoli file di testo che vengono memorizzati sul tuo dispositivo quando visiti un sito web. Sono ampiamente utilizzati per migliorare l'efficienza dei siti web e fornire informazioni utili ai loro proprietari. I cookie possono essere di sessione (che vengono eliminati alla chiusura del browser) o persistenti (che rimangono sul tuo dispositivo per un determinato periodo di tempo)."
+        },
+        {
+          "title": "Tipi di cookie che utilizziamo",
+          "content": "Utilizziamo i seguenti tipi di cookie sul nostro Sito:\n\n- Cookie essenziali: necessari per il funzionamento del nostro Sito\n- Cookie analitici: ci aiutano a capire come i visitatori interagiscono con il nostro Sito\n- Cookie funzionali: memorizzano le tue preferenze e impostazioni\n- Cookie di marketing: vengono utilizzati per tracciare i visitatori tra diversi siti"
+        },
+        {
+          "title": "Come utilizziamo i cookie",
+          "content": "Utilizziamo i cookie per vari scopi, tra cui:\n\n- Garantire il corretto funzionamento del Sito\n- Analizzare l'utilizzo del Sito da parte dei visitatori\n- Memorizzare le tue preferenze e impostazioni\n- Migliorare la tua esperienza di navigazione\n- Personalizzare i contenuti e la pubblicità"
+        },
+        {
+          "title": "Cookie di terze parti",
+          "content": "Alcuni cookie sono inseriti da servizi di terze parti che compaiono sul nostro Sito. Queste terze parti possono utilizzare i cookie per raccogliere informazioni sulla tua attività online su diversi siti web. Non controlliamo questi cookie di terze parti e il loro utilizzo è regolato dalle politiche sulla privacy delle terze parti che li inseriscono."
+        },
+        {
+          "title": "Gestione dei cookie",
+          "content": "Puoi controllare e/o eliminare i cookie come preferisci. Puoi eliminare tutti i cookie già presenti sul tuo dispositivo e puoi impostare la maggior parte dei browser per impedirne l'installazione. Tuttavia, se lo fai, potresti dover regolare manualmente alcune preferenze ogni volta che visiti il nostro Sito e alcuni servizi e funzionalità potrebbero non funzionare."
+        },
+        {
+          "title": "Modifiche alla presente Informativa",
+          "content": "Potremmo aggiornare la presente Informativa sui cookie di tanto in tanto. Ti informeremo di eventuali modifiche pubblicando la nuova Informativa sui cookie su questa pagina e aggiornando la data \"Ultimo aggiornamento\". Si consiglia di controllare periodicamente la presente Informativa sui cookie per eventuali modifiche."
+        },
+        {
+          "title": "Contattaci",
+          "content": "Se hai domande sulla presente Informativa sui cookie, ti preghiamo di contattarci a <COMPANY contact email>."
+        }
+      ]
+    }
+  }
 }
