@@ -145,7 +145,7 @@ function Row2() {
       direction={isMobile ? "column-reverse" : "row"}
       sx={{
         alignItems: "center",
-        justifyContent: "space-between",
+        justifyContent: "center",
         width: "100%",
         marginTop: "3rem",
         gap: theme.spacing(2),
@@ -163,24 +163,31 @@ function Row2() {
             justifyContent: "center",
             transition: theme.transitions.create("color"),
             "&:hover": {
-              color: "text.secondary",
+              color: "Highlight",
               textDecoration: "underline",
             },
           },
         }}
       >
-        <Link href="/terms" passHref>
-          <Typography component="span" variant="body2" sx={{ fontWeight: 500 }}>
+        <Link href="/terms#terms" passHref style={{
+          textDecoration: `none`
+        }}>
+          <Typography variant="subtitle2">
             {content.row2TermsTitle}
           </Typography>
         </Link>
-        <Link href="/privacy" passHref>
-          <Typography component="span" variant="body2" sx={{ fontWeight: 500 }}>
+
+        <Link href="/privacy#privacy" passHref style={{
+          textDecoration: `none`
+        }}>
+          <Typography variant="subtitle2">
             {content.row2PrivacyTitle}
           </Typography>
         </Link>
-        <Link href="/cookies" passHref>
-          <Typography component="span" variant="body2" sx={{ fontWeight: 500 }}>
+        <Link href="/cookies#cookies" passHref style={{
+          textDecoration: `none`
+        }}>
+          <Typography variant="subtitle2">
             {content.row2CookiesTitle}
           </Typography>
         </Link>
@@ -350,7 +357,6 @@ export default function Footer() {
       id={"footer"}
       sx={{
         minHeight: isMobile ? `100vh` : `480px`,
-        height: `20vh`,
         maxHeight: `1080px`,
       }}
     >

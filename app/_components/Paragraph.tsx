@@ -40,7 +40,7 @@ export default function Paragraph({ item }: ParagraphProps) {
   };
 
   return (
-    <div>
+    <section>
       {item.title && (
         <Typography
           variant="h5"
@@ -55,6 +55,6 @@ export default function Paragraph({ item }: ParagraphProps) {
         </Typography>
       )}
       {renderContent(item.content)}
-    </div>
+    </section>
   );
 }
