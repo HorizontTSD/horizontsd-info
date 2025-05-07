@@ -1163,6 +1163,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/google-libphonenumber@npm:^7.4.30":
+  version: 7.4.30
+  resolution: "@types/google-libphonenumber@npm:7.4.30"
+  checksum: 10c0/f81803dc061b775d981a04e99dfe9ee124b9e73ced6f0298928c0ff73fea4b34bc50b9c58f3235ee5c3c08a940a27bad20fcb9f4c25ba31698f1a64b98768306
+  languageName: node
+  linkType: hard
+
 "@types/hoist-non-react-statics@npm:^3.3.6":
   version: 3.3.6
   resolution: "@types/hoist-non-react-statics@npm:3.3.6"
@@ -2841,6 +2848,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"google-libphonenumber@npm:^3.2.40":
+  version: 3.2.40
+  resolution: "google-libphonenumber@npm:3.2.40"
+  checksum: 10c0/997857e0dfdd39b169171cfee72ba268e9b0f9c655317701e21f61b2725d48384df3b2dea6977b49fb47efbde319fd71a1f2ec46589e91ab832ada9f54793cff
+  languageName: node
+  linkType: hard
+
 "gopd@npm:^1.0.1, gopd@npm:^1.2.0":
   version: 1.2.0
   resolution: "gopd@npm:1.2.0"
@@ -2940,6 +2954,7 @@ __metadata:
     "@mui/system": "npm:^7.0.2"
     "@mui/types": "npm:^7.4.1"
     "@mui/utils": "npm:^7.0.2"
+    "@types/google-libphonenumber": "npm:^7.4.30"
     "@types/js-cookie": "npm:^3.0.6"
     "@types/negotiator": "npm:^0.6.3"
     "@types/node": "npm:^20"
@@ -2951,6 +2966,7 @@ __metadata:
     critters: "npm:^0.0.25"
     eslint: "npm:^9"
     eslint-config-next: "npm:15.3.1"
+    google-libphonenumber: "npm:^3.2.40"
     js-cookie: "npm:^3.0.5"
     negotiator: "npm:^1.0.0"
     next: "npm:^15.3.1"
