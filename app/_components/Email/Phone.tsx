@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Stack,
   FormControl,
@@ -15,8 +15,7 @@ import Image from "next/image";
 import { FormData, FormDataFieldStatus } from "@/app/_providers/ModalFormProvider";
 import { FieldSetterProps } from "./Form";
 import { useI18n } from "@/app/_providers/I18nProvider";
-import countries from "../../_json/countries.json";
-import defCodes from "../../_json/def_codes.json";
+import { PhoneNumberUtil } from "google-libphonenumber";
 
 interface CustomProps extends InputBaseComponentProps {
   name: string;
@@ -27,7 +26,8 @@ const TextMaskCustom = React.forwardRef<HTMLInputElement, CustomProps>(function 
   ref
 ) {
   const { dict } = useI18n();
-  if (!dict || !dict.FeedbackForm) return null;
+  if (!dict?.FeedbackForm) return null;
+
   const { onChange, ...other } = props;
   return (
     <IMaskInput
@@ -43,59 +43,59 @@ const TextMaskCustom = React.forwardRef<HTMLInputElement, CustomProps>(function 
   );
 });
 
+// Memoize the phone util instance creation
+const phoneUtil = PhoneNumberUtil.getInstance();
+
 export function Phone({ formData, setFormData, checkForm }: FieldSetterProps) {
+  const { dict } = useI18n();
   const [inputValue, setInputValue] = useState(
     typeof formData.phone === "string"
       ? { value: formData.phone, status: FormDataFieldStatus.Empty }
       : formData.phone
   );
-  const [countryFlag, setCountryFlag] = useState<string>("un");
+  const [countryFlag, setCountryFlag] = useState<string>("");
   const debounceTimer = useRef<NodeJS.Timeout | null>(null);
 
-  function getCountryByCode(phone: string) {
-    const digits = phone.replace(/[^\d]/g, "");
-    let found = null;
-    let maxLen = 0;
-    for (const c of countries) {
-      const prefix = c.code.split("-")[0];
-      if (digits.startsWith(prefix) && prefix.length > maxLen) {
-        found = c;
-        maxLen = prefix.length;
-      }
+  // Memoize the getCountryByCode function
+  const getCountryByCode = useCallback((phone: string): string => {
+    try {
+      const number = phoneUtil.parseAndKeepRawInput(phone);
+      return phoneUtil.getRegionCodeForNumber(number)?.toLowerCase() || "";
+    } catch {
+      return "";
     }
-    if (found && found.code === "7" && digits.length >= 4) {
-      const def = digits.slice(1, 4);
-      for (const entry of defCodes) {
-        if (entry.defs.includes(def)) {
-          return entry.country.toLowerCase();
-        }
-      }
-      return "ru";
-    }
-    return found ? found.iso.toLowerCase() : "un";
-  }
+  }, []);
 
-  function validatePhone(phone: string) {
+  // Memoize the validation function
+  const validatePhone = useCallback((phone: string) => {
     const onlyDigits = phone.replace(/\D/g, "");
     if (onlyDigits.length === 0) {
-      setCountryFlag("un");
+      setCountryFlag("");
       return FormDataFieldStatus.Empty;
     }
-    const match = phone.match(/^\+\d+ \(\d{3}\) \d{3} \d{4}$/);
-    if (!match) {
-      setCountryFlag("un");
+
+    // Simplified regex check
+    if (!/^\+\d+ \(\d{3}\) \d{3} \d{4}$/.test(phone)) {
+      setCountryFlag("");
       return FormDataFieldStatus.Invalid;
     }
+
     const flag = getCountryByCode(phone);
     setCountryFlag(flag);
     return FormDataFieldStatus.Valid;
-  }
+  }, [getCountryByCode]);
 
-  function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
+  // Optimized handler with proper cleanup
+  const handleInputChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value;
     const newStatus = validatePhone(newValue);
+
     setInputValue({ value: newValue, status: newStatus });
-    if (debounceTimer.current) clearTimeout(debounceTimer.current);
+
+    if (debounceTimer.current) {
+      clearTimeout(debounceTimer.current);
+    }
+
     debounceTimer.current = setTimeout(() => {
       setFormData((prev: FormData) => ({
         ...prev,
@@ -103,8 +103,16 @@ export function Phone({ formData, setFormData, checkForm }: FieldSetterProps) {
       }));
       checkForm(formData);
     }, 300);
-  }
+  }, [validatePhone, setFormData, checkForm, formData]);
 
+  // Memoize the color calculation
+  const textFieldColor = useMemo(() => {
+    if (inputValue.status === FormDataFieldStatus.Invalid) return "error";
+    if (inputValue.status === FormDataFieldStatus.Valid) return "secondary";
+    return "primary";
+  }, [inputValue.status]);
+
+  // Effect for initial value and cleanup
   useEffect(() => {
     setInputValue(
       typeof formData.phone === "string"
@@ -121,14 +129,7 @@ export function Phone({ formData, setFormData, checkForm }: FieldSetterProps) {
     };
   }, []);
 
-  const { dict } = useI18n();
-  if (!dict || !dict.FeedbackForm) return null;
-
-  function getTextFieldColor() {
-    if (inputValue.status === FormDataFieldStatus.Invalid) return "error";
-    if (inputValue.status === FormDataFieldStatus.Valid) return "secondary";
-    return "primary";
-  }
+  if (!dict?.FeedbackForm) return null;
 
   return (
     <Stack direction="row" alignItems="center" m={1}>
@@ -142,25 +143,29 @@ export function Phone({ formData, setFormData, checkForm }: FieldSetterProps) {
           justifyContent: "center",
         }}
       >
-        <Image
-          loading="lazy"
-          width={32}
-          height={32}
-          src={`https://flagcdn.com/w80/${countryFlag}.jpg`}
-          alt=""
-          style={{
-            marginTop: "20px",
-            objectFit: "contain",
-          }}
-        />
+        {countryFlag ? (
+          <Image
+            loading="lazy"
+            width={32}
+            height={32}
+            src={`https://flagcdn.com/w80/${countryFlag}.jpg`}
+            alt=""
+            style={{
+              marginTop: "20px",
+              objectFit: "contain",
+            }}
+          />
+        ) : (
+          <Box sx={{ userSelect: `none`, marginTop: `12px` }}>🌐</Box>
+        )}
       </Box>
-      <FormControl variant="standard" sx={{ width: `100%` }}>
+      <FormControl variant="standard" sx={{ width: "100%" }}>
         <InputLabel variant="standard" htmlFor="formatted-text-mask-input">
           {dict.FeedbackForm.Phone.inputLabel}
         </InputLabel>
         <Input
           placeholder={dict.FeedbackForm.Phone.placeholder}
-          color={getTextFieldColor()}
+          color={textFieldColor}
           error={inputValue.status === FormDataFieldStatus.Invalid && inputValue.value.length > 0}
           required={true}
           value={inputValue.value}
@@ -173,7 +178,7 @@ export function Phone({ formData, setFormData, checkForm }: FieldSetterProps) {
             name: "phone",
           }}
         />
-        <FormHelperText sx={{ userSelect: `none` }}>
+        <FormHelperText sx={{ userSelect: "none" }}>
           {inputValue.status === FormDataFieldStatus.Invalid && inputValue.value.length > 0
             ? dict.FeedbackForm.Phone.FormHelperText
             : ""}

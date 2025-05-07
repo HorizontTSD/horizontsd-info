@@ -3,7 +3,6 @@ const nextConfig = {
   output: "standalone",
   reactStrictMode: true,
   images: {
-    domains: ["flagcdn.com"],
     remotePatterns: [
       {
         protocol: "https",
