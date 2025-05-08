@@ -801,5 +801,13 @@
         }
       ]
     }
+  },
+  "PrivacyBanner": {
+    "cookies": "Cookie",
+    "analytics": "Analisi",
+    "terms": "Termini",
+    "accept": "Accetta",
+    "acceptAll": "Accetta tutto",
+    "loading": "Caricamento..."
   }
 }

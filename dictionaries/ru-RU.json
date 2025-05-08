@@ -806,5 +806,13 @@
         }
       ]
     }
+  },
+  "PrivacyBanner": {
+    "cookies": "Файлы cookie",
+    "analytics": "Аналитика",
+    "terms": "Условия",
+    "accept": "Принять",
+    "acceptAll": "Принять все",
+    "loading": "Загрузка..."
   }
 }
