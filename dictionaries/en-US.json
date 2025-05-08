@@ -802,5 +802,13 @@
         }
       ]
     }
+  },
+  "PrivacyBanner": {
+    "cookies": "Cookies",
+    "analytics": "Analytics",
+    "terms": "Terms",
+    "accept": "Accept",
+    "acceptAll": "Accept All",
+    "loading": "Loading..."
   }
 }
