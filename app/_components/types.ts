@@ -82,6 +82,7 @@ export interface CallToActionSection {
 
 export interface AboutSection {
   SectionHeader: SectionHeader;
+  JoinTeam: string;
 }
 
 export interface FeatureItem {
