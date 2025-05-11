@@ -204,6 +204,18 @@ export interface LegalDictionary {
   Cookies: LegalContent;
 }
 
+export interface PrivacyBannerDict {
+  accept: string;
+  acceptAll: string;
+  cookies: string;
+  analytics: string;
+  terms: string;
+  agreementText: string;
+  agreementGDPRText: string;
+  title: string;
+  privacy: string;
+}
+
 export interface AppDictionary extends Dictionary {
   Home: {
     Hero: HeroContent;
@@ -229,4 +241,5 @@ export interface AppDictionary extends Dictionary {
     };
   };
   Legal: LegalDictionary;
+  PrivacyBanner: PrivacyBannerDict;
 }
