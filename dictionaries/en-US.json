@@ -805,6 +805,10 @@
     "terms": "Terms",
     "accept": "Accept",
     "acceptAll": "Accept All",
-    "loading": "Loading..."
+    "agreementText": "By using this site, you agree to our data processing policy.",
+    "loadingText": "Please wait...",
+    "agreementGDPRText": "We use cookies to ensure you get the best experience on our website and to analyze its usage. You can find more information about cookies and how we use them in our privacy policy. By continuing to use this site, you consent to the use of cookies.",
+    "title": "Data Usage Agreement",
+    "privacy": "Privacy"
   }
 }

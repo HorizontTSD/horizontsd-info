@@ -808,6 +808,10 @@
     "terms": "Termini",
     "accept": "Accetta",
     "acceptAll": "Accetta tutto",
-    "loading": "Caricamento..."
+    "agreementText": "Utilizzando questo sito, accetti la nostra politica di trattamento dei dati.",
+    "loadingText": "Attendere prego...",
+    "agreementGDPRText": "Utilizziamo i cookie per garantirti la migliore esperienza sul nostro sito web e per analizzarne l'utilizzo. Puoi trovare maggiori informazioni sui cookie e su come li utilizziamo nella nostra politica sulla privacy. Continuando a utilizzare questo sito, acconsenti all'uso dei cookie.",
+    "title": "Accordo sull'utilizzo dei dati",
+    "privacy": "Privacy"
   }
 }

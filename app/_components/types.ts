@@ -210,6 +210,10 @@ export interface PrivacyBannerDict {
   cookies: string;
   analytics: string;
   terms: string;
+  agreementText: string;
+  agreementGDPRText: string;
+  title: string;
+  privacy: string;
 }
 
 export interface AppDictionary extends Dictionary {
