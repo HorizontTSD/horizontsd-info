@@ -44,11 +44,13 @@
       "button": [
         {
           "title": "Previsione Rapida",
-          "description": ["provalo ora", "LSTM", "XGBoost", "modelli ibridi"]
+          "description": ["provalo ora", "LSTM", "XGBoost", "modelli ibridi"],
+          "link": "https://ranareinsit-horizontsd-tool-9d25.twc1.net/forecast"
         },
         {
           "title": "La Soluzione Aziendale",
-          "description": ["guarda la demo", "demo", "esempio"]
+          "description": ["guarda la demo", "demo", "esempio"],
+          "link": "https://ranareinsit-horizontsd-tool-9d25.twc1.net"
         }
       ]
     },

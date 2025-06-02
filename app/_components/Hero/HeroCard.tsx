@@ -14,6 +14,7 @@ import OnlinePredictionIcon from '@mui/icons-material/OnlinePrediction';
 import BatchPrediction from '@mui/icons-material/BatchPrediction';
 import { useI18n } from "@/app/_providers/I18nProvider";
 import { bebasNeue } from "@/fonts";
+import Link from '@mui/material/Link';
 export interface HeroCardProps {
 	type: "primary" | "secondary";
 }
@@ -137,101 +138,103 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 			maxHeight: `200px`,
 			boxShadow: 10,
 		}}>
-			<CardActionArea
-				sx={{
-					padding: `0.4rem`,
-					'&[data-active]': {
-						backgroundColor: 'action.selected',
-						'&:hover': {
-							backgroundColor: 'action.selectedHover',
-						},
-					},
-				}}>
-				<CardContent sx={{
-					display: `flex`,
-					flexDirection: `column`,
-					justifyContent: `space-between`,
-				}}>
-					<Stack direction={"row"} sx={{
-						display: `flex`,
-						flexDirection: `row`,
-						justifyContent: `space-between`,
-						alignItems: `normal`,
-						padding: `0 0 0 0`
-					}}>
-						<Stack
-							direction={"column"}
-							sx={{ justifyContent: `space-around`, minWidth: isMd ? `200px` : `13rem` }}
-						>
-							<Stack
-								direction={"row"}
-								sx={{ marginBottom: `0.5rem` }}
-							>
-								{type == 'primary'
-									? <FlashOnIcon sx={{ color: "var(--mui-palette-warning-dark)" }} />
-									: <OnlinePredictionIcon sx={{ color: "var(--mui-palette-text-primary)" }} />
-								}
-								<Typography
-									variant={isMd ? "h6" : "h4"}
-									sx={{
-										fontFamily: bebasNeue.style.fontFamily,
-										textTransform: `uppercase`,
-										lineHeight: `1.8rem`,
-									}}
-								>
-									{content.title}
-								</Typography>
-							</Stack>
-							<Stack direction={"column"} >
-								<Typography
-									variant={isMd ? "subtitle1" : "h5"}
-									sx={{
-										fontFamily: bebasNeue.style.fontFamily,
-										textTransform: `uppercase`,
-										lineHeight: `1.5rem`,
-										maxHeight: `5rem`,
-										overflow: `hidden`,
-										position: `relative`
-									}}
-								>{content.description[0]}</Typography>
-							</Stack>
-							<Stack direction={"row"} spacing={1} sx={{ width: `100px`, position: `relative`, bottom: `-15px` }}>
-								{content.description.slice(1).map((e, i) => (
-									<Chip key={i} variant="filled" label={e} size="small" sx={{
-										fontFamily: bebasNeue.style.fontFamily,
-										textTransform: `uppercase`,
-										padding: `0.5rem 0.5rem 0.3rem 0.5rem`,
-										color: type == "primary" ? `warning.main` : "text.primary"
-									}} />
-								))}
-							</Stack>
-						</Stack>
-						<div style={{
-							display: "flex",
-							left: isMd ? "-95px" : "-15%",
-							minWidth: `200px`,
-							position: "relative",
-							top: `-1rem`,
-							width: "200px",
-							height: `140px`
-						}}>
-							<div style={{
-								display: `flex`,
-								left: `82%`,
-								position: `relative`,
-								top: `10px`,
-							}}>
-								<TurnRightIcon sx={{
-									height: `64px`,
-									transform: `rotate(90deg)`,
-									width: `64px`,
-								}} />
-							</div>
-							<HeroCardIllustration type={type} />
-						</div>
-					</Stack>
-				</CardContent>
-			</CardActionArea>
+    		<Link href={content.link} target="_blank" rel="noopener noreferrer" underline="none">
+                <CardActionArea
+                    sx={{
+                        padding: `0.4rem`,
+                        '&[data-active]': {
+                            backgroundColor: 'action.selected',
+                            '&:hover': {
+                                backgroundColor: 'action.selectedHover',
+                            },
+                        },
+                    }}>
+                    <CardContent sx={{
+                        display: `flex`,
+                        flexDirection: `column`,
+                        justifyContent: `space-between`,
+                    }}>
+                        <Stack direction={"row"} sx={{
+                            display: `flex`,
+                            flexDirection: `row`,
+                            justifyContent: `space-between`,
+                            alignItems: `normal`,
+                            padding: `0 0 0 0`
+                        }}>
+                            <Stack
+                                direction={"column"}
+                                sx={{ justifyContent: `space-around`, minWidth: isMd ? `200px` : `13rem` }}
+                            >
+                                <Stack
+                                    direction={"row"}
+                                    sx={{ marginBottom: `0.5rem` }}
+                                >
+                                    {type == 'primary'
+                                        ? <FlashOnIcon sx={{ color: "var(--mui-palette-warning-dark)" }} />
+                                        : <OnlinePredictionIcon sx={{ color: "var(--mui-palette-text-primary)" }} />
+                                    }
+                                    <Typography
+                                        variant={isMd ? "h6" : "h4"}
+                                        sx={{
+                                            fontFamily: bebasNeue.style.fontFamily,
+                                            textTransform: `uppercase`,
+                                            lineHeight: `1.8rem`,
+                                        }}
+                                    >
+                                        {content.title}
+                                    </Typography>
+                                </Stack>
+                                <Stack direction={"column"} >
+                                    <Typography
+                                        variant={isMd ? "subtitle1" : "h5"}
+                                        sx={{
+                                            fontFamily: bebasNeue.style.fontFamily,
+                                            textTransform: `uppercase`,
+                                            lineHeight: `1.5rem`,
+                                            maxHeight: `5rem`,
+                                            overflow: `hidden`,
+                                            position: `relative`
+                                        }}
+                                    >{content.description[0]}</Typography>
+                                </Stack>
+                                <Stack direction={"row"} spacing={1} sx={{ width: `100px`, position: `relative`, bottom: `-15px` }}>
+                                    {content.description.slice(1).map((e, i) => (
+                                        <Chip key={i} variant="filled" label={e} size="small" sx={{
+                                            fontFamily: bebasNeue.style.fontFamily,
+                                            textTransform: `uppercase`,
+                                            padding: `0.5rem 0.5rem 0.3rem 0.5rem`,
+                                            color: type == "primary" ? `warning.main` : "text.primary"
+                                        }} />
+                                    ))}
+                                </Stack>
+                            </Stack>
+                            <div style={{
+                                display: "flex",
+                                left: isMd ? "-95px" : "-15%",
+                                minWidth: `200px`,
+                                position: "relative",
+                                top: `-1rem`,
+                                width: "200px",
+                                height: `140px`
+                            }}>
+                                <div style={{
+                                    display: `flex`,
+                                    left: `82%`,
+                                    position: `relative`,
+                                    top: `10px`,
+                                }}>
+                                    <TurnRightIcon sx={{
+                                        height: `64px`,
+                                        transform: `rotate(90deg)`,
+                                        width: `64px`,
+                                    }} />
+                                </div>
+                                <HeroCardIllustration type={type} />
+                            </div>
+                        </Stack>
+                    </CardContent>
+                </CardActionArea>
+            </Link>
 		</Card >
 	)
 }
@@ -261,57 +264,59 @@ function HeroCardMobile({ type }: HeroCardProps) {
 			marginTop: type == "primary" ? `1rem` : "unset",
 			width: `100%`,
 		}}>
-			<CardActionArea
-				sx={{
-					'&[data-active]': {
-						backgroundColor: 'action.selected',
-						'&:hover': {
-							backgroundColor: 'action.selectedHover',
-						},
-					},
-				}}>
-				<CardContent>
-					<Stack direction={"column"}>
-						<Stack direction={"row"} >
-							{type == 'primary'
-								? <FlashOnIcon sx={{ color: "var(--mui-palette-warning-dark)" }} />
-								: <OnlinePredictionIcon sx={{ color: "var(--mui-palette-text-primary)" }} />
-							}
-							<Typography
-								variant="h6"
-								sx={{
-									fontFamily: bebasNeue.style.fontFamily,
-									textTransform: `uppercase`,
-									lineHeight: `1.8rem`,
-								}}
-							>
-								{content.title}
-							</Typography>
-						</Stack>
-						<Stack direction={"column"} >
-							<Typography
-								variant={"subtitle1"}
-								sx={{
-									fontFamily: bebasNeue.style.fontFamily,
-									textTransform: `uppercase`,
-									overflow: `hidden`,
-									position: `relative`
-								}}
-							>{content.description[0]}</Typography>
-						</Stack>
-						<Stack direction={"row"} spacing={1} sx={{ position: `relative`, bottom: `-5px` }}>
-							{content.description.slice(1).map((e, i) => (
-								<Chip key={i} variant="filled" label={e} size="small" sx={{
-									fontFamily: bebasNeue.style.fontFamily,
-									textTransform: `uppercase`,
-									padding: `0.5rem 0.5rem 0.3rem 0.5rem`,
-									color: type == "primary" ? `warning.main` : "text.primary"
-								}} />
-							))}
-						</Stack>
-					</Stack>
-				</CardContent>
-			</CardActionArea>
+            <Link href={content.link} target="_blank" rel="noopener noreferrer" underline="none">
+                <CardActionArea
+                    sx={{
+                        '&[data-active]': {
+                            backgroundColor: 'action.selected',
+                            '&:hover': {
+                                backgroundColor: 'action.selectedHover',
+                            },
+                        },
+                    }}>
+                    <CardContent>
+                        <Stack direction={"column"}>
+                            <Stack direction={"row"} >
+                                {type == 'primary'
+                                    ? <FlashOnIcon sx={{ color: "var(--mui-palette-warning-dark)" }} />
+                                    : <OnlinePredictionIcon sx={{ color: "var(--mui-palette-text-primary)" }} />
+                                }
+                                <Typography
+                                    variant="h6"
+                                    sx={{
+                                        fontFamily: bebasNeue.style.fontFamily,
+                                        textTransform: `uppercase`,
+                                        lineHeight: `1.8rem`,
+                                    }}
+                                >
+                                    {content.title}
+                                </Typography>
+                            </Stack>
+                            <Stack direction={"column"} >
+                                <Typography
+                                    variant={"subtitle1"}
+                                    sx={{
+                                        fontFamily: bebasNeue.style.fontFamily,
+                                        textTransform: `uppercase`,
+                                        overflow: `hidden`,
+                                        position: `relative`
+                                    }}
+                                >{content.description[0]}</Typography>
+                            </Stack>
+                            <Stack direction={"row"} spacing={1} sx={{ position: `relative`, bottom: `-5px` }}>
+                                {content.description.slice(1).map((e, i) => (
+                                    <Chip key={i} variant="filled" label={e} size="small" sx={{
+                                        fontFamily: bebasNeue.style.fontFamily,
+                                        textTransform: `uppercase`,
+                                        padding: `0.5rem 0.5rem 0.3rem 0.5rem`,
+                                        color: type == "primary" ? `warning.main` : "text.primary"
+                                    }} />
+                                ))}
+                            </Stack>
+                        </Stack>
+                    </CardContent>
+                </CardActionArea>
+            </Link>
 		</Card >
 	)
 }

@@ -10,11 +10,13 @@
       "button": [
         {
           "title": "быстрый прогноз",
-          "description": ["попробовать сейчас", "lstm", "xgboost", "hybrid models"]
+          "description": ["попробовать сейчас", "lstm", "xgboost", "hybrid models"],
+          "link": "https://ranareinsit-horizontsd-tool-9d25.twc1.net/forecast"
         },
         {
           "title": "кейс компании",
-          "description": ["смотреть демо", "демо", "пример"]
+          "description": ["смотреть демо", "демо", "пример"],
+          "link": "https://ranareinsit-horizontsd-tool-9d25.twc1.net"
         }
       ]
     },
