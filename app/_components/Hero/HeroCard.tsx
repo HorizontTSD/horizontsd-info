@@ -264,7 +264,7 @@ function HeroCardMobile({ type }: HeroCardProps) {
 			marginTop: type == "primary" ? `1rem` : "unset",
 			width: `100%`,
 		}}>
-            <Link href={content.link} target="_blank" rel="noopener noreferrer" underline="none">
+            <Link href={"https://ranareinsit-horizontsd-tool-9d25.twc1.net"} target="_blank" rel="noopener noreferrer" underline="none">
                 <CardActionArea
                     sx={{
                         '&[data-active]': {
