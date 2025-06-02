@@ -44,13 +44,11 @@
       "button": [
         {
           "title": "Quick Forecast",
-          "description": ["try it now", "lstm", "xgboost", "hybrid models"],
-          "link": "https://ranareinsit-horizontsd-tool-9d25.twc1.net/forecast"
+          "description": ["try it now", "lstm", "xgboost", "hybrid models"]
         },
         {
           "title": "The Solution of the company",
-          "description": ["view the demo", "demo", "example"],
-          "link": "https://ranareinsit-horizontsd-tool-9d25.twc1.net"
+          "description": ["view the demo", "demo", "example"]
         }
       ]
     },
