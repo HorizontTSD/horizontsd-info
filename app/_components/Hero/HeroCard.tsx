@@ -115,7 +115,7 @@ function HeroCardDesktop({ type }: HeroCardProps) {
 	const isMd = useMediaQuery(theme.breakpoints.down("lg"));
 	const { mode } = useColorScheme();
 	if (!dict || !dict.Home || !dict.Home.Hero || !dict.Home.Hero.button) return null;
-	const content = dict.Home.Hero.button[type == 'primary' ? 0 : 1]
+	const content: { title: string; description: string[]; link: string } = dict.Home.Hero.button[type == 'primary' ? 0 : 1];
 	const isDark = mode == 'dark'
 	const { background: cardBackground } = {
 		primary: {
@@ -256,7 +256,8 @@ function HeroCardMobile({ type }: HeroCardProps) {
 		}
 	}[type]
 	if (!dict || !dict.Home || !dict.Home.Hero || !dict.Home.Hero.button) return null;
-	const content = dict.Home.Hero.button[type == 'primary' ? 0 : 1]
+	const content: { title: string; description: string[]; link: string } = dict.Home.Hero.button[type == 'primary' ? 0 : 1];
+
 	return (
 		<Card sx={{
 			background: cardBackground,
