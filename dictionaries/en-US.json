@@ -44,11 +44,13 @@
       "button": [
         {
           "title": "Quick Forecast",
-          "description": ["try it now", "lstm", "xgboost", "hybrid models"]
+          "description": ["try it now", "lstm", "xgboost", "hybrid models"],
+          "link": "https://horizon-tool.ru/forecast"
         },
         {
           "title": "The Solution of the company",
-          "description": ["view the demo", "demo", "example"]
+          "description": ["view the demo", "demo", "example"],
+          "link": "https://horizon-tool.ru"
         }
       ]
     },
