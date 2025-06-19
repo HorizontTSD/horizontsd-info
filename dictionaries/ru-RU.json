@@ -10,13 +10,19 @@
       "button": [
         {
           "title": "быстрый прогноз",
-          "description": ["попробовать сейчас", "lstm", "xgboost", "hybrid models"],
-          "link": "https://horizon-tool.ru/forecast"
+          "description": ["попробовать сейчас", "lstm", "xgboost", "hybrid models"]
         },
         {
           "title": "кейс компании",
-          "description": ["смотреть демо", "демо", "пример"],
-          "link": "https://horizon-tool.ru"
+          "description": ["смотреть демо", "демо", "пример"]
+        },
+        {
+          "title": "Чат с ИИ",
+          "description": ["Попробуй наш ИИ чат сейчас", "GPT", "Диалог", "Мгновенно"]
+        },
+        {
+          "title": "API Док.",
+          "description": ["FastAPI", "OpenAPI", "REST"]
         }
       ]
     },

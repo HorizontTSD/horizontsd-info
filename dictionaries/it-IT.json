@@ -44,13 +44,19 @@
       "button": [
         {
           "title": "Previsione Rapida",
-          "description": ["provalo ora", "LSTM", "XGBoost", "modelli ibridi"],
-          "link": "https://horizon-tool.ru/forecast"
+          "description": ["provalo ora", "LSTM", "XGBoost", "modelli ibridi"]
         },
         {
           "title": "La Soluzione Aziendale",
-          "description": ["guarda la demo", "demo", "esempio"],
-          "link": "https://horizon-tool.ru"
+          "description": ["guarda la demo", "demo", "esempio"]
+        },
+        {
+          "title": "Chat AI",
+          "description": ["Prova la nostra chat AI ora", "GPT", "Dialogo", "Istantaneo"]
+        },
+        {
+          "title": "API Doc.",
+          "description": ["FastAPI", "OpenAPI", "REST"]
         }
       ]
     },

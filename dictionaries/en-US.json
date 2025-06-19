@@ -44,13 +44,19 @@
       "button": [
         {
           "title": "Quick Forecast",
-          "description": ["try it now", "lstm", "xgboost", "hybrid models"],
-          "link": "https://horizon-tool.ru/forecast"
+          "description": ["try it now", "lstm", "xgboost", "hybrid models"]
         },
         {
           "title": "The Solution of the company",
-          "description": ["view the demo", "demo", "example"],
-          "link": "https://horizon-tool.ru"
+          "description": ["view the demo", "demo", "example"]
+        },
+        {
+          "title": "AI Chat",
+          "description": ["Try our AI chat now", "GPT", "Dialog", "Instant"]
+        },
+        {
+          "title": "API Doc.",
+          "description": ["FastAPI", "OpenAPI", "REST"]
         }
       ]
     },
