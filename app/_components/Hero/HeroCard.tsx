@@ -245,6 +245,8 @@ function HeroCardDesktop({ type, active = false, onMouseEnter }: HeroCardProps) 
   let cardLink: string | undefined = undefined;
   if (type === "api") cardLink = "https://nikitasavvin2000-api-docs-c9bf.twc1.net";
   if (type === "chat") cardLink = "https://nikitasavvin2000-streamlit-ui-agent-9ad1.twc1.net";
+  if (type === "primary") cardLink = "https://horizon-tool.ru/forecast";
+  if (type === "secondary") cardLink = "https://horizon-tool.ru";
 
   return (
     <Card
@@ -372,6 +374,8 @@ function HeroCardMobile({ type }: HeroCardProps) {
   let cardLink: string | undefined = undefined;
   if (type === "api") cardLink = "https://nikitasavvin2000-api-docs-c9bf.twc1.net";
   if (type === "chat") cardLink = "https://nikitasavvin2000-streamlit-ui-agent-9ad1.twc1.net";
+  if (type === "primary") cardLink = "https://horizon-tool.ru/forecast";
+  if (type === "secondary") cardLink = "https://horizon-tool.ru";
 
   return (
     <Card
