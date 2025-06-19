@@ -49,6 +49,14 @@
         {
           "title": "The Solution of the company",
           "description": ["view the demo", "demo", "example"]
+        },
+        {
+          "title": "AI Chat",
+          "description": ["Try our AI chat now", "GPT", "Dialog", "Instant"]
+        },
+        {
+          "title": "API Doc.",
+          "description": ["FastAPI", "OpenAPI", "REST"]
         }
       ]
     },

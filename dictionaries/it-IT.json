@@ -49,6 +49,14 @@
         {
           "title": "La Soluzione Aziendale",
           "description": ["guarda la demo", "demo", "esempio"]
+        },
+        {
+          "title": "Chat AI",
+          "description": ["Prova la nostra chat AI ora", "GPT", "Dialogo", "Istantaneo"]
+        },
+        {
+          "title": "API Doc.",
+          "description": ["FastAPI", "OpenAPI", "REST"]
         }
       ]
     },
