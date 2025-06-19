@@ -113,6 +113,7 @@ export interface HeroContent {
   button: {
     title: string;
     description: string[];
+    link: string;
   }[];
 }
 

@@ -20,6 +20,7 @@ export interface ApplicationItem {
 export interface ButtonItem {
 	title: string;
 	description: string;
+
 }
 
 export interface ContentItem {
