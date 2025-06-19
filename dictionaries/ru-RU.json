@@ -319,18 +319,6 @@
   },
   "Team": [
     {
-      "first_name": "Дмитрий",
-      "last_name": "Васенин",
-      "education": "PhD in Technology for Health",
-      "job_title": "Co-founder / Lead",
-      "contacts": {
-        "telegram": "https://t.me/dvasenin",
-        "orcid": "https://orcid.org/0000-0002-7028-9984",
-        "email": "vasenindmitrij01@gmail.com"
-      },
-      "photo": "/images/team/Dmitrii_Vasenin.png"
-    },
-    {
       "first_name": "Никита",
       "last_name": "Саввин",
       "education": "PhD Student. Major – Systems Analysis, Information Management and Processing, Statistics",
@@ -341,6 +329,18 @@
         "orcid": "https://orcid.org/0009-0009-9163-6234"
       },
       "photo": "/images/team/Savvin_Nikita.png"
+    },
+    {
+      "first_name": "Дмитрий",
+      "last_name": "Васенин",
+      "education": "PhD in Technology for Health",
+      "job_title": "Co-founder / Lead",
+      "contacts": {
+        "telegram": "https://t.me/dvasenin",
+        "orcid": "https://orcid.org/0000-0002-7028-9984",
+        "email": "vasenindmitrij01@gmail.com"
+      },
+      "photo": "/images/team/Dmitrii_Vasenin.png"
     },
     {
       "first_name": "Андрей",
