@@ -121,6 +121,7 @@ export interface NavbarContent {
   home: string;
   features: string;
   research: string;
+  investors: string;
 }
 
 export interface WorksContent {

@@ -642,9 +642,10 @@
     "row3Copyright": "© 2025 Horizon TSD"
   },
   "Navbar": {
-    "home": "home",
-    "features": "funzionalità",
-    "research": "ricerca"
+    "home": "Home",
+    "features": "Funzionalità",
+    "research": "Ricerca",
+    "investors": "Relazioni con gli investitori"
   },
   "Legal": {
     "Terms": {
@@ -809,5 +810,9 @@
         }
       ]
     }
+  },
+  "InvestorRelations": {
+    "title": "Relazioni con gli investitori",
+    "stub": "Le informazioni per gli investitori saranno disponibili presto su questa pagina. Qui verranno pubblicati il modello di business, i piani di sviluppo, i report e altri materiali."
   }
 }
