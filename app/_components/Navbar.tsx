@@ -226,10 +226,14 @@ function Desktop() {
             <Typography variant="button">{content.research}</Typography>
           </NavButton>
           <NavButton href="/investors">
-            <Typography variant="button">{content.investors}</Typography>
+            <Typography variant="button" sx={{ whiteSpace: "nowrap" }}>
+              {content.investors}
+            </Typography>
           </NavButton>
           <NavButton href="/benchmarks">
-            <Typography variant="button">{content.benchmarks}</Typography>
+            <Typography variant="button" sx={{ whiteSpace: "nowrap" }}>
+              {content.benchmarks}
+            </Typography>
           </NavButton>
         </Stack>
         <Stack
