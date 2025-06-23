@@ -32,6 +32,7 @@ export function Desktop({ fullsize = false }: HeroProps) {
         padding: `2rem`,
         width: `100%`,
         zIndex: 3,
+        marginTop: { xs: "7.5rem", md: "-9.5rem" },
       }}
     >
       <Stack
