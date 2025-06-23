@@ -122,6 +122,7 @@ export interface NavbarContent {
   features: string;
   research: string;
   investors: string;
+  benchmarks: string;
 }
 
 export interface WorksContent {
@@ -231,4 +232,8 @@ export interface AppDictionary extends Dictionary {
     };
   };
   Legal: LegalDictionary;
+  Benchmarks?: {
+    title: string;
+    stub: string;
+  };
 }

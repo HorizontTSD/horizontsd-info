@@ -643,7 +643,8 @@
     "home": "Home",
     "features": "Features",
     "research": "Research",
-    "investors": "Investor Relations"
+    "investors": "Investor Relations",
+    "benchmarks": "Benchmarks"
   },
   "Legal": {
     "Terms": {
@@ -811,5 +812,9 @@
   "InvestorRelations": {
     "title": "Investor Relations",
     "stub": "Information for investors will appear on this page soon. Here you will find our business model, development plans, reports, and other materials."
+  },
+  "Benchmarks": {
+    "title": "Benchmarks",
+    "stub": "Benchmark results for our models and solutions will appear here soon. Stay tuned!"
   }
 }

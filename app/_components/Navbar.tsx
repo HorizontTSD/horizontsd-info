@@ -137,6 +137,9 @@ function Mobile() {
               <ListItemButton component="a" href="/investors">
                 <ListItemText primary={content.investors} sx={{ textTransform: "uppercase" }} />
               </ListItemButton>
+              <ListItemButton component="a" href="/benchmarks">
+                <ListItemText primary={content.benchmarks} sx={{ textTransform: "uppercase" }} />
+              </ListItemButton>
             </List>
           </Box>
         </Drawer>
@@ -224,6 +227,9 @@ function Desktop() {
           </NavButton>
           <NavButton href="/investors">
             <Typography variant="button">{content.investors}</Typography>
+          </NavButton>
+          <NavButton href="/benchmarks">
+            <Typography variant="button">{content.benchmarks}</Typography>
           </NavButton>
         </Stack>
         <Stack
