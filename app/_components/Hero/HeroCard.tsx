@@ -351,23 +351,26 @@ function HeroCardDesktop({ type, active = false, onMouseEnter }: HeroCardProps) 
 
 function HeroCardMobile({ type }: HeroCardProps) {
   const { dict } = useI18n();
-  const { mode } = useColorScheme();
-  const isDark = mode === "dark";
-  const DEFAULT_BG = isDark ? DEFAULT_BG_DARK : DEFAULT_BG_LIGHT;
+  const CARD_COLORS: Record<string, string> = {
+    primary: "#FF7A00",
+    secondary: "#26AD50",
+    chat: "#EB5757",
+    api: "#2291FF",
+  };
   let content, icon;
   if (!dict || !dict.Home || !dict.Home.Hero || !dict.Home.Hero.button) return null;
   if (type === "api") {
     content = dict.Home.Hero.button[3];
-    icon = <CodeIcon sx={{ color: isDark ? "#fff" : "#111" }} />;
+    icon = <CodeIcon sx={{ color: "#fff" }} />;
   } else if (type === "chat") {
     content = dict.Home.Hero.button[2];
-    icon = <SmartToyIcon sx={{ color: isDark ? "#fff" : "#111" }} />;
+    icon = <SmartToyIcon sx={{ color: "#fff" }} />;
   } else if (type === "secondary") {
     content = dict.Home.Hero.button[1];
-    icon = <OnlinePredictionIcon sx={{ color: "#111" }} />;
+    icon = <OnlinePredictionIcon sx={{ color: "#fff" }} />;
   } else {
     content = dict.Home.Hero.button[0];
-    icon = <FlashOnIcon sx={{ color: "#111" }} />;
+    icon = <FlashOnIcon sx={{ color: "#fff" }} />;
   }
 
   // Определяем ссылку для перехода
@@ -380,7 +383,7 @@ function HeroCardMobile({ type }: HeroCardProps) {
   return (
     <Card
       sx={{
-        background: DEFAULT_BG,
+        background: CARD_COLORS[type],
         marginBottom: `1rem`,
         marginTop: type === "primary" ? `1rem` : undefined,
         width: `100%`,
@@ -407,6 +410,7 @@ function HeroCardMobile({ type }: HeroCardProps) {
                   fontFamily: bebasNeue.style.fontFamily,
                   textTransform: `uppercase`,
                   lineHeight: `1.8rem`,
+                  color: "#fff",
                 }}
               >
                 {content.title}
@@ -420,6 +424,7 @@ function HeroCardMobile({ type }: HeroCardProps) {
                   textTransform: `uppercase`,
                   overflow: `hidden`,
                   position: `relative`,
+                  color: "#fff",
                 }}
               >
                 {content.description[0]}
@@ -435,8 +440,8 @@ function HeroCardMobile({ type }: HeroCardProps) {
                       fontFamily: bebasNeue.style.fontFamily,
                       textTransform: `uppercase`,
                       padding: `0.5rem 0.5rem 0.3rem 0.5rem`,
-                      color: isDark ? "#fff" : "#111",
-                      background: isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)",
+                      color: "#fff",
+                      background: "rgba(255,255,255,0.18)",
                       marginBottom: "4px",
                     }}
                   />
