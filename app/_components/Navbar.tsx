@@ -140,6 +140,7 @@ function Mobile() {
               <ListItemButton component="a" href="/benchmarks">
                 <ListItemText primary={content.benchmarks} sx={{ textTransform: "uppercase" }} />
               </ListItemButton>
+
             </List>
           </Box>
         </Drawer>
