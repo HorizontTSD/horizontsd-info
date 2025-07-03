@@ -68,53 +68,58 @@
     },
     "Applications": {
       "SectionHeader": {
-        "h4": "AI That Cuts Your Energy Costs – Automatically",
-        "body2": "Advanced forecasting and optimization algorithms reduce waste, smooth demand peaks, and slash operational expenses – with no manual work."
+        "h4": "AI that understands time series behavior",
+        "body2": "We work with time series data that changes over time."
       },
       "Content": [
         {
           "button": {
-            "title": "Data Analysis",
-            "description": "SKNN & H-DIRT algorithms detect seasonal patterns and clean data without distorting trends."
+            "title": "Data Preparation",
+            "description": "Before forecasting, our algorithms clean and prepare the data"
           },
           "block": {
             "title": "Smart Data Processing",
             "link": "/features#processing",
             "description": [
-              "Our proprietary SKNN and H-DIRT algorithms go beyond traditional methods, identifying hidden seasonal patterns and filling data gaps without skewing trends.",
-              "By applying distance correlation, we capture nonlinear relationships between external factors (like weather) and energy loads—ensuring your models train on perfectly preprocessed data.",
-              "No more noise, just precision."
+              "Automatically clean, fill in missing values, and normalize the data",
+              "Detect noise and anomalies",
+              "Prepare data for training",
+              "So that the AI performs reliably — even on messy or incomplete data",
+              "No manual preparation — everything happens automatically"
             ]
           }
         },
         {
           "button": {
             "title": "AI Forecasting",
-            "description": "LSTM, XGBoost & hybrid models adapt to any data for ultra-accurate predictions."
+            "description": "Our AI doesn't just look at the past — it helps you see into the future."
           },
           "block": {
             "title": "Adaptive AI Forecasting",
             "link": "/features#prediction",
             "description": [
-              "Not all data behaves the same—so we deploy LSTM, XGBoost, Transformer, and hybrid models to match your unique dynamics.",
-              "With temporal encoding and real-time external factors (e.g., temperature), our system self-adjusts for 95%+ accuracy—and scales effortlessly to new assets or timeframes.",
-              "Predictions that evolve as fast as your operations do."
+              "By analyzing historical data, we generate accurate forecasts that help businesses make informed decisions in advance.",
+              "This allows you to:",
+              "Plan production and inventory to avoid shortages or overstock",
+              "Optimize marketing campaigns based on predicted demand",
+              "Reduce financial risks by anticipating market changes",
+              "Improve customer service by predicting needs",
+              "Forecasting helps make your business more agile and resilient."
             ]
           }
         },
         {
           "button": {
-            "title": "Cost Optimization",
-            "description": "Reduce energy waste by 30%+ with automated demand smoothing and smart procurement."
+            "title": "Optimization & Risk Management",
+            "description": "Reduce the impact of unstable factors — from market fluctuations to supply chain disruptions."
           },
           "block": {
             "title": "Automated Savings",
             "link": "/features#optimization",
             "description": [
-              "Stop overpaying for energy.",
-              "Our AI flattens demand spikes, optimizes power purchases, and cuts preprocessing time by 80% via full automation.",
-              "From raw data to actionable insights, every step is engineered to boost efficiency across your entire energy chain.",
-              "Lower costs, zero manual hassle."
+              "AI alerts you in advance and helps adapt to changes.",
+              "Cut costs, improve inventory and production management.",
+              "By forecasting demand, load, and stock levels, AI helps you spend less and operate more efficiently."
             ]
           }
         }
@@ -128,48 +133,46 @@
     },
     "Capabilities": {
       "SectionHeader": {
-        "h4": "Future-Ready Forecasting, Seamlessly Integrated",
-        "body2": "Plug-and-play AI solutions that work with your existing systems—or deploy a complete forecasting stack from scratch."
+        "h4": "AI FORECASTS THAT DELIVER RESULTS",
+        "body2": "Smart algorithms, flexible infrastructure, and an AI agent that makes analytics accessible to everyone."
       },
       "Content": [
         {
-          "title": "Smarter Forecasting Algorithms",
+          "title": "AI Agent for Analytics & Decisions",
           "description": [
-            "LSTM, XGBoost & Transformer hybrids that learn your data's hidden patterns—with 85%+ accuracy.",
-            "Why it matters:",
-            "Not all data plays by the rules.",
-            "Our self-tuning models (including BiLSTM, CNN, and hybrid architectures) adapt to your unique trends—whether tracking energy spikes, user behavior, or market movements.",
-            "Precision that evolves as fast as your business."
+            "Your personal data analyst — always on call.",
+            "The AI Agent helps you understand your data in real time.",
+            "It handles both numbers and requests like: “Forecast next week,” or “Show me the trends.”",
+            "Analytics without an analyst. Confident decisions"
           ]
         },
         {
-          "title": "Infrastructure That Just Fits",
+          "title": "API Interface",
           "description": [
-            "We build your data pipeline from the ground up—or snap into your current systems like Lego.",
-            "Why it matters:",
-            "No \"rip and replace\" required.",
-            "Our solutions integrate via API, CSV, or custom connectors, blending with your tech stack while automating data collection, cleaning, and analysis.",
-            "Your workflows stay intact. Your forecasts get superpowers."
+            "A clear and well-documented API makes integration simple — whether you’re connecting BI tools, CRM systems, or custom platforms.",
+            "Comes with full documentation, examples, and responsive support."
           ]
         },
         {
-          "title": "Forecast in 1 Click (Yes, Really)",
+          "title": "Dashboard",
           "description": [
+            "A user-friendly dashboard designed for fast forecasting — even without technical skills.",
             "Upload a CSV or connect live data—get AI-powered predictions without a data science degree.",
             "Why it matters:",
-            "Forget months of development.",
+            "View forecasts, trends, and anomalies in one place, updated automatically every 30 minutes.",
+            "All analytics in one view. Data updates automatically.",
             "Our turnkey tool delivers real-time and historical forecasts through a no-code interface.",
             "Perfect for energy managers, ops teams, or execs who need answers—not algorithms."
           ]
         },
         {
-          "title": "Data Wizardry Under the Hood",
+          "title": "Anomaly Detection & Alerts",
           "description": [
-            "SKNN, H-DIRT & distance correlation—cleaning messy data so your models see the signal, not the noise.",
-            "Why it matters:",
-            "Garbage in, garbage out? Not here.",
-            "Our proprietary methods auto-detect seasonal patterns, fill gaps, and expose nonlinear relationships—turbocharging prediction accuracy.",
-            "Even when your data is stubborn."
+            "Stay in control of fluctuations and unexpected spikes",
+            "The system spots abnormal behavior and notifies you:",
+            "Sharp increase in churn, 32 percent above norm — you get an alert.",
+            "Alerts are fully configurable to fit your goals and thresholds."
+
           ]
         }
       ],
@@ -275,72 +278,71 @@
     },
     "Features": {
       "SectionHeader": {
-        "h4": "PlugNPlay",
-        "body2": "Seamless integration with your existing systems or full-stack deployment in days"
+        "h4": "Fast Launch with Your Systems",
+        "body2": "We integrate into your current systems or deploy from scratch — all within days."
       },
       "Content": [
         {
-          "title": "Risk Mitigation",
+          "title": "Risk Management & Decision Making",
           "description": [
-            "Cut forecasting errors by 40–60%—avoid under-purchasing or energy waste with AI-driven precision."
+            "Forecasts remain reliable even with unstable data."
           ],
           "more": [
-            "Stop playing guessing games with energy demand.",
-            "Our system reduces prediction risks by half, preventing costly infrastructure strain—especially for volatile loads like university campuses.",
-            "Sleep better knowing your energy buffers are neither too big nor too small."
+            "Avoid under-purchasing and infrastructure overload.",
+            "60% fewer planning errors."
           ]
         },
         {
-          "title": "Decision Intelligence",
+          "title": "AI Agent for Real-Time Decisions",
           "description": [
-            "Clear dashboards, confidence intervals, and risk alerts turn data into confident actions."
+            "Built-in assistant:"
           ],
           "more": [
-            "No more spreadsheets in the dark.",
-            "Get real-time metrics, visual forecasts, and risk zone highlights—all designed for non-technical managers.",
-            "Make resource decisions faster, with 95% certainty backing every move."
+            "Answers questions (“What’s the forecast for next week?”)",
+            "Builds visualizations",
+            "Detects anomalies and forecasts deviations",
+            "Dashboards, alerts, and recommendations — always at hand."
           ]
         },
         {
-          "title": "Seamless Integration",
+          "title": "Effortless Integration",
           "description": [
-            "Plug-and-play setup: works with your current monitors or deploys from scratch in days."
+            "Works with any source: CSV, APIs, databases, BI systems."
           ],
           "more": [
             "Compatible with CSV, APIs, and all major data platforms, our solution fits your tech stack like a glove.",
             "Need a full-stack rollout?",
-            "We handle collection, storage, and visualization—zero coding required."
+            "We handle collection, storage, and visualization—zero coding required",
+            "Just plug in and get started."
           ]
         },
         {
           "title": "Self-Learning AI",
           "description": [
-            "Upload a CSV—our models auto-tune to your data, scaling from small offices to smart cities."
+            "Upload a spreadsheet — the AI adapts to your data."
           ],
           "more": [
-            "Forget hiring data scientists.",
-            "Whether you're optimizing a single building or a metro grid, our AI adapts to your patterns out of the box.",
+            "No need to hire analysts: the algorithm detects trends and patterns on its own.",
             "No code, no complexity—just hit 'upload' and watch it learn."
           ]
         },
         {
-          "title": "Cost Slasher",
+          "title": "Cost Optimization",
           "description": [
-            "Shrink energy bills by 30%+ with smarter tariff optimization and automated workflows."
+            "AI identifies inefficiencies and demand peaks, reducing costs in logistics, procurement, and inventory."
           ],
           "more": [
-            "Overpaying for power?",
-            "Our forecasts pinpoint waste, automate peak shaving, and cut specialist labor costs.",
-            "Deploy once, save across all sites—ROI kicks in by Quarter 2."
+            "Thanks to predictive planning, we help cut expenses and optimize operations.",
+            "Predict what you’ll need — before you need it."
           ]
         },
         {
-          "title": "UX That Just Works",
-          "description": ["Designed for humans: drag-and-drop analytics, no training needed."],
+          "title": "Interface Anyone Can Use",
+          "description": ["Everything is clear from the first click. Reports and insights in just a few taps — even if you’ve only used Excel before."],
           "more": [
             "If you can use Netflix, you can use this.",
-            "Intuitive charts, one-click reports, and familiar UI patterns get your team up to speed in minutes—not weeks.",
-            "Finally, an energy tool that doesn't need an IT manual."
+            "Intuitive charts, one-click reports, and familiar interface patterns get your team up to speed in minutes — not weeks.",
+            "Works with no manual needed."
           ]
         }
       ]
