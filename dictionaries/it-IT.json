@@ -818,6 +818,7 @@
   },
   "Benchmarks": {
     "title": "Benchmark",
-    "stub": "I risultati dei benchmark dei nostri modelli e soluzioni saranno presto disponibili su questa pagina. Restate sintonizzati!"
+    "stub": "I risultati dei benchmark dei nostri modelli e soluzioni saranno presto disponibili su questa pagina. Restate sintonizzati!",
+    "testLink": "Link al test"
   }
 }
