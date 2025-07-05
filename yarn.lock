@@ -750,7 +750,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/icons-material@npm:^7.0.2":
+"@mui/icons-material@npm:^7.1.2":
   version: 7.2.0
   resolution: "@mui/icons-material@npm:7.2.0"
   dependencies:
@@ -766,7 +766,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/lab@npm:^7.0.0-beta.11":
+"@mui/lab@npm:^7.0.0-beta.14":
   version: 7.0.0-beta.14
   resolution: "@mui/lab@npm:7.0.0-beta.14"
   dependencies:
@@ -797,7 +797,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/material-nextjs@npm:^7.0.2":
+"@mui/material-nextjs@npm:^7.1.2":
   version: 7.2.0
   resolution: "@mui/material-nextjs@npm:7.2.0"
   dependencies:
@@ -820,7 +820,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/material@npm:^7.0.2":
+"@mui/material@npm:^7.1.2":
   version: 7.2.0
   resolution: "@mui/material@npm:7.2.0"
   dependencies:
@@ -856,7 +856,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/private-theming@npm:^7.0.2, @mui/private-theming@npm:^7.2.0":
+"@mui/private-theming@npm:^7.1.2, @mui/private-theming@npm:^7.2.0":
   version: 7.2.0
   resolution: "@mui/private-theming@npm:7.2.0"
   dependencies:
@@ -873,7 +873,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/styled-engine-sc@npm:^7.0.2":
+"@mui/styled-engine-sc@npm:^7.1.2":
   version: 7.2.0
   resolution: "@mui/styled-engine-sc@npm:7.2.0"
   dependencies:
@@ -888,7 +888,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/styled-engine@npm:^7.0.2, @mui/styled-engine@npm:^7.2.0":
+"@mui/styled-engine@npm:^7.1.2, @mui/styled-engine@npm:^7.2.0":
   version: 7.2.0
   resolution: "@mui/styled-engine@npm:7.2.0"
   dependencies:
@@ -911,7 +911,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/system@npm:^7.0.2, @mui/system@npm:^7.1.1, @mui/system@npm:^7.2.0":
+"@mui/system@npm:^7.1.1, @mui/system@npm:^7.1.2, @mui/system@npm:^7.2.0":
   version: 7.2.0
   resolution: "@mui/system@npm:7.2.0"
   dependencies:
@@ -985,7 +985,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/utils@npm:^7.0.2, @mui/utils@npm:^7.1.1, @mui/utils@npm:^7.2.0":
+"@mui/utils@npm:^7.1.1, @mui/utils@npm:^7.1.2, @mui/utils@npm:^7.2.0":
   version: 7.2.0
   resolution: "@mui/utils@npm:7.2.0"
   dependencies:
@@ -2978,16 +2978,16 @@ __metadata:
     "@eslint/eslintrc": "npm:^3"
     "@fontsource/roboto": "npm:^5.2.5"
     "@mui/base": "npm:5.0.0-beta.70"
-    "@mui/icons-material": "npm:^7.0.2"
-    "@mui/lab": "npm:^7.0.0-beta.11"
-    "@mui/material": "npm:^7.0.2"
-    "@mui/material-nextjs": "npm:^7.0.2"
-    "@mui/private-theming": "npm:^7.0.2"
-    "@mui/styled-engine": "npm:^7.0.2"
-    "@mui/styled-engine-sc": "npm:^7.0.2"
-    "@mui/system": "npm:^7.0.2"
+    "@mui/icons-material": "npm:^7.1.2"
+    "@mui/lab": "npm:^7.0.0-beta.14"
+    "@mui/material": "npm:^7.1.2"
+    "@mui/material-nextjs": "npm:^7.1.2"
+    "@mui/private-theming": "npm:^7.1.2"
+    "@mui/styled-engine": "npm:^7.1.2"
+    "@mui/styled-engine-sc": "npm:^7.1.2"
+    "@mui/system": "npm:^7.1.2"
     "@mui/types": "npm:^7.4.1"
-    "@mui/utils": "npm:^7.0.2"
+    "@mui/utils": "npm:^7.1.2"
     "@types/js-cookie": "npm:^3.0.6"
     "@types/negotiator": "npm:^0.6.3"
     "@types/node": "npm:^20"
