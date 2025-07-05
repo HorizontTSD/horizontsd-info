@@ -815,6 +815,7 @@
   },
   "Benchmarks": {
     "title": "Benchmarks",
-    "stub": "Benchmark results for our models and solutions will appear here soon. Stay tuned!"
+    "stub": "Results of comparative tests of our machine learning models for time series forecasting",
+    "testLink": "Test link"
   }
 }
