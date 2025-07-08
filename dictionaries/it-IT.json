@@ -818,9 +818,9 @@
     "stub": "Le informazioni per gli investitori saranno disponibili presto su questa pagina. Qui verranno pubblicati il modello di business, i piani di sviluppo, i report e altri materiali."
   },
   "Benchmarks": {
+    "testLink": "Link al test",
     "title": "Benchmark",
-    "stub": "I risultati dei benchmark dei nostri modelli e soluzioni saranno presto disponibili su questa pagina. Restate sintonizzati!",
-    "testLink": "Link al test"
+    "stub": "I risultati dei benchmark dei nostri modelli e soluzioni saranno presto disponibili su questa pagina. Restate sintonizzati!"
   },
   "Pricing": {
     "title": "Le nostre offerte",
