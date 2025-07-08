@@ -645,8 +645,9 @@
     "home": "Home",
     "features": "Funzionalità",
     "research": "Ricerca",
-    "investors": "Relazioni con gli investitori",
-    "benchmarks": "Benchmark"
+    "investors": "Investitori",
+    "benchmarks": "Benchmark",
+    "price": "Prezzi"
   },
   "Legal": {
     "Terms": {
@@ -820,5 +821,41 @@
     "title": "Benchmark",
     "stub": "I risultati dei benchmark dei nostri modelli e soluzioni saranno presto disponibili su questa pagina. Restate sintonizzati!",
     "testLink": "Link al test"
+  },
+  "Pricing": {
+    "title": "Le nostre offerte",
+    "sections": ["Horizon Agent", "Dashboard", "API"],
+    "offers": [
+      {
+        "header": "Base",
+        "price": "Gratis",
+        "features": [
+          "Accesso alle funzionalità di base",
+          "Limite di richieste",
+          "Supporto via email"
+        ],
+        "color": "secondary"
+      },
+      {
+        "header": "Standard",
+        "price": "990 ₽ / mese",
+        "features": ["Tutto dal Base", "Supporto prioritario", "Integrazioni aggiuntive"],
+        "color": "success"
+      },
+      {
+        "header": "Business",
+        "price": "2990 ₽ / mese",
+        "features": ["Tutto dal Pro", "Collaborazione in team", "Supporto SLA"],
+        "color": "warning"
+      },
+      {
+        "header": "Premium",
+        "price": "Su richiesta",
+        "features": ["Tutto dal Business", "Manager personale", "Configurazione personalizzata"],
+        "color": "error"
+      }
+    ],
+    "custom": "Sviluppo personalizzato — su richiesta",
+    "perUserLabel": "per utente al mese"
   }
 }
