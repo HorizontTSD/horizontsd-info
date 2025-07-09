@@ -172,7 +172,6 @@
             "The system spots abnormal behavior and notifies you:",
             "Sharp increase in churn, 32 percent above norm — you get an alert.",
             "Alerts are fully configurable to fit your goals and thresholds."
-
           ]
         }
       ],
@@ -284,9 +283,7 @@
       "Content": [
         {
           "title": "Risk Management & Decision Making",
-          "description": [
-            "Forecasts remain reliable even with unstable data."
-          ],
+          "description": ["Forecasts remain reliable even with unstable data."],
           "more": [
             "Avoid under-purchasing and infrastructure overload.",
             "60% fewer planning errors."
@@ -294,9 +291,7 @@
         },
         {
           "title": "AI Agent for Real-Time Decisions",
-          "description": [
-            "Built-in assistant:"
-          ],
+          "description": ["Built-in assistant:"],
           "more": [
             "Answers questions (“What’s the forecast for next week?”)",
             "Builds visualizations",
@@ -306,9 +301,7 @@
         },
         {
           "title": "Effortless Integration",
-          "description": [
-            "Works with any source: CSV, APIs, databases, BI systems."
-          ],
+          "description": ["Works with any source: CSV, APIs, databases, BI systems."],
           "more": [
             "Compatible with CSV, APIs, and all major data platforms, our solution fits your tech stack like a glove.",
             "Need a full-stack rollout?",
@@ -318,9 +311,7 @@
         },
         {
           "title": "Self-Learning AI",
-          "description": [
-            "Upload a spreadsheet — the AI adapts to your data."
-          ],
+          "description": ["Upload a spreadsheet — the AI adapts to your data."],
           "more": [
             "No need to hire analysts: the algorithm detects trends and patterns on its own.",
             "No code, no complexity—just hit 'upload' and watch it learn."
@@ -338,7 +329,9 @@
         },
         {
           "title": "Interface Anyone Can Use",
-          "description": ["Everything is clear from the first click. Reports and insights in just a few taps — even if you’ve only used Excel before."],
+          "description": [
+            "Everything is clear from the first click. Reports and insights in just a few taps — even if you’ve only used Excel before."
+          ],
           "more": [
             "If you can use Netflix, you can use this.",
             "Intuitive charts, one-click reports, and familiar interface patterns get your team up to speed in minutes — not weeks.",

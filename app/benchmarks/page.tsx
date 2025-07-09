@@ -20,6 +20,7 @@ import React, { useEffect, useState, useRef } from "react";
 interface BenchmarksDict {
   title: string;
   stub: string;
+  testLink: string;
 }
 
 interface BenchmarkMetrics {
@@ -116,7 +117,7 @@ function BenchmarksTable() {
   const [error, setError] = useState<string | null>(null);
   const fetchedRef = useRef(false);
   const { dict } = useI18n();
-  const testLinkLabel = dict?.Benchmarks?.testLink || "Test link";
+  const testLinkLabel = (dict?.Benchmarks as BenchmarksDict)?.testLink || "Test link";
 
   useEffect(() => {
     if (fetchedRef.current) return;
