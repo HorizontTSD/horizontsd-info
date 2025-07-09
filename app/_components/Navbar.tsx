@@ -140,7 +140,9 @@ function Mobile() {
               <ListItemButton component="a" href="/benchmarks">
                 <ListItemText primary={content.benchmarks} sx={{ textTransform: "uppercase" }} />
               </ListItemButton>
-
+              <ListItemButton component="a" href="/price">
+                <ListItemText primary={content.price} sx={{ textTransform: "uppercase" }} />
+              </ListItemButton>
             </List>
           </Box>
         </Drawer>
@@ -235,6 +237,9 @@ function Desktop() {
             <Typography variant="button" sx={{ whiteSpace: "nowrap" }}>
               {content.benchmarks}
             </Typography>
+          </NavButton>
+          <NavButton href="/price">
+            <Typography variant="button">{content.price}</Typography>
           </NavButton>
         </Stack>
         <Stack

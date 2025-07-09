@@ -115,6 +115,8 @@ function BenchmarksTable() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const fetchedRef = useRef(false);
+  const { dict } = useI18n();
+  const testLinkLabel = dict?.Benchmarks?.testLink || "Test link";
 
   useEffect(() => {
     if (fetchedRef.current) return;
@@ -194,7 +196,7 @@ function BenchmarksTable() {
           </TableRow>
           {/* Строка с Colab-ссылками */}
           <TableRow>
-            <TableCell>Ссылка на тест</TableCell>
+            <TableCell>{testLinkLabel}</TableCell>
             {allModels.map((model) => (
               <TableCell align="center" key={model}>
                 {colabLinks[model] ? (

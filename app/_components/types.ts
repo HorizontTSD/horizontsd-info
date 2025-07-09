@@ -123,6 +123,7 @@ export interface NavbarContent {
   research: string;
   investors: string;
   benchmarks: string;
+  price: string;
 }
 
 export interface WorksContent {

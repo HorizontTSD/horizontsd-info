@@ -645,8 +645,9 @@
     "home": "Home",
     "features": "Features",
     "research": "Research",
-    "investors": "Investor Relations",
-    "benchmarks": "Benchmarks"
+    "investors": "Investors",
+    "benchmarks": "Benchmarks",
+    "price": "Pricing"
   },
   "Legal": {
     "Terms": {
@@ -819,5 +820,37 @@
     "title": "Benchmarks",
     "stub": "Results of comparative tests of our machine learning models for time series forecasting",
     "testLink": "Test link"
+  },
+  "Pricing": {
+    "title": "Our Offers",
+    "sections": ["Horizon Agent", "Dashboard", "API"],
+    "offers": [
+      {
+        "header": "Basic",
+        "price": "Free",
+        "features": ["Access to basic features", "Request limit", "Email support"],
+        "color": "secondary"
+      },
+      {
+        "header": "Standard",
+        "price": "990 ₽ / month",
+        "features": ["Everything in Basic", "Priority support", "Additional integrations"],
+        "color": "success"
+      },
+      {
+        "header": "Business",
+        "price": "2990 ₽ / month",
+        "features": ["Everything in Pro", "Team collaboration", "SLA support"],
+        "color": "warning"
+      },
+      {
+        "header": "Premium",
+        "price": "On request",
+        "features": ["Everything in Business", "Personal manager", "Custom setup"],
+        "color": "error"
+      }
+    ],
+    "custom": "Custom development — on request",
+    "perUserLabel": "per user per month"
   }
 }
