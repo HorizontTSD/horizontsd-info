@@ -208,6 +208,29 @@ export interface LegalDictionary {
   Cookies: LegalContent;
 }
 
+export interface TimelineItemDict {
+  date: string;
+  title: string;
+  type: "past" | "future";
+  link?: string;
+  linkText?: string;
+  description?: string;
+  phase?: string;
+}
+
+export interface InvestorMaterialsDict {
+  why: { label: string; link: string };
+  marketOverview: { label: string; link: string };
+  financialModel: { label: string; link: string };
+}
+
+export interface InvestorRelationsDictionary {
+  title: string;
+  stub: string;
+  timeline: TimelineItemDict[];
+  materials: InvestorMaterialsDict;
+}
+
 export interface AppDictionary extends Dictionary {
   Home: {
     Hero: HeroContent;
@@ -237,4 +260,5 @@ export interface AppDictionary extends Dictionary {
     title: string;
     stub: string;
   };
+  InvestorRelations?: InvestorRelationsDictionary;
 }

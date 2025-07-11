@@ -22,8 +22,8 @@ export const WebGLBackground: React.FC<{ color: [number, number, number] }> = ({
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
     const resize = () => {
-      c.width = c.clientWidth;
-      c.height = c.clientHeight;
+      c.width = Math.max(1, Math.floor(c.clientWidth / 2));
+      c.height = Math.max(1, Math.floor(c.clientHeight / 2));
       gl.viewport(0, 0, c.width, c.height);
     };
     window.addEventListener("resize", resize);
@@ -53,7 +53,9 @@ export const WebGLBackground: React.FC<{ color: [number, number, number] }> = ({
     const cLoc = gl.getUniformLocation(prog, "uColor")!;
     let rafId: number;
     const start = performance.now();
+    let running = true;
     const render = () => {
+      if (!running || document.hidden) return;
       gl.useProgram(prog);
       gl.clear(gl.COLOR_BUFFER_BIT);
       gl.uniform3f(rLoc, c.width, c.height, 1);
@@ -62,9 +64,22 @@ export const WebGLBackground: React.FC<{ color: [number, number, number] }> = ({
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       rafId = requestAnimationFrame(render);
     };
+    const onVisibility = () => {
+      if (document.hidden) {
+        running = false;
+      } else {
+        if (!running) {
+          running = true;
+          render();
+        }
+      }
+    };
+    document.addEventListener("visibilitychange", onVisibility);
     render();
     return () => {
       window.removeEventListener("resize", resize);
+      document.removeEventListener("visibilitychange", onVisibility);
+      running = false;
       cancelAnimationFrame(rafId);
     };
   }, [color]);
