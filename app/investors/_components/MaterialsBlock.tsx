@@ -70,27 +70,29 @@ const MaterialsBlock: React.FC = () => {
         Материалы
       </h2>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
-        {Object.entries(materials).map(([key, val]) => (
-          <Box
-            key={key}
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              fontSize: 20,
-            }}
-          >
-            <span>{val.label}</span>
-            <a
-              href={val.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "#1976d2", fontSize: 18, textDecoration: "underline" }}
+        {Object.entries(materials)
+          .filter(([key]) => key !== "downloadPdf")
+          .map(([key, val]) => (
+            <Box
+              key={key}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                fontSize: 20,
+              }}
             >
-              Скачать PDF
-            </a>
-          </Box>
-        ))}
+              <span>{val.label}</span>
+              <a
+                href={val.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#1976d2", fontSize: 18, textDecoration: "underline" }}
+              >
+                {dict?.InvestorRelations?.materials?.downloadPdf || "Скачать PDF"}
+              </a>
+            </Box>
+          ))}
       </Box>
       {/* Фазы */}
       <Box

@@ -1044,7 +1044,8 @@
       "financialModel": {
         "label": "Financial Model",
         "link": "https://example.com/financial-model"
-      }
+      },
+      "downloadPdf": "Download PDF"
     }
   },
   "Benchmarks": {

@@ -222,6 +222,7 @@ export interface InvestorMaterialsDict {
   why: { label: string; link: string };
   marketOverview: { label: string; link: string };
   financialModel: { label: string; link: string };
+  downloadPdf?: string;
 }
 
 export interface InvestorRelationsDictionary {
