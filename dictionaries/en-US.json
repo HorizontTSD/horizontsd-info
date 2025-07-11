@@ -556,6 +556,118 @@
       }
     ]
   },
+  "timeline": [
+    {
+      "phase": "Phase 1",
+      "date": "2021-2023",
+      "title": "Fundamental scientific research",
+      "type": "past"
+    },
+    {
+      "phase": "Phase 1",
+      "date": "2023-2024",
+      "title": "Research approbation on data from the University of Brescia, Italy",
+      "type": "past"
+    },
+    {
+      "phase": "Phase 1",
+      "date": "2024",
+      "title": "PhD defense on the project topic",
+      "type": "past"
+    },
+    {
+      "phase": "Phase 2",
+      "date": "2024-09",
+      "title": "Development of the first product prototype",
+      "type": "past"
+    },
+    {
+      "phase": "Phase 2",
+      "date": "2024-11",
+      "title": "Feedback from the University of Brescia, algorithm improvement",
+      "type": "past"
+    },
+    {
+      "phase": "Phase 3",
+      "date": "2025-01",
+      "title": "First project team assembled",
+      "type": "future"
+    },
+    {
+      "phase": "Phase 3",
+      "date": "2025-02",
+      "title": "Participation in Skolkovo acceleration program",
+      "type": "future"
+    },
+    {
+      "phase": "Phase 3",
+      "date": "2025-03",
+      "title": "Mentor recommendations, product improvement",
+      "type": "future"
+    },
+    {
+      "phase": "Phase 3",
+      "date": "2025-03",
+      "title": "Team expansion to 7 members",
+      "type": "future"
+    },
+    {
+      "phase": "Phase 4",
+      "date": "2025-04",
+      "title": "Approbation of forecasting models on ATS data",
+      "description": "Report https://nikitasavvin2000-ate-report-55ad.twc1.net/ (accuracy improvement from 4% to 30%)",
+      "type": "future"
+    },
+    {
+      "phase": "Phase 4",
+      "date": "2025-05",
+      "title": "MVP (minimum viable product) release",
+      "type": "future"
+    },
+    {
+      "phase": "Phase 4",
+      "date": "2025-06",
+      "title": "Legal entity registration: LLC 'Horizon TSD",
+      "link": "https://www.rusprofile.ru/id/1253600007704",
+      "type": "future"
+    },
+    {
+      "phase": "Phase 4",
+      "date": "2025-06",
+      "title": "Positive feedback from HSE business incubator participants",
+      "type": "future"
+    },
+    {
+      "phase": "Phase 5",
+      "date": "2025-08",
+      "title": "Applications submitted: – For a grant from the Innovation Assistance Fund (FASIE) – To the 'Academy of Innovators' accelerator",
+      "type": "future"
+    },
+    {
+      "phase": "Phase 5",
+      "date": "2025-09",
+      "title": "Application for repeated Skolkovo acceleration",
+      "type": "future"
+    },
+    {
+      "phase": "Phase 5",
+      "date": "2025-09",
+      "title": "Work on improvements after accelerators",
+      "type": "future"
+    },
+    {
+      "phase": "Phase 6",
+      "date": "2026-01",
+      "title": "Development of a minimum launchable product (MLP)",
+      "type": "future"
+    },
+    {
+      "phase": "Phase 6",
+      "date": "2026-02",
+      "title": "Start of sales and active client search",
+      "type": "future"
+    }
+  ],
   "Team": [
     {
       "first_name": "Nikita",
@@ -807,7 +919,133 @@
   },
   "InvestorRelations": {
     "title": "Investor Relations",
-    "stub": "Information for investors will appear on this page soon. Here you will find our business model, development plans, reports, and other materials."
+    "stub": "Information for investors will appear on this page soon. Here you will find our business model, development plans, reports, and other materials.",
+    "timeline": [
+      {
+        "phase": "Phase 1",
+        "date": "2021-2023",
+        "title": "Fundamental scientific research",
+        "type": "past"
+      },
+      {
+        "phase": "Phase 1",
+        "date": "2023-2024",
+        "title": "Research approbation on data from the University of Brescia, Italy",
+        "type": "past"
+      },
+      {
+        "phase": "Phase 1",
+        "date": "2024",
+        "title": "PhD defense on the project topic",
+        "type": "past"
+      },
+      {
+        "phase": "Phase 2",
+        "date": "2024-09",
+        "title": "Development of the first product prototype",
+        "type": "past"
+      },
+      {
+        "phase": "Phase 2",
+        "date": "2024-11",
+        "title": "Feedback from the University of Brescia, algorithm improvement",
+        "type": "past"
+      },
+      {
+        "phase": "Phase 3",
+        "date": "2025-01",
+        "title": "First project team assembled",
+        "type": "future"
+      },
+      {
+        "phase": "Phase 3",
+        "date": "2025-02",
+        "title": "Participation in Skolkovo acceleration program",
+        "type": "future"
+      },
+      {
+        "phase": "Phase 3",
+        "date": "2025-03",
+        "title": "Mentor recommendations, product improvement",
+        "type": "future"
+      },
+      {
+        "phase": "Phase 3",
+        "date": "2025-03",
+        "title": "Team expansion to 7 members",
+        "type": "future"
+      },
+      {
+        "phase": "Phase 4",
+        "date": "2025-04",
+        "title": "Approbation of forecasting models on ATS data",
+        "description": "Report https://nikitasavvin2000-ate-report-55ad.twc1.net/ (accuracy improvement from 4% to 30%)",
+        "type": "future",
+        "linkText": "Report",
+        "link": "https://nikitasavvin2000-ate-report-55ad.twc1.net/"
+      },
+      {
+        "phase": "Phase 4",
+        "date": "2025-05",
+        "title": "MVP (minimum viable product) release",
+        "type": "future"
+      },
+      {
+        "phase": "Phase 4",
+        "date": "2025-06",
+        "title": "Legal entity registration: LLC 'Horizon TSD",
+        "link": "https://www.rusprofile.ru/id/1253600007704",
+        "type": "future",
+        "linkText": "LLC 'Horizon TSD'"
+      },
+      {
+        "phase": "Phase 4",
+        "date": "2025-06",
+        "title": "Positive feedback from HSE business incubator participants",
+        "type": "future"
+      },
+      {
+        "phase": "Phase 5",
+        "date": "2025-08",
+        "title": "Applications submitted: – For a grant from the Innovation Assistance Fund (FASIE) – To the 'Academy of Innovators' accelerator",
+        "type": "future"
+      },
+      {
+        "phase": "Phase 5",
+        "date": "2025-09",
+        "title": "Application for repeated Skolkovo acceleration",
+        "type": "future"
+      },
+      {
+        "phase": "Phase 5",
+        "date": "2025-09",
+        "title": "Work on improvements after accelerators",
+        "type": "future"
+      },
+      {
+        "phase": "Phase 6",
+        "date": "2026-01",
+        "title": "Development of a minimum launchable product (MLP)",
+        "type": "future"
+      },
+      {
+        "phase": "Phase 6",
+        "date": "2026-02",
+        "title": "Start of sales and active client search",
+        "type": "future"
+      }
+    ],
+    "materials": {
+      "why": { "label": "Purpose", "link": "https://example.com/why" },
+      "marketOverview": {
+        "label": "Market Overview",
+        "link": "https://example.com/market-overview"
+      },
+      "financialModel": {
+        "label": "Financial Model",
+        "link": "https://example.com/financial-model"
+      }
+    }
   },
   "Benchmarks": {
     "title": "Benchmarks",
