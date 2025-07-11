@@ -941,7 +941,8 @@
       "financialModel": {
         "label": "Финансовая модель",
         "link": "https://example.com/financial-model"
-      }
+      },
+      "downloadPdf": "Скачать PDF"
     }
   },
   "Benchmarks": {

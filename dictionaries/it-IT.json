@@ -1052,7 +1052,8 @@
       "financialModel": {
         "label": "Modello finanziario",
         "link": "https://example.com/financial-model"
-      }
+      },
+      "downloadPdf": "Scarica PDF"
     }
   },
   "Benchmarks": {
