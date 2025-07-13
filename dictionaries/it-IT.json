@@ -133,43 +133,35 @@
       },
       "Content": [
         {
-          "title": "Algoritmi di previsione più intelligenti",
+          "title": "Previsione Rapida",
           "description": [
-            "Ibridi LSTM, XGBoost e Transformer che apprendono i modelli nascosti nei tuoi dati - con un'accuratezza superiore all'85%.",
-            "Perché è importante:",
-            "Non tutti i dati seguono le regole.",
-            "I nostri modelli auto-regolanti (inclusi BiLSTM, CNN e architetture ibride) si adattano ai tuoi trend unici - che traccino picchi energetici, comportamenti utente o movimenti di mercato.",
-            "Precisione che evolve alla stessa velocità del tuo business."
+            "Problemi risolti:\nConsente previsioni accurate per serie temporali archiviate in Excel o CSV, senza la necessità di caricare i dati nei database o integrarli con l'infrastruttura IT.",
+            "Esempio di utilizzo:\nUn'azienda manifatturiera carica un file Excel con il registro di produzione e riceve in pochi minuti una previsione per la settimana successiva per pianificare i turni e le consegne.",
+            "Mercato potenziale:\nAziende di vendita al dettaglio, manifattura, logistica ed energia, dove i dati sono spesso gestiti manualmente e archiviati in fogli di calcolo."
           ]
         },
         {
-          "title": "Infrastruttura che si adatta perfettamente",
+          "title": "Dashboard",
           "description": [
-            "Costruiamo la tua pipeline dati da zero - o ci integriamo nei tuoi sistemi attuali come Lego.",
-            "Perché è importante:",
-            "Nessun \"strappa e sostituisci\" richiesto.",
-            "Le nostre soluzioni si integrano via API, CSV o connettori personalizzati, fondendosi con il tuo stack tecnologico mentre automatizzano raccolta, pulizia e analisi dei dati.",
-            "I tuoi flussi di lavoro rimangono intatti. Le tue previsioni ottengono superpoteri."
+            "Problemi risolti:\nLe aziende perdono profitti a causa di risposte tardive ai cambiamenti. Senza controllo automatico e notifiche, i rischi aumentano. La nostra funzionalità integra le previsioni, imposta gli avvisi e riduce i rischi.",
+            "Esempio di utilizzo:\nUn'azienda collega il sistema al database del magazzino. Se si prevede il superamento di una soglia critica di scorte, il sistema notifica l'ufficio acquisti e suggerisce un adeguamento dell'ordine, riducendo il rischio di fermi.",
+            "Mercato potenziale:\nAziende nei settori logistica, manifattura, energia e finanza, dove interruzioni o fluttuazioni della domanda comportano rischi operativi e finanziari."
           ]
         },
         {
-          "title": "Previsioni con 1 clic (sì, davvero)",
+          "title": "Agente AI",
           "description": [
-            "Carica un CSV o connetti dati live - ottieni previsioni powered by AI senza una laurea in data science.",
-            "Perché è importante:",
-            "Dimentica mesi di sviluppo.",
-            "Il nostro strumento chiavi in mano fornisce previsioni storiche e in tempo reale attraverso un'interfaccia no-code.",
-            "Perfetto per energy manager, team operativi o dirigenti che hanno bisogno di risposte - non algoritmi."
+            "Problemi risolti:\nLa mancanza di competenze sui dati e interfacce complesse impediscono l'accesso rapido a previsioni e visualizzazioni. L'agente consente di caricare dati, analizzare e fare previsioni tramite dialogo, senza conoscenze tecniche, promuovendo chiarezza e trasparenza (XAI).",
+            "Esempio di utilizzo:\nUn manager del commercio al dettaglio carica un file con i dati di vendita e riceve rapidamente previsioni della domanda e grafici di pianificazione tramite l'agente in chat.",
+            "Mercato potenziale:\nPiccole e medie imprese, manager e analisti senza esperienza di programmazione nei settori retail, logistica e manifattura."
           ]
         },
         {
-          "title": "Magia dei dati sotto il cofano",
+          "title": "API",
           "description": [
-            "SKNN, H-DIRT e correlazione di distanza - puliscono dati disordinati così i tuoi modelli vedono il segnale, non il rumore.",
-            "Perché è importante:",
-            "Spazzatura dentro, spazzatura fuori? Non qui.",
-            "I nostri metodi proprietari rilevano automaticamente modelli stagionali, colmano lacune ed espongono relazioni non lineari - potenziando l'accuratezza delle previsioni.",
-            "Anche quando i tuoi dati sono testardi."
+            "Problemi risolti:\nCosti elevati e ritardi dovuti a integrazioni complesse e alla necessità di assumere un team di Data Science. Consente di integrare rapidamente la previsione nei sistemi esistenti con codice minimo.",
+            "Esempio di utilizzo:\nUna piattaforma finanziaria si collega all’API per previsioni automatiche della domanda, ricevendo risultati immediati e integrandoli nei propri pannelli analitici.",
+            "Mercato potenziale:\nAziende IT, istituzioni finanziarie, imprese manifatturiere e logistiche che necessitano di previsioni scalabili."
           ]
         }
       ],
@@ -731,7 +723,7 @@
     {
       "phase": "Fase 6",
       "date": "2026-01",
-      "title": "Sviluppo di un prodotto minimo lanciabile (MLP)",
+      "title": "Sviluppo di un prodotto minimo lanciabile (MVP)",
       "type": "future"
     },
     {
@@ -1035,7 +1027,7 @@
       {
         "phase": "Fase 6",
         "date": "2026-01",
-        "title": "Sviluppo di un prodotto minimo lanciabile (MLP)",
+        "title": "Sviluppo di un prodotto minimo lanciabile (MVP)",
         "type": "future"
       },
       {
@@ -1045,19 +1037,23 @@
         "type": "future"
       }
     ],
-    "materials": {
-      "why": { "label": "Perché", "link": "https://example.com/why" },
-      "marketOverview": {
-        "label": "Panoramica del mercato",
-        "link": "https://example.com/market-overview"
-      },
-      "financialModel": {
-        "label": "Modello finanziario",
-        "link": "https://example.com/financial-model"
-      },
-      "downloadPdf": "Scarica PDF"
-    }
-  },
+  "materials": {
+    "why": {
+      "label": "Brochure",
+      "link": "https://drive.google.com/file/d/1aCR8M5dsaAtD2VZsFEXBrfodg2GIkvfs/view?usp=sharing"
+    },
+    "marketOverview": {
+      "label": "Presentazione",
+      "link": "https://drive.google.com/file/d/1yMy1jHZSeIBGn_Diuj2jPjOAa3dok0zO/view?usp=sharing"
+    },
+    "financialModel": {
+      "label": "Modello finanziario",
+      "link": "https://docs.google.com/spreadsheets/d/1xqa5QT5RF-ClpuJgo5pY6vgE3JxfWHItBWnfqJdyxm4/edit?usp=sharing"
+    },
+    "downloadPdf": "Scarica PDF"
+  }
+
+},
   "Benchmarks": {
     "testLink": "Link al test",
     "title": "Benchmark",

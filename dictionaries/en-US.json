@@ -138,40 +138,35 @@
       },
       "Content": [
         {
-          "title": "AI Agent for Analytics & Decisions",
+          "title": "Quick Forecast",
           "description": [
-            "Your personal data analyst — always on call.",
-            "The AI Agent helps you understand your data in real time.",
-            "It handles both numbers and requests like: “Forecast next week,” or “Show me the trends.”",
-            "Analytics without an analyst. Confident decisions"
-          ]
-        },
-        {
-          "title": "API Interface",
-          "description": [
-            "A clear and well-documented API makes integration simple — whether you’re connecting BI tools, CRM systems, or custom platforms.",
-            "Comes with full documentation, examples, and responsive support."
+            "Problems it solves:\nEnables accurate forecasting for time series stored in Excel or CSV, without the need to upload data to databases or integrate with IT infrastructure.",
+            "Example use case:\nA manufacturing company uploads an Excel file with a production log and receives a forecast for the next week within minutes to plan shifts and deliveries.",
+            "Potential market:\nRetail, manufacturing, logistics, and energy companies where data is often processed manually and stored in spreadsheets."
           ]
         },
         {
           "title": "Dashboard",
           "description": [
-            "A user-friendly dashboard designed for fast forecasting — even without technical skills.",
-            "Upload a CSV or connect live data—get AI-powered predictions without a data science degree.",
-            "Why it matters:",
-            "View forecasts, trends, and anomalies in one place, updated automatically every 30 minutes.",
-            "All analytics in one view. Data updates automatically.",
-            "Our turnkey tool delivers real-time and historical forecasts through a no-code interface.",
-            "Perfect for energy managers, ops teams, or execs who need answers—not algorithms."
+            "Problems it solves:\nBusinesses lose profit due to delayed responses to changes. Without automatic control and alerts, risks increase. Our functionality integrates forecasts, sets up alerts, and reduces risks.",
+            "Example use case:\nA company connects the system to its warehouse database. When a critical stock level is forecasted to be exceeded, the system notifies the supply department and suggests order adjustments, reducing downtime risks.",
+            "Potential market:\nCompanies in logistics, manufacturing, energy, and finance, where supply disruptions or demand fluctuations carry operational and financial risks."
           ]
         },
         {
-          "title": "Anomaly Detection & Alerts",
+          "title": "AI Agent",
           "description": [
-            "Stay in control of fluctuations and unexpected spikes",
-            "The system spots abnormal behavior and notifies you:",
-            "Sharp increase in churn, 32 percent above norm — you get an alert.",
-            "Alerts are fully configurable to fit your goals and thresholds."
+            "Problems it solves:\nLack of data skills and complex interfaces hinder quick access to forecasts and visualizations. The agent allows users to upload data, analyze, and forecast through dialogue without technical knowledge, promoting clarity and transparency (XAI).",
+            "Example use case:\nA retail manager uploads a sales file and quickly receives demand forecasts and planning charts via the chat agent.",
+            "Potential market:\nSmall and medium businesses, managers, and analysts without programming experience in retail, logistics, and manufacturing."
+          ]
+        },
+        {
+          "title": "API",
+          "description": [
+            "Problems it solves:\nHigh costs and delays due to complex integration and the need to hire a Data Science team. Allows rapid integration of forecasting into existing systems with minimal code.",
+            "Example use case:\nA financial platform connects to the API for automatic demand forecasting, instantly receives results, and integrates them into its analytics dashboards.",
+            "Potential market:\nIT companies, financial institutions, manufacturing, and logistics enterprises needing scalable forecasting."
           ]
         }
       ],
@@ -658,7 +653,7 @@
     {
       "phase": "Phase 6",
       "date": "2026-01",
-      "title": "Development of a minimum launchable product (MLP)",
+      "title": "Development of a minimum launchable product (MVP)",
       "type": "future"
     },
     {
@@ -1027,7 +1022,7 @@
       {
         "phase": "Phase 6",
         "date": "2026-01",
-        "title": "Development of a minimum launchable product (MLP)",
+        "title": "Development of a minimum launchable product (MVP)",
         "type": "future"
       },
       {
@@ -1037,18 +1032,22 @@
         "type": "future"
       }
     ],
-    "materials": {
-      "why": { "label": "Purpose", "link": "https://example.com/why" },
-      "marketOverview": {
-        "label": "Market Overview",
-        "link": "https://example.com/market-overview"
-      },
-      "financialModel": {
-        "label": "Financial Model",
-        "link": "https://example.com/financial-model"
-      },
-      "downloadPdf": "Download PDF"
-    }
+  "materials": {
+    "why": {
+      "label": "Brochure",
+      "link": "https://drive.google.com/file/d/1aCR8M5dsaAtD2VZsFEXBrfodg2GIkvfs/view?usp=sharing"
+    },
+    "marketOverview": {
+      "label": "Presentation",
+      "link": "https://drive.google.com/file/d/1yMy1jHZSeIBGn_Diuj2jPjOAa3dok0zO/view?usp=sharing"
+    },
+    "financialModel": {
+      "label": "Financial Model",
+      "link": "https://docs.google.com/spreadsheets/d/1xqa5QT5RF-ClpuJgo5pY6vgE3JxfWHItBWnfqJdyxm4/edit?usp=sharing"
+    },
+    "downloadPdf": "Download PDF"
+  }
+
   },
   "Benchmarks": {
     "title": "Benchmarks",

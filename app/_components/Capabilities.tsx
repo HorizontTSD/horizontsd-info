@@ -140,7 +140,7 @@ function Desktop() {
                                 background: bgPalette[~~(!isDark)],
                                 color: "textPrimary",
                                 justifyContent: "space-between",
-                                minHeight: isSm ? `auto` : "22rem",
+                                minHeight: isSm ? `auto` : "25rem",
                                 padding: `0.7rem`,
                             }}>
                             <Stack direction={"column"}>
@@ -151,7 +151,11 @@ function Desktop() {
                                     justifyContent: "start",
                                 }}>
                                     <LabelIcon color="primary" sx={{ marginRight: "1rem" }} />
-                                    <Typography variant={isSm ? "subtitle1" : "h6"} component="div">{item.title}</Typography>
+                                    <Box display="flex" justifyContent="center" width="100%">
+                                      <Typography variant={isSm ? "subtitle1" : "h4"} component="div" style={{ fontWeight: 'bold', textAlign: 'center', width: '100%' }}>
+                                        {item.title}
+                                      </Typography>
+                                    </Box>
                                 </Stack>
                                 {item.description.slice(0, 2).map((e: string, i: number) => (
                                     <Typography key={i} variant={isSm ? "subtitle2" : "subtitle1"} gutterBottom>{e}</Typography>
