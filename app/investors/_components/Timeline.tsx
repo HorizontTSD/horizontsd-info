@@ -54,7 +54,7 @@ const TimelineBlock: React.FC = () => {
           letterSpacing: 1,
         }}
       >
-        Наш путь
+        {investorDict?.timelineTitle || "Наш путь"}
       </h2>
       <VerticalTimeline animate={true} lineColor="var(--timeline-line-past)">
         {timeline.map((item, idx) => {

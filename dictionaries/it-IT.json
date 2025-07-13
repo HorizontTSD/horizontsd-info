@@ -928,6 +928,8 @@
   "InvestorRelations": {
     "title": "Relazioni con gli investitori",
     "stub": "",
+    "timelineTitle": "Il nostro percorso",
+    "materialsTitle": "Materiali",
     "timeline": [
       {
         "phase": "Fase 1",
@@ -1095,6 +1097,38 @@
       }
     ],
     "custom": "Sviluppo personalizzato — su richiesta",
-    "perUserLabel": "per utente al mese"
+    "perUserLabel": "per utente al mese",
+    "QuickForecastLine": {
+      "title": "Previsione Rapida",
+      "cards": [
+        {
+          "title": "Carica un CSV — ottieni una previsione",
+          "description": "Analisi istantanea dei tuoi dati senza configurazioni."
+        },
+        {
+          "title": "Nessun codice, nessuna integrazione",
+          "description": "Basta scegliere un file — risultato immediato a schermo."
+        },
+        {
+          "title": "AI per tutti",
+          "description": "Accessibile anche a chi non conosce la Data Science."
+        }
+      ]
+    },
+    "QuickForecastTitle": "Previsione Rapida"
+  },
+  "PricingPlan": {
+    "Basic": "Base",
+    "Standard": "Standard",
+    "Business": "Business",
+    "Premium": "Premium",
+    "features": {
+      "basic": ["Accesso alle funzionalità di base", "Limite di richieste", "Supporto via email"],
+      "standard": ["Tutto dal Base", "Supporto prioritario", "Integrazioni aggiuntive"],
+      "business": ["Tutto dal Pro", "Collaborazione in team", "Supporto SLA"],
+      "premium": ["Tutto dal Business", "Manager personale", "Configurazione personalizzata"]
+    },
+    "priceFree": "Gratis",
+    "priceRequest": "Su richiesta"
   }
 }
