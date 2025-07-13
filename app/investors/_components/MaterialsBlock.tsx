@@ -67,7 +67,7 @@ const MaterialsBlock: React.FC = () => {
           marginBottom: 24,
         }}
       >
-        Материалы
+        {dict?.InvestorRelations?.materialsTitle || "Материалы"}
       </h2>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
         {Object.entries(materials)

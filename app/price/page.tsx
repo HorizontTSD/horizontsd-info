@@ -7,6 +7,7 @@ import { WebGLBackground } from "@/app/_components/Wow";
 import { useI18n } from "@/app/_providers/I18nProvider";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import React from "react";
+import QuickForecastCardsLine from "./QuickForecastCardsLine";
 
 export default function PricePage() {
   const { mode } = useColorScheme();
@@ -72,6 +73,7 @@ export default function PricePage() {
         <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700, mb: 6 }}>
           {pricing.title}
         </Typography>
+        <QuickForecastCardsLine offers={pricing.offers} />
         {pricing.sections.map((section: string) => {
           const offers = pricing.offers;
           return (

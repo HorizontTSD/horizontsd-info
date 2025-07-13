@@ -228,6 +228,8 @@ export interface InvestorMaterialsDict {
 export interface InvestorRelationsDictionary {
   title: string;
   stub: string;
+  timelineTitle: string;
+  materialsTitle: string;
   timeline: TimelineItemDict[];
   materials: InvestorMaterialsDict;
 }

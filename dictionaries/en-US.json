@@ -920,6 +920,8 @@
   "InvestorRelations": {
     "title": "Investor Relations",
     "stub": "",
+    "timelineTitle": "Our Journey",
+    "materialsTitle": "Materials",
     "timeline": [
       {
         "phase": "Phase 1",
@@ -1083,6 +1085,38 @@
       }
     ],
     "custom": "Custom development — on request",
-    "perUserLabel": "per user per month"
+    "perUserLabel": "per user per month",
+    "QuickForecastLine": {
+      "title": "Quick Forecast",
+      "cards": [
+        {
+          "title": "Upload CSV — Get a Forecast",
+          "description": "Instant analysis of your data, no setup required."
+        },
+        {
+          "title": "No Code, No Integration",
+          "description": "Just pick a file — see results immediately."
+        },
+        {
+          "title": "AI for Everyone",
+          "description": "Accessible even for those new to Data Science."
+        }
+      ]
+    },
+    "QuickForecastTitle": "Quick Forecast",
+    "PricingPlan": {
+      "Basic": "Basic",
+      "Standard": "Standard",
+      "Business": "Business",
+      "Premium": "Premium",
+      "features": {
+        "basic": ["Access to basic features", "Request limit", "Email support"],
+        "standard": ["Everything in Basic", "Priority support", "Additional integrations"],
+        "business": ["Everything in Pro", "Team collaboration", "SLA support"],
+        "premium": ["Everything in Business", "Personal manager", "Custom setup"]
+      },
+      "priceFree": "Free",
+      "priceRequest": "On request"
+    }
   }
 }
