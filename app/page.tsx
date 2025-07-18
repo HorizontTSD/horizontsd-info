@@ -18,11 +18,11 @@ function PageContent() {
     <>
       <Navbar />
       <Hero fullsize={true} />
+      <Capabilities />
       <Applications />
       <Features />
       <Works />
       <CallToAction />
-      <Capabilities />
       <About />
       <Faq />
       <Footer />
