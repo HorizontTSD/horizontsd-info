@@ -512,10 +512,12 @@
     }
   },
   "Research": {
+    "title": "Research",
+    "stub": "Scientific publications and developments in time series forecasting",
     "Button": "Learn more",
     "Content": [
       {
-        "image": "/images/images_research/LSTM-Based Models for Day-Ahead Electrical Load Forecast A Novel Feature Selection Method Including Weather Data.webp",
+        "image": "/images/images_research/Framework_page-0001.jpg",
         "title": "LSTM-Based Models for Day-Ahead Electrical Load Forecast: A Novel Feature Selection Method Including Weather Data",
         "description": [
           "We present a novel load forecasting algorithm based on LSTM combined with a custom Time2Vec temporal encoding method and weather data integration.",
@@ -524,6 +526,16 @@
           "This confirms that proper feature engineering and advanced time encoding can deliver highly accurate forecasts without the need for architectural complexity."
         ],
         "link": "https://iris.unibs.it/bitstream/11379/622686/2/PhD_Thesis_ML_for_T4H_final_version_pdf.pdf"
+      },
+      {
+        "image": "/images/images_research/frame_time2vec_page-0001.jpg",
+        "title": "Time2Vec-Augmented LSTM for Enhanced Time Series Forecasting",
+        "description": [
+          "This work focuses on improving long-horizon time series forecasting accuracy by integrating Time2Vec — a learnable temporal encoding — into three deep learning models: LSTM, BiLSTM, and a CNN-LSTM hybrid.",
+          "The models were trained on hourly electricity load data from three Moroccan regions to forecast demand 72 hours ahead. Time2Vec consistently improved performance, reducing error metrics by up to 3.7% (MAPE and WMAPE), compared to the same models using conventional timestamp features.",
+          "This enhancement allows neural networks to better capture seasonal, cyclic, and irregular temporal patterns. The approach is lightweight, model-agnostic, and easily transferable to other time series applications — from energy systems to transport and finance."
+        ],
+        "link": "https://example.com/time2vec-lstm-paper"
       },
       {
         "image": "/images/images_research/Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series.webp",

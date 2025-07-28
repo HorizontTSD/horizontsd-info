@@ -519,10 +519,12 @@
     }
   },
   "Research": {
+    "title": "Ricerca",
+    "stub": "Pubblicazioni scientifiche e sviluppi nel campo della previsione di serie temporali",
     "Button": "Scopri di più",
     "Content": [
       {
-        "image": "/images/images_research/LSTM-Based Models for Day-Ahead Electrical Load Forecast A Novel Feature Selection Method Including Weather Data.webp",
+        "image": "/images/images_research/Framework_page-0001.jpg",
         "title": "Modelli basati su LSTM per la previsione del carico elettrico a breve termine: un innovativo metodo di selezione delle feature con dati meteorologici",
         "description": [
           "Presentiamo un innovativo algoritmo di previsione del carico basato su LSTM, combinato con un metodo personalizzato di codifica temporale Time2Vec e integrazione di dati meteorologici.",
@@ -531,6 +533,16 @@
           "Ciò conferma che un'accurata progettazione delle feature e una codifica temporale avanzata possono fornire previsioni estremamente accurate senza necessità di complessità architetturale."
         ],
         "link": "https://iris.unibs.it/bitstream/11379/622686/2/PhD_Thesis_ML_for_T4H_final_version_pdf.pdf"
+      },
+      {
+        "image": "/images/images_research/frame_time2vec_page-0001.jpg",
+        "title": "LSTM potenziato con Time2Vec per previsioni avanzate di serie temporali",
+        "description": [
+          "Questo lavoro si concentra sul miglioramento dell'accuratezza delle previsioni di serie temporali a lungo orizzonte integrando Time2Vec — una codifica temporale apprendibile — in tre modelli di deep learning: LSTM, BiLSTM e un ibrido CNN-LSTM.",
+          "I modelli sono stati addestrati su dati orari di carico elettrico di tre regioni marocchine per prevedere la domanda a 72 ore di anticipo. Time2Vec ha costantemente migliorato le prestazioni, riducendo le metriche di errore fino al 3.7% (MAPE e WMAPE), rispetto agli stessi modelli che utilizzano caratteristiche temporali convenzionali.",
+          "Questo miglioramento consente alle reti neurali di catturare meglio i pattern temporali stagionali, ciclici e irregolari. L'approccio è leggero, agnostico al modello e facilmente trasferibile ad altre applicazioni di serie temporali — dai sistemi energetici ai trasporti e alla finanza."
+        ],
+        "link": "https://example.com/time2vec-lstm-paper"
       },
       {
         "image": "/images/images_research/Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series.webp",
