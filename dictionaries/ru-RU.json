@@ -341,7 +341,7 @@
     },
     {
       "first_name": "Андрей",
-      "last_name": "Ш.",
+      "last_name": "С.",
       "job_title": "Lead Frontend Developer",
       "contacts": {
         "github": "https://github.com/ranareinsit"
@@ -363,7 +363,7 @@
       "first_name": "Илья",
       "last_name": "Селиванов",
       "education": "Information Systems and Programming, Web and Multimedia Applications Developer.",
-      "job_title": "Frontend Developer",
+      "job_title": "Frontend разработчик",
       "contacts": {
         "telegram": "https://t.me/dostanmenyatyt",
         "email": "ilyailyaselivanov@gmail.com"
@@ -377,6 +377,30 @@
       "contacts": {
         "telegram": "https://t.me/erzert",
         "email": "bhkuzin@gmail.com"
+      }
+    },
+    {
+      "first_name": "Татьяна",
+      "last_name": "Гуцуляк",
+      "job_title": "Backend разработчик",
+      "contacts": {
+        "email": "tgutsulyak@mail.ru"
+      }
+    },
+    {
+      "first_name": "Дмитрий",
+      "last_name": "Аникушин",
+      "job_title": "Финансовый аналитик",
+      "contacts": {
+        "email": "d.anikushin@icloud.com"
+      }
+    },
+    {
+      "first_name": "Никита",
+      "last_name": "Рыженков",
+      "job_title": "Backend разработчик",
+      "contacts": {
+        "email": "HoverGovi@yandex.ru"
       }
     }
   ],

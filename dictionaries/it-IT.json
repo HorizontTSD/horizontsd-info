@@ -627,6 +627,30 @@
         "telegram": "https://t.me/erzert",
         "email": "bhkuzin@gmail.com"
       }
+    },
+    {
+      "first_name": "Tatiana",
+      "last_name": "Gutsulyak",
+      "job_title": "Sviluppatore Backend",
+      "contacts": {
+        "email": "tgutsulyak@mail.ru"
+      }
+    },
+    {
+      "first_name": "Dmitry",
+      "last_name": "Anikushin",
+      "job_title": "Analista Finanziario",
+      "contacts": {
+        "email": "d.anikushin@icloud.com"
+      }
+    },
+    {
+      "first_name": "Nikita",
+      "last_name": "Ryzhenkov",
+      "job_title": "Sviluppatore Backend",
+      "contacts": {
+        "email": "HoverGovi@yandex.ru"
+      }
     }
   ],
   "timeline": [
