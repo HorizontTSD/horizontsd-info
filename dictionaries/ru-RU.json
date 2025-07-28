@@ -336,7 +336,7 @@
     },
     {
       "first_name": "Андрей",
-      "last_name": "Ш.",
+      "last_name": "С.",
       "job_title": "Lead Frontend Developer",
       "contacts": {
         "github": "https://github.com/ranareinsit"
@@ -358,7 +358,7 @@
       "first_name": "Илья",
       "last_name": "Селиванов",
       "education": "Information Systems and Programming, Web and Multimedia Applications Developer.",
-      "job_title": "Frontend Developer",
+      "job_title": "Frontend разработчик",
       "contacts": {
         "telegram": "https://t.me/dostanmenyatyt",
         "email": "ilyailyaselivanov@gmail.com"
@@ -372,6 +372,30 @@
       "contacts": {
         "telegram": "https://t.me/erzert",
         "email": "bhkuzin@gmail.com"
+      }
+    },
+    {
+      "first_name": "Татьяна",
+      "last_name": "Гуцуляк",
+      "job_title": "Backend разработчик",
+      "contacts": {
+        "email": "tgutsulyak@mail.ru"
+      }
+    },
+    {
+      "first_name": "Дмитрий",
+      "last_name": "Аникушин",
+      "job_title": "Финансовый аналитик",
+      "contacts": {
+        "email": "d.anikushin@icloud.com"
+      }
+    },
+    {
+      "first_name": "Никита",
+      "last_name": "Рыженков",
+      "job_title": "Backend разработчик",
+      "contacts": {
+        "email": "HoverGovi@yandex.ru"
       }
     }
   ],
@@ -597,11 +621,13 @@
     }
   },
   "Research": {
+    "title": "Исследования",
+    "stub": "Научные публикации и разработки в области прогнозирования временных рядов",
     "Button": "Узнать больше",
     "Content": [
       {
         "title": "Модели на основе LSTM для прогноза суточного потребления электроэнергии: новый метод отбора признаков с учетом погодных данных",
-        "image": "/images/images_research/LSTM-Based Models for Day-Ahead Electrical Load Forecast A Novel Feature Selection Method Including Weather Data.webp",
+        "image": "/images/images_research/Framework_page-0001.jpg",
         "description": [
           "Разработан оригинальный алгоритм краткосрочного прогнозирования нагрузки, основанный на модели LSTM с использованием усовершенствованного представления временных признаков через Time2Vec и интеграции погодных данных.",
           "В качестве входных данных использовались только временные признаки (день недели, час, дата) и метеопараметры (температура, влажность и др.).",
@@ -610,6 +636,16 @@
           "Подход позволяет отказаться от дорогостоящих сенсоров, опираясь на доступные данные и интеллектуальную обработку времени."
         ],
         "link": "https://iris.unibs.it/bitstream/11379/622686/2/PhD_Thesis_ML_for_T4H_final_version_pdf.pdf"
+      },
+      {
+        "title": "Улучшенное прогнозирование временных рядов с помощью Time2Vec и LSTM",
+        "image": "/images/images_research/frame_time2vec_page-0001.jpg",
+        "description": [
+          "В этом исследовании мы сосредотачиваемся на повышении точности долгосрочного прогнозирования временных рядов. Мы внедрили Time2Vec — обучаемое временное представление — в три нейросетевые архитектуры: LSTM, BiLSTM и гибрид CNN-LSTM.",
+          "Модели обучались на почасовых данных электропотребления из трёх регионов Марокко и предсказывали нагрузку на 72 часа вперёд. Использование Time2Vec позволило добиться снижения ошибок прогноза (до 3.7% по метрикам MAPE и WMAPE) по сравнению с теми же моделями, использующими стандартные временные признаки.",
+          "Предложенный подход помогает нейросетям лучше улавливать сезонные, циклические и нерегулярные закономерности во временных рядах. Благодаря лёгкости и универсальности Time2Vec, метод легко переносится на другие задачи, связанные с временными рядами — от энергетики до транспорта и финансов."
+        ],
+        "link": "https://example.com/time2vec-lstm-paper"
       },
       {
         "title": "Методы восстановления данных с учётом сезонных признаков для временных рядов потребления электроэнергии",
