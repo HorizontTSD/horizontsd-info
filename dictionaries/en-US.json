@@ -517,7 +517,7 @@
     "Button": "Learn more",
     "Content": [
       {
-        "image": "/images/images_research/Framework_page-0001.jpg",
+        "image": "/images/images_research/Framework-1.png",
         "title": "LSTM-Based Models for Day-Ahead Electrical Load Forecast: A Novel Feature Selection Method Including Weather Data",
         "description": [
           "We present a novel load forecasting algorithm based on LSTM combined with a custom Time2Vec temporal encoding method and weather data integration.",
@@ -528,7 +528,7 @@
         "link": "https://iris.unibs.it/bitstream/11379/622686/2/PhD_Thesis_ML_for_T4H_final_version_pdf.pdf"
       },
       {
-        "image": "/images/images_research/frame_time2vec_page-0001.jpg",
+        "image": "/images/images_research/frame_time2vec-1.png",
         "title": "Time2Vec-Augmented LSTM for Enhanced Time Series Forecasting",
         "description": [
           "This work focuses on improving long-horizon time series forecasting accuracy by integrating Time2Vec — a learnable temporal encoding — into three deep learning models: LSTM, BiLSTM, and a CNN-LSTM hybrid.",
