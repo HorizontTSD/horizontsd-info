@@ -516,7 +516,7 @@
     "Button": "Scopri di più",
     "Content": [
       {
-        "image": "/images/images_research/Framework_page-0001.jpg",
+        "image": "/images/images_research/Framework-1.png",
         "title": "Modelli basati su LSTM per la previsione del carico elettrico a breve termine: un innovativo metodo di selezione delle feature con dati meteorologici",
         "description": [
           "Presentiamo un innovativo algoritmo di previsione del carico basato su LSTM, combinato con un metodo personalizzato di codifica temporale Time2Vec e integrazione di dati meteorologici.",
@@ -527,7 +527,7 @@
         "link": "https://iris.unibs.it/bitstream/11379/622686/2/PhD_Thesis_ML_for_T4H_final_version_pdf.pdf"
       },
       {
-        "image": "/images/images_research/frame_time2vec_page-0001.jpg",
+        "image": "/images/images_research/frame_time2vec-1.png",
         "title": "LSTM potenziato con Time2Vec per previsioni avanzate di serie temporali",
         "description": [
           "Questo lavoro si concentra sul miglioramento dell'accuratezza delle previsioni di serie temporali a lungo orizzonte integrando Time2Vec — una codifica temporale apprendibile — in tre modelli di deep learning: LSTM, BiLSTM e un ibrido CNN-LSTM.",
