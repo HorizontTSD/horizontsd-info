@@ -79,14 +79,14 @@
           },
           "block": {
             "title": "Smart Data Processing",
-            "link": "/features#processing",
             "description": [
               "Automatically clean, fill in missing values, and normalize the data",
               "Detect noise and anomalies",
               "Prepare data for training",
               "So that the AI performs reliably — even on messy or incomplete data",
               "No manual preparation — everything happens automatically"
-            ]
+            ],
+            "link": "/features"
           }
         },
         {
@@ -96,7 +96,6 @@
           },
           "block": {
             "title": "Adaptive AI Forecasting",
-            "link": "/features#prediction",
             "description": [
               "By analyzing historical data, we generate accurate forecasts that help businesses make informed decisions in advance.",
               "This allows you to:",
@@ -105,7 +104,8 @@
               "Reduce financial risks by anticipating market changes",
               "Improve customer service by predicting needs",
               "Forecasting helps make your business more agile and resilient."
-            ]
+            ],
+            "link": "/features"
           }
         },
         {
@@ -115,12 +115,12 @@
           },
           "block": {
             "title": "Automated Savings",
-            "link": "/features#optimization",
             "description": [
               "AI alerts you in advance and helps adapt to changes.",
               "Cut costs, improve inventory and production management.",
               "By forecasting demand, load, and stock levels, AI helps you spend less and operate more efficiently."
-            ]
+            ],
+            "link": "/features"
           }
         }
       ],
@@ -337,175 +337,43 @@
     }
   },
   "Features": {
-    "Optimization": {
-      "SectionHeader": {
-        "h4": "Cost Optimization",
-        "body2": "Reduce energy waste by 30%+ with automated demand smoothing and smart procurement."
-      },
-      "Content": [
-        {
-          "image": "/images/images_features/optimization-0.webp",
-          "title": "Simple Forecast",
-          "description": [
-            "Instant insights, zero hassle",
-            "Upload your data, pick a timeframe, and let our science-backed models auto-generate forecasts.",
-            "Perfect for quick trendspotting or preliminary analysis when speed trumps ultra-precision."
-          ]
-        },
-        {
-          "image": "/images/images_features/optimization-1.webp",
-          "title": "Data Dive",
-          "description": [
-            "See what your data's hiding",
-            "Unmask seasonal patterns, volatility hotspots, and predictability limits with granular time-series analytics.",
-            "For teams who need more than surface-level trends – understand the why behind the numbers."
-          ]
-        },
-        {
-          "image": "/images/images_features/optimization-2.webp",
-          "title": "Train Your AI",
-          "description": [
-            "Custom accuracy, no code needed",
-            "Tweak parameters, test scenarios, and fine-tune models to your unique data—all through intuitive sliders, not Python.",
-            "Get forecasts that adapt to your business quirks, not the other way around."
-          ]
-        },
-        {
-          "image": "/images/images_features/optimization-3.webp",
-          "title": "Always-On Insights",
-          "description": [
-            "Forecasts that chase you",
-            "Get SMS/email alerts when predictions hit your custom thresholds.",
-            "Spot anomalies early, dodge risks faster, and keep teams synced—no dashboard refreshing required."
-          ]
-        },
-        {
-          "image": "/images/images_features/optimization-4.webp",
-          "title": "Smart Alerts Builder",
-          "description": [
-            "Your rules, your reactions",
-            "Define triggers like \"Notify if forecasted demand exceeds X\" and automate responses.",
-            "Syncs with Slack, Teams, or your internal tools to turn predictions into actions."
-          ]
-        },
-        {
-          "image": "/images/images_features/optimization-5.webp",
-          "title": "Threshold Guardian",
-          "description": [
-            "Safety nets for your forecasts",
-            "When predictions breach critical levels (e.g., energy overloads), get instant warnings.",
-            "Pre-set escalation rules ensure the right people act—before it becomes a cost."
-          ]
-        }
-      ]
+    "sectionTitle": "Features",
+    "sectionSubtitle": "Key functions of our product for time series forecasting",
+    "sectionHeaders": {
+      "problems": "What problems does it solve:",
+      "market": "Potential market:",
+      "example": "Usage example:"
     },
-    "Prediction": {
-      "SectionHeader": {
-        "h4": "Prediction",
-        "body2": "Prediction body"
-      },
-      "Content": [
-        {
-          "image": "/images/images_features/prediction-0.webp",
-          "title": "Simple Forecast",
-          "description": [
-            "Quick insights, zero effort",
-            "Upload your data, pick a timeframe, and let our science-backed models auto-generate forecasts.",
-            "Perfect for fast trendspotting or preliminary analysis—when speed matters more than ultra-precision."
-          ],
-          "title2": "Why it stands out",
-          "description2": [
-            "✅ One-click predictions",
-            "✅ Research-driven algorithms",
-            "✅ Ideal for rapid decision-making"
-          ]
-        },
-        {
-          "image": "/images/images_features/prediction-1.webp",
-          "title": "Train Your AI",
-          "description": [
-            "Custom accuracy, no code needed",
-            "Tweak parameters, test scenarios, and fine-tune models to your data—all through intuitive sliders, not Python.",
-            "Get forecasts that adapt to your business quirks."
-          ],
-          "title2": "Why it's powerful:",
-          "description2": [
-            "⚙️ Drag-and-drop parameter tuning",
-            "⚙️ Adapts to unique data patterns",
-            "⚙️ Boosts accuracy for strategic decisions"
-          ]
-        },
-        {
-          "image": "/images/images_features/prediction-2.webp",
-          "title": "Assess Accuracy",
-          "description": [
-            "Transparency you can measure",
-            "Compare models side-by-side using MSE, R², MAE, and 10+ other metrics.",
-            "See exactly where your forecast shines (or needs polish)—no guesswork."
-          ],
-          "title2": "Why it matters:",
-          "description2": [
-            "🔍 Benchmark performance objectively",
-            "🔍 Spot weaknesses with error heatmaps",
-            "🔍 Trust data, not hunches"
-          ]
-        }
-      ]
+    "QuickForecast": {
+      "title": "Quick Forecast",
+      "description": "Get predictions in seconds. Upload your data — our model will instantly build a short-term forecast. Perfect for analyzing current trends when decision-making speed is important.",
+      "problems": "Allows building accurate forecasts for time series stored in Excel or CSV without the need to load data into databases or integrate with IT infrastructure.",
+      "market": "Companies from retail, manufacturing, logistics and energy sectors where data is often processed manually and stored in spreadsheets.",
+      "example": "A manufacturing company uploads an Excel file with production logs and gets a forecast for the next week in minutes for shift planning and supply management."
     },
-    "Processing": {
-      "SectionHeader": {
-        "h4": "Processing",
-        "body2": "Processing body"
-      },
-      "Content": [
-        {
-          "image": "/images/images_features/processing-0.webp",
-          "title": "Interactive Dashboard",
-          "description": [
-            "Instant insights at your fingertips",
-            "Upload your data, set your forecast horizon, and let our research-driven algorithms handle the rest.",
-            "Designed for speed and simplicity, this tool delivers quick trend assessments and actionable insights—perfect when you need fast answers, not lab-grade precision."
-          ],
-          "title2": "Key strengths:",
-          "description2": [
-            "✅ One-click forecasting",
-            "✅ Science-backed models",
-            "✅ Ideal for rapid scenario evaluation"
-          ]
-        },
-        {
-          "image": "/images/images_features/processing-1.webp",
-          "title": "Metric Visualization",
-          "description": [
-            "See the story behind your data",
-            "Dive deep into time-series patterns, seasonal trends, and volatility hotspots.",
-            "Our interactive tools transform raw numbers into visual narratives—exposing hidden drivers of demand, risks, and opportunities."
-          ],
-          "title2": "Why it matters:",
-          "description2": [
-            "📈 Identify predictability limits",
-            "📈 Compare forecast vs. actuals in real-time",
-            "📈 Turn \"data noise\" into boardroom-ready strategies"
-          ]
-        },
-        {
-          "image": "/images/images_features/processing-2.webp",
-          "title": "Seasonality Analysis",
-          "description": [
-            "Predict cycles, not chaos",
-            "Automatically detect recurring patterns—weekly sales spikes, monthly energy surges, annual inventory drops.",
-            "Customize models via intuitive sliders (no coding!) to align forecasts with your unique business rhythms."
-          ],
-          "title2": "Built for adaptability",
-          "description2": [
-            "🔄 Pre-built templates for common cycles",
-            "🔄 Manual override for edge cases",
-            "🔄 Sync findings to procurement/planning teams"
-          ]
-        }
-      ]
+    "InteractiveDashboard": {
+      "title": "Interactive Dashboard",
+      "description": "All key metrics in one window. If data is stored centrally — configure updatable forecasts, automatic notifications and deviation control. The dashboard adapts to your tasks: from daily operational analytics to strategic monitoring.",
+      "problems": "Business loses profit and control due to delayed response to unexpected changes. Lack of automatic control and notifications leads to risks and losses. Our functionality integrates forecasts into processes, configures threshold notifications and allows proactive risk reduction.",
+      "market": "Companies from logistics, manufacturing, energy and finance sectors where supply disruptions, capacity overloads or demand fluctuations carry operational and financial risks.",
+      "example": "A manufacturing enterprise connects the system to a warehouse database. When a critical inventory level is predicted to be exceeded, the system automatically notifies the supply department and suggests a scenario for order adjustment, reducing the risk of downtime and losses."
+    },
+    "AIAgent": {
+      "title": "AI Agent",
+      "description": "Your personal assistant. The AI agent answers questions about data, generates reports and helps find insights without the need to write code. Perfect for non-technical specialists.",
+      "problems": "Lack of data skills and complex interfaces prevents quickly obtaining forecasts and visualizations. The agent through dialogue allows uploading data, analyzing and forecasting without technical knowledge, promoting understandability and transparency (XAI).",
+      "market": "Small and medium businesses, managers and analysts without programming experience in retail, logistics and manufacturing.",
+      "example": "A retail manager uploads a sales file and quickly gets a demand forecast and charts for procurement planning through the chat agent."
+    },
+    "APIIntegration": {
+      "title": "API Integration",
+      "description": "Easy integration into your processes. Connect data directly through API, automate updates and forecasts. Integration with BI systems, data warehouses and other tools.",
+      "problems": "High costs and delays due to complex integration and the need to hire a Data Science team. Allows quickly connecting forecasting to existing systems with minimal code.",
+      "market": "IT companies, financial organizations, manufacturing and logistics enterprises in need of scalable forecasting.",
+      "example": "A financial platform connects an API for automatic product demand forecasting, instantly getting results and integrating them into their analytical dashboards."
     }
   },
+
   "Research": {
     "title": "Research",
     "stub": "Scientific publications and developments in time series forecasting",
