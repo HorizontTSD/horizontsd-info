@@ -642,6 +642,7 @@
     "row2TermsTitle": "Terms of Service",
     "row2PrivacyTitle": "Privacy Policy",
     "row2CookiesTitle": "Cookie Policy",
+    "privacySettings": "Privacy Settings",
     "row3Follows": "Follow Us",
     "row3Copyright": "© 2025 Horizon TSD"
   },
@@ -654,6 +655,24 @@
     "price": "Pricing"
   },
   "Legal": {
+    "ConsentModal": {
+      "title": "Data Processing Consent",
+      "description": "We use cookies and similar technologies to improve website functionality, analyze traffic, and personalize content. In accordance with GDPR, we request your explicit consent for data processing. You can manage settings below.",
+      "settingsTitle": "Data Processing Settings",
+      "privacyPolicyTitle": "Privacy Policy",
+      "privacyPolicyDescription": "Consent to process personal data in accordance with our privacy policy.",
+      "cookiePolicyTitle": "Cookie Policy",
+      "cookiePolicyDescription": "Consent to use cookies for website improvement.",
+      "termsOfServiceTitle": "Terms of Service",
+      "termsOfServiceDescription": "Agreement to the terms of service.",
+      "learnMore": "Learn more:",
+      "privacyPolicy": "Privacy Policy",
+      "cookiePolicy": "Cookie Policy",
+      "termsOfService": "Terms of Service",
+      "declineAll": "Decline All",
+      "acceptSelected": "Accept Selected",
+      "acceptAll": "Accept All"
+    },
     "Terms": {
       "Title": "Terms of Service",
       "LastUpdated": "Last updated: April 11, 2023",
@@ -780,6 +799,26 @@
     },
     "Cookies": {
       "Title": "Cookie Policy",
+      "ConsentModal": {
+        "title": "Cookie Settings",
+        "description": "We use cookies to improve website functionality, analyze traffic, and personalize content. You can manage cookie settings below.",
+        "settingsTitle": "Cookie Settings",
+        "essentialTitle": "Essential Cookies",
+        "essentialDescription": "Required for website functionality. Cannot be disabled.",
+        "analyticsTitle": "Analytics Cookies",
+        "analyticsDescription": "Help us understand how visitors use the website.",
+        "functionalTitle": "Functional Cookies",
+        "functionalDescription": "Remember your preferences and settings.",
+        "marketingTitle": "Marketing Cookies",
+        "marketingDescription": "Used to display relevant advertisements.",
+        "learnMore": "Learn more:",
+        "privacyPolicy": "Privacy Policy",
+        "cookiePolicy": "Cookie Policy",
+        "termsOfService": "Terms of Service",
+        "declineAll": "Decline All",
+        "acceptSelected": "Accept Selected",
+        "acceptAll": "Accept All"
+      },
       "Sections": [
         {
           "title": "Introduction",

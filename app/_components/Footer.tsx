@@ -10,6 +10,7 @@ import EastIcon from "@mui/icons-material/East";
 import { useTheme } from "@mui/material/styles";
 import XIcon from "@mui/icons-material/X";
 import { useI18n } from "@/app/_providers/I18nProvider";
+import { useConsent } from "@/app/_providers/ConsentProvider";
 import { FooterContent } from "@/app/_components/types";
 import Section from "@/app/_components/Section";
 import { useModalForm } from "@/app/_providers/ModalFormProvider";
@@ -135,6 +136,7 @@ function Row2() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const { dict } = useI18n();
+  const { showConsentModal } = useConsent();
 
   if (!dict || !dict.Footer) return null;
 
@@ -169,28 +171,52 @@ function Row2() {
           },
         }}
       >
-        <Link href="/terms#terms" passHref style={{
-          textDecoration: `none`
-        }}>
-          <Typography variant="subtitle2">
-            {content.row2TermsTitle}
-          </Typography>
+        <Link
+          href="/terms#terms"
+          passHref
+          style={{
+            textDecoration: `none`,
+          }}
+        >
+          <Typography variant="subtitle2">{content.row2TermsTitle}</Typography>
         </Link>
 
-        <Link href="/privacy#privacy" passHref style={{
-          textDecoration: `none`
-        }}>
-          <Typography variant="subtitle2">
-            {content.row2PrivacyTitle}
-          </Typography>
+        <Link
+          href="/privacy#privacy"
+          passHref
+          style={{
+            textDecoration: `none`,
+          }}
+        >
+          <Typography variant="subtitle2">{content.row2PrivacyTitle}</Typography>
         </Link>
-        <Link href="/cookies#cookies" passHref style={{
-          textDecoration: `none`
-        }}>
-          <Typography variant="subtitle2">
-            {content.row2CookiesTitle}
-          </Typography>
+        <Link
+          href="/cookies#cookies"
+          passHref
+          style={{
+            textDecoration: `none`,
+          }}
+        >
+          <Typography variant="subtitle2">{content.row2CookiesTitle}</Typography>
         </Link>
+        <Button
+          variant="text"
+          onClick={showConsentModal}
+          sx={{
+            color: "text.primary",
+            textTransform: "none",
+            fontSize: "0.875rem",
+            fontWeight: 500,
+            padding: 0,
+            minWidth: "auto",
+            "&:hover": {
+              backgroundColor: "transparent",
+              textDecoration: "underline",
+            },
+          }}
+        >
+          {content.privacySettings}
+        </Button>
       </Stack>
     </Stack>
   );
