@@ -654,6 +654,7 @@
     "row2TermsTitle": "Termini di servizio",
     "row2PrivacyTitle": "Informativa sulla privacy",
     "row2CookiesTitle": "Informativa sui cookie",
+    "privacySettings": "Impostazioni privacy",
     "row3Follows": "Seguici",
     "row3Copyright": "© 2025 Horizon TSD"
   },
@@ -666,6 +667,24 @@
     "price": "Prezzi"
   },
   "Legal": {
+    "ConsentModal": {
+      "title": "Consenso al trattamento dei dati",
+      "description": "Utilizziamo cookie e tecnologie simili per migliorare la funzionalità del sito, analizzare il traffico e personalizzare i contenuti. In conformità con il GDPR, richiediamo il tuo consenso esplicito per il trattamento dei dati. Puoi gestire le impostazioni di seguito.",
+      "settingsTitle": "Impostazioni trattamento dati",
+      "privacyPolicyTitle": "Informativa sulla privacy",
+      "privacyPolicyDescription": "Consenso al trattamento dei dati personali in conformità con la nostra informativa sulla privacy.",
+      "cookiePolicyTitle": "Informativa sui cookie",
+      "cookiePolicyDescription": "Consenso all'uso dei cookie per il miglioramento del sito.",
+      "termsOfServiceTitle": "Termini di servizio",
+      "termsOfServiceDescription": "Accordo con i termini di servizio.",
+      "learnMore": "Scopri di più:",
+      "privacyPolicy": "Informativa sulla privacy",
+      "cookiePolicy": "Informativa sui cookie",
+      "termsOfService": "Termini di servizio",
+      "declineAll": "Rifiuta tutto",
+      "acceptSelected": "Accetta selezionati",
+      "acceptAll": "Accetta tutto"
+    },
     "Terms": {
       "Title": "Termini e Condizioni",
       "LastUpdated": "Ultimo aggiornamento: 11 aprile 2023",
@@ -793,6 +812,26 @@
     "Cookies": {
       "Title": "Informativa sui cookie",
       "LastUpdated": "Ultimo aggiornamento: 11 aprile 2023",
+      "ConsentModal": {
+        "title": "Impostazioni cookie",
+        "description": "Utilizziamo i cookie per migliorare la funzionalità del sito, analizzare il traffico e personalizzare i contenuti. Puoi gestire le impostazioni dei cookie di seguito.",
+        "settingsTitle": "Impostazioni cookie",
+        "essentialTitle": "Cookie essenziali",
+        "essentialDescription": "Necessari per il funzionamento del sito. Non possono essere disabilitati.",
+        "analyticsTitle": "Cookie analitici",
+        "analyticsDescription": "Ci aiutano a capire come i visitatori utilizzano il sito.",
+        "functionalTitle": "Cookie funzionali",
+        "functionalDescription": "Memorizzano le tue preferenze e impostazioni.",
+        "marketingTitle": "Cookie di marketing",
+        "marketingDescription": "Utilizzati per mostrare pubblicità pertinenti.",
+        "learnMore": "Scopri di più:",
+        "privacyPolicy": "Informativa sulla privacy",
+        "cookiePolicy": "Informativa sui cookie",
+        "termsOfService": "Termini di servizio",
+        "declineAll": "Rifiuta tutto",
+        "acceptSelected": "Accetta selezionati",
+        "acceptAll": "Accetta tutto"
+      },
       "Sections": [
         {
           "title": "Introduzione",

@@ -104,6 +104,7 @@ export interface FooterContent {
   row2TermsTitle: string;
   row2PrivacyTitle: string;
   row2CookiesTitle: string;
+  privacySettings: string;
   row3Copyright: string;
   row3Follows: string;
 }
@@ -217,12 +218,55 @@ export interface LegalContent {
   Title: string;
   LastUpdated: string;
   Sections: LegalSection[];
+  ConsentModal?: {
+    title: string;
+    description: string;
+    settingsTitle: string;
+    essentialTitle: string;
+    essentialDescription: string;
+    analyticsTitle: string;
+    analyticsDescription: string;
+    functionalTitle: string;
+    functionalDescription: string;
+    marketingTitle: string;
+    marketingDescription: string;
+    learnMore: string;
+    privacyPolicy: string;
+    cookiePolicy: string;
+    termsOfService: string;
+    declineAll: string;
+    acceptSelected: string;
+    acceptAll: string;
+  };
 }
 
 export interface LegalDictionary {
   Terms: LegalContent;
   Privacy: LegalContent;
   Cookies: LegalContent;
+  ConsentModal?: {
+    title: string;
+    description: string;
+    settingsTitle: string;
+    privacyPolicyTitle: string;
+    privacyPolicyDescription: string;
+    cookiePolicyTitle: string;
+    cookiePolicyDescription: string;
+    termsOfServiceTitle: string;
+    termsOfServiceDescription: string;
+    learnMore: string;
+    privacyPolicy: string;
+    cookiePolicy: string;
+    termsOfService: string;
+    declineAll: string;
+    acceptSelected: string;
+    acceptAll: string;
+  };
+  ConsentWarning?: {
+    terms: string;
+    privacy: string;
+    cookies: string;
+  };
 }
 
 export interface TimelineItemDict {
