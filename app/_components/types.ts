@@ -145,25 +145,42 @@ export interface SectionHeaderContent {
   body2: string;
 }
 
-export interface OptimizationContent {
-  SectionHeader: SectionHeaderContent;
-  Content: ContentItem[];
-}
-
-export interface PredictionContent {
-  SectionHeader: SectionHeaderContent;
-  Content: ContentItem[];
-}
-
-export interface ProcessingContent {
-  SectionHeader: SectionHeaderContent;
-  Content: ContentItem[];
-}
-
 export interface FeaturesContent {
-  Optimization: OptimizationContent;
-  Prediction: PredictionContent;
-  Processing: ProcessingContent;
+  sectionTitle: string;
+  sectionSubtitle: string;
+  sectionHeaders: {
+    problems: string;
+    market: string;
+    example: string;
+  };
+  QuickForecast: {
+    title: string;
+    description: string;
+    problems: string;
+    market: string;
+    example: string;
+  };
+  InteractiveDashboard: {
+    title: string;
+    description: string;
+    problems: string;
+    market: string;
+    example: string;
+  };
+  AIAgent: {
+    title: string;
+    description: string;
+    problems: string;
+    market: string;
+    example: string;
+  };
+  APIIntegration: {
+    title: string;
+    description: string;
+    problems: string;
+    market: string;
+    example: string;
+  };
 }
 
 export interface ResearchContent {
