@@ -13,8 +13,6 @@ import About from "@/app/_components/About";
 import Faq from "@/app/_components/Faq";
 import Footer from "@/app/_components/Footer";
 import ScrollTop from "@/app/_components/ScrollTop";
-import ConsentModal from "@/app/_components/ConsentModal";
-import { ConsentProvider } from "@/app/_providers/ConsentProvider";
 function PageContent() {
   return (
     <>
@@ -34,24 +32,21 @@ function PageContent() {
 
 export default function Page() {
   return (
-    <ConsentProvider>
-      <Box
-        sx={{
-          alignItems: `center`,
-          display: `flex`,
-          flexDirection: `column`,
-          justifyContent: `start`,
-          margin: `0 auto`,
-          overflow: `hidden`,
-          overflowX: `hidden`,
-          width: `100%`,
-        }}
-      >
-        <Toolbar id="back-to-top-anchor" sx={{ position: `absolute` }} />
-        <PageContent />
+    <Box
+      sx={{
+        alignItems: `center`,
+        display: `flex`,
+        flexDirection: `column`,
+        justifyContent: `start`,
+        margin: `0 auto`,
+        overflow: `hidden`,
+        overflowX: `hidden`,
+        width: `100%`,
+      }}
+    >
+      <Toolbar id="back-to-top-anchor" sx={{ position: `absolute` }} />
+              <PageContent />
         <ScrollTop />
-        <ConsentModal />
       </Box>
-    </ConsentProvider>
   );
 }

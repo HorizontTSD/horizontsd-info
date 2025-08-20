@@ -9,8 +9,6 @@ import Paragraph from "@/app/_components/Paragraph";
 import { useI18n } from "@/app/_providers/I18nProvider";
 import ScrollTop from "@/app/_components/ScrollTop";
 import { useConsentCheck } from "@/app/_hooks/useConsentCheck";
-import { ConsentProvider } from "@/app/_providers/ConsentProvider";
-import ConsentModal from "@/app/_components/ConsentModal";
 
 function PageContent() {
   const { dict } = useI18n();
@@ -70,24 +68,21 @@ function PageContent() {
 
 export default function Page() {
   return (
-    <ConsentProvider>
-      <Box
-        sx={{
-          alignItems: `center`,
-          display: `flex`,
-          flexDirection: `column`,
-          justifyContent: `start`,
-          margin: `0 auto`,
-          overflow: `hidden`,
-          overflowX: `hidden`,
-          width: `100%`,
-        }}
-      >
-        <Toolbar id="back-to-top-anchor" sx={{ position: `absolute` }} />
-        <PageContent />
+    <Box
+      sx={{
+        alignItems: `center`,
+        display: `flex`,
+        flexDirection: `column`,
+        justifyContent: `start`,
+        margin: `0 auto`,
+        overflow: `hidden`,
+        overflowX: `hidden`,
+        width: `100%`,
+      }}
+    >
+      <Toolbar id="back-to-top-anchor" sx={{ position: `absolute` }} />
+              <PageContent />
         <ScrollTop />
-        <ConsentModal />
       </Box>
-    </ConsentProvider>
   );
 }
