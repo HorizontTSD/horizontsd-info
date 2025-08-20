@@ -57,8 +57,8 @@ export default function Page() {
       width: `100%`,
     }}>
       <Toolbar id="back-to-top-anchor" sx={{ position: `absolute` }} />
-      <PageContent />
-      <ScrollTop />
-    </Box>
+              <PageContent />
+        <ScrollTop />
+      </Box>
   )
 }

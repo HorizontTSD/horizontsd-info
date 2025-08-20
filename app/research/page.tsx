@@ -149,8 +149,8 @@ export default function Page() {
       <Toolbar id="back-to-top-anchor" sx={{ position: "absolute" }} />
       <ResearchPage />
       <CallToAction />
-      <Footer />
-      <ScrollTop />
-    </Box>
+              <Footer />
+        <ScrollTop />
+      </Box>
   );
 }
