@@ -35,7 +35,11 @@
       "FormHelperText": "Please enter a valid phone number"
     },
     "Submit": {
-      "button": "send"
+      "button": "send",
+      "success": "Form submitted successfully",
+      "error": "Error submitting form",
+      "status": "Status:",
+      "code": "Code:"
     }
   },
   "Home": {

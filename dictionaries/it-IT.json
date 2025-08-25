@@ -35,7 +35,11 @@
       "FormHelperText": "Inserisci un numero di telefono valido"
     },
     "Submit": {
-      "button": "invia"
+      "button": "invia",
+      "success": "Modulo inviato con successo",
+      "error": "Errore nell'invio del modulo",
+      "status": "Stato:",
+      "code": "Codice:"
     }
   },
   "Home": {
