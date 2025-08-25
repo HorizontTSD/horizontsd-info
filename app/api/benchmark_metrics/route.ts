@@ -2,17 +2,22 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const url = process.env.BENCHMARKS_API_URL || "http://77.37.136.11:7070/api/v1/benchmarks";
+    const url = process.env.BENCHMARKS_API_URL;
     const token = process.env.BENCHMARKS_API_TOKEN;
     const headers: Record<string, string> = {
       "Content-Type": "application/json",
       Accept: "application/json",
     };
+
     if (token) {
       headers["Authorization"] = `Bearer ${token}`;
     }
     // DEBUG: вернуть переменные и заголовки
     // return NextResponse.json({ url, headers, env_url: process.env.BENCHMARKS_API_URL, env_token: process.env.BENCHMARKS_API_TOKEN }, { status: 200 });
+
+    if (!url) {
+      throw new Error("BENCHMARKS_API_URL is not defined");
+    }
 
     const response = await fetch(url, {
       method: "GET",

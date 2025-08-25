@@ -117,7 +117,8 @@ function BenchmarksTable() {
   const [error, setError] = useState<string | null>(null);
   const fetchedRef = useRef(false);
   const { dict } = useI18n();
-  const testLinkLabel = (dict?.Benchmarks as BenchmarksDict)?.testLink || "Test link";
+  const testLinkLabel =
+    (dict?.Benchmarks as BenchmarksDict)?.testLink || "Test link";
 
   useEffect(() => {
     if (fetchedRef.current) return;
@@ -184,7 +185,11 @@ function BenchmarksTable() {
               <TableCell align="center" key={model.name}>
                 <Typography>{model.metrics.MAPE.toFixed(1)}%</Typography>
                 {idx !== 0 && (
-                  <Box display="flex" alignItems="center" justifyContent="center">
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
                     <ArrowDownwardIcon fontSize="small" color="error" />
                     <Typography variant="body2" color="error">
                       {model.relative_to_horizon.MAPE > 0 ? "+" : ""}
