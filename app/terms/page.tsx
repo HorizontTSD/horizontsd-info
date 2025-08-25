@@ -8,16 +8,25 @@ import Footer from "@/app/_components/Footer";
 import Paragraph from "@/app/_components/Paragraph";
 import { useI18n } from "@/app/_providers/I18nProvider";
 import ScrollTop from "@/app/_components/ScrollTop";
-
+import { useConsentCheck } from "@/app/_hooks/useConsentCheck";
 
 function PageContent() {
   const { dict } = useI18n();
   const termsContent = dict?.Legal?.Terms;
+  const { hasConsented } = useConsentCheck();
+
   if (!termsContent) return null;
   return (
     <>
       <Navbar />
       <Hero fullsize={false} />
+      {!hasConsented && (
+        <Box sx={{ p: 2, bgcolor: "warning.light", textAlign: "center" }}>
+          <Typography variant="body2" color="warning.contrastText">
+            {dict?.Legal?.ConsentWarning?.terms}
+          </Typography>
+        </Box>
+      )}
       <Section id="terms">
         <SectionHeader>
           <Typography
@@ -54,24 +63,26 @@ function PageContent() {
       </Section>
       <Footer />
     </>
-  )
+  );
 }
 
 export default function Page() {
   return (
-    <Box sx={{
-      alignItems: `center`,
-      display: `flex`,
-      flexDirection: `column`,
-      justifyContent: `start`,
-      margin: `0 auto`,
-      overflow: `hidden`,
-      overflowX: `hidden`,
-      width: `100%`,
-    }}>
+    <Box
+      sx={{
+        alignItems: `center`,
+        display: `flex`,
+        flexDirection: `column`,
+        justifyContent: `start`,
+        margin: `0 auto`,
+        overflow: `hidden`,
+        overflowX: `hidden`,
+        width: `100%`,
+      }}
+    >
       <Toolbar id="back-to-top-anchor" sx={{ position: `absolute` }} />
-      <PageContent />
-      <ScrollTop />
-    </Box>
-  )
+              <PageContent />
+        <ScrollTop />
+      </Box>
+  );
 }

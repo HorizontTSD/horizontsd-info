@@ -53,24 +53,26 @@ function PageContent() {
       </Section>
       <Footer />
     </>
-  )
+  );
 }
 
 export default function Page() {
   return (
-    <Box sx={{
-      alignItems: `center`,
-      display: `flex`,
-      flexDirection: `column`,
-      justifyContent: `start`,
-      margin: `0 auto`,
-      overflow: `hidden`,
-      overflowX: `hidden`,
-      width: `100%`,
-    }}>
+    <Box
+      sx={{
+        alignItems: `center`,
+        display: `flex`,
+        flexDirection: `column`,
+        justifyContent: `start`,
+        margin: `0 auto`,
+        overflow: `hidden`,
+        overflowX: `hidden`,
+        width: `100%`,
+      }}
+    >
       <Toolbar id="back-to-top-anchor" sx={{ position: `absolute` }} />
       <PageContent />
       <ScrollTop />
     </Box>
-  )
+  );
 }

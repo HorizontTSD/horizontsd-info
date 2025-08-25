@@ -104,6 +104,7 @@ export interface FooterContent {
   row2TermsTitle: string;
   row2PrivacyTitle: string;
   row2CookiesTitle: string;
+  privacySettings: string;
   row3Copyright: string;
   row3Follows: string;
 }
@@ -113,6 +114,7 @@ export interface HeroContent {
   button: {
     title: string;
     description: string[];
+    link: string;
   }[];
 }
 
@@ -120,6 +122,9 @@ export interface NavbarContent {
   home: string;
   features: string;
   research: string;
+  investors: string;
+  benchmarks: string;
+  price: string;
 }
 
 export interface WorksContent {
@@ -141,25 +146,42 @@ export interface SectionHeaderContent {
   body2: string;
 }
 
-export interface OptimizationContent {
-  SectionHeader: SectionHeaderContent;
-  Content: ContentItem[];
-}
-
-export interface PredictionContent {
-  SectionHeader: SectionHeaderContent;
-  Content: ContentItem[];
-}
-
-export interface ProcessingContent {
-  SectionHeader: SectionHeaderContent;
-  Content: ContentItem[];
-}
-
 export interface FeaturesContent {
-  Optimization: OptimizationContent;
-  Prediction: PredictionContent;
-  Processing: ProcessingContent;
+  sectionTitle: string;
+  sectionSubtitle: string;
+  sectionHeaders: {
+    problems: string;
+    market: string;
+    example: string;
+  };
+  QuickForecast: {
+    title: string;
+    description: string;
+    problems: string;
+    market: string;
+    example: string;
+  };
+  InteractiveDashboard: {
+    title: string;
+    description: string;
+    problems: string;
+    market: string;
+    example: string;
+  };
+  AIAgent: {
+    title: string;
+    description: string;
+    problems: string;
+    market: string;
+    example: string;
+  };
+  APIIntegration: {
+    title: string;
+    description: string;
+    problems: string;
+    market: string;
+    example: string;
+  };
 }
 
 export interface ResearchContent {
@@ -196,12 +218,81 @@ export interface LegalContent {
   Title: string;
   LastUpdated: string;
   Sections: LegalSection[];
+  ConsentModal?: {
+    title: string;
+    description: string;
+    settingsTitle: string;
+    essentialTitle: string;
+    essentialDescription: string;
+    analyticsTitle: string;
+    analyticsDescription: string;
+    functionalTitle: string;
+    functionalDescription: string;
+    marketingTitle: string;
+    marketingDescription: string;
+    learnMore: string;
+    privacyPolicy: string;
+    cookiePolicy: string;
+    termsOfService: string;
+    declineAll: string;
+    acceptSelected: string;
+    acceptAll: string;
+  };
 }
 
 export interface LegalDictionary {
   Terms: LegalContent;
   Privacy: LegalContent;
   Cookies: LegalContent;
+  ConsentModal?: {
+    title: string;
+    description: string;
+    settingsTitle: string;
+    privacyPolicyTitle: string;
+    privacyPolicyDescription: string;
+    cookiePolicyTitle: string;
+    cookiePolicyDescription: string;
+    termsOfServiceTitle: string;
+    termsOfServiceDescription: string;
+    learnMore: string;
+    privacyPolicy: string;
+    cookiePolicy: string;
+    termsOfService: string;
+    declineAll: string;
+    acceptSelected: string;
+    acceptAll: string;
+  };
+  ConsentWarning?: {
+    terms: string;
+    privacy: string;
+    cookies: string;
+  };
+}
+
+export interface TimelineItemDict {
+  date: string;
+  title: string;
+  type: "past" | "future";
+  link?: string;
+  linkText?: string;
+  description?: string;
+  phase?: string;
+}
+
+export interface InvestorMaterialsDict {
+  why: { label: string; link: string };
+  marketOverview: { label: string; link: string };
+  financialModel: { label: string; link: string };
+  downloadPdf?: string;
+}
+
+export interface InvestorRelationsDictionary {
+  title: string;
+  stub: string;
+  timelineTitle: string;
+  materialsTitle: string;
+  timeline: TimelineItemDict[];
+  materials: InvestorMaterialsDict;
 }
 
 export interface AppDictionary extends Dictionary {
@@ -229,4 +320,9 @@ export interface AppDictionary extends Dictionary {
     };
   };
   Legal: LegalDictionary;
+  Benchmarks?: {
+    title: string;
+    stub: string;
+  };
+  InvestorRelations?: InvestorRelationsDictionary;
 }

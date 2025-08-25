@@ -53,6 +53,14 @@
         {
           "title": "La Soluzione Aziendale",
           "description": ["guarda la demo", "demo", "esempio"]
+        },
+        {
+          "title": "Chat AI",
+          "description": ["Prova la nostra chat AI ora", "GPT", "Dialogo", "Istantaneo"]
+        },
+        {
+          "title": "API Doc.",
+          "description": ["FastAPI", "OpenAPI", "REST"]
         }
       ]
     },
@@ -75,12 +83,12 @@
           },
           "block": {
             "title": "Elaborazione dati intelligente",
-            "link": "/features#processing",
             "description": [
               "I nostri algoritmi proprietari SKNN e H-DIRT vanno oltre i metodi tradizionali, identificando modelli stagionali nascosti e colmando le lacune dei dati senza alterare i trend.",
               "Applicando la correlazione di distanza, catturiamo relazioni non lineari tra fattori esterni (come il meteo) e carichi energetici - garantendo che i tuoi modelli si allenino su dati perfettamente preprocessati.",
               "Niente più rumore, solo precisione."
-            ]
+            ],
+            "link": "/features"
           }
         },
         {
@@ -90,12 +98,12 @@
           },
           "block": {
             "title": "Previsioni AI adattive",
-            "link": "/features#prediction",
             "description": [
               "Non tutti i dati si comportano allo stesso modo - quindi distribuiamo modelli LSTM, XGBoost, Transformer e ibridi per adattarci alle tue dinamiche uniche.",
               "Con codifica temporale e fattori esterni in tempo reale (es. temperatura), il nostro sistema si auto-regola per un'accuratezza del 95%+ - e si scala facilmente a nuovi asset o periodi.",
               "Previsioni che evolvono alla stessa velocità delle tue operazioni."
-            ]
+            ],
+            "link": "/features"
           }
         },
         {
@@ -105,13 +113,13 @@
           },
           "block": {
             "title": "Risparmi automatizzati",
-            "link": "/features#optimization",
             "description": [
               "Smetti di pagare troppo l'energia.",
               "La nostra AI appiattisce i picchi di domanda, ottimizza gli acquisti di energia e riduce il tempo di preprocessing dell'80% grazie alla piena automazione.",
               "Dai dati grezzi alle intuizioni azionabili, ogni passo è progettato per aumentare l'efficienza in tutta la tua catena energetica.",
               "Costi inferiori, zero sforzo manuale."
-            ]
+            ],
+            "link": "/features"
           }
         }
       ],
@@ -129,43 +137,35 @@
       },
       "Content": [
         {
-          "title": "Algoritmi di previsione più intelligenti",
+          "title": "Previsione Rapida",
           "description": [
-            "Ibridi LSTM, XGBoost e Transformer che apprendono i modelli nascosti nei tuoi dati - con un'accuratezza superiore all'85%.",
-            "Perché è importante:",
-            "Non tutti i dati seguono le regole.",
-            "I nostri modelli auto-regolanti (inclusi BiLSTM, CNN e architetture ibride) si adattano ai tuoi trend unici - che traccino picchi energetici, comportamenti utente o movimenti di mercato.",
-            "Precisione che evolve alla stessa velocità del tuo business."
+            "Problemi risolti:\nConsente previsioni accurate per serie temporali archiviate in Excel o CSV, senza la necessità di caricare i dati nei database o integrarli con l'infrastruttura IT.",
+            "Esempio di utilizzo:\nUn'azienda manifatturiera carica un file Excel con il registro di produzione e riceve in pochi minuti una previsione per la settimana successiva per pianificare i turni e le consegne.",
+            "Mercato potenziale:\nAziende di vendita al dettaglio, manifattura, logistica ed energia, dove i dati sono spesso gestiti manualmente e archiviati in fogli di calcolo."
           ]
         },
         {
-          "title": "Infrastruttura che si adatta perfettamente",
+          "title": "Dashboard",
           "description": [
-            "Costruiamo la tua pipeline dati da zero - o ci integriamo nei tuoi sistemi attuali come Lego.",
-            "Perché è importante:",
-            "Nessun \"strappa e sostituisci\" richiesto.",
-            "Le nostre soluzioni si integrano via API, CSV o connettori personalizzati, fondendosi con il tuo stack tecnologico mentre automatizzano raccolta, pulizia e analisi dei dati.",
-            "I tuoi flussi di lavoro rimangono intatti. Le tue previsioni ottengono superpoteri."
+            "Problemi risolti:\nLe aziende perdono profitti a causa di risposte tardive ai cambiamenti. Senza controllo automatico e notifiche, i rischi aumentano. La nostra funzionalità integra le previsioni, imposta gli avvisi e riduce i rischi.",
+            "Esempio di utilizzo:\nUn'azienda collega il sistema al database del magazzino. Se si prevede il superamento di una soglia critica di scorte, il sistema notifica l'ufficio acquisti e suggerisce un adeguamento dell'ordine, riducendo il rischio di fermi.",
+            "Mercato potenziale:\nAziende nei settori logistica, manifattura, energia e finanza, dove interruzioni o fluttuazioni della domanda comportano rischi operativi e finanziari."
           ]
         },
         {
-          "title": "Previsioni con 1 clic (sì, davvero)",
+          "title": "Agente AI",
           "description": [
-            "Carica un CSV o connetti dati live - ottieni previsioni powered by AI senza una laurea in data science.",
-            "Perché è importante:",
-            "Dimentica mesi di sviluppo.",
-            "Il nostro strumento chiavi in mano fornisce previsioni storiche e in tempo reale attraverso un'interfaccia no-code.",
-            "Perfetto per energy manager, team operativi o dirigenti che hanno bisogno di risposte - non algoritmi."
+            "Problemi risolti:\nLa mancanza di competenze sui dati e interfacce complesse impediscono l'accesso rapido a previsioni e visualizzazioni. L'agente consente di caricare dati, analizzare e fare previsioni tramite dialogo, senza conoscenze tecniche, promuovendo chiarezza e trasparenza (XAI).",
+            "Esempio di utilizzo:\nUn manager del commercio al dettaglio carica un file con i dati di vendita e riceve rapidamente previsioni della domanda e grafici di pianificazione tramite l'agente in chat.",
+            "Mercato potenziale:\nPiccole e medie imprese, manager e analisti senza esperienza di programmazione nei settori retail, logistica e manifattura."
           ]
         },
         {
-          "title": "Magia dei dati sotto il cofano",
+          "title": "API",
           "description": [
-            "SKNN, H-DIRT e correlazione di distanza - puliscono dati disordinati così i tuoi modelli vedono il segnale, non il rumore.",
-            "Perché è importante:",
-            "Spazzatura dentro, spazzatura fuori? Non qui.",
-            "I nostri metodi proprietari rilevano automaticamente modelli stagionali, colmano lacune ed espongono relazioni non lineari - potenziando l'accuratezza delle previsioni.",
-            "Anche quando i tuoi dati sono testardi."
+            "Problemi risolti:\nCosti elevati e ritardi dovuti a integrazioni complesse e alla necessità di assumere un team di Data Science. Consente di integrare rapidamente la previsione nei sistemi esistenti con codice minimo.",
+            "Esempio di utilizzo:\nUna piattaforma finanziaria si collega all’API per previsioni automatiche della domanda, ricevendo risultati immediati e integrandoli nei propri pannelli analitici.",
+            "Mercato potenziale:\nAziende IT, istituzioni finanziarie, imprese manifatturiere e logistiche che necessitano di previsioni scalabili."
           ]
         }
       ],
@@ -345,180 +345,50 @@
     }
   },
   "Features": {
-    "Optimization": {
-      "SectionHeader": {
-        "h4": "Ottimizzazione costi",
-        "body2": "Riduci sprechi energetici del 30%+ con livellamento automatico della domanda e approvvigionamento intelligente."
-      },
-      "Content": [
-        {
-          "image": "/images/images_features/optimization-0.webp",
-          "title": "Previsione semplice",
-          "description": [
-            "Insight istantanei, zero problemi",
-            "Carica i tuoi dati, seleziona un timeframe e lascia che i nostri modelli scientifici generino automaticamente previsioni.",
-            "Perfetto per individuare trend rapidi o analisi preliminari quando la velocità batte l'ultra-precisione."
-          ]
-        },
-        {
-          "image": "/images/images_features/optimization-1.webp",
-          "title": "Analisi dati approfondita",
-          "description": [
-            "Scopri cosa nascondono i tuoi dati",
-            "Rivela modelli stagionali, punti critici di volatilità e limiti di predicibilità con analytics granulari su serie temporali.",
-            "Per team che hanno bisogno di più che trend superficiali - capisci il perché dietro i numeri."
-          ]
-        },
-        {
-          "image": "/images/images_features/optimization-2.webp",
-          "title": "Allena la tua AI",
-          "description": [
-            "Accuratezza personalizzata, nessun codice richiesto",
-            "Modifica parametri, testa scenari e perfeziona modelli sui tuoi dati unici - tutto tramite slider intuitivi, non Python.",
-            "Ottieni previsioni che si adattano alle tue peculiarità aziendali, non viceversa."
-          ]
-        },
-        {
-          "image": "/images/images_features/optimization-3.webp",
-          "title": "Insight sempre attivi",
-          "description": [
-            "Previsioni che ti seguono",
-            "Ricevi alert SMS/email quando le previsioni superano le tue soglie personalizzate.",
-            "Identifica anomalie prima, evita rischi più velocemente e mantieni i team sincronizzati - nessun refresh di dashboard richiesto."
-          ]
-        },
-        {
-          "image": "/images/images_features/optimization-4.webp",
-          "title": "Costruttore alert intelligenti",
-          "description": [
-            "Le tue regole, le tue reazioni",
-            "Definisci trigger come \"Notifica se la domanda prevista supera X\" e automatizza le risposte.",
-            "Si sincronizza con Slack, Teams o i tuoi tool interni per trasformare previsioni in azioni."
-          ]
-        },
-        {
-          "image": "/images/images_features/optimization-5.webp",
-          "title": "Guardiano delle soglie",
-          "description": [
-            "Reti di sicurezza per le tue previsioni",
-            "Quando le previsioni superano livelli critici (es. sovraccarichi energetici), ricevi avvisi istantanei.",
-            "Regole di escalation preimpostate assicurano che le persone giuste agiscano - prima che diventi un costo."
-          ]
-        }
-      ]
+    "sectionTitle": "Funzionalità",
+    "sectionSubtitle": "Funzioni chiave del nostro prodotto per la previsione di serie temporali",
+    "sectionHeaders": {
+      "problems": "Quali problemi risolve:",
+      "market": "Mercato potenziale:",
+      "example": "Esempio di utilizzo:"
     },
-    "Prediction": {
-      "SectionHeader": {
-        "h4": "Previsione",
-        "body2": "Corpo previsione"
-      },
-      "Content": [
-        {
-          "image": "/images/images_features/prediction-0.webp",
-          "title": "Previsione semplice",
-          "description": [
-            "Insight rapidi, zero sforzo",
-            "Carica i tuoi dati, seleziona un timeframe e lascia che i nostri modelli scientifici generino automaticamente previsioni.",
-            "Perfetto per individuare trend veloci o analisi preliminari - quando la velocità conta più dell'ultra-precisione."
-          ],
-          "title2": "Perché si distingue",
-          "description2": [
-            "✅ Previsioni a un clic",
-            "✅ Algoritmi basati su ricerca",
-            "✅ Ideale per decision-making rapido"
-          ]
-        },
-        {
-          "image": "/images/images_features/prediction-1.webp",
-          "title": "Allena la tua AI",
-          "description": [
-            "Accuratezza personalizzata, nessun codice richiesto",
-            "Modifica parametri, testa scenari e perfeziona modelli sui tuoi dati - tutto tramite slider intuitivi, non Python.",
-            "Ottieni previsioni che si adattano alle tue peculiarità aziendali."
-          ],
-          "title2": "Perché è potente:",
-          "description2": [
-            "⚙️ Regolazione parametri drag-and-drop",
-            "⚙️ Si adatta a pattern dati unici",
-            "⚙️ Aumenta l'accuratezza per decisioni strategiche"
-          ]
-        },
-        {
-          "image": "/images/images_features/prediction-2.webp",
-          "title": "Valuta accuratezza",
-          "description": [
-            "Trasparenza che puoi misurare",
-            "Confronta modelli side-by-side usando MSE, R², MAE e 10+ altre metriche.",
-            "Vedi esattamente dove la tua previsione eccelle (o ha bisogno di miglioramenti) - nessuna ipotesi."
-          ],
-          "title2": "Perché è importante:",
-          "description2": [
-            "🔍 Valuta le performance oggettivamente",
-            "🔍 Identifica punti deboli con mappe di calore degli errori",
-            "🔍 Fidati dei dati, non delle sensazioni"
-          ]
-        }
-      ]
+    "QuickForecast": {
+      "title": "Previsione Rapida",
+      "description": "Ottieni previsioni in secondе. Carica i tuoi dati — il nostro modello costruirà istantaneamente una previsione a breve termine. Perfetto per analizzare le tendenze attuali quando la velocità di decisione è importante.",
+      "problems": "Permette di costruire previsioni accurate per serie temporali memorizzate in Excel o CSV senza la necessità di caricare dati in database o integrarsi con l'infrastruttura IT.",
+      "market": "Aziende dei settori retail, manifatturiero, logistica ed energia dove i dati sono spesso elaborati manualmente e memorizzati in fogli di calcolo.",
+      "example": "Un'azienda manifatturiera carica un file Excel con i log di produzione e ottiene una previsione per la prossima settimana in minuti per la pianificazione dei turni e la gestione degli approvvigionamenti."
     },
-    "Processing": {
-      "SectionHeader": {
-        "h4": "Elaborazione",
-        "body2": "Corpo elaborazione"
-      },
-      "Content": [
-        {
-          "image": "/images/images_features/processing-0.webp",
-          "title": "Dashboard interattiva",
-          "description": [
-            "Insight istantanei a portata di mano",
-            "Carica i tuoi dati, imposta il tuo orizzonte di previsione e lascia che i nostri algoritmi basati su ricerca facciano il resto.",
-            "Progettata per velocità e semplicità, questo tool offre valutazioni rapide dei trend e insight azionabili - perfetta quando hai bisogno di risposte veloci, non precisione da laboratorio."
-          ],
-          "title2": "Punti di forza:",
-          "description2": [
-            "✅ Previsioni a un clic",
-            "✅ Modelli scientifici",
-            "✅ Ideale per valutazione rapida di scenari"
-          ]
-        },
-        {
-          "image": "/images/images_features/processing-1.webp",
-          "title": "Visualizzazione metriche",
-          "description": [
-            "Vedi la storia dietro i tuoi dati",
-            "Approfondisci modelli temporali, trend stagionali e punti critici di volatilità.",
-            "I nostri tool interattivi trasformano numeri grezzi in narrazioni visuali - esponendo driver nascosti di domanda, rischi e opportunità."
-          ],
-          "title2": "Perché è importante:",
-          "description2": [
-            "📈 Identifica limiti di predicibilità",
-            "📈 Confronta previsioni vs. risultati in tempo reale",
-            "📈 Trasforma \"rumore di dati\" in strategie pronte per la sala riunioni"
-          ]
-        },
-        {
-          "image": "/images/images_features/processing-2.webp",
-          "title": "Analisi stagionalità",
-          "description": [
-            "Prevedi cicli, non caos",
-            "Rileva automaticamente pattern ricorrenti - picchi settimanali di vendite, aumenti mensili di energia, cali annuali di inventario.",
-            "Personalizza modelli via slider intuitivi (nessun codice!) per allineare previsioni ai tuoi ritmi aziendali unici."
-          ],
-          "title2": "Costruito per adattabilità",
-          "description2": [
-            "🔄 Template predefiniti per cicli comuni",
-            "🔄 Override manuale per casi particolari",
-            "🔄 Sincronizza risultati con team acquisti/pianificazione"
-          ]
-        }
-      ]
+    "InteractiveDashboard": {
+      "title": "Dashboard Interattivo",
+      "description": "Tutte le metriche chiave in una finestra. Se i dati sono memorizzati centralmente — configura previsioni aggiornabili, notifiche automatiche e controllo delle deviazioni. La dashboard si adatta ai tuoi compiti: dall'analisi operativa quotidiana al monitoraggio strategico.",
+      "problems": "L'azienda perde profitti e controllo a causa della risposta ritardata ai cambiamenti inaspettati. La mancanza di controllo automatico e notifiche porta a rischi e perdite. La nostra funzionalità integra le previsioni nei processi, configura notifiche soglia e consente la riduzione proattiva dei rischi.",
+      "market": "Aziende dei settori logistica, manifatturiero, energia e finanza dove interruzioni nell'approvvigionamento, sovraccarichi di capacità o fluttuazioni della domanda comportano rischi operativi e finanziari.",
+      "example": "Un'impresa manifatturiera collega il sistema a un database del magazzino. Quando si prevede che un livello critico di inventario venga superato, il sistema notifica automaticamente il reparto approvvigionamenti e suggerisce uno scenario per la regolazione dell'ordine, riducendo il rischio di tempi morti e perdite."
+    },
+    "AIAgent": {
+      "title": "Agente IA",
+      "description": "Il tuo assistente personale. L'agente IA risponde alle domande sui dati, genera report e aiuta a trovare insight senza la necessità di scrivere codice. Perfetto per specialisti non tecnici.",
+      "problems": "La mancanza di competenze sui dati e interfacce complesse impedisce di ottenere rapidamente previsioni e visualizzazioni. L'agente attraverso il dialogo consente di caricare dati, analizzare e prevedere senza conoscenze tecniche, promuovendo comprensibilità e trasparenza (XAI).",
+      "market": "Piccole e medie imprese, manager e analisti senza esperienza di programmazione nel retail, logistica e manifatturiero.",
+      "example": "Un manager del retail carica un file di vendite e ottiene rapidamente una previsione della domanda e grafici per la pianificazione degli acquisti attraverso l'agente chat."
+    },
+    "APIIntegration": {
+      "title": "Integrazione API",
+      "description": "Facile integrazione nei tuoi processi. Connetti i dati direttamente tramite API, automatizza aggiornamenti e previsioni. Integrazione con sistemi BI, data warehouse e altri strumenti.",
+      "problems": "Alti costi e ritardi dovuti all'integrazione complessa e alla necessità di assumere un team di Data Science. Consente di collegare rapidamente le previsioni ai sistemi esistenti con codice minimo.",
+      "market": "Aziende IT, organizzazioni finanziarie, imprese manifatturiere e logistiche bisognose di previsioni scalabili.",
+      "example": "Una piattaforma finanziaria collega un'API per la previsione automatica della domanda di prodotti, ottenendo istantaneamente risultati e integrandoli nei loro dashboard analitici."
     }
   },
+
   "Research": {
+    "title": "Ricerca",
+    "stub": "Pubblicazioni scientifiche e sviluppi nel campo della previsione di serie temporali",
     "Button": "Scopri di più",
     "Content": [
       {
-        "image": "/images/images_research/LSTM-Based Models for Day-Ahead Electrical Load Forecast A Novel Feature Selection Method Including Weather Data.webp",
+        "image": "/images/images_research/Framework-1.png",
         "title": "Modelli basati su LSTM per la previsione del carico elettrico a breve termine: un innovativo metodo di selezione delle feature con dati meteorologici",
         "description": [
           "Presentiamo un innovativo algoritmo di previsione del carico basato su LSTM, combinato con un metodo personalizzato di codifica temporale Time2Vec e integrazione di dati meteorologici.",
@@ -527,6 +397,16 @@
           "Ciò conferma che un'accurata progettazione delle feature e una codifica temporale avanzata possono fornire previsioni estremamente accurate senza necessità di complessità architetturale."
         ],
         "link": "https://iris.unibs.it/bitstream/11379/622686/2/PhD_Thesis_ML_for_T4H_final_version_pdf.pdf"
+      },
+      {
+        "image": "/images/images_research/frame_time2vec-1.png",
+        "title": "LSTM potenziato con Time2Vec per previsioni avanzate di serie temporali",
+        "description": [
+          "Questo lavoro si concentra sul miglioramento dell'accuratezza delle previsioni di serie temporali a lungo orizzonte integrando Time2Vec — una codifica temporale apprendibile — in tre modelli di deep learning: LSTM, BiLSTM e un ibrido CNN-LSTM.",
+          "I modelli sono stati addestrati su dati orari di carico elettrico di tre regioni marocchine per prevedere la domanda a 72 ore di anticipo. Time2Vec ha costantemente migliorato le prestazioni, riducendo le metriche di errore fino al 3.7% (MAPE e WMAPE), rispetto agli stessi modelli che utilizzano caratteristiche temporali convenzionali.",
+          "Questo miglioramento consente alle reti neurali di catturare meglio i pattern temporali stagionali, ciclici e irregolari. L'approccio è leggero, agnostico al modello e facilmente trasferibile ad altre applicazioni di serie temporali — dai sistemi energetici ai trasporti e alla finanza."
+        ],
+        "link": "https://example.com/time2vec-lstm-paper"
       },
       {
         "image": "/images/images_research/Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series.webp",
@@ -623,6 +503,142 @@
         "telegram": "https://t.me/erzert",
         "email": "bhkuzin@gmail.com"
       }
+    },
+    {
+      "first_name": "Tatiana",
+      "last_name": "Gutsulyak",
+      "job_title": "Sviluppatore Backend",
+      "contacts": {
+        "email": "tgutsulyak@mail.ru"
+      }
+    },
+    {
+      "first_name": "Dmitry",
+      "last_name": "Anikushin",
+      "job_title": "Analista Finanziario",
+      "contacts": {
+        "email": "d.anikushin@icloud.com"
+      }
+    },
+    {
+      "first_name": "Nikita",
+      "last_name": "Ryzhenkov",
+      "job_title": "Sviluppatore Backend",
+      "contacts": {
+        "email": "HoverGovi@yandex.ru"
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "phase": "Fase 1",
+      "date": "2021-2023",
+      "title": "Ricerca scientifica fondamentale",
+      "type": "past"
+    },
+    {
+      "phase": "Fase 1",
+      "date": "2023-2024",
+      "title": "Approvazione della ricerca sui dati dell'Università di Brescia, Italia",
+      "type": "past"
+    },
+    {
+      "phase": "Fase 1",
+      "date": "2024",
+      "title": "Difesa del dottorato sul tema del progetto",
+      "type": "past"
+    },
+    {
+      "phase": "Fase 2",
+      "date": "2024-09",
+      "title": "Sviluppo del primo prototipo di prodotto",
+      "type": "past"
+    },
+    {
+      "phase": "Fase 2",
+      "date": "2024-11",
+      "title": "Feedback dall'Università di Brescia, miglioramento degli algoritmi",
+      "type": "past"
+    },
+    {
+      "phase": "Fase 3",
+      "date": "2025-01",
+      "title": "Formazione del primo team di progetto",
+      "type": "future"
+    },
+    {
+      "phase": "Fase 3",
+      "date": "2025-02",
+      "title": "Partecipazione al programma di accelerazione Skolkovo",
+      "type": "future"
+    },
+    {
+      "phase": "Fase 3",
+      "date": "2025-03",
+      "title": "Raccomandazioni dei mentori, miglioramento del prodotto",
+      "type": "future"
+    },
+    {
+      "phase": "Fase 3",
+      "date": "2025-03",
+      "title": "Espansione del team a 7 membri",
+      "type": "future"
+    },
+    {
+      "phase": "Fase 4",
+      "date": "2025-04",
+      "title": "Approvazione dei modelli previsionali sui dati ATS",
+      "description": "Rapporto https://nikitasavvin2000-ate-report-55ad.twc1.net/ (miglioramento della precisione dal 4% al 30%)",
+      "type": "future"
+    },
+    {
+      "phase": "Fase 4",
+      "date": "2025-05",
+      "title": "Rilascio MVP (prodotto minimo vitale)",
+      "type": "future"
+    },
+    {
+      "phase": "Fase 4",
+      "date": "2025-06",
+      "title": "Registrazione della persona giuridica: LLC 'Horizon TSD",
+      "link": "https://www.rusprofile.ru/id/1253600007704",
+      "type": "future"
+    },
+    {
+      "phase": "Fase 4",
+      "date": "2025-06",
+      "title": "Feedback positivo dai partecipanti all'incubatore d'impresa HSE",
+      "type": "future"
+    },
+    {
+      "phase": "Fase 5",
+      "date": "2025-08",
+      "title": "Presentazione delle domande: – Per una sovvenzione dal Fondo per l'Innovazione (FASIE) – All'acceleratore 'Accademia degli Innovatori'",
+      "type": "future"
+    },
+    {
+      "phase": "Fase 5",
+      "date": "2025-09",
+      "title": "Domanda per una nuova accelerazione Skolkovo",
+      "type": "future"
+    },
+    {
+      "phase": "Fase 5",
+      "date": "2025-09",
+      "title": "Lavoro su miglioramenti dopo gli acceleratori",
+      "type": "future"
+    },
+    {
+      "phase": "Fase 6",
+      "date": "2026-01",
+      "title": "Sviluppo di un prodotto minimo lanciabile (MVP)",
+      "type": "future"
+    },
+    {
+      "phase": "Fase 6",
+      "date": "2026-02",
+      "title": "Inizio delle vendite e ricerca attiva di clienti",
+      "type": "future"
     }
   ],
   "Footer": {
@@ -634,15 +650,37 @@
     "row2TermsTitle": "Termini di servizio",
     "row2PrivacyTitle": "Informativa sulla privacy",
     "row2CookiesTitle": "Informativa sui cookie",
+    "privacySettings": "Impostazioni privacy",
     "row3Follows": "Seguici",
     "row3Copyright": "© 2025 Horizon TSD"
   },
   "Navbar": {
-    "home": "home",
-    "features": "funzionalità",
-    "research": "ricerca"
+    "home": "Home",
+    "features": "Funzionalità",
+    "research": "Ricerca",
+    "investors": "Investitori",
+    "benchmarks": "Benchmark",
+    "price": "Prezzi"
   },
   "Legal": {
+    "ConsentModal": {
+      "title": "Consenso al trattamento dei dati",
+      "description": "Utilizziamo cookie e tecnologie simili per migliorare la funzionalità del sito, analizzare il traffico e personalizzare i contenuti. In conformità con il GDPR, richiediamo il tuo consenso esplicito per il trattamento dei dati. Puoi gestire le impostazioni di seguito.",
+      "settingsTitle": "Impostazioni trattamento dati",
+      "privacyPolicyTitle": "Informativa sulla privacy",
+      "privacyPolicyDescription": "Consenso al trattamento dei dati personali in conformità con la nostra informativa sulla privacy.",
+      "cookiePolicyTitle": "Informativa sui cookie",
+      "cookiePolicyDescription": "Consenso all'uso dei cookie per il miglioramento del sito.",
+      "termsOfServiceTitle": "Termini di servizio",
+      "termsOfServiceDescription": "Accordo con i termini di servizio.",
+      "learnMore": "Scopri di più:",
+      "privacyPolicy": "Informativa sulla privacy",
+      "cookiePolicy": "Informativa sui cookie",
+      "termsOfService": "Termini di servizio",
+      "declineAll": "Rifiuta tutto",
+      "acceptSelected": "Accetta selezionati",
+      "acceptAll": "Accetta tutto"
+    },
     "Terms": {
       "Title": "Termini e Condizioni",
       "LastUpdated": "Ultimo aggiornamento: 11 aprile 2023",
@@ -770,6 +808,26 @@
     "Cookies": {
       "Title": "Informativa sui cookie",
       "LastUpdated": "Ultimo aggiornamento: 11 aprile 2023",
+      "ConsentModal": {
+        "title": "Impostazioni cookie",
+        "description": "Utilizziamo i cookie per migliorare la funzionalità del sito, analizzare il traffico e personalizzare i contenuti. Puoi gestire le impostazioni dei cookie di seguito.",
+        "settingsTitle": "Impostazioni cookie",
+        "essentialTitle": "Cookie essenziali",
+        "essentialDescription": "Necessari per il funzionamento del sito. Non possono essere disabilitati.",
+        "analyticsTitle": "Cookie analitici",
+        "analyticsDescription": "Ci aiutano a capire come i visitatori utilizzano il sito.",
+        "functionalTitle": "Cookie funzionali",
+        "functionalDescription": "Memorizzano le tue preferenze e impostazioni.",
+        "marketingTitle": "Cookie di marketing",
+        "marketingDescription": "Utilizzati per mostrare pubblicità pertinenti.",
+        "learnMore": "Scopri di più:",
+        "privacyPolicy": "Informativa sulla privacy",
+        "cookiePolicy": "Informativa sui cookie",
+        "termsOfService": "Termini di servizio",
+        "declineAll": "Rifiuta tutto",
+        "acceptSelected": "Accetta selezionati",
+        "acceptAll": "Accetta tutto"
+      },
       "Sections": [
         {
           "title": "Introduzione",
@@ -805,5 +863,215 @@
         }
       ]
     }
+  },
+  "InvestorRelations": {
+    "title": "Relazioni con gli investitori",
+    "stub": "",
+    "timelineTitle": "Il nostro percorso",
+    "materialsTitle": "Materiali",
+    "timeline": [
+      {
+        "phase": "Fase 1",
+        "date": "2021-2023",
+        "title": "Ricerca scientifica fondamentale",
+        "type": "past"
+      },
+      {
+        "phase": "Fase 1",
+        "date": "2023-2024",
+        "title": "Approvazione della ricerca sui dati dell'Università di Brescia, Italia",
+        "type": "past"
+      },
+      {
+        "phase": "Fase 1",
+        "date": "2024",
+        "title": "Difesa del dottorato sul tema del progetto",
+        "type": "past"
+      },
+      {
+        "phase": "Fase 2",
+        "date": "2024-09",
+        "title": "Sviluppo del primo prototipo di prodotto",
+        "type": "past"
+      },
+      {
+        "phase": "Fase 2",
+        "date": "2024-11",
+        "title": "Feedback dall'Università di Brescia, miglioramento degli algoritmi",
+        "type": "past"
+      },
+      {
+        "phase": "Fase 3",
+        "date": "2025-01",
+        "title": "Formazione del primo team di progetto",
+        "type": "future"
+      },
+      {
+        "phase": "Fase 3",
+        "date": "2025-02",
+        "title": "Partecipazione al programma di accelerazione Skolkovo",
+        "type": "future"
+      },
+      {
+        "phase": "Fase 3",
+        "date": "2025-03",
+        "title": "Raccomandazioni dei mentori, miglioramento del prodotto",
+        "type": "future"
+      },
+      {
+        "phase": "Fase 3",
+        "date": "2025-03",
+        "title": "Espansione del team a 7 membri",
+        "type": "future"
+      },
+      {
+        "phase": "Fase 4",
+        "date": "2025-04",
+        "title": "Approvazione dei modelli previsionali sui dati ATS",
+        "description": "Rapporto https://nikitasavvin2000-ate-report-55ad.twc1.net/ (miglioramento della precisione dal 4% al 30%)",
+        "linkText": "Rapporto",
+        "link": "https://nikitasavvin2000-ate-report-55ad.twc1.net/",
+        "type": "future"
+      },
+      {
+        "phase": "Fase 4",
+        "date": "2025-05",
+        "title": "Rilascio MVP (prodotto minimo vitale)",
+        "type": "future"
+      },
+      {
+        "phase": "Fase 4",
+        "date": "2025-06",
+        "title": "Registrazione della persona giuridica: LLC 'Horizon TSD",
+        "linkText": "LLC 'Horizon TSD'",
+        "link": "https://www.rusprofile.ru/id/1253600007704",
+        "type": "future"
+      },
+      {
+        "phase": "Fase 4",
+        "date": "2025-06",
+        "title": "Feedback positivo dai partecipanti all'incubatore d'impresa HSE",
+        "type": "future"
+      },
+      {
+        "phase": "Fase 5",
+        "date": "2025-08",
+        "title": "Presentazione delle domande: – Per una sovvenzione dal Fondo per l'Innovazione (FASIE) – All'acceleratore 'Accademia degli Innovatori'",
+        "type": "future"
+      },
+      {
+        "phase": "Fase 5",
+        "date": "2025-09",
+        "title": "Domanda per una nuova accelerazione Skolkovo",
+        "type": "future"
+      },
+      {
+        "phase": "Fase 5",
+        "date": "2025-09",
+        "title": "Lavoro su miglioramenti dopo gli acceleratori",
+        "type": "future"
+      },
+      {
+        "phase": "Fase 6",
+        "date": "2026-01",
+        "title": "Sviluppo di un prodotto minimo lanciabile (MVP)",
+        "type": "future"
+      },
+      {
+        "phase": "Fase 6",
+        "date": "2026-02",
+        "title": "Inizio delle vendite e ricerca attiva di clienti",
+        "type": "future"
+      }
+    ],
+  "materials": {
+    "why": {
+      "label": "Brochure",
+      "link": "https://drive.google.com/file/d/1aCR8M5dsaAtD2VZsFEXBrfodg2GIkvfs/view?usp=sharing"
+    },
+    "marketOverview": {
+      "label": "Presentazione",
+      "link": "https://drive.google.com/file/d/1yMy1jHZSeIBGn_Diuj2jPjOAa3dok0zO/view?usp=sharing"
+    },
+    "financialModel": {
+      "label": "Modello finanziario",
+      "link": "https://docs.google.com/spreadsheets/d/1Emli0_0QopckOkAHSBwNB79DLF-_6hjr/edit?usp=sharing&ouid=115331786107741480910&rtpof=true&sd=true"
+    },
+    "downloadPdf": "Scarica"
+  }
+
+},
+  "Benchmarks": {
+    "testLink": "Link al test",
+    "title": "Benchmark",
+    "stub": "I risultati dei benchmark dei nostri modelli e soluzioni saranno presto disponibili su questa pagina. Restate sintonizzati!"
+  },
+  "Pricing": {
+    "title": "Le nostre offerte",
+    "sections": ["Horizon Agent", "Dashboard", "API"],
+    "offers": [
+      {
+        "header": "Base",
+        "price": "Gratis",
+        "features": [
+          "Accesso alle funzionalità di base",
+          "Limite di richieste",
+          "Supporto via email"
+        ],
+        "color": "secondary"
+      },
+      {
+        "header": "Standard",
+        "price": "990 ₽ / mese",
+        "features": ["Tutto dal Base", "Supporto prioritario", "Integrazioni aggiuntive"],
+        "color": "success"
+      },
+      {
+        "header": "Business",
+        "price": "2990 ₽ / mese",
+        "features": ["Tutto dal Pro", "Collaborazione in team", "Supporto SLA"],
+        "color": "warning"
+      },
+      {
+        "header": "Premium",
+        "price": "Su richiesta",
+        "features": ["Tutto dal Business", "Manager personale", "Configurazione personalizzata"],
+        "color": "error"
+      }
+    ],
+    "custom": "Sviluppo personalizzato — su richiesta",
+    "perUserLabel": "per utente al mese",
+    "QuickForecastLine": {
+      "title": "Previsione Rapida",
+      "cards": [
+        {
+          "title": "Carica un CSV — ottieni una previsione",
+          "description": "Analisi istantanea dei tuoi dati senza configurazioni."
+        },
+        {
+          "title": "Nessun codice, nessuna integrazione",
+          "description": "Basta scegliere un file — risultato immediato a schermo."
+        },
+        {
+          "title": "AI per tutti",
+          "description": "Accessibile anche a chi non conosce la Data Science."
+        }
+      ]
+    },
+    "QuickForecastTitle": "Previsione Rapida"
+  },
+  "PricingPlan": {
+    "Basic": "Base",
+    "Standard": "Standard",
+    "Business": "Business",
+    "Premium": "Premium",
+    "features": {
+      "basic": ["Accesso alle funzionalità di base", "Limite di richieste", "Supporto via email"],
+      "standard": ["Tutto dal Base", "Supporto prioritario", "Integrazioni aggiuntive"],
+      "business": ["Tutto dal Pro", "Collaborazione in team", "Supporto SLA"],
+      "premium": ["Tutto dal Business", "Manager personale", "Configurazione personalizzata"]
+    },
+    "priceFree": "Gratis",
+    "priceRequest": "Su richiesta"
   }
 }
